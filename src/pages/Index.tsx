@@ -206,6 +206,76 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Traveler Categories Section */}
+      <section className="categories-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="categories-heading">
+              Traveler Categories
+            </h2>
+          </div>
+          
+          <div className="categories-grid">
+            <div className="category-card">
+              <img 
+                src="/lovable-uploads/explorer-travel.jpg" 
+                alt="Adventure explorer in mountain landscape"
+                className="category-card-bg"
+              />
+              <div className="category-card-content">
+                <p className="category-description">
+                  <span className="category-label">Explorers</span> can discover hidden gems and off-the-beaten-path destinations.
+                </p>
+                <div className="category-badge">
+                  From $99 trips
+                </div>
+              </div>
+            </div>
+            
+            <div className="category-card">
+              <img 
+                src="/lovable-uploads/luxury-travel.jpg" 
+                alt="Luxury traveler in premium resort setting"
+                className="category-card-bg"
+              />
+              <div className="category-card-content">
+                <p className="category-description">
+                  <span className="category-label">Premium</span> travelers can access exclusive experiences and luxury accommodations.
+                </p>
+                <div className="category-badge">
+                  From $999 packages
+                </div>
+              </div>
+            </div>
+            
+            <div className="category-card">
+              <img 
+                src="/lovable-uploads/concierge-travel.jpg" 
+                alt="VIP traveler with personal concierge service"
+                className="category-card-bg"
+              />
+              <div className="category-card-content">
+                <p className="category-description">
+                  <span className="category-label">VIP Members</span> enjoy personalized concierge service and bespoke itineraries.
+                </p>
+                <div className="category-badge">
+                  Elite from $5K+
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <button className="categories-cta">
+              Explore Packages
+              <svg className="categories-cta-icon" viewBox="0 0 17 17" fill="none">
+                <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
     </div>;
 };
 export default Index;
