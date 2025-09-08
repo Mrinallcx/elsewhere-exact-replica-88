@@ -81,12 +81,22 @@ const Index = () => {
                 <div className="logo-item">Journey</div>
                 <div className="logo-item">Nomad</div>
                 <div className="logo-item">Venture</div>
+                <div className="logo-item">Compass</div>
+                <div className="logo-item">Atlas</div>
+                <div className="logo-item">Odyssey</div>
+                <div className="logo-item">Roam</div>
+                <div className="logo-item">Passport</div>
                 <div className="logo-item">Wanderlust</div>
                 <div className="logo-item">TravelPro</div>
                 <div className="logo-item">Explorer</div>
                 <div className="logo-item">Journey</div>
                 <div className="logo-item">Nomad</div>
                 <div className="logo-item">Venture</div>
+                <div className="logo-item">Compass</div>
+                <div className="logo-item">Atlas</div>
+                <div className="logo-item">Odyssey</div>
+                <div className="logo-item">Roam</div>
+                <div className="logo-item">Passport</div>
               </div>
             </div>
           </div>
