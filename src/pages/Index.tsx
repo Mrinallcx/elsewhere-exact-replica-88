@@ -339,6 +339,85 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Resources Section */}
+      <section className="resources-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="resources-heading">
+              Resources
+            </h2>
+            <p className="resources-subtitle">
+              See the Latest from Elsewhere
+            </p>
+          </div>
+          
+          <div className="resources-tabs mb-12">
+            <button className="tab-btn active">
+              Travel Insights
+            </button>
+            <button className="tab-btn">
+              Destination Guides
+            </button>
+          </div>
+          
+          <div className="blog-grid">
+            <div className="blog-card blog-card-purple">
+              <div className="blog-card-content">
+                <div className="blog-tag">Travel Spotlight</div>
+                <h3 className="blog-title">Japan Travel Guide</h3>
+                <div className="blog-subtitle">Spring • Summer • Fall</div>
+                <div className="blog-meta">
+                  <span>Blog • Elsewhere Travel • March 15, 2024</span>
+                </div>
+                <p className="blog-excerpt">
+                  Comprehensive guide to Japan's seasons including cherry blossom timing, cultural festivals, hidden temples, and local cuisine experiences across Tokyo, Kyoto, and rural regions.
+                </p>
+              </div>
+            </div>
+            
+            <div className="blog-card blog-card-blue">
+              <div className="blog-card-content">
+                <div className="blog-tag">New Partnership</div>
+                <div className="blog-brands">
+                  <div className="brand-logo">✈ Elsewhere</div>
+                  <div className="brand-logo">🏨 Luxury Stay</div>
+                </div>
+                <div className="blog-meta">
+                  <span>Blog • Elsewhere Travel • March 10, 2024</span>
+                </div>
+                <h3 className="blog-title">Luxury Stay Partners with Global Hotels</h3>
+                <p className="blog-excerpt">
+                  Luxury Stay now partners with premium hotels worldwide, enabling travelers access to exclusive accommodations, spa services, and VIP experiences across 50+ destinations.
+                </p>
+              </div>
+            </div>
+            
+            <div className="blog-card blog-card-red">
+              <div className="blog-card-content">
+                <div className="blog-tag">Platform Update</div>
+                <div className="blog-brands-grid">
+                  <div className="brand-mini">✈ Elsewhere</div>
+                  <div className="brand-mini">🌍 Global</div>
+                </div>
+                <div className="blog-meta">
+                  <span>Blog • Elsewhere Travel • March 5, 2024</span>
+                </div>
+                <h3 className="blog-title">AI Recommendations Now Live Globally</h3>
+                <p className="blog-excerpt">
+                  We're excited to announce that our AI-powered travel recommendations are now available globally, offering personalized itineraries across 200+ destinations worldwide.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <button className="resources-cta">
+              Explore Insights
+            </button>
+          </div>
+        </div>
+      </section>
     </div>;
 };
 export default Index;
