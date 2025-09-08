@@ -121,6 +121,14 @@
 }
 
 @layer components {
+  /* Sticky Glass Navbar */
+  .glass-navbar {
+    background: hsl(var(--glass-white-20));
+    border-bottom: 1px solid hsl(var(--border-glass));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 50;
+  }
   /* Hero Background */
   .hero-background {
     background-image: 
@@ -138,7 +146,7 @@
   
   .hero-overlay {
     @apply absolute inset-0;
-    background: hsl(var(--travel-black) / 0.45);
+    background: hsl(var(--travel-black) / 0.7);
     z-index: 1;
     pointer-events: none;
   }
@@ -166,14 +174,15 @@
   
   /* Glass Morphism Components */
   .glass-nav-btn {
-    background: hsl(var(--glass-white-10));
-    border: 1px solid hsl(var(--border-glass));
+    background: hsl(var(--travel-black) / 0.8);
+    color: hsl(var(--travel-white));
+    border: 1px solid hsl(var(--travel-white) / 0.2);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
   
   .glass-nav-btn:hover {
-    background: hsl(var(--glass-white-20));
+    background: hsl(var(--travel-black) / 0.9);
   }
   
   /* Typography Classes */
