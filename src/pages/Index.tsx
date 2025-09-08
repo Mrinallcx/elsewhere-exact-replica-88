@@ -33,17 +33,17 @@ const Index = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="relative flex flex-col items-center justify-center min-h-screen text-center px-4 sm:px-6 md:px-8 lg:px-12">
+      <main className="relative flex flex-col items-center justify-center min-h-screen text-center px-4 sm:px-6 md:px-8 lg:px-12 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16">
         <video className="hero-video" autoPlay muted loop playsInline src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/test-video.mp4?alt=media&token=37ed1571-934e-475c-a56c-30bb24210165"></video>
         <div className="hero-overlay"></div>
         <div className="relative z-10 max-w-5xl mx-auto pt-8 sm:pt-12">
           
           {/* Hero Headings */}
-          <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-travel-white mb-1 sm:mb-2 leading-tight">
+          <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-travel-white mb-1 sm:mb-2 leading-tight mx-auto max-w-[18ch] sm:max-w-[22ch]">
             Travel without limits.
           </h1>
           
-          <h2 className="hero-subheading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 md:mb-8 lg:mb-10 leading-tight">
+          <h2 className="hero-subheading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 md:mb-8 lg:mb-10 leading-tight mx-auto max-w-[20ch] sm:max-w-[26ch]">
             Discover with intelligence.
           </h2>
           
@@ -59,7 +59,7 @@ const Index = () => {
           
           {/* Call-to-Action */}
           <div className="flex flex-col items-center space-y-4 sm:space-y-6 mb-12 sm:mb-16">
-            <button className="cta-primary px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-medium w-auto">
+            <button className="cta-primary px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-medium w-full sm:w-auto">
               Build my trip now
             </button>
           </div>
@@ -72,7 +72,7 @@ const Index = () => {
           
           {/* Social Proof Section */}
           <div className="social-proof-section">
-            <p className="social-proof-text mb-8">
+            <p className="social-proof-text mb-6 sm:mb-8">
               TRUSTED BY TRAVELERS WORLDWIDE
             </p>
             <div className="w-full overflow-hidden">
