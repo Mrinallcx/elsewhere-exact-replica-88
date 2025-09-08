@@ -462,6 +462,63 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="footer-section px-6 md:px-8 lg:px-12 py-16 md:py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="footer-grid">
+            <div className="footer-column">
+              <h3 className="footer-heading">Travel</h3>
+              <ul className="footer-links">
+                <li><a href="#" className="footer-link">Destinations</a></li>
+                <li><a href="#" className="footer-link">Experiences</a></li>
+                <li><a href="#" className="footer-link">AI Planner</a></li>
+                <li><a href="#" className="footer-link">Bookings</a></li>
+              </ul>
+            </div>
+            
+            <div className="footer-column">
+              <h3 className="footer-heading">Partners</h3>
+              <ul className="footer-links">
+                <li><a href="#" className="footer-link">Travel Network</a></li>
+                <li><a href="#" className="footer-link">Hotels <span className="external-icon">↗</span></a></li>
+                <li><a href="#" className="footer-link">Airlines <span className="external-icon">↗</span></a></li>
+              </ul>
+            </div>
+            
+            <div className="footer-column">
+              <h3 className="footer-heading">Explore</h3>
+              <ul className="footer-links">
+                <li><a href="#" className="footer-link">Travel Insights</a></li>
+                <li><a href="#" className="footer-link">Travel Guides <span className="external-icon">↗</span></a></li>
+                <li><a href="#" className="footer-link">Safety & Security <span className="external-icon">↗</span></a></li>
+                <li><a href="#" className="footer-link">Travel Tips <span className="external-icon">↗</span></a></li>
+              </ul>
+            </div>
+            
+            <div className="footer-column">
+              <h3 className="footer-heading">Company</h3>
+              <ul className="footer-links">
+                <li><a href="#" className="footer-link">Our Team</a></li>
+                <li><a href="#" className="footer-link">Careers <span className="external-icon">↗</span></a></li>
+                <li><a href="#" className="footer-link">Press Kit <span className="external-icon">↗</span></a></li>
+                <li><a href="#" className="footer-link">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="footer-bottom">
+            <div className="footer-brand">
+              <span className="brand-logo">Elsewhere™</span>
+            </div>
+            <div className="footer-legal">
+              <a href="#" className="legal-link">Privacy Policy</a>
+              <a href="#" className="legal-link">Terms of Service</a>
+              <a href="#" className="legal-link">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>;
 };
 export default Index;

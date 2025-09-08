@@ -750,4 +750,62 @@
   .social-link svg {
     @apply w-5 h-5;
   }
+
+  /* Footer Section */
+  .footer-section {
+    background: hsl(var(--travel-black));
+    color: hsl(var(--travel-white));
+  }
+
+  .footer-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 mb-12;
+  }
+
+  .footer-column {
+    @apply space-y-4;
+  }
+
+  .footer-heading {
+    @apply text-lg font-medium mb-6;
+    color: hsl(var(--travel-white));
+  }
+
+  .footer-links {
+    @apply space-y-3;
+  }
+
+  .footer-link {
+    @apply text-sm transition-colors duration-300 flex items-center gap-1;
+    color: hsl(var(--travel-white) / 0.7);
+  }
+
+  .footer-link:hover {
+    color: hsl(var(--travel-white));
+  }
+
+  .external-icon {
+    @apply text-xs opacity-60;
+  }
+
+  .footer-bottom {
+    @apply flex flex-col md:flex-row justify-between items-center pt-8 border-t;
+    border-color: hsl(var(--travel-white) / 0.1);
+  }
+
+  .footer-brand {
+    @apply mb-4 md:mb-0;
+  }
+
+  .footer-legal {
+    @apply flex gap-6;
+  }
+
+  .legal-link {
+    @apply text-sm transition-colors duration-300;
+    color: hsl(var(--travel-white) / 0.6);
+  }
+
+  .legal-link:hover {
+    color: hsl(var(--travel-white) / 0.8);
+  }
 }
