@@ -107,7 +107,7 @@ const Index = () => {
       {/* Statistics Section */}
       <section className="stats-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="mb-12">
             <p className="stats-intro-text">
               Elsewhere is building the foundation for the future of travel.
             </p>
