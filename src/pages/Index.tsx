@@ -64,12 +64,6 @@ const Index = () => {
             </button>
           </div>
           
-          {/* Privacy Notice */}
-          <div className="flex items-center justify-center space-x-2 privacy-notice mb-12 sm:mb-16">
-            <Lock size={12} className="text-glass-white-60" />
-            <span className="text-xs sm:text-sm">PRIVACY-FIRST. NO DATA RESOLD.</span>
-          </div>
-          
           {/* Social Proof Section */}
           <div className="social-proof-section">
             <p className="social-proof-text mb-6 sm:mb-8">
