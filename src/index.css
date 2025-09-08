@@ -244,43 +244,4 @@
     @apply text-sm md:text-base font-medium tracking-wide;
     color: hsl(var(--travel-black) / 0.7);
   }
-  
-  /* Bridge Section Styles */
-  .bridge-section {
-    background: linear-gradient(135deg, hsl(var(--glass-white-10)) 0%, hsl(var(--glass-white-20)) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-  
-  .bridge-ecosystem-label {
-    @apply text-sm font-medium tracking-wider uppercase;
-    color: hsl(var(--glass-white-70));
-  }
-  
-  .bridge-heading {
-    color: hsl(var(--travel-white));
-    line-height: 1.1;
-    font-weight: 700;
-  }
-  
-  .bridge-description {
-    color: hsl(var(--glass-white-80));
-    line-height: 1.6;
-  }
-  
-  .bridge-cta-btn {
-    background: hsl(var(--glass-white-10));
-    border: 1px solid hsl(var(--glass-white-20));
-    color: hsl(var(--travel-white));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: var(--transition-smooth);
-  }
-  
-  .bridge-cta-btn:hover {
-    background: hsl(var(--glass-white-20));
-    border-color: hsl(var(--glass-white-30));
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px -10px hsl(var(--glass-white-20));
-  }
 }

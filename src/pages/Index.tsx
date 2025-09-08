@@ -136,41 +136,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
-      {/* Bridge Section - Travel Focus */}
-      <section className="bridge-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left side - Image */}
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/2913d379-3625-461c-8297-90639106fe27.png" 
-                alt="Travel planning meeting"
-                className="rounded-2xl w-full h-auto shadow-xl"
-              />
-            </div>
-            
-            {/* Right side - Content */}
-            <div className="text-left">
-              <div className="bridge-ecosystem-label mb-4">
-                Travel Ecosystem
-              </div>
-              
-              <h2 className="bridge-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                Building the Bridge Between Dreams & Destinations
-              </h2>
-              
-              <p className="bridge-description text-base md:text-lg mb-8">
-                We're grateful to be working with organizations aligned with the mission of making institutional-grade travel planning and services available to everyone.
-              </p>
-              
-              <button className="bridge-cta-btn px-6 py-3 rounded-full text-sm font-medium tracking-wide uppercase">
-                Explore Our Partners
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>;
 };
 export default Index;
