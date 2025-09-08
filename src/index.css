@@ -104,7 +104,7 @@
 @layer components {
   /* Hero Background */
   .hero-background {
-    background-image: url('https://ik.imagekit.io/5dpiwrqpo/wmremove-transformed%20(1).png?updatedAt=1756917064913');
+    background-image: url('https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7aa3f483-3978-4416-8322-fa9964864dcb_3840w.jpg');
     @apply bg-cover bg-center bg-no-repeat;
   }
   
