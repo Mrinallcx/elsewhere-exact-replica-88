@@ -111,7 +111,7 @@
   }
   
   body {
-    @apply bg-background text-foreground font-light overflow-x-hidden;
+    @apply bg-background text-foreground font-light;
     font-family: var(--font-body);
   }
   
@@ -141,7 +141,6 @@
   .hero-video {
     @apply absolute inset-0 w-full h-full object-cover;
     z-index: 0;
-    object-position: center;
   }
   
   .hero-overlay {
@@ -149,27 +148,6 @@
     background: hsl(var(--travel-black) / 0.7);
     z-index: 1;
     pointer-events: none;
-  }
-  
-  /* Mobile and tablet tuning for hero background */
-  @media (max-width: 1024px) {
-    .hero-overlay { background: hsl(var(--travel-black) / 0.5); }
-  }
-  @media (max-width: 768px) {
-    .hero-overlay { background: hsl(var(--travel-black) / 0.6); }
-    .hero-video { object-position: center 35%; }
-  }
-  
-  /* Hero content readability on small screens */
-  .hero-content { @apply px-2 sm:px-0; }
-  @media (max-width: 768px) {
-    .hero-content {
-      background: linear-gradient(to bottom, hsl(var(--travel-black) / 0.1), hsl(var(--travel-black) / 0.45));
-      backdrop-filter: blur(2px);
-      -webkit-backdrop-filter: blur(2px);
-      border-radius: 12px;
-      padding: 0.75rem 0.5rem;
-    }
   }
   
   /* Glass Morphism Components */
@@ -189,15 +167,11 @@
   .hero-heading {
     font-family: var(--font-heading);
     @apply font-light tracking-tight leading-tight;
-    text-wrap: balance;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.45);
   }
   
   .hero-subheading {
     font-family: var(--font-heading);
     @apply font-light tracking-tight leading-tight;
-    text-wrap: balance;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.45);
     color: hsl(var(--glass-white-70));
   }
   
@@ -250,7 +224,7 @@
   
   /* Social Proof Section */
   .social-proof-section {
-    @apply w-full max-w-6xl mx-auto overflow-x-hidden;
+    @apply w-full max-w-6xl mx-auto;
   }
   
   .social-proof-text {
@@ -262,12 +236,6 @@
     @apply flex items-center gap-8 md:gap-12 lg:gap-16 overflow-hidden;
     animation: scroll-left 60s linear infinite;
     width: max-content;
-  }
-  @media (max-width: 640px) {
-    .social-proof-logos {
-      gap: 1.25rem; /* tighter gaps on mobile */
-      animation-duration: 90s; /* slower scroll for readability */
-    }
   }
   
   .logo-item {

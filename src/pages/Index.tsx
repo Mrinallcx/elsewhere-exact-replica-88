@@ -5,7 +5,7 @@ const Index = () => {
         <div className="flex justify-between items-center px-6 md:px-12 lg:px-20 py-4 md:py-5">
           {/* Brand */}
           <div className="brand-logo">
-            <img src="/tiamonds.svg" alt="Tiamonds" className="h-10 md:h-12 lg:h-14" />
+            <img src="/tiamonds.svg" alt="Tiamonds" className="h-8 md:h-10 lg:h-12" />
           </div>
           
           {/* Right Side CTA */}
@@ -16,19 +16,6 @@ const Index = () => {
       </nav>
 
       {/* Main Content */}
-<<<<<<< HEAD
-      <main className="relative flex flex-col items-center justify-center min-h-[90svh] md:min-h-screen text-center px-4 sm:px-6 md:px-8 lg:px-12 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16">
-        <video className="hero-video" autoPlay muted loop playsInline src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/test-video.mp4?alt=media&token=37ed1571-934e-475c-a56c-30bb24210165"></video>
-        <div className="hero-overlay"></div>
-        <div className="relative z-10 max-w-5xl mx-auto pt-8 sm:pt-12 hero-content">
-          
-          {/* Hero Headings */}
-          <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-travel-white mb-1 sm:mb-2 leading-tight mx-auto max-w-[18ch] sm:max-w-[22ch]">
-            Travel without limits.
-          </h1>
-          
-          <h2 className="hero-subheading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 md:mb-8 lg:mb-10 leading-tight mx-auto max-w-[20ch] sm:max-w-[26ch]">
-=======
       <main className="relative flex flex-col items-start sm:items-center justify-center min-h-[80vh] md:min-h-screen text-left sm:text-center px-4 sm:px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-12 overflow-hidden">
         <video className="hero-video" autoPlay muted loop playsInline src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/test-video.mp4?alt=media&token=37ed1571-934e-475c-a56c-30bb24210165"></video>
         <div className="hero-overlay"></div>
@@ -40,51 +27,31 @@ const Index = () => {
           </h1>
           
           <h2 className="hero-subheading text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 md:mb-8 lg:mb-10">
->>>>>>> bdf0884 (chore(nav): sticky glass navbar; dark CTA; update brand logo image and size; hero mobile align and spacing; overlay darker)
             Discover with intelligence.
           </h2>
           
           {/* Description Section */}
-<<<<<<< HEAD
-          <div className="max-w-3xl mx-auto mb-6 sm:mb-8 mt-2 sm:mt-4 px-2 sm:px-0">
-            <p className="hero-description text-sm sm:text-base md:text-lg lg:text-xl text-travel-white mb-1 sm:mb-2 leading-relaxed">
-              Our AI-powered journeys adapt to you — your pace, your mood, your sense of wonder.
-            </p>
-            <p className="hero-description-secondary text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
-=======
           <div className="max-w-3xl w-full mx-0 sm:mx-auto mb-6 sm:mb-8 mt-6 sm:mt-8 md:mt-10 text-left sm:text-center ">
             <p className="hero-description text-sm sm:text-base md:text-lg lg:text-xl text-travel-white mb-2 text-left sm:text-center">
               Our AI-powered journeys adapt to you — your pace, your mood, your sense of wonder.
             </p>
             <p className="hero-description-secondary text-sm sm:text-base md:text-lg lg:text-xl text-left sm:text-center">
->>>>>>> bdf0884 (chore(nav): sticky glass navbar; dark CTA; update brand logo image and size; hero mobile align and spacing; overlay darker)
               Every trip is personalized, effortless, and truly yours.
             </p>
           </div>
           
           {/* Call-to-Action */}
-<<<<<<< HEAD
-          <div className="flex flex-col items-center space-y-4 sm:space-y-6 mb-12 sm:mb-16">
-            <button className="cta-primary px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-medium w-full sm:w-auto">
-=======
           <div className="flex flex-col items-start sm:items-center space-y-6 mb-10 sm:mb-16">
             <button className="cta-primary px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-medium">
->>>>>>> bdf0884 (chore(nav): sticky glass navbar; dark CTA; update brand logo image and size; hero mobile align and spacing; overlay darker)
               Build my trip now
             </button>
           </div>
           
-<<<<<<< HEAD
-          {/* Social Proof Section */}
-          <div className="social-proof-section">
-            <p className="social-proof-text mb-6 sm:mb-8">
-=======
           
           
           {/* Social Proof Section */}
           <div className="social-proof-section mx-0 sm:mx-auto text-left sm:text-center">
             <p className="social-proof-text mb-8">
->>>>>>> bdf0884 (chore(nav): sticky glass navbar; dark CTA; update brand logo image and size; hero mobile align and spacing; overlay darker)
               TRUSTED BY TRAVELERS WORLDWIDE
             </p>
             <div className="w-full overflow-hidden">
