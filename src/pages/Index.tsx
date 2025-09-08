@@ -1,6 +1,6 @@
 import { Lock } from 'lucide-react';
 const Index = () => {
-  return <div className="min-h-screen w-full relative hero-background">
+  return <div className="min-h-screen w-full relative">
       {/* Navigation Bar */}
       <nav className="absolute top-0 left-0 right-0 z-50">
         <div className="flex justify-between items-center px-6 md:px-12 lg:px-20 py-8">
@@ -33,20 +33,22 @@ const Index = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="flex flex-col items-center justify-center min-h-screen text-center px-6 md:px-8 lg:px-12">
-        <div className="max-w-5xl mx-auto pt-12">
+      <main className="relative flex flex-col items-center justify-center min-h-screen text-center px-6 md:px-8 lg:px-12">
+        <video className="hero-video" autoPlay muted loop playsInline src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/test-video.mp4?alt=media&token=37ed1571-934e-475c-a56c-30bb24210165"></video>
+        <div className="hero-overlay"></div>
+        <div className="relative z-10 max-w-5xl mx-auto pt-12">
           
           {/* Hero Headings */}
-          <h1 className="hero-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-travel-white mb-4">
+          <h1 className="hero-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-travel-white mb-2">
             Travel without limits.
           </h1>
           
-          <h2 className="hero-subheading text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-48">
+          <h2 className="hero-subheading text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 md:mb-8 lg:mb-10">
             Discover with intelligence.
           </h2>
           
           {/* Description Section */}
-          <div className="max-w-3xl mx-auto mb-8 mt-16 ">
+          <div className="max-w-3xl mx-auto mb-8 mt-4 ">
             <p className="hero-description text-base md:text-lg lg:text-xl text-travel-white mb-2">
               Our AI-powered journeys adapt to you — your pace, your mood, your sense of wonder.
             </p>
@@ -163,7 +165,7 @@ const Index = () => {
             
             <div className="mission-image">
               <img 
-                src="/lovable-uploads/mission-travel.jpg" 
+                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/tiamonds%20test%2001.png?alt=media&token=a3b7bbdc-da42-4130-8e14-4a8fe67ad901" 
                 alt="Beautiful travel destination with mountains and pristine waters"
                 className="mission-img"
               />
@@ -178,8 +180,8 @@ const Index = () => {
           <div className="experience-grid">
             <div className="experience-image">
               <img 
-                src="/lovable-uploads/experience-travel.jpg" 
-                alt="Immersive cultural travel experience with local architecture"
+                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/tiamonds%20test%2002.png?alt=media&token=0859db5d-8be3-4d90-b9c6-8ef057c4c542" 
+                alt="Experience visual"
                 className="experience-img"
               />
             </div>
@@ -285,55 +287,30 @@ const Index = () => {
               <div className="platform-header">
                 <p className="platform-label">PLATFORM</p>
               </div>
-              
+
               <div className="platform-text">
                 <h2 className="platform-heading">
                   Elsewhere Network<br />
                   is going global
                 </h2>
-                
+
                 <p className="platform-description">
                   Seamlessly connecting destinations across continents, Elsewhere ensures personalized travel experiences are accessible worldwide, unlocking global adventures and local authenticity.
                 </p>
-                
+
                 <button className="platform-cta">
                   Explore Platform
                 </button>
               </div>
             </div>
-            
+
             <div className="platform-visual">
-              <div className="destinations-orbit">
-                <div className="destination-node destination-1">
-                  <div className="destination-circle"></div>
-                  <span className="destination-name">TOKYO</span>
-                </div>
-                <div className="destination-node destination-2">
-                  <div className="destination-circle"></div>
-                  <span className="destination-name">PARIS</span>
-                </div>
-                <div className="destination-node destination-3">
-                  <div className="destination-circle"></div>
-                  <span className="destination-name">NYC</span>
-                </div>
-                <div className="destination-node destination-4">
-                  <div className="destination-circle"></div>
-                  <span className="destination-name">BALI</span>
-                </div>
-                <div className="destination-node destination-5">
-                  <div className="destination-circle"></div>
-                  <span className="destination-name">DUBAI</span>
-                </div>
-                <div className="destination-node destination-center">
-                  <div className="destination-circle-center">
-                    <img 
-                      src="/lovable-uploads/platform-icon.svg" 
-                      alt="Elsewhere Platform Hub"
-                      className="platform-icon"
-                    />
-                  </div>
-                  <span className="destination-name-center">HUB</span>
-                </div>
+              <div className="platform-image">
+                <img
+                  src="/lovable-uploads/urban-architecture.jpg"
+                  alt="Elsewhere global platform visual"
+                  className="platform-img"
+                />
               </div>
             </div>
           </div>
@@ -361,53 +338,107 @@ const Index = () => {
             </button>
           </div>
           
-          <div className="blog-grid">
-            <div className="blog-card blog-card-purple">
-              <div className="blog-card-content">
-                <div className="blog-tag">Travel Spotlight</div>
-                <h3 className="blog-title">Japan Travel Guide</h3>
-                <div className="blog-subtitle">Spring • Summer • Fall</div>
-                <div className="blog-meta">
-                  <span>Blog • Elsewhere Travel • March 15, 2024</span>
+          <div className="blog-marquee">
+            <div className="blog-marquee-track">
+              {/* Blog Card 1 */}
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="/lovable-uploads/explorer-travel.jpg" alt="Japan Travel Guide" className="blog-card-image" />
                 </div>
-                <p className="blog-excerpt">
-                  Comprehensive guide to Japan's seasons including cherry blossom timing, cultural festivals, hidden temples, and local cuisine experiences across Tokyo, Kyoto, and rural regions.
-                </p>
-              </div>
-            </div>
-            
-            <div className="blog-card blog-card-blue">
-              <div className="blog-card-content">
-                <div className="blog-tag">New Partnership</div>
-                <div className="blog-brands">
-                  <div className="brand-logo">✈ Elsewhere</div>
-                  <div className="brand-logo">🏨 Luxury Stay</div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">Japan Travel Guide</h3>
+                  <p className="blog-excerpt">
+                    Cherry blossoms, timeless temples, and street food adventures across Tokyo, Kyoto, and beyond. A quick-start guide for your next Japan trip.
+                  </p>
+                  <a href="#" className="blog-read-more">
+                    Read article
+                    <svg viewBox="0 0 17 17" fill="none">
+                      <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
+                    </svg>
+                  </a>
                 </div>
-                <div className="blog-meta">
-                  <span>Blog • Elsewhere Travel • March 10, 2024</span>
+              </article>
+
+              {/* Blog Card 2 */}
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="/lovable-uploads/luxury-travel.jpg" alt="Luxury Stay Partners with Global Hotels" className="blog-card-image" />
                 </div>
-                <h3 className="blog-title">Luxury Stay Partners with Global Hotels</h3>
-                <p className="blog-excerpt">
-                  Luxury Stay now partners with premium hotels worldwide, enabling travelers access to exclusive accommodations, spa services, and VIP experiences across 50+ destinations.
-                </p>
-              </div>
-            </div>
-            
-            <div className="blog-card blog-card-red">
-              <div className="blog-card-content">
-                <div className="blog-tag">Platform Update</div>
-                <div className="blog-brands-grid">
-                  <div className="brand-mini">✈ Elsewhere</div>
-                  <div className="brand-mini">🌍 Global</div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">Luxury Stay Partners with Global Hotels</h3>
+                  <p className="blog-excerpt">
+                    Access premium stays, spa experiences, and VIP services across 50+ destinations through our newest partnership expansion.
+                  </p>
+                  <a href="#" className="blog-read-more">
+                    Read article
+                    <svg viewBox="0 0 17 17" fill="none">
+                      <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
+                    </svg>
+                  </a>
                 </div>
-                <div className="blog-meta">
-                  <span>Blog • Elsewhere Travel • March 5, 2024</span>
+              </article>
+
+              {/* Blog Card 3 */}
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="/lovable-uploads/concierge-travel.jpg" alt="AI Recommendations Now Live Globally" className="blog-card-image" />
                 </div>
-                <h3 className="blog-title">AI Recommendations Now Live Globally</h3>
-                <p className="blog-excerpt">
-                  We're excited to announce that our AI-powered travel recommendations are now available globally, offering personalized itineraries across 200+ destinations worldwide.
-                </p>
-              </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">AI Recommendations Now Live Globally</h3>
+                  <p className="blog-excerpt">
+                    Personalized itineraries are now available worldwide, matching your interests to unforgettable moments wherever you go.
+                  </p>
+                  <a href="#" className="blog-read-more">
+                    Read article
+                    <svg viewBox="0 0 17 17" fill="none">
+                      <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              {/* Duplicate set for seamless scroll */}
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="/lovable-uploads/explorer-travel.jpg" alt="Japan Travel Guide" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">Japan Travel Guide</h3>
+                  <p className="blog-excerpt">Cherry blossoms, timeless temples, and street food adventures across Tokyo, Kyoto, and beyond. A quick-start guide for your next Japan trip.</p>
+                  <a href="#" className="blog-read-more">
+                    Read article
+                    <svg viewBox="0 0 17 17" fill="none"><path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="/lovable-uploads/luxury-travel.jpg" alt="Luxury Stay Partners with Global Hotels" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">Luxury Stay Partners with Global Hotels</h3>
+                  <p className="blog-excerpt">Access premium stays, spa experiences, and VIP services across 50+ destinations through our newest partnership expansion.</p>
+                  <a href="#" className="blog-read-more">
+                    Read article
+                    <svg viewBox="0 0 17 17" fill="none"><path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="/lovable-uploads/concierge-travel.jpg" alt="AI Recommendations Now Live Globally" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">AI Recommendations Now Live Globally</h3>
+                  <p className="blog-excerpt">Personalized itineraries are now available worldwide, matching your interests to unforgettable moments wherever you go.</p>
+                  <a href="#" className="blog-read-more">
+                    Read article
+                    <svg viewBox="0 0 17 17" fill="none"><path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/></svg>
+                  </a>
+                </div>
+              </article>
             </div>
           </div>
           
@@ -420,9 +451,9 @@ const Index = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="newsletter-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
+      <section className="newsletter-section py-16 md:py-24">
         <div className="newsletter-bg">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center px-6 md:px-8 lg:px-12">
             <h2 className="newsletter-heading">
               The Future of Travel
             </h2>

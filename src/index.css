@@ -88,10 +88,20 @@
 
 @keyframes scroll-left {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
+  }
+}
+
+/* Blog cards marquee */
+@keyframes blog-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
@@ -117,6 +127,19 @@
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       url('https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7aa3f483-3978-4416-8322-fa9964864dcb_3840w.jpg');
     @apply bg-cover bg-center bg-no-repeat;
+  }
+  
+  /* Hero video background */
+  .hero-video {
+    @apply absolute inset-0 w-full h-full object-cover;
+    z-index: 0;
+  }
+  
+  .hero-overlay {
+    @apply absolute inset-0;
+    background: hsl(var(--travel-black) / 0.45);
+    z-index: 1;
+    pointer-events: none;
   }
   
   /* Glass Morphism Components */
@@ -202,7 +225,7 @@
   
   .social-proof-logos {
     @apply flex items-center gap-8 md:gap-12 lg:gap-16 overflow-hidden;
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 60s linear infinite;
     width: max-content;
   }
   
@@ -259,6 +282,10 @@
     @apply space-y-6;
   }
 
+  .mission-text {
+    @apply space-y-4 md:space-y-6;
+  }
+
   .mission-label {
     @apply text-sm font-medium tracking-wide uppercase;
     color: hsl(var(--travel-black) / 0.6);
@@ -290,8 +317,9 @@
   }
 
   .mission-image {
-    @apply relative rounded-lg overflow-hidden;
-    aspect-ratio: 4/5;
+    @apply relative overflow-hidden;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
   }
 
   .mission-img {
@@ -312,9 +340,14 @@
     @apply space-y-6 lg:order-2;
   }
 
+  .experience-text {
+    @apply space-y-4 md:space-y-6;
+  }
+
   .experience-image {
-    @apply relative rounded-lg overflow-hidden lg:order-1;
-    aspect-ratio: 4/5;
+    @apply relative overflow-hidden lg:order-1;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
   }
 
   .experience-img {
@@ -440,6 +473,10 @@
     @apply space-y-6;
   }
 
+  .platform-text {
+    @apply space-y-4 md:space-y-6;
+  }
+
   .platform-label {
     @apply text-sm font-medium tracking-wide uppercase;
     color: hsl(var(--travel-black) / 0.6);
@@ -471,7 +508,17 @@
   }
 
   .platform-visual {
-    @apply relative h-96 lg:h-[500px];
+    @apply relative;
+  }
+
+  .platform-image {
+    @apply relative overflow-hidden;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+  }
+
+  .platform-img {
+    @apply w-full h-full object-cover;
   }
 
   .destinations-orbit {
@@ -597,14 +644,52 @@
     @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8;
   }
 
+  /* Blog marquee (auto-scrolling row) */
+  .blog-marquee {
+    @apply w-full overflow-hidden;
+  }
+
+  .blog-marquee-track {
+    @apply flex items-stretch gap-6 lg:gap-8;
+    width: max-content;
+    animation: blog-scroll 60s linear infinite;
+  }
+
   .blog-card {
-    @apply rounded-2xl overflow-hidden p-6 transition-all duration-300;
-    min-height: 320px;
+    @apply rounded-2xl overflow-hidden transition-all duration-300;
+    background: hsl(var(--travel-white));
+    color: hsl(var(--travel-black));
+    border: 1px solid hsl(var(--travel-black) / 0.1);
+  }
+
+  .blog-card--marquee {
+    @apply flex flex-col w-[280px] md:w-[360px] flex-shrink-0;
   }
 
   .blog-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 40px hsl(var(--travel-black) / 0.1);
+  }
+
+  .blog-card-image-wrapper {
+    @apply w-full;
+  }
+
+  .blog-card-image {
+    @apply w-full h-32 md:h-36 lg:h-40 object-cover;
+  }
+
+  .blog-card-body {
+    @apply p-6 flex flex-col gap-3;
+  }
+
+  .blog-read-more {
+    @apply inline-flex items-center gap-2 font-medium;
+    color: hsl(var(--travel-black));
+  }
+
+  .blog-read-more svg {
+    @apply w-4 h-4;
   }
 
   .blog-card-purple {
@@ -820,8 +905,9 @@
   }
 
   .brand-text {
-    @apply text-6xl md:text-8xl lg:text-9xl xl:text-[12rem] font-light leading-none tracking-tight;
+    @apply font-light leading-none tracking-tight whitespace-nowrap;
     color: hsl(var(--travel-white));
+    font-size: clamp(3rem, 12vw, 12rem);
   }
 
   .brand-footer {
