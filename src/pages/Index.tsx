@@ -73,13 +73,21 @@ const Index = () => {
             <p className="social-proof-text mb-8">
               TRUSTED BY TRAVELERS WORLDWIDE
             </p>
-            <div className="social-proof-logos">
-              <div className="logo-item">Wanderlust</div>
-              <div className="logo-item">TravelPro</div>
-              <div className="logo-item">Explorer</div>
-              <div className="logo-item">Journey</div>
-              <div className="logo-item">Nomad</div>
-              <div className="logo-item">Venture</div>
+            <div className="w-full overflow-hidden">
+              <div className="social-proof-logos">
+                <div className="logo-item">Wanderlust</div>
+                <div className="logo-item">TravelPro</div>
+                <div className="logo-item">Explorer</div>
+                <div className="logo-item">Journey</div>
+                <div className="logo-item">Nomad</div>
+                <div className="logo-item">Venture</div>
+                <div className="logo-item">Wanderlust</div>
+                <div className="logo-item">TravelPro</div>
+                <div className="logo-item">Explorer</div>
+                <div className="logo-item">Journey</div>
+                <div className="logo-item">Nomad</div>
+                <div className="logo-item">Venture</div>
+              </div>
             </div>
           </div>
           
