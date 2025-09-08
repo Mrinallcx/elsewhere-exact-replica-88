@@ -808,4 +808,58 @@
   .legal-link:hover {
     color: hsl(var(--travel-white) / 0.8);
   }
+
+  /* Brand Section */
+  .brand-section {
+    background: hsl(var(--travel-black));
+    color: hsl(var(--travel-white));
+  }
+
+  .brand-content {
+    @apply text-center mb-8;
+  }
+
+  .brand-text {
+    @apply text-6xl md:text-8xl lg:text-9xl xl:text-[12rem] font-light leading-none tracking-tight;
+    color: hsl(var(--travel-white));
+  }
+
+  .brand-footer {
+    @apply flex flex-col md:flex-row justify-between items-center;
+  }
+
+  .brand-footer-left {
+    @apply flex flex-col md:flex-row items-center gap-4 md:gap-6 mb-4 md:mb-0;
+  }
+
+  .brand-copyright {
+    @apply text-sm;
+    color: hsl(var(--travel-white) / 0.7);
+  }
+
+  .brand-footer-link {
+    @apply text-sm transition-colors duration-300;
+    color: hsl(var(--travel-white) / 0.6);
+  }
+
+  .brand-footer-link:hover {
+    color: hsl(var(--travel-white) / 0.8);
+  }
+
+  .brand-footer-right {
+    @apply flex gap-4;
+  }
+
+  .brand-social-link {
+    @apply w-6 h-6 flex items-center justify-center transition-colors duration-300;
+    color: hsl(var(--travel-white) / 0.7);
+  }
+
+  .brand-social-link:hover {
+    color: hsl(var(--travel-white));
+  }
+
+  .brand-social-link svg {
+    @apply w-5 h-5;
+  }
 }
