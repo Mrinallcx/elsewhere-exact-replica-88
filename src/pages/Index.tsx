@@ -136,6 +136,41 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Mission Section */}
+      <section className="mission-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="mission-grid">
+            <div className="mission-content">
+              <div className="mission-header">
+                <p className="mission-label">MISSION</p>
+              </div>
+              
+              <div className="mission-text">
+                <h2 className="mission-heading">
+                  Democratizing travel experiences, starting from just your next adventure.
+                </h2>
+                
+                <p className="mission-description">
+                  Through AI-powered personalization, Elsewhere provides access to the world's most unique experiences via next-generation travel technology that bridges local culture with digital convenience.
+                </p>
+                
+                <button className="mission-cta">
+                  Explore Destinations
+                </button>
+              </div>
+            </div>
+            
+            <div className="mission-image">
+              <img 
+                src="/lovable-uploads/mission-travel.jpg" 
+                alt="Beautiful travel destination with mountains and pristine waters"
+                className="mission-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>;
 };
 export default Index;

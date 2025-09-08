@@ -244,4 +244,57 @@
     @apply text-sm md:text-base font-medium tracking-wide;
     color: hsl(var(--travel-black) / 0.7);
   }
+
+  /* Mission Section */
+  .mission-section {
+    background: hsl(var(--travel-white));
+    color: hsl(var(--travel-black));
+  }
+
+  .mission-grid {
+    @apply grid lg:grid-cols-2 gap-12 lg:gap-16 items-center;
+  }
+
+  .mission-content {
+    @apply space-y-6;
+  }
+
+  .mission-label {
+    @apply text-sm font-medium tracking-wide uppercase;
+    color: hsl(var(--travel-black) / 0.6);
+  }
+
+  .mission-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-light leading-tight;
+    color: hsl(var(--travel-black));
+    line-height: 1.1;
+  }
+
+  .mission-description {
+    @apply text-base md:text-lg leading-relaxed;
+    color: hsl(var(--travel-black) / 0.7);
+  }
+
+  .mission-cta {
+    background: hsl(var(--travel-black));
+    color: hsl(var(--travel-white));
+    @apply px-8 py-3 rounded-full text-base font-medium;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 12px hsl(var(--travel-black) / 0.15);
+  }
+
+  .mission-cta:hover {
+    background: hsl(var(--travel-black) / 0.9);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px hsl(var(--travel-black) / 0.2);
+  }
+
+  .mission-image {
+    @apply relative rounded-lg overflow-hidden;
+    aspect-ratio: 4/5;
+  }
+
+  .mission-img {
+    @apply w-full h-full object-cover;
+  }
 }
