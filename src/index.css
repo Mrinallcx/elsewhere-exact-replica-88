@@ -244,43 +244,4 @@
     @apply text-sm md:text-base font-medium tracking-wide;
     color: hsl(var(--travel-black) / 0.7);
   }
-
-  /* Mission Section */
-  .mission-section {
-    background: hsl(var(--travel-white) / 0.95);
-  }
-
-  .mission-container {
-    @apply grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center;
-  }
-
-  .mission-content {
-    @apply space-y-6;
-  }
-
-  .mission-label {
-    @apply text-sm font-semibold tracking-widest uppercase;
-    color: hsl(var(--travel-black) / 0.7);
-  }
-
-  .mission-heading {
-    @apply text-3xl md:text-4xl lg:text-5xl font-light leading-tight;
-    color: hsl(var(--travel-black));
-  }
-
-  .mission-description {
-    @apply text-base md:text-lg leading-relaxed;
-    color: hsl(var(--travel-black) / 0.7);
-  }
-
-  .mission-cta {
-    @apply px-8 py-3 rounded-full text-base font-medium transition-all duration-300 hover:scale-105;
-    background: hsl(var(--travel-black));
-    color: hsl(var(--travel-white));
-  }
-
-  .mission-image {
-    @apply rounded-2xl overflow-hidden shadow-lg;
-    aspect-ratio: 4/3;
-  }
 }

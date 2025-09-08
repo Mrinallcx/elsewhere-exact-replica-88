@@ -136,33 +136,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Mission Section */}
-      <section className="mission-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="mission-container">
-            <div className="mission-content">
-              <div className="mission-label">MISSION</div>
-              <h2 className="mission-heading">
-                Empowering every traveler with AI-driven journeys, starting from just one destination.
-              </h2>
-              <p className="mission-description">
-                Through intelligent algorithms, Elsewhere provides access to personalized travel experiences via next-gen planning that bridges wanderlust with seamless exploration.
-              </p>
-              <button className="mission-cta">
-                Explore Features
-              </button>
-            </div>
-            <div className="mission-image">
-              <img 
-                src="/lovable-uploads/fa132307-c124-4b71-85d5-2ba6e3d314e5.png" 
-                alt="Traveler using mobile app for journey planning"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
     </div>;
 };
 export default Index;
