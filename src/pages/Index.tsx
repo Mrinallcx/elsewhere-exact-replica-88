@@ -276,6 +276,69 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Platform Section */}
+      <section className="platform-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="platform-grid">
+            <div className="platform-content">
+              <div className="platform-header">
+                <p className="platform-label">PLATFORM</p>
+              </div>
+              
+              <div className="platform-text">
+                <h2 className="platform-heading">
+                  Elsewhere Network<br />
+                  is going global
+                </h2>
+                
+                <p className="platform-description">
+                  Seamlessly connecting destinations across continents, Elsewhere ensures personalized travel experiences are accessible worldwide, unlocking global adventures and local authenticity.
+                </p>
+                
+                <button className="platform-cta">
+                  Explore Platform
+                </button>
+              </div>
+            </div>
+            
+            <div className="platform-visual">
+              <div className="destinations-orbit">
+                <div className="destination-node destination-1">
+                  <div className="destination-circle"></div>
+                  <span className="destination-name">TOKYO</span>
+                </div>
+                <div className="destination-node destination-2">
+                  <div className="destination-circle"></div>
+                  <span className="destination-name">PARIS</span>
+                </div>
+                <div className="destination-node destination-3">
+                  <div className="destination-circle"></div>
+                  <span className="destination-name">NYC</span>
+                </div>
+                <div className="destination-node destination-4">
+                  <div className="destination-circle"></div>
+                  <span className="destination-name">BALI</span>
+                </div>
+                <div className="destination-node destination-5">
+                  <div className="destination-circle"></div>
+                  <span className="destination-name">DUBAI</span>
+                </div>
+                <div className="destination-node destination-center">
+                  <div className="destination-circle-center">
+                    <img 
+                      src="/lovable-uploads/platform-icon.svg" 
+                      alt="Elsewhere Platform Hub"
+                      className="platform-icon"
+                    />
+                  </div>
+                  <span className="destination-name-center">HUB</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>;
 };
 export default Index;

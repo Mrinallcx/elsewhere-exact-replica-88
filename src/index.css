@@ -425,4 +425,134 @@
   .categories-cta-icon {
     @apply w-4 h-4;
   }
+
+  /* Platform Section */
+  .platform-section {
+    background: hsl(var(--travel-white));
+    color: hsl(var(--travel-black));
+  }
+
+  .platform-grid {
+    @apply grid lg:grid-cols-2 gap-12 lg:gap-16 items-center;
+  }
+
+  .platform-content {
+    @apply space-y-6;
+  }
+
+  .platform-label {
+    @apply text-sm font-medium tracking-wide uppercase;
+    color: hsl(var(--travel-black) / 0.6);
+  }
+
+  .platform-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-light leading-tight;
+    color: hsl(var(--travel-black));
+    line-height: 1.1;
+  }
+
+  .platform-description {
+    @apply text-base md:text-lg leading-relaxed;
+    color: hsl(var(--travel-black) / 0.7);
+  }
+
+  .platform-cta {
+    background: hsl(var(--travel-black));
+    color: hsl(var(--travel-white));
+    @apply px-8 py-3 rounded-full text-base font-medium;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 12px hsl(var(--travel-black) / 0.15);
+  }
+
+  .platform-cta:hover {
+    background: hsl(var(--travel-black) / 0.9);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px hsl(var(--travel-black) / 0.2);
+  }
+
+  .platform-visual {
+    @apply relative h-96 lg:h-[500px];
+  }
+
+  .destinations-orbit {
+    @apply relative w-full h-full;
+  }
+
+  .destination-node {
+    @apply absolute flex flex-col items-center;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .destination-1 {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+  }
+
+  .destination-2 {
+    top: 20%;
+    right: 15%;
+    animation-delay: -1s;
+  }
+
+  .destination-3 {
+    top: 60%;
+    left: 10%;
+    animation-delay: -2s;
+  }
+
+  .destination-4 {
+    bottom: 20%;
+    right: 20%;
+    animation-delay: -3s;
+  }
+
+  .destination-5 {
+    top: 45%;
+    right: 5%;
+    animation-delay: -4s;
+  }
+
+  .destination-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: -0.5s;
+  }
+
+  .destination-circle {
+    @apply w-16 h-16 rounded-full mb-2;
+    background: hsl(var(--travel-black) / 0.1);
+    border: 2px solid hsl(var(--travel-black) / 0.2);
+  }
+
+  .destination-circle-center {
+    @apply w-20 h-20 rounded-full mb-2 flex items-center justify-center;
+    background: hsl(var(--travel-black));
+    border: 3px solid hsl(var(--travel-black) / 0.3);
+  }
+
+  .platform-icon {
+    @apply w-8 h-8;
+    filter: brightness(0) invert(1);
+  }
+
+  .destination-name {
+    @apply text-xs font-medium tracking-wider uppercase;
+    color: hsl(var(--travel-black) / 0.6);
+  }
+
+  .destination-name-center {
+    @apply text-sm font-medium tracking-wider uppercase;
+    color: hsl(var(--travel-black));
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
 }
