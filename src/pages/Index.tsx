@@ -33,41 +33,41 @@ const Index = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="relative flex flex-col items-center justify-center min-h-screen text-center px-6 md:px-8 lg:px-12">
+      <main className="relative flex flex-col items-center justify-center min-h-screen text-center px-4 sm:px-6 md:px-8 lg:px-12">
         <video className="hero-video" autoPlay muted loop playsInline src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/test-video.mp4?alt=media&token=37ed1571-934e-475c-a56c-30bb24210165"></video>
         <div className="hero-overlay"></div>
-        <div className="relative z-10 max-w-5xl mx-auto pt-12">
+        <div className="relative z-10 max-w-5xl mx-auto pt-8 sm:pt-12">
           
           {/* Hero Headings */}
-          <h1 className="hero-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-travel-white mb-2">
+          <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-travel-white mb-1 sm:mb-2 leading-tight">
             Travel without limits.
           </h1>
           
-          <h2 className="hero-subheading text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 md:mb-8 lg:mb-10">
+          <h2 className="hero-subheading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 md:mb-8 lg:mb-10 leading-tight">
             Discover with intelligence.
           </h2>
           
           {/* Description Section */}
-          <div className="max-w-3xl mx-auto mb-8 mt-4 ">
-            <p className="hero-description text-base md:text-lg lg:text-xl text-travel-white mb-2">
+          <div className="max-w-3xl mx-auto mb-6 sm:mb-8 mt-2 sm:mt-4 px-2 sm:px-0">
+            <p className="hero-description text-sm sm:text-base md:text-lg lg:text-xl text-travel-white mb-1 sm:mb-2 leading-relaxed">
               Our AI-powered journeys adapt to you — your pace, your mood, your sense of wonder.
             </p>
-            <p className="hero-description-secondary text-base md:text-lg lg:text-xl">
+            <p className="hero-description-secondary text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
               Every trip is personalized, effortless, and truly yours.
             </p>
           </div>
           
           {/* Call-to-Action */}
-          <div className="flex flex-col items-center space-y-6 mb-16">
-            <button className="cta-primary px-8 py-3 rounded-full text-lg font-medium">
+          <div className="flex flex-col items-center space-y-4 sm:space-y-6 mb-12 sm:mb-16">
+            <button className="cta-primary px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-medium w-auto">
               Build my trip now
             </button>
           </div>
           
           {/* Privacy Notice */}
-          <div className="flex items-center justify-center space-x-2 privacy-notice mb-16">
+          <div className="flex items-center justify-center space-x-2 privacy-notice mb-12 sm:mb-16">
             <Lock size={12} className="text-glass-white-60" />
-            <span>PRIVACY-FIRST. NO DATA RESOLD.</span>
+            <span className="text-xs sm:text-sm">PRIVACY-FIRST. NO DATA RESOLD.</span>
           </div>
           
           {/* Social Proof Section */}
