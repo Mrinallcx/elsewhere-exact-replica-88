@@ -207,7 +207,7 @@
   }
   
   .logo-item {
-    @apply text-lg md:text-xl font-light tracking-wide;
+    @apply text-sm md:text-base font-light tracking-wide;
     color: hsl(var(--glass-white-70));
     transition: var(--transition-smooth);
   }
