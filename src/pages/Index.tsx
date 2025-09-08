@@ -33,10 +33,10 @@ const Index = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="relative flex flex-col items-center justify-center min-h-screen text-center px-4 sm:px-6 md:px-8 lg:px-12 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16">
+      <main className="relative flex flex-col items-center justify-center min-h-[90svh] md:min-h-screen text-center px-4 sm:px-6 md:px-8 lg:px-12 pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16">
         <video className="hero-video" autoPlay muted loop playsInline src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/test-video.mp4?alt=media&token=37ed1571-934e-475c-a56c-30bb24210165"></video>
         <div className="hero-overlay"></div>
-        <div className="relative z-10 max-w-5xl mx-auto pt-8 sm:pt-12">
+        <div className="relative z-10 max-w-5xl mx-auto pt-8 sm:pt-12 hero-content">
           
           {/* Hero Headings */}
           <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-travel-white mb-1 sm:mb-2 leading-tight mx-auto max-w-[18ch] sm:max-w-[22ch]">
