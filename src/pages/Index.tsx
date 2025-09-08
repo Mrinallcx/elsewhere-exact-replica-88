@@ -217,7 +217,7 @@ const Index = () => {
           </div>
           
           <div className="categories-grid">
-            <div className="category-card">
+            <div className="category-card group">
               <img 
                 src="/lovable-uploads/explorer-travel.jpg" 
                 alt="Adventure explorer in mountain landscape"
@@ -233,7 +233,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="category-card">
+            <div className="category-card group">
               <img 
                 src="/lovable-uploads/luxury-travel.jpg" 
                 alt="Luxury traveler in premium resort setting"
@@ -249,7 +249,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="category-card">
+            <div className="category-card group">
               <img 
                 src="/lovable-uploads/concierge-travel.jpg" 
                 alt="VIP traveler with personal concierge service"
