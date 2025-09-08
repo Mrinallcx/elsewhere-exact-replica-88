@@ -675,4 +675,79 @@
     transform: translateY(-1px);
     box-shadow: 0 8px 20px hsl(var(--travel-black) / 0.2);
   }
+
+  /* Newsletter Section */
+  .newsletter-section {
+    @apply relative;
+  }
+
+  .newsletter-bg {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('/lovable-uploads/urban-architecture.jpg');
+    @apply bg-cover bg-center bg-no-repeat py-16 md:py-24;
+    min-height: 60vh;
+    @apply flex items-center;
+  }
+
+  .newsletter-heading {
+    @apply text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6;
+    color: hsl(var(--travel-white));
+  }
+
+  .newsletter-subtitle {
+    @apply text-lg md:text-xl font-light mb-8;
+    color: hsl(var(--glass-white-80));
+  }
+
+  .newsletter-form {
+    @apply flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8;
+  }
+
+  .newsletter-input {
+    @apply flex-1 px-4 py-3 rounded-lg;
+    background: hsl(var(--glass-white-20));
+    border: 1px solid hsl(var(--border-glass));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: hsl(var(--travel-white));
+    @apply placeholder-white/60;
+  }
+
+  .newsletter-input:focus {
+    outline: none;
+    background: hsl(var(--glass-white-30));
+    border-color: hsl(var(--travel-white) / 0.4);
+  }
+
+  .newsletter-btn {
+    background: hsl(var(--travel-white));
+    color: hsl(var(--travel-black));
+    @apply px-8 py-3 rounded-lg font-medium;
+    transition: var(--transition-smooth);
+  }
+
+  .newsletter-btn:hover {
+    background: hsl(var(--glass-white-90));
+    transform: translateY(-1px);
+  }
+
+  .newsletter-social {
+    @apply flex justify-center gap-6;
+  }
+
+  .social-link {
+    @apply w-8 h-8 flex items-center justify-center;
+    color: hsl(var(--glass-white-70));
+    transition: var(--transition-smooth);
+  }
+
+  .social-link:hover {
+    color: hsl(var(--travel-white));
+    transform: translateY(-2px);
+  }
+
+  .social-link svg {
+    @apply w-5 h-5;
+  }
 }
