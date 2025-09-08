@@ -215,4 +215,33 @@
   .logo-item:hover {
     color: hsl(var(--travel-white));
   }
+  
+  /* Statistics Section */
+  .stats-section {
+    background: hsl(var(--travel-white));
+    color: hsl(var(--travel-black));
+  }
+  
+  .stats-intro-text {
+    @apply text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto;
+    color: hsl(var(--travel-black));
+  }
+  
+  .stats-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12;
+  }
+  
+  .stat-item {
+    @apply text-center;
+  }
+  
+  .stat-number {
+    @apply text-4xl md:text-5xl lg:text-6xl font-light mb-2;
+    color: hsl(var(--travel-black));
+  }
+  
+  .stat-label {
+    @apply text-sm md:text-base font-medium tracking-wide;
+    color: hsl(var(--travel-black) / 0.7);
+  }
 }

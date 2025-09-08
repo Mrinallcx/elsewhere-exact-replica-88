@@ -103,6 +103,39 @@ const Index = () => {
           
         </div>
       </main>
+      
+      {/* Statistics Section */}
+      <section className="stats-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="stats-intro-text">
+              Elsewhere is building the foundation for the future of travel.
+            </p>
+          </div>
+          
+          <div className="stats-grid">
+            <div className="stat-item">
+              <div className="stat-number">200+</div>
+              <div className="stat-label">Destinations</div>
+            </div>
+            
+            <div className="stat-item">
+              <div className="stat-number">50K</div>
+              <div className="stat-label">Happy Travelers</div>
+            </div>
+            
+            <div className="stat-item">
+              <div className="stat-number">95%</div>
+              <div className="stat-label">Satisfaction Rate</div>
+            </div>
+            
+            <div className="stat-item">
+              <div className="stat-number">$2.5M</div>
+              <div className="stat-label">Saved in Planning</div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>;
 };
 export default Index;
