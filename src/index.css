@@ -297,4 +297,57 @@
   .mission-img {
     @apply w-full h-full object-cover;
   }
+
+  /* Experience Section */
+  .experience-section {
+    background: hsl(var(--travel-white));
+    color: hsl(var(--travel-black));
+  }
+
+  .experience-grid {
+    @apply grid lg:grid-cols-2 gap-12 lg:gap-16 items-center;
+  }
+
+  .experience-content {
+    @apply space-y-6 lg:order-2;
+  }
+
+  .experience-image {
+    @apply relative rounded-lg overflow-hidden lg:order-1;
+    aspect-ratio: 4/5;
+  }
+
+  .experience-img {
+    @apply w-full h-full object-cover;
+  }
+
+  .experience-label {
+    @apply text-sm font-medium tracking-wide uppercase;
+    color: hsl(var(--travel-black) / 0.6);
+  }
+
+  .experience-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-light leading-tight;
+    color: hsl(var(--travel-black));
+    line-height: 1.1;
+  }
+
+  .experience-description {
+    @apply text-base md:text-lg leading-relaxed;
+    color: hsl(var(--travel-black) / 0.7);
+  }
+
+  .experience-cta {
+    background: hsl(var(--travel-black));
+    color: hsl(var(--travel-white));
+    @apply px-8 py-3 rounded-full text-base font-medium;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 12px hsl(var(--travel-black) / 0.15);
+  }
+
+  .experience-cta:hover {
+    background: hsl(var(--travel-black) / 0.9);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px hsl(var(--travel-black) / 0.2);
+  }
 }

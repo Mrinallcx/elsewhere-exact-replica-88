@@ -171,6 +171,41 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Experience Section */}
+      <section className="experience-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="experience-grid">
+            <div className="experience-image">
+              <img 
+                src="/lovable-uploads/experience-travel.jpg" 
+                alt="Immersive cultural travel experience with local architecture"
+                className="experience-img"
+              />
+            </div>
+            
+            <div className="experience-content">
+              <div className="experience-header">
+                <p className="experience-label">EXPERIENCE</p>
+              </div>
+              
+              <div className="experience-text">
+                <h2 className="experience-heading">
+                  Curated journeys that adapt to your unique travel style and preferences.
+                </h2>
+                
+                <p className="experience-description">
+                  Every destination becomes a personalized adventure through our intelligent matching system that learns from your interests, creating unforgettable moments tailored specifically for you.
+                </p>
+                
+                <button className="experience-cta">
+                  Start Planning
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>;
 };
 export default Index;
