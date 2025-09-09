@@ -8,7 +8,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion)').matches;
     const lenis = new Lenis({
       smoothWheel: !prefersReduced,
-      smoothTouch: false,
+      syncTouch: false,
       lerp: 0.12,
     });
     lenisRef.current = lenis;
