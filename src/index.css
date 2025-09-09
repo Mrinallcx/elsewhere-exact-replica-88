@@ -109,6 +109,8 @@
   * {
     @apply border-border;
   }
+  /* Reset any smoother-specific overrides */
+  html, body { height: auto; }
   
   body {
     @apply bg-background text-foreground font-light;
@@ -121,6 +123,32 @@
 }
 
 @layer components {
+  /* Cash Management Section */
+  .cash-section { background: hsl(var(--travel-white)); color: hsl(var(--travel-black)); }
+  .cash-grid { @apply grid lg:grid-cols-2 gap-12 lg:gap-16 items-center; }
+  .cash-left { }
+  .cash-heading { @apply text-3xl md:text-4xl lg:text-5xl font-light leading-tight mb-6; }
+  .cash-description { @apply text-base md:text-lg leading-relaxed max-w-xl mb-8; color: hsl(var(--travel-black) / 0.75); }
+  .cash-cta { @apply inline-flex items-center gap-2 px-6 py-3 rounded-full text-base font-medium; background: hsl(var(--travel-black)); color: hsl(var(--travel-white)); transition: var(--transition-smooth); }
+  .cash-cta:hover { background: hsl(var(--travel-black) / 0.9); transform: translateY(-1px); }
+  .cash-nav { @apply flex gap-3; }
+  .cash-nav-btn { @apply w-10 h-10 rounded-md border flex items-center justify-center; border-color: hsl(var(--travel-black) / 0.15); }
+
+  .cash-right { @apply grid grid-cols-1 md:grid-cols-2 gap-6 items-start; }
+  .cash-card { @apply rounded-2xl p-6 md:p-8 relative overflow-hidden h-full flex; border: 1px solid hsl(var(--travel-black) / 0.08); }
+  .cash-feature { @apply flex flex-col justify-between gap-2 md:gap-3; }
+  .cash-card-blue { background: #E7F0FF; }
+  .cash-card-green { background: #E8F0E8; }
+  .cash-card-purple { background: #EEE8FF; }
+  .cash-card-rose { background: #FFE8EC; }
+  /* Feature-style content */
+  .cash-feature-title { @apply text-2xl md:text-3xl font-medium mb-1; color: #0A2A4A; }
+  .cash-feature-sub { @apply text-sm md:text-base leading-relaxed; color: hsl(var(--travel-black) / 0.75); }
+  .cash-card-arrow { @apply absolute right-6 bottom-6 text-2xl; color: hsl(var(--travel-black) / 0.6); }
+
+  /* Reveal animation on scroll */
+  .cash-card-reveal { opacity: 0; transform: translateY(12px); transition: opacity 420ms ease, transform 420ms ease; }
+  .cash-in { opacity: 1; transform: translateY(0); }
   /* Sticky Glass Navbar */
   .glass-navbar {
     background: hsl(var(--glass-white-20));
@@ -161,6 +189,16 @@
   
   .glass-nav-btn:hover {
     background: hsl(var(--travel-black) / 0.9);
+  }
+
+  /* Light variant for navbar CTA (used over dark hero) */
+  .glass-nav-btn--light {
+    background: hsl(var(--travel-white));
+    color: hsl(var(--travel-black));
+    border-color: hsl(var(--travel-white) / 0.6);
+  }
+  .glass-nav-btn--light:hover {
+    background: hsl(var(--glass-white-90));
   }
   
   /* Typography Classes */
@@ -296,8 +334,10 @@
   }
 
   .mission-label {
-    @apply text-sm font-medium tracking-wide uppercase;
-    color: hsl(var(--travel-black) / 0.6);
+    @apply inline-block text-xs md:text-sm font-medium tracking-wide uppercase px-3 py-1 rounded-full;
+    background: hsl(var(--travel-black) / 0.05);
+    color: hsl(var(--travel-black) / 0.7);
+    border: 1px solid hsl(var(--travel-black) / 0.12);
   }
 
   .mission-heading {
@@ -364,8 +404,10 @@
   }
 
   .experience-label {
-    @apply text-sm font-medium tracking-wide uppercase;
-    color: hsl(var(--travel-black) / 0.6);
+    @apply inline-block text-xs md:text-sm font-medium tracking-wide uppercase px-3 py-1 rounded-full;
+    background: hsl(var(--travel-black) / 0.05);
+    color: hsl(var(--travel-black) / 0.7);
+    border: 1px solid hsl(var(--travel-black) / 0.12);
   }
 
   .experience-heading {
@@ -404,14 +446,17 @@
     color: hsl(var(--travel-black));
   }
 
-  .categories-grid {
-    @apply grid md:grid-cols-3 gap-6 lg:gap-8;
-  }
+  .categories-grid { @apply grid md:grid-cols-3 gap-6 lg:gap-8; }
+  .categories-grid-4 { @apply grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6; }
+  .categories-grid-3 { @apply grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mt-3 sm:mt-4 md:mt-6; }
 
   .category-card {
-    @apply relative rounded-2xl overflow-hidden aspect-[3/4] cursor-pointer;
+    @apply relative rounded-2xl overflow-hidden cursor-pointer;
     transition: var(--transition-smooth);
   }
+  .category-card-sm { aspect-ratio: 4 / 5; }
+  @media (min-width: 768px) { .category-card-sm { aspect-ratio: 5 / 6; } }
+  .category-card-short { aspect-ratio: 16/9; }
 
   .category-card:hover {
     transform: translateY(-4px);
@@ -423,18 +468,31 @@
     transition: var(--transition-smooth);
   }
 
+  /* Uniform dark layer across all cards */
+  .category-overlay {
+    @apply absolute inset-0;
+    background: hsl(var(--travel-black) / 0.35);
+    z-index: 1;
+  }
+
   .category-card:hover .category-card-bg {
     transform: scale(1.05);
   }
 
   .category-card-content {
-    @apply absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-6 flex flex-col justify-end;
+    @apply absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-3 sm:p-4 md:p-5 flex flex-col justify-end;
+    z-index: 2;
   }
 
+  /* Title only style */
+  .category-title { @apply text-xl sm:text-2xl md:text-3xl font-medium mb-1; color: hsl(var(--travel-white)); }
+
   .category-description {
-    @apply text-lg md:text-xl font-light leading-relaxed mb-4;
+    @apply text-base sm:text-lg md:text-xl font-light leading-relaxed mb-3;
     color: hsl(var(--travel-white));
   }
+  .category-card-sm .category-description { @apply text-sm sm:text-base md:text-lg; }
+  .category-card-short .category-description { @apply text-sm sm:text-base; }
 
   .category-label {
     @apply font-medium;
@@ -445,7 +503,7 @@
     border: 1px solid hsl(var(--border-glass));
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    @apply px-4 py-2 rounded-full text-sm font-medium;
+    @apply px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium;
     color: hsl(var(--travel-white));
     width: fit-content;
   }
@@ -487,8 +545,10 @@
   }
 
   .platform-label {
-    @apply text-sm font-medium tracking-wide uppercase;
-    color: hsl(var(--travel-black) / 0.6);
+    @apply inline-block text-xs md:text-sm font-medium tracking-wide px-3 py-1 rounded-full;
+    background: hsl(var(--travel-black) / 0.05);
+    color: hsl(var(--travel-black) / 0.7);
+    border: 1px solid hsl(var(--travel-black) / 0.12);
   }
 
   .platform-heading {
@@ -590,6 +650,11 @@
 
   .platform-icon {
     @apply w-8 h-8;
+    filter: brightness(0) invert(1);
+  }
+
+  /* Light variant for logo over dark hero */
+  .logo-light {
     filter: brightness(0) invert(1);
   }
 
@@ -776,12 +841,21 @@
   }
 
   .newsletter-bg {
-    background-image: 
-      linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url('/lovable-uploads/urban-architecture.jpg');
-    @apply bg-cover bg-center bg-no-repeat py-16 md:py-24;
+    @apply relative bg-cover bg-center bg-no-repeat;
     min-height: 60vh;
     @apply flex items-center;
+  }
+
+  .newsletter-video {
+    @apply absolute inset-0 w-full h-full object-cover;
+    z-index: 0;
+  }
+
+  .newsletter-overlay {
+    @apply absolute inset-0;
+    background: hsl(var(--travel-black) / 0.7);
+    z-index: 1;
+    pointer-events: none;
   }
 
   .newsletter-heading {

@@ -1,49 +1,115 @@
+import { useEffect, useMemo, useRef, useState } from 'react';
 const Index = () => {
+  const cashRef = useRef<HTMLDivElement | null>(null);
+  const cashCards = useMemo(
+    () => [
+      {
+        title: 'Regulated & Audited',
+        subtitle:
+          'Built under MiCA and Liechtenstein TVTG with LCX as Physical Validator.',
+        variant: 'cash-card-blue',
+      },
+      {
+        title: 'Redeemable Assets',
+        subtitle:
+          'Assets are stored in accredited, high-security vaults in Liechtenstein',
+        variant: 'cash-card-green',
+      },
+      {
+        title: 'Transparent Reserves',
+        subtitle:
+          'Live proof-of-reserves dashboards and quarterly independent audits.',
+        variant: 'cash-card-purple',
+      },
+      {
+        title: 'Simple Fees',
+        subtitle:
+          'Clear, upfront minting, trading, redemption, and no storage costs.',
+        variant: 'cash-card-rose',
+      },
+    ],
+    []
+  );
+  const visibleCashCards = useMemo(() => {
+    // Show all four cards
+    return cashCards;
+  }, [cashCards]);
+  useEffect(() => {
+    const root = cashRef.current;
+    if (!root) return;
+    const cards = Array.from(root.querySelectorAll<HTMLElement>('.cash-card-reveal'));
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            el.classList.add('cash-in');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    cards.forEach((c, idx) => {
+      c.style.transitionDelay = `${idx * 120}ms`;
+      io.observe(c);
+    });
+    return () => io.disconnect();
+  }, []);
+  const heroRef = useRef<HTMLDivElement | null>(null);
+  const [pastHero, setPastHero] = useState(false);
+
+  useEffect(() => {
+    const target = heroRef.current;
+    if (!target) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      setPastHero(!entry.isIntersecting);
+    }, { root: null, threshold: 0, rootMargin: '-64px 0px 0px 0px' });
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, []);
+
   return <div className="min-h-screen w-full relative">
       {/* Navigation Bar */}
       <nav className="glass-navbar fixed top-0 left-0 right-0 z-50">
-        <div className="flex justify-between items-center px-6 md:px-12 lg:px-20 py-4 md:py-5">
+        <div className="flex justify-between items-center px-6 md:px-12 lg:px-20 py-2 md:py-1">
           {/* Brand */}
           <div className="brand-logo">
-            <img src="/tiamonds.svg" alt="Tiamonds" className="h-8 md:h-10 lg:h-12" />
+            <img src="/tiamonds.svg" alt="Tiamonds" className={`h-10 md:h-12 lg:h-14 ${pastHero ? '' : 'logo-light'}`} />
           </div>
           
           {/* Right Side CTA */}
-          <button className="glass-nav-btn px-6 py-2.5 rounded-full text-sm font-medium tracking-wide uppercase text-travel-white hover:scale-105 transition-all duration-300">
+          <button className={`glass-nav-btn ${pastHero ? '' : 'glass-nav-btn--light'} px-6 py-2.5 rounded-full text-sm font-medium tracking-wide uppercase hover:scale-105 transition-all duration-300`}>
             Launch App
           </button>
         </div>
       </nav>
 
       {/* Main Content */}
-      <main className="relative flex flex-col items-start sm:items-center justify-center min-h-[80vh] md:min-h-screen text-left sm:text-center px-4 sm:px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-12 overflow-hidden">
+      <main ref={heroRef} className="relative flex flex-col items-start sm:items-center justify-center min-h-[80vh] md:min-h-screen text-left sm:text-center px-4 sm:px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-24 md:pb-32 overflow-hidden">
         <video className="hero-video" autoPlay muted loop playsInline src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/test-video.mp4?alt=media&token=37ed1571-934e-475c-a56c-30bb24210165"></video>
         <div className="hero-overlay"></div>
         <div className="relative z-10 max-w-5xl w-full mx-0 sm:mx-auto">
           
           {/* Hero Headings */}
           <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-travel-white mb-2">
-            Travel without limits.
+            Total Tokenization
           </h1>
           
           <h2 className="hero-subheading text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-            Discover with intelligence.
+            Future of Commodities
           </h2>
           
           {/* Description Section */}
           <div className="max-w-3xl w-full mx-0 sm:mx-auto mb-6 sm:mb-8 mt-6 sm:mt-8 md:mt-10 text-left sm:text-center ">
             <p className="hero-description text-sm sm:text-base md:text-lg lg:text-xl text-travel-white mb-2 text-left sm:text-center">
-              Our AI-powered journeys adapt to you — your pace, your mood, your sense of wonder.
-            </p>
-            <p className="hero-description-secondary text-sm sm:text-base md:text-lg lg:text-xl text-left sm:text-center">
-              Every trip is personalized, effortless, and truly yours.
+              The market leader in tokenized commodities, driving transparency and efficiency across industries.
             </p>
           </div>
           
           {/* Call-to-Action */}
           <div className="flex flex-col items-start sm:items-center space-y-6 mb-10 sm:mb-16">
             <button className="cta-primary px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-medium">
-              Build my trip now
+              Explore Marketplace
             </button>
           </div>
           
@@ -86,7 +152,7 @@ const Index = () => {
       </main>
       
       {/* Statistics Section */}
-      <section className="stats-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
+      <section className="stats-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <p className="stats-intro-text">
@@ -118,26 +184,59 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Cash Management Section (new 3rd section) */}
+      <section className="cash-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
+        <div className="max-w-7xl mx-auto">
+          <div className="cash-grid">
+            {/* Left copy */}
+            <div className="cash-left">
+              <h2 className="cash-heading">Institutional-Grade RWA Asset Management</h2>
+              <p className="cash-description">
+                Ensuring Transparency, Security, and Accountability in Every Transaction.
+              </p>
+              <div className="mt-6">
+                <button className="cash-cta">Explore Marketplace</button>
+              </div>
+            </div>
+
+            {/* Right cards */}
+            <div className="cash-right" ref={cashRef}>
+              {visibleCashCards.map((card, idx) => (
+                <article
+                  key={`${idx}-${card.title}`}
+                  className={`cash-card ${card.variant} cash-card-reveal`}
+                >
+                  <div className="cash-feature">
+                    <h3 className="cash-feature-title">{card.title}</h3>
+                    <p className="cash-feature-sub">{card.subtitle}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission Section */}
-      <section className="mission-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
+      <section className="mission-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="mission-grid">
             <div className="mission-content">
               <div className="mission-header">
-                <p className="mission-label">MISSION</p>
+                <p className="mission-label">Why Tiamonds</p>
               </div>
               
               <div className="mission-text">
                 <h2 className="mission-heading">
-                  Democratizing travel experiences, starting from just your next adventure.
+                  Secure Your Future with Tokenized Investment
                 </h2>
                 
                 <p className="mission-description">
-                  Through AI-powered personalization, Elsewhere provides access to the world's most unique experiences via next-generation travel technology that bridges local culture with digital convenience.
+                  Own, trade, and redeem assets, backed by real-world assets in secure custody. Seamless access and liquidity with full redemption rights, anytime
                 </p>
                 
                 <button className="mission-cta">
-                  Explore Destinations
+                  Learn more
                 </button>
               </div>
             </div>
@@ -154,7 +253,7 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section className="experience-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
+      <section className="experience-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="experience-grid">
             <div className="experience-image">
@@ -167,20 +266,20 @@ const Index = () => {
             
             <div className="experience-content">
               <div className="experience-header">
-                <p className="experience-label">EXPERIENCE</p>
+                <p className="experience-label">How it works</p>
               </div>
               
               <div className="experience-text">
                 <h2 className="experience-heading">
-                  Curated journeys that adapt to your unique travel style and preferences.
+                  We Make Your Perfect Investment Smart
                 </h2>
                 
                 <p className="experience-description">
-                  Every destination becomes a personalized adventure through our intelligent matching system that learns from your interests, creating unforgettable moments tailored specifically for you.
+                  Seamlessly plan your journey with our AI-driven platform that tailors every experience to match your personal preferences.
                 </p>
                 
                 <button className="experience-cta">
-                  Start Planning
+                  Learn More
                 </button>
               </div>
             </div>
@@ -189,67 +288,114 @@ const Index = () => {
       </section>
 
       {/* Traveler Categories Section */}
-      <section className="categories-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
+      <section className="categories-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="categories-heading">
-              Traveler Categories
+              Explore Commodities
             </h2>
           </div>
           
-          <div className="categories-grid">
-            <div className="category-card group">
+          {/* Top row: 4 smaller cards */}
+          <div className="categories-grid-4">
+            <div className="category-card category-card-sm group">
               <img 
                 src="/lovable-uploads/explorer-travel.jpg" 
                 alt="Adventure explorer in mountain landscape"
                 className="category-card-bg"
               />
+              <div className="category-overlay"></div>
               <div className="category-card-content">
-                <p className="category-description">
-                  <span className="category-label">Explorers</span> can discover hidden gems and off-the-beaten-path destinations.
-                </p>
-                <div className="category-badge">
-                  From $99 trips
-                </div>
+                <h3 className="category-title">Gold</h3>
+                <p className="category-description">Own LBMA-grade gold on-chain.</p>
               </div>
             </div>
             
-            <div className="category-card group">
+            <div className="category-card category-card-sm group">
               <img 
                 src="/lovable-uploads/luxury-travel.jpg" 
                 alt="Luxury traveler in premium resort setting"
                 className="category-card-bg"
               />
+              <div className="category-overlay"></div>
               <div className="category-card-content">
-                <p className="category-description">
-                  <span className="category-label">Premium</span> travelers can access exclusive experiences and luxury accommodations.
-                </p>
-                <div className="category-badge">
-                  From $999 packages
-                </div>
+                <h3 className="category-title">Silver</h3>
+                <p className="category-description">Tokenized 1kg silver bars.</p>
               </div>
             </div>
             
-            <div className="category-card group">
+            <div className="category-card category-card-sm group">
               <img 
                 src="/lovable-uploads/concierge-travel.jpg" 
                 alt="VIP traveler with personal concierge service"
                 className="category-card-bg"
               />
+              <div className="category-overlay"></div>
               <div className="category-card-content">
-                <p className="category-description">
-                  <span className="category-label">VIP Members</span> enjoy personalized concierge service and bespoke itineraries.
-                </p>
-                <div className="category-badge">
-                  Elite from $5K+
-                </div>
+                <h3 className="category-title">Platinum</h3>
+                <p className="category-description">Rare and valuable with real-world backing</p>
+              </div>
+            </div>
+
+            <div className="category-card category-card-sm group">
+              <img 
+                src="/lovable-uploads/mission-travel.jpg" 
+                alt="Family-friendly scenic destination"
+                className="category-card-bg"
+              />
+              <div className="category-overlay"></div>
+              <div className="category-card-content">
+                <h3 className="category-title">Diamond</h3>
+                <p className="category-description">GIA-certified stones</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom row: 3 shorter cards */}
+          <div className="categories-grid-3">
+            <div className="category-card category-card-short group">
+              <img 
+                src="/lovable-uploads/experience-travel.jpg" 
+                alt="Cultural travel experience"
+                className="category-card-bg"
+              />
+              <div className="category-overlay"></div>
+              <div className="category-card-content">
+                <h3 className="category-title">Carbon credit</h3>
+                <p className="category-description">Registry-integrated credits.</p>
+              </div>
+            </div>
+
+            <div className="category-card category-card-short group">
+              <img 
+                src="/lovable-uploads/urban-architecture.jpg" 
+                alt="Business travel in a modern city"
+                className="category-card-bg"
+              />
+              <div className="category-overlay"></div>
+              <div className="category-card-content">
+                <h3 className="category-title">Energy</h3>
+                <p className="category-description">Solar and renewable credits</p>
+              </div>
+            </div>
+
+            <div className="category-card category-card-short group">
+              <img 
+                src="/lovable-uploads/concierge-travel.jpg" 
+                alt="Investor-focused luxury experience"
+                className="category-card-bg"
+              />
+              <div className="category-overlay"></div>
+              <div className="category-card-content">
+                <h3 className="category-title">Agriculture</h3>
+                <p className="category-description">Tokenized crops and warrants</p>
               </div>
             </div>
           </div>
           
           <div className="text-center mt-12">
             <button className="categories-cta">
-              Explore Packages
+              Launch App
               <svg className="categories-cta-icon" viewBox="0 0 17 17" fill="none">
                 <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
               </svg>
@@ -259,26 +405,25 @@ const Index = () => {
       </section>
 
       {/* Platform Section */}
-      <section className="platform-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
+      <section className="platform-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="platform-grid">
             <div className="platform-content">
               <div className="platform-header">
-                <p className="platform-label">PLATFORM</p>
+                <p className="platform-label">TOTO Token</p>
               </div>
 
               <div className="platform-text">
                 <h2 className="platform-heading">
-                  Elsewhere Network<br />
-                  is going global
+                  Utility that lowers your costs and raises your limits.
                 </h2>
 
                 <p className="platform-description">
-                  Seamlessly connecting destinations across continents, Elsewhere ensures personalized travel experiences are accessible worldwide, unlocking global adventures and local authenticity.
+                  Stake TOTO to reduce fees, unlock higher redemption limits, and gain priority access to scarce assets.
                 </p>
 
                 <button className="platform-cta">
-                  Explore Platform
+                  Learn more
                 </button>
               </div>
             </div>
@@ -297,7 +442,7 @@ const Index = () => {
       </section>
 
       {/* Resources Section */}
-      <section className="resources-section px-6 md:px-8 lg:px-12 py-16 md:py-24">
+      <section className="resources-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="resources-heading">
@@ -430,9 +575,18 @@ const Index = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="newsletter-section py-16 md:py-24">
+      <section className="newsletter-section py-32 md:py-40">
         <div className="newsletter-bg">
-          <div className="max-w-4xl mx-auto text-center px-6 md:px-8 lg:px-12">
+          <video
+            className="newsletter-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            src="https://framerusercontent.com/assets/sSwM1re36kMMZd5gcHruIAdEHRI.mp4"
+          ></video>
+          <div className="newsletter-overlay"></div>
+          <div className="relative z-10 max-w-4xl mx-auto text-center px-6 md:px-8 lg:px-12">
             <h2 className="newsletter-heading">
               The Future of Travel
             </h2>
@@ -474,7 +628,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="footer-section px-6 md:px-8 lg:px-12 py-16 md:py-20">
+      <footer className="footer-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="footer-grid">
             <div className="footer-column">
@@ -531,7 +685,7 @@ const Index = () => {
       </footer>
 
       {/* Brand Section */}
-      <section className="brand-section px-6 md:px-8 lg:px-12 py-12 md:py-16">
+      <section className="brand-section px-6 md:px-8 lg:px-12 py-28 md:py-36">
         <div className="max-w-7xl mx-auto">
           <div className="brand-content">
             <h1 className="brand-text">Tiamonds Finance</h1>
