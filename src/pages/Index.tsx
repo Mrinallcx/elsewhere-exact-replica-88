@@ -57,6 +57,7 @@ const Index = () => {
   }, []);
   const heroRef = useRef<HTMLDivElement | null>(null);
   const [pastHero, setPastHero] = useState(false);
+  const [resourcesTab, setResourcesTab] = useState<'news' | 'updates'>('news');
 
   useEffect(() => {
     const target = heroRef.current;
@@ -243,7 +244,7 @@ const Index = () => {
             
             <div className="mission-image">
               <img 
-                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/tiamonds%20test%2001.png?alt=media&token=a3b7bbdc-da42-4130-8e14-4a8fe67ad901" 
+                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/1111.png?alt=media&token=a352551e-77b3-4259-818a-f3aaaf96fb5f" 
                 alt="Beautiful travel destination with mountains and pristine waters"
                 className="mission-img"
               />
@@ -258,7 +259,7 @@ const Index = () => {
           <div className="experience-grid">
             <div className="experience-image">
               <img 
-                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/tiamonds%20test%2002.png?alt=media&token=0859db5d-8be3-4d90-b9c6-8ef057c4c542" 
+                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/12222.png?alt=media&token=23503fb4-be66-4836-ba26-9094dd6a444d" 
                 alt="Experience visual"
                 className="experience-img"
               />
@@ -275,7 +276,7 @@ const Index = () => {
                 </h2>
                 
                 <p className="experience-description">
-                  Seamlessly plan your journey with our AI-driven platform that tailors every experience to match your personal preferences.
+                  Seamlessly plan your journey with our advanced platform that tailors every experience to match your personal preferences.
                 </p>
                 
                 <button className="experience-cta">
@@ -300,7 +301,7 @@ const Index = () => {
           <div className="categories-grid-4">
             <div className="category-card category-card-sm group">
               <img 
-                src="/lovable-uploads/explorer-travel.jpg" 
+                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/gold.png?alt=media&token=2df54300-9089-416b-8f50-4cd359b415c0" 
                 alt="Adventure explorer in mountain landscape"
                 className="category-card-bg"
               />
@@ -313,7 +314,7 @@ const Index = () => {
             
             <div className="category-card category-card-sm group">
               <img 
-                src="/lovable-uploads/luxury-travel.jpg" 
+                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/Silver.png?alt=media&token=05a8833b-11de-49cf-9bd9-bb9a66262237" 
                 alt="Luxury traveler in premium resort setting"
                 className="category-card-bg"
               />
@@ -326,7 +327,7 @@ const Index = () => {
             
             <div className="category-card category-card-sm group">
               <img 
-                src="/lovable-uploads/concierge-travel.jpg" 
+                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/Platninum.png?alt=media&token=76c2d4b3-bec6-4e0d-9873-9f65e99e07b8" 
                 alt="VIP traveler with personal concierge service"
                 className="category-card-bg"
               />
@@ -339,7 +340,7 @@ const Index = () => {
 
             <div className="category-card category-card-sm group">
               <img 
-                src="/lovable-uploads/mission-travel.jpg" 
+                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/Diamond.png?alt=media&token=95150bef-c373-414d-b03c-487fe77da463" 
                 alt="Family-friendly scenic destination"
                 className="category-card-bg"
               />
@@ -355,7 +356,7 @@ const Index = () => {
           <div className="categories-grid-3">
             <div className="category-card category-card-short group">
               <img 
-                src="/lovable-uploads/experience-travel.jpg" 
+                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/carbon.png?alt=media&token=912c5639-da13-4ead-a1b1-1a11b434289e" 
                 alt="Cultural travel experience"
                 className="category-card-bg"
               />
@@ -368,7 +369,7 @@ const Index = () => {
 
             <div className="category-card category-card-short group">
               <img 
-                src="/lovable-uploads/urban-architecture.jpg" 
+                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/solar%20energy.png?alt=media&token=84dffd90-e90e-4c5e-a5fb-6a4fd79dc9ae" 
                 alt="Business travel in a modern city"
                 className="category-card-bg"
               />
@@ -377,11 +378,11 @@ const Index = () => {
                 <h3 className="category-title">Energy</h3>
                 <p className="category-description">Solar and renewable credits</p>
               </div>
-            </div>
+                </div>
 
             <div className="category-card category-card-short group">
               <img 
-                src="/lovable-uploads/concierge-travel.jpg" 
+                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/agri.png?alt=media&token=296fe91e-e533-4862-8acd-468cb207add2" 
                 alt="Investor-focused luxury experience"
                 className="category-card-bg"
               />
@@ -412,22 +413,22 @@ const Index = () => {
               <div className="platform-header">
                 <p className="platform-label">TOTO Token</p>
               </div>
-
+              
               <div className="platform-text">
                 <h2 className="platform-heading">
                   Utility that lowers your costs and raises your limits.
                 </h2>
-
+                
                 <p className="platform-description">
                   Stake TOTO to reduce fees, unlock higher redemption limits, and gain priority access to scarce assets.
                 </p>
-
+                
                 <button className="platform-cta">
                   Learn more
                 </button>
               </div>
             </div>
-
+            
             <div className="platform-visual">
               <div className="platform-image">
                 <img
@@ -454,27 +455,288 @@ const Index = () => {
           </div>
           
           <div className="resources-tabs mb-12">
-            <button className="tab-btn active">
-              Travel Insights
+            <button
+              type="button"
+              className={`tab-btn ${resourcesTab === 'news' ? 'active' : ''}`}
+              onClick={() => setResourcesTab('news')}
+            >
+              Tiamonds News
             </button>
-            <button className="tab-btn">
-              Destination Guides
+            <button
+              type="button"
+              className={`tab-btn ${resourcesTab === 'updates' ? 'active' : ''}`}
+              onClick={() => setResourcesTab('updates')}
+            >
+              RWA Updates
             </button>
           </div>
           
+          {resourcesTab === 'news' && (
           <div className="blog-marquee">
             <div className="blog-marquee-track">
               {/* Blog Card 1 */}
               <article className="blog-card blog-card--marquee">
                 <div className="blog-card-image-wrapper">
-                  <img src="/lovable-uploads/explorer-travel.jpg" alt="Japan Travel Guide" className="blog-card-image" />
+                  <img src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/AB-Cardano-NFTCase-Study_-NMKR-and-Tiamonds.avif?alt=media&token=fcb76cf0-f310-4716-aec2-8b41d2b8e205" alt="Cardano NFT Case Study: NMKR and Tiamonds" className="blog-card-image" />
                 </div>
                 <div className="blog-card-body">
-                  <h3 className="blog-title">Japan Travel Guide</h3>
+                  <h3 className="blog-title">Cardano NFT Case Study: NMKR and Tiamonds</h3>
                   <p className="blog-excerpt">
-                    Cherry blossoms, timeless temples, and street food adventures across Tokyo, Kyoto, and beyond. A quick-start guide for your next Japan trip.
+                    Web3 providers like NMKR help businesses tokenize assets and expand their reach globally using their platform.
                   </p>
-                  <a href="#" className="blog-read-more">
+                  <a href="https://www.emurgo.io/press-news/cardano-nft-case-study-nmkr-and-tiamonds/" className="blog-read-more">
+                    Read article
+                    <svg viewBox="0 0 17 17" fill="none">
+                      <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              {/* Blog Card 4 */}
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://img.decrypt.co/insecure/rs:fit:3840:0:0:0/plain/https://cdn.decrypt.co/wp-content/uploads/2019/09/Tokenization-1-gID_5-pID_2.png@webp" alt="What Is Tokenization?" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">What Is Tokenization?</h3>
+                  <p className="blog-excerpt">
+                    We explore tokenization, its workings, and how it’s revolutionizing asset issuance, management, and trading.
+                  </p>
+                  <a href="https://decrypt.co/resources/what-is-tokenization" className="blog-read-more">
+                    Learn more
+                    <svg viewBox="0 0 17 17" fill="none">
+                      <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              {/* Blog Card 5 */}
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://images.cointelegraph.com/cdn-cgi/image/format=auto,onerror=redirect,quality=90,width=717/https://s3.cointelegraph.com/storage/uploads/view/2927b60eedfc872f9b2f9c03999eb2ab.jpeg" alt="How does tokenization help transform illiquid real estate ownership into a liquid one?" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">How does tokenization help transform illiquid real estate ownership into a liquid one?</h3>
+                  <p className="blog-excerpt">Tokenization boosts real estate liquidity, making it easier for people to trade and invest in properties.</p>
+                  <a href="https://cointelegraph.com/news/how-does-tokenization-help-transform-illiquid-real-estate-ownership-into-a-liquid-one" className="blog-read-more">
+                    Learn more
+                    <svg viewBox="0 0 17 17" fill="none"><path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/></svg>
+                  </a>
+                </div>
+              </article>
+              {/* Blog Card 2 */}
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://www.coindesk.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fs3y3vcno%2Fproduction%2F74f533926b6639da78c9484c4cd921ebb6b4b51a-3977x2234.jpg%3Fauto%3Dformat&w=3840&q=75" alt="2024 Will Be the Year Tokenization Truly (Finally) Begins" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">2024 Will Be the Year Tokenization Truly (Finally) Begins</h3>
+                <p className="blog-excerpt">
+                    After years of hype, next year will be when tokenization of real-world assets truly takes off.
+                  </p>
+                  <a href="https://www.coindesk.com/business/2023/11/29/2024-will-be-the-year-tokenization-truly-finally-begins" className="blog-read-more">
+                    Learn more
+                    <svg viewBox="0 0 17 17" fill="none">
+                      <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              {/* Blog Card 3 */}
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://specials-images.forbesimg.com/imageserve/660cc218e753d30c6dc18d53/Tokenization/960x0.jpg?fit=scale" alt="Asset Tokenization Revolutionizing Global Finance" className="blog-card-image" />
+              </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">Asset Tokenization Revolutionizing Global Finance</h3>
+                  <p className="blog-excerpt">
+                    Cryptocurrencies and blockchain are revolutionizing finance, shifting how we perceive and interact with assets.
+                  </p>
+                  <a href="https://www.forbes.com/sites/roomykhan/2024/04/03/asset-tokenization-revolutionizing-global-finance/" className="blog-read-more">
+                    Read more
+                    <svg viewBox="0 0 17 17" fill="none">
+                      <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
+                    </svg>
+                  </a>
+            </div>
+              </article>
+
+              {/* Blog Card 4 */}
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://img.decrypt.co/insecure/rs:fit:3840:0:0:0/plain/https://cdn.decrypt.co/wp-content/uploads/2019/09/Tokenization-1-gID_5-pID_2.png@webp" alt="What Is Tokenization?" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">What Is Tokenization?</h3>
+                  <p className="blog-excerpt">
+                    We explore tokenization, its workings, and how it’s revolutionizing asset issuance, management, and trading.
+                  </p>
+                  <a href="https://decrypt.co/resources/what-is-tokenization" className="blog-read-more">
+                    Learn more
+                    <svg viewBox="0 0 17 17" fill="none">
+                      <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              {/* Blog Card 4 */}
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://img.decrypt.co/insecure/rs:fit:3840:0:0:0/plain/https://cdn.decrypt.co/wp-content/uploads/2019/09/Tokenization-1-gID_5-pID_2.png@webp" alt="What Is Tokenization?" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">What Is Tokenization?</h3>
+                  <p className="blog-excerpt">
+                    We explore tokenization, its workings, and how it’s revolutionizing asset issuance, management, and trading.
+                  </p>
+                  <a href="https://decrypt.co/resources/what-is-tokenization" className="blog-read-more">
+                    Learn more
+                    <svg viewBox="0 0 17 17" fill="none">
+                      <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              {/* Blog Card 4 */}
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://images.cointelegraph.com/cdn-cgi/image/format=auto,onerror=redirect,quality=90,width=717/https://s3.cointelegraph.com/storage/uploads/view/2927b60eedfc872f9b2f9c03999eb2ab.jpeg" alt="How does tokenization help transform illiquid real estate ownership into a liquid one?" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">How does tokenization help transform illiquid real estate ownership into a liquid one?</h3>
+                <p className="blog-excerpt">
+                    Tokenization boosts real estate liquidity, making it easier for people to trade and invest in properties.
+                  </p>
+                  <a href="https://cointelegraph.com/news/how-does-tokenization-help-transform-illiquid-real-estate-ownership-into-a-liquid-one" className="blog-read-more">
+                    Learn more
+                    <svg viewBox="0 0 17 17" fill="none">
+                      <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              {/* Duplicate set for seamless scroll */}
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/AB-Cardano-NFTCase-Study_-NMKR-and-Tiamonds.avif?alt=media&token=fcb76cf0-f310-4716-aec2-8b41d2b8e205" alt="Cardano NFT Case Study: NMKR and Tiamonds" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">Cardano NFT Case Study: NMKR and Tiamonds</h3>
+                  <p className="blog-excerpt">Web3 providers like NMKR help businesses tokenize assets and expand their reach globally using their platform.</p>
+                  <a href="https://www.emurgo.io/press-news/cardano-nft-case-study-nmkr-and-tiamonds/" className="blog-read-more">
+                    Read article
+                    <svg viewBox="0 0 17 17" fill="none"><path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://www.coindesk.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fs3y3vcno%2Fproduction%2F74f533926b6639da78c9484c4cd921ebb6b4b51a-3977x2234.jpg%3Fauto%3Dformat&w=3840&q=75" alt="2024 Will Be the Year Tokenization Truly (Finally) Begins" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">2024 Will Be the Year Tokenization Truly (Finally) Begins</h3>
+                  <p className="blog-excerpt">After years of hype, next year will be when tokenization of real-world assets truly takes off.</p>
+                  <a href="https://www.coindesk.com/business/2023/11/29/2024-will-be-the-year-tokenization-truly-finally-begins" className="blog-read-more">
+                    Learn more
+                    <svg viewBox="0 0 17 17" fill="none"><path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://specials-images.forbesimg.com/imageserve/660cc218e753d30c6dc18d53/Tokenization/960x0.jpg?fit=scale" alt="Asset Tokenization Revolutionizing Global Finance" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">Asset Tokenization Revolutionizing Global Finance</h3>
+                  <p className="blog-excerpt">Cryptocurrencies and blockchain are revolutionizing finance, shifting how we perceive and interact with assets.</p>
+                  <a href="https://www.forbes.com/sites/roomykhan/2024/04/03/asset-tokenization-revolutionizing-global-finance/" className="blog-read-more">
+                    Read more
+                    <svg viewBox="0 0 17 17" fill="none"><path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://img.decrypt.co/insecure/rs:fit:3840:0:0:0/plain/https://cdn.decrypt.co/wp-content/uploads/2019/09/Tokenization-1-gID_5-pID_2.png@webp" alt="What Is Tokenization?" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">What Is Tokenization?</h3>
+                  <p className="blog-excerpt">We explore tokenization, its workings, and how it’s revolutionizing asset issuance, management, and trading.</p>
+                  <a href="https://decrypt.co/resources/what-is-tokenization" className="blog-read-more">
+                    Learn more
+                    <svg viewBox="0 0 17 17" fill="none"><path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://images.cointelegraph.com/cdn-cgi/image/format=auto,onerror=redirect,quality=90,width=717/https://s3.cointelegraph.com/storage/uploads/view/2927b60eedfc872f9b2f9c03999eb2ab.jpeg" alt="How does tokenization help transform illiquid real estate ownership into a liquid one?" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">How does tokenization help transform illiquid real estate ownership into a liquid one?</h3>
+                  <p className="blog-excerpt">Tokenization boosts real estate liquidity, making it easier for people to trade and invest in properties.</p>
+                  <a href="https://cointelegraph.com/news/how-does-tokenization-help-transform-illiquid-real-estate-ownership-into-a-liquid-one" className="blog-read-more">
+                    Learn more
+                    <svg viewBox="0 0 17 17" fill="none"><path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://img.decrypt.co/insecure/rs:fit:3840:0:0:0/plain/https://cdn.decrypt.co/wp-content/uploads/2019/09/Tokenization-1-gID_5-pID_2.png@webp" alt="What Is Tokenization?" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">What Is Tokenization?</h3>
+                  <p className="blog-excerpt">We explore tokenization, its workings, and how it’s revolutionizing asset issuance, management, and trading.</p>
+                  <a href="https://decrypt.co/resources/what-is-tokenization" className="blog-read-more">
+                    Learn more
+                    <svg viewBox="0 0 17 17" fill="none"><path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://images.cointelegraph.com/cdn-cgi/image/format=auto,onerror=redirect,quality=90,width=717/https://s3.cointelegraph.com/storage/uploads/view/2927b60eedfc872f9b2f9c03999eb2ab.jpeg" alt="How does tokenization help transform illiquid real estate ownership into a liquid one?" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">How does tokenization help transform illiquid real estate ownership into a liquid one?</h3>
+                  <p className="blog-excerpt">Tokenization boosts real estate liquidity, making it easier for people to trade and invest in properties.</p>
+                  <a href="https://cointelegraph.com/news/how-does-tokenization-help-transform-illiquid-real-estate-ownership-into-a-liquid-one" className="blog-read-more">
+                    Learn more
+                    <svg viewBox="0 0 17 17" fill="none"><path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/></svg>
+                  </a>
+              </div>
+              </article>
+            </div>
+          </div>
+          )}
+
+          {resourcesTab === 'updates' && (
+          <div className="blog-marquee">
+            <div className="blog-marquee-track">
+              {/* Blog Card 1 */}
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/AB-Cardano-NFTCase-Study_-NMKR-and-Tiamonds.avif?alt=media&token=fcb76cf0-f310-4716-aec2-8b41d2b8e205" alt="Cardano NFT Case Study: NMKR and Tiamonds" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">Cardano NFT Case Study: NMKR and Tiamonds</h3>
+                  <p className="blog-excerpt">
+                    Web3 providers like NMKR help businesses tokenize assets and expand their reach globally using their platform.
+                  </p>
+                  <a href="https://www.emurgo.io/press-news/cardano-nft-case-study-nmkr-and-tiamonds/" className="blog-read-more">
                     Read article
                     <svg viewBox="0 0 17 17" fill="none">
                       <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
@@ -486,15 +748,15 @@ const Index = () => {
               {/* Blog Card 2 */}
               <article className="blog-card blog-card--marquee">
                 <div className="blog-card-image-wrapper">
-                  <img src="/lovable-uploads/luxury-travel.jpg" alt="Luxury Stay Partners with Global Hotels" className="blog-card-image" />
+                  <img src="https://www.coindesk.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fs3y3vcno%2Fproduction%2F74f533926b6639da78c9484c4cd921ebb6b4b51a-3977x2234.jpg%3Fauto%3Dformat&w=3840&q=75" alt="2024 Will Be the Year Tokenization Truly (Finally) Begins" className="blog-card-image" />
                 </div>
                 <div className="blog-card-body">
-                  <h3 className="blog-title">Luxury Stay Partners with Global Hotels</h3>
+                  <h3 className="blog-title">2024 Will Be the Year Tokenization Truly (Finally) Begins</h3>
                   <p className="blog-excerpt">
-                    Access premium stays, spa experiences, and VIP services across 50+ destinations through our newest partnership expansion.
+                    After years of hype, next year will be when tokenization of real-world assets truly takes off.
                   </p>
-                  <a href="#" className="blog-read-more">
-                    Read article
+                  <a href="https://www.coindesk.com/business/2023/11/29/2024-will-be-the-year-tokenization-truly-finally-begins" className="blog-read-more">
+                    Learn more
                     <svg viewBox="0 0 17 17" fill="none">
                       <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
                     </svg>
@@ -505,15 +767,15 @@ const Index = () => {
               {/* Blog Card 3 */}
               <article className="blog-card blog-card--marquee">
                 <div className="blog-card-image-wrapper">
-                  <img src="/lovable-uploads/concierge-travel.jpg" alt="AI Recommendations Now Live Globally" className="blog-card-image" />
+                  <img src="https://specials-images.forbesimg.com/imageserve/660cc218e753d30c6dc18d53/Tokenization/960x0.jpg?fit=scale" alt="Asset Tokenization Revolutionizing Global Finance" className="blog-card-image" />
                 </div>
                 <div className="blog-card-body">
-                  <h3 className="blog-title">AI Recommendations Now Live Globally</h3>
-                  <p className="blog-excerpt">
-                    Personalized itineraries are now available worldwide, matching your interests to unforgettable moments wherever you go.
+                  <h3 className="blog-title">Asset Tokenization Revolutionizing Global Finance</h3>
+                <p className="blog-excerpt">
+                    Cryptocurrencies and blockchain are revolutionizing finance, shifting how we perceive and interact with assets.
                   </p>
-                  <a href="#" className="blog-read-more">
-                    Read article
+                  <a href="https://www.forbes.com/sites/roomykhan/2024/04/03/asset-tokenization-revolutionizing-global-finance/" className="blog-read-more">
+                    Read more
                     <svg viewBox="0 0 17 17" fill="none">
                       <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
                     </svg>
@@ -538,13 +800,13 @@ const Index = () => {
 
               <article className="blog-card blog-card--marquee">
                 <div className="blog-card-image-wrapper">
-                  <img src="/lovable-uploads/luxury-travel.jpg" alt="Luxury Stay Partners with Global Hotels" className="blog-card-image" />
+                  <img src="https://www.coindesk.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fs3y3vcno%2Fproduction%2F74f533926b6639da78c9484c4cd921ebb6b4b51a-3977x2234.jpg%3Fauto%3Dformat&w=3840&q=75" alt="2024 Will Be the Year Tokenization Truly (Finally) Begins" className="blog-card-image" />
                 </div>
                 <div className="blog-card-body">
-                  <h3 className="blog-title">Luxury Stay Partners with Global Hotels</h3>
-                  <p className="blog-excerpt">Access premium stays, spa experiences, and VIP services across 50+ destinations through our newest partnership expansion.</p>
-                  <a href="#" className="blog-read-more">
-                    Read article
+                  <h3 className="blog-title">2024 Will Be the Year Tokenization Truly (Finally) Begins</h3>
+                  <p className="blog-excerpt">After years of hype, next year will be when tokenization of real-world assets truly takes off.</p>
+                  <a href="https://www.coindesk.com/business/2023/11/29/2024-will-be-the-year-tokenization-truly-finally-begins" className="blog-read-more">
+                    Learn more
                     <svg viewBox="0 0 17 17" fill="none"><path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/></svg>
                   </a>
                 </div>
@@ -552,19 +814,34 @@ const Index = () => {
 
               <article className="blog-card blog-card--marquee">
                 <div className="blog-card-image-wrapper">
-                  <img src="/lovable-uploads/concierge-travel.jpg" alt="AI Recommendations Now Live Globally" className="blog-card-image" />
+                  <img src="https://specials-images.forbesimg.com/imageserve/660cc218e753d30c6dc18d53/Tokenization/960x0.jpg?fit=scale" alt="Asset Tokenization Revolutionizing Global Finance" className="blog-card-image" />
                 </div>
                 <div className="blog-card-body">
-                  <h3 className="blog-title">AI Recommendations Now Live Globally</h3>
-                  <p className="blog-excerpt">Personalized itineraries are now available worldwide, matching your interests to unforgettable moments wherever you go.</p>
-                  <a href="#" className="blog-read-more">
-                    Read article
+                  <h3 className="blog-title">Asset Tokenization Revolutionizing Global Finance</h3>
+                  <p className="blog-excerpt">Cryptocurrencies and blockchain are revolutionizing finance, shifting how we perceive and interact with assets.</p>
+                  <a href="https://www.forbes.com/sites/roomykhan/2024/04/03/asset-tokenization-revolutionizing-global-finance/" className="blog-read-more">
+                    Read more
                     <svg viewBox="0 0 17 17" fill="none"><path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/></svg>
                   </a>
                 </div>
               </article>
+
+              <article className="blog-card blog-card--marquee">
+                <div className="blog-card-image-wrapper">
+                  <img src="https://images.cointelegraph.com/cdn-cgi/image/format=auto,onerror=redirect,quality=90,width=717/https://s3.cointelegraph.com/storage/uploads/view/2927b60eedfc872f9b2f9c03999eb2ab.jpeg" alt="How does tokenization help transform illiquid real estate ownership into a liquid one?" className="blog-card-image" />
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">How does tokenization help transform illiquid real estate ownership into a liquid one?</h3>
+                  <p className="blog-excerpt">Tokenization boosts real estate liquidity, making it easier for people to trade and invest in properties.</p>
+                  <a href="https://cointelegraph.com/news/how-does-tokenization-help-transform-illiquid-real-estate-ownership-into-a-liquid-one" className="blog-read-more">
+                    Learn more
+                    <svg viewBox="0 0 17 17" fill="none"><path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/></svg>
+                  </a>
+              </div>
+              </article>
             </div>
           </div>
+          )}
           
           <div className="text-center mt-12">
             <button className="resources-cta">
@@ -588,11 +865,10 @@ const Index = () => {
           <div className="newsletter-overlay"></div>
           <div className="relative z-10 max-w-4xl mx-auto text-center px-6 md:px-8 lg:px-12">
             <h2 className="newsletter-heading">
-              The Future of Travel
+              The Future of Tokenization
             </h2>
             <p className="newsletter-subtitle">
-              Subscribe for the latest destinations,<br />
-              insights, and travel news.
+              Subscribe for the latest destinations, insights, news.
             </p>
             
             <div className="newsletter-form">
