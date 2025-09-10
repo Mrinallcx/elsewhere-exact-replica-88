@@ -315,6 +315,78 @@
     color: hsl(var(--travel-black) / 0.7);
   }
 
+  /* TNFTs Section */
+  .tnfts-section { background: hsl(var(--travel-white)); color: hsl(var(--travel-black)); }
+  .tnfts-heading { @apply text-4xl md:text-5xl lg:text-6xl font-light leading-tight; color: hsl(var(--travel-black)); }
+  .tnfts-grid { @apply grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6; }
+  .tnft-card {
+    @apply rounded-2xl border;
+    border-color: hsl(var(--travel-black) / 0.12);
+    background: linear-gradient(180deg, hsl(var(--travel-black) / 0.04), hsl(var(--travel-black) / 0.02));
+    min-height: 260px;
+    position: relative;
+    overflow: hidden;
+  }
+  @media (min-width: 768px) {
+    .tnft-card { min-height: 320px; }
+  }
+  .tnfts-more-wrap { @apply flex justify-center mt-8; }
+  .tnfts-more { @apply inline-flex items-center gap-2 justify-center rounded-full px-5 py-3; background: hsl(var(--travel-black)); color: hsl(var(--travel-white)); transition: var(--transition-smooth); box-shadow: 0 6px 20px hsl(var(--travel-black) / 0.2); }
+  .tnfts-more:hover { background: hsl(var(--travel-black) / 0.9); transform: translateY(-1px); }
+  .tnfts-more-icon { @apply w-4 h-4; }
+  .tnfts-more-text { @apply text-sm font-medium; }
+
+  /* Horizontal scroller behavior */
+  .tnfts-scroller { /* legacy class kept unused intentionally */ }
+
+  /* Auto-scrolling marquee */
+  .tnfts-marquee { @apply w-full overflow-hidden; }
+  .tnfts-track {
+    @apply flex items-stretch gap-4 sm:gap-6;
+    width: max-content;
+    animation: blog-scroll 45s linear infinite;
+  }
+  .tnfts-track .tnft-card { @apply w-[40vw] sm:w-[200px] md:w-[240px] flex-shrink-0; }
+  .tnfts-marquee:hover .tnfts-track,
+  .tnfts-marquee:focus-within .tnfts-track { animation-play-state: paused; }
+  .tnft-card-img {
+    position: absolute;
+    inset: 10%;
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    z-index: 1;
+  }
+  .tnft-badge {
+    @apply absolute top-2 right-2 text-[10px] sm:text-xs font-medium px-2.5 py-0.5 rounded-full;
+    background: hsl(var(--glass-white-60));
+    border: 1px solid hsl(var(--travel-black) / 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: hsl(var(--travel-black));
+    z-index: 2;
+  }
+
+  .tnft-cta {
+    @apply absolute left-1/2 -translate-x-1/2 text-sm font-medium px-4 py-2 rounded-full;
+    bottom: 10px;
+    background: hsl(var(--travel-black) / 0.7);
+    border: 1px solid hsl(var(--travel-white) / 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: hsl(var(--travel-white));
+    transition: var(--transition-smooth);
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .tnft-cta:hover { background: hsl(var(--travel-black) / 0.8); transform: translate(-50%, -1px); }
+  .tnft-card:hover .tnft-cta,
+  .tnft-card:focus-within .tnft-cta {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   /* Mission Section */
   .mission-section {
     background: hsl(var(--travel-white));
@@ -386,7 +458,7 @@
   }
 
   .experience-content {
-    @apply space-y-6 lg:order-2;
+    @apply space-y-6 order-1 lg:order-2;
   }
 
   .experience-text {
@@ -394,7 +466,7 @@
   }
 
   .experience-image {
-    @apply relative overflow-hidden lg:order-1;
+    @apply relative overflow-hidden order-2 lg:order-1;
     aspect-ratio: 1 / 1;
     border-radius: 12px;
   }

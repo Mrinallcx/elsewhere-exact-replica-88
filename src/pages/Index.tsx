@@ -59,6 +59,20 @@ const Index = () => {
   const scrollAnimRef = useRef<HTMLDivElement | null>(null);
   const [pastHero, setPastHero] = useState(false);
   const [resourcesTab, setResourcesTab] = useState<'news' | 'updates'>('news');
+  const partnerLogos = [
+    'Cardano.svg',
+    'Coingecko.svg',
+    'Coinmarketcap.svg',
+    'Ethereum.svg',
+    'Gia.svg',
+    'LCX (1).svg',
+    'Nmkr.svg',
+    'Polygon.svg',
+    'Solana (1).svg',
+    'Uniswap.svg',
+    'Xrp.svg',
+  ];
+  const tnftCards = Array.from({ length: 16 });
 
   useEffect(() => {
     const target = heroRef.current;
@@ -134,7 +148,7 @@ const Index = () => {
       </nav>
 
       {/* Main Content */}
-      <main ref={heroRef} className="relative flex flex-col items-start sm:items-center justify-center min-h-[80vh] md:min-h-screen text-left sm:text-center px-4 sm:px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-24 md:pb-32 overflow-hidden">
+      <main ref={heroRef} className="relative flex flex-col items-start sm:items-center justify-center min-h-[90vh] md:min-h-screen text-left sm:text-center px-4 sm:px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-24 md:pb-32 overflow-hidden">
         <video className="hero-video" autoPlay muted loop playsInline src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/test-video.mp4?alt=media&token=37ed1571-934e-475c-a56c-30bb24210165"></video>
         <div className="hero-overlay"></div>
         <div className="relative z-10 max-w-5xl w-full mx-0 sm:mx-auto">
@@ -182,34 +196,23 @@ const Index = () => {
           
           
           {/* Social Proof Section */}
-          <div className="social-proof-section mx-0 sm:mx-auto text-left sm:text-center">
-            <p className="social-proof-text mb-8">
-              TRUSTED BY TRAVELERS WORLDWIDE
-            </p>
+          <div className="social-proof-section mx-0 sm:mx-auto text-left sm:text-center mt-6 sm:mt-10">
+            <p className="social-proof-text mb-8">TRUSTED BY</p>
             <div className="w-full overflow-hidden">
               <div className="social-proof-logos">
-                <div className="logo-item">Wanderlust</div>
-                <div className="logo-item">TravelPro</div>
-                <div className="logo-item">Explorer</div>
-                <div className="logo-item">Journey</div>
-                <div className="logo-item">Nomad</div>
-                <div className="logo-item">Venture</div>
-                <div className="logo-item">Compass</div>
-                <div className="logo-item">Atlas</div>
-                <div className="logo-item">Odyssey</div>
-                <div className="logo-item">Roam</div>
-                <div className="logo-item">Passport</div>
-                <div className="logo-item">Wanderlust</div>
-                <div className="logo-item">TravelPro</div>
-                <div className="logo-item">Explorer</div>
-                <div className="logo-item">Journey</div>
-                <div className="logo-item">Nomad</div>
-                <div className="logo-item">Venture</div>
-                <div className="logo-item">Compass</div>
-                <div className="logo-item">Atlas</div>
-                <div className="logo-item">Odyssey</div>
-                <div className="logo-item">Roam</div>
-                <div className="logo-item">Passport</div>
+                {partnerLogos.concat(partnerLogos).map((name, idx) => (
+                  <div className="logo-item" key={`pl-${idx}-${name}`}>
+                    <img
+                      src={`/logo/${name}`}
+                      alt={name.replace(/\.[^/.]+$/, '')}
+                      className={`${['Nmkr.svg','Solana (1).svg','Xrp.svg'].includes(name)
+                        ? 'h-4 sm:h-5'
+                        : ['Uniswap.svg','Coingecko.svg'].includes(name)
+                          ? 'h-6 sm:h-8'
+                          : 'h-5 sm:h-6'} opacity-80 hover:opacity-100 transition`}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -218,7 +221,7 @@ const Index = () => {
       </main>
       
       {/* Statistics Section */}
-      <section className="stats-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
+      <section className="stats-section px-6 md:px-8 lg:px-12 py-20 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <p className="stats-intro-text">
@@ -250,8 +253,43 @@ const Index = () => {
         </div>
       </section>
 
+      {/* TNFTs Section */}
+      <section className="tnfts-section px-6 md:px-8 lg:px-12 py-16 md:py-32">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-8 md:mb-12">
+            <h2 className="tnfts-heading text-left">Explore TNFTs</h2>
+          </div>
+
+          {/* Auto-scrolling (marquee) cards */}
+          <div className="tnfts-marquee">
+            <div className="tnfts-track">
+              {tnftCards.map((_, idx) => (
+                <div className="tnft-card" key={idx}>
+                  <span className="tnft-badge">1M TOTO</span>
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/goldnft.png?alt=media&token=360a9bc9-64de-4c42-8b18-13788830ffe3"
+                    alt="TNFT preview"
+                    className="tnft-card-img"
+                  />
+                  <button className="tnft-cta" type="button">Buy Now</button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="tnfts-more-wrap">
+            <button className="tnfts-more" aria-label="Explore more TNFT cards">
+              <span className="tnfts-more-text">Explore more</span>
+              <svg viewBox="0 0 17 17" fill="none" className="tnfts-more-icon">
+                <path d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Cash Management Section (new 3rd section) */}
-      <section className="cash-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
+      <section className="cash-section px-6 md:px-8 lg:px-12 py-20 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="cash-grid">
             {/* Left copy */}
@@ -284,7 +322,7 @@ const Index = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="mission-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
+      <section className="mission-section px-6 md:px-8 lg:px-12 py-20 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="mission-grid">
             <div className="mission-content">
@@ -319,7 +357,7 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section className="experience-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
+      <section className="experience-section px-6 md:px-8 lg:px-12 py-20 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="experience-grid">
             <div className="experience-image">
@@ -354,7 +392,7 @@ const Index = () => {
       </section>
 
       {/* Traveler Categories Section */}
-      <section className="categories-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
+      <section className="categories-section px-6 md:px-8 lg:px-12 py-20 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="categories-heading">
@@ -471,7 +509,7 @@ const Index = () => {
       </section>
 
       {/* Platform Section */}
-      <section className="platform-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
+      <section className="platform-section px-6 md:px-8 lg:px-12 py-20 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="platform-grid">
             <div className="platform-content">
@@ -508,7 +546,7 @@ const Index = () => {
       </section>
 
       {/* Resources Section */}
-      <section className="resources-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
+      <section className="resources-section px-6 md:px-8 lg:px-12 py-20 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="resources-heading">
@@ -917,7 +955,7 @@ const Index = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="newsletter-section py-32 md:py-40">
+      <section className="newsletter-section py-20 md:py-40">
         <div className="newsletter-bg">
           <video
             className="newsletter-video"
@@ -969,7 +1007,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="footer-section px-6 md:px-8 lg:px-12 py-32 md:py-40">
+      <footer className="footer-section px-6 md:px-8 lg:px-12 py-24 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="footer-grid">
             <div className="footer-column">
@@ -1014,7 +1052,7 @@ const Index = () => {
           
           <div className="footer-bottom">
             <div className="footer-brand">
-              <span className="brand-logo">Elsewhere™</span>
+              <img src="/tiamonds.svg" alt="Tiamonds" className="h-8 sm:h-16 logo-light" />
             </div>
             <div className="footer-legal">
               <a href="#" className="legal-link">Privacy Policy</a>
@@ -1026,7 +1064,7 @@ const Index = () => {
       </footer>
 
       {/* Brand Section */}
-      <section className="brand-section px-6 md:px-8 lg:px-12 py-28 md:py-36">
+      <section className="brand-section px-6 md:px-8 lg:px-12 py-20 md:py-36">
         <div className="max-w-7xl mx-auto">
           <div className="brand-content">
             <h1 className="brand-text">Tiamonds Finance</h1>
