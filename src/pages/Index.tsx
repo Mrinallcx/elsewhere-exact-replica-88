@@ -56,6 +56,7 @@ const Index = () => {
     return () => io.disconnect();
   }, []);
   const heroRef = useRef<HTMLDivElement | null>(null);
+  const scrollAnimRef = useRef<HTMLDivElement | null>(null);
   const [pastHero, setPastHero] = useState(false);
   const [resourcesTab, setResourcesTab] = useState<'news' | 'updates'>('news');
 
@@ -67,6 +68,53 @@ const Index = () => {
     }, { root: null, threshold: 0, rootMargin: '-64px 0px 0px 0px' });
     observer.observe(target);
     return () => observer.disconnect();
+  }, []);
+
+  // Lazy-load lottie-web from CDN and mount the scroll animation
+  useEffect(() => {
+    const container = scrollAnimRef.current;
+    if (!container) return;
+
+    const ensureLottie = async (): Promise<any> => {
+      if ((window as any).lottie) return (window as any).lottie;
+      await new Promise<void>((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js';
+        script.async = true;
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error('Failed to load lottie-web'));
+        document.body.appendChild(script);
+      });
+      return (window as any).lottie;
+    };
+
+    // Provided Lottie JSON (scroll indicator)
+    const scrollAnimationData = {"nm":"Comp 1","ddd":0,"h":500,"w":500,"meta":{"g":"@lottiefiles/toolkit-js 0.33.2"},"layers":[{"ty":4,"nm":"Ball","sr":1,"st":0,"op":90,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[0,0,0],"ix":1},"s":{"a":0,"k":[114,114,100],"ix":6},"sk":{"a":0,"k":0},"p":{"s":true,"x":{"a":0,"k":250,"ix":3},"y":{"a":1,"k":[{"o":{"x":0.213,"y":1.081},"i":{"x":0.689,"y":1},"s":[255],"t":10},{"o":{"x":0.918,"y":0},"i":{"x":0.284,"y":1},"s":[242.838],"t":24},{"o":{"x":0.589,"y":-0.009},"i":{"x":0.348,"y":1},"s":[426.703],"t":50},{"s":[409.703],"t":60}],"ix":4},"z":{"a":0,"k":0}},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":1,"k":[{"o":{"x":0.167,"y":0.167},"i":{"x":0.833,"y":0.833},"s":[0],"t":0},{"o":{"x":0.167,"y":0.167},"i":{"x":0.833,"y":0.833},"s":[100],"t":5},{"o":{"x":0.167,"y":0.167},"i":{"x":0.833,"y":0.833},"s":[100],"t":60},{"s":[0],"t":70}],"ix":11}},"ef":[],"shapes":[{"ty":"gr","bm":0,"hd":false,"mn":"ADBE Vector Group","nm":"Ellipse 1","ix":1,"cix":2,"np":3,"it":[{"ty":"el","bm":0,"hd":false,"mn":"ADBE Vector Shape - Ellipse","nm":"Ellipse Path 1","d":1,"p":{"a":0,"k":[0,0],"ix":3},"s":{"a":0,"k":[28.594,28.594],"ix":2}},{"ty":"fl","bm":0,"hd":false,"mn":"ADBE Vector Graphic - Fill","nm":"Fill 1","c":{"a":0,"k":[1,1,1],"ix":4},"r":1,"o":{"a":0,"k":100,"ix":5}},{"ty":"tr","a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"sk":{"a":0,"k":0,"ix":4},"p":{"a":0,"k":[0.297,-72.703],"ix":2},"r":{"a":0,"k":0,"ix":6},"sa":{"a":0,"k":0,"ix":5},"o":{"a":0,"k":100,"ix":7}}]}],"ind":1},{"ty":4,"nm":"Mouse","sr":1,"st":0,"op":90,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":true,"ao":0,"ks":{"a":{"a":0,"k":[0,0,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"s":true,"x":{"a":0,"k":250,"ix":3},"y":{"a":0,"k":250,"ix":4},"z":{"a":0,"k":0}},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"masksProperties":[{"nm":"Mask 1","inv":false,"mode":"f","x":{"a":0,"k":0,"ix":4},"o":{"a":0,"k":100,"ix":3},"pt":{"a":0,"k":{"c":true,"i":[[0,0],[0,0],[0,-58.818],[0,0],[-58.818,0],[0,0],[0,58.818],[0,0],[58.818,0]],"o":[[0,0],[-58.818,0],[0,0],[0,58.818],[0,0],[58.818,0],[0,0],[0,-58.818],[0,0]],"v":[[0.5,-186.5],[0.5,-186.5],[-106,-80],[-106,81],[0.5,187.5],[0.5,187.5],[107,81],[107,-80],[0.5,-186.5]]},"ix":1}}],"shapes":[{"ty":"gr","bm":0,"hd":false,"mn":"ADBE Vector Group","nm":"Shape 1","ix":1,"cix":2,"np":3,"it":[{"ty":"sh","bm":0,"hd":false,"mn":"ADBE Vector Shape - Group","nm":"Path 1","ix":1,"d":1,"ks":{"a":0,"k":{"c":true,"i":[[-47.696,0],[0,-47.696],[0,0],[47.696,0],[0,47.696],[0,0]],"o":[[47.696,0],[0,0],[0,47.696],[-47.696,0],[0,0],[0,-47.696]],"v":[[0,-167],[86.5,-80.5],[86.5,80.5],[0,167],[-86.5,80.5],[-86.5,-80.5]]},"ix":2}},{"ty":"st","bm":0,"hd":false,"mn":"ADBE Vector Graphic - Stroke","nm":"Stroke 1","lc":1,"lj":1,"ml":4,"o":{"a":0,"k":100,"ix":4},"w":{"a":0,"k":18,"ix":5},"c":{"a":0,"k":[1,1,1],"ix":3}},{"ty":"tr","a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"sk":{"a":0,"k":0,"ix":4},"p":{"a":0,"k":[0,0],"ix":2},"r":{"a":0,"k":0,"ix":6},"sa":{"a":0,"k":0,"ix":5},"o":{"a":0,"k":100,"ix":7}}]}],"ind":2}],"v":"5.5.2","fr":30,"op":90,"ip":0,"assets":[]};
+
+    let lottieInstance: any | null = null;
+    let isCancelled = false;
+
+    ensureLottie()
+      .then((lottie) => {
+        if (isCancelled) return;
+        lottieInstance = lottie.loadAnimation({
+          container,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          animationData: scrollAnimationData,
+        });
+      })
+      .catch(() => {
+        // ignore failure silently
+      });
+
+    return () => {
+      isCancelled = true;
+      if (lottieInstance) {
+        try { lottieInstance.destroy(); } catch {}
+      }
+    };
   }, []);
 
   return <div className="min-h-screen w-full relative">
@@ -113,6 +161,23 @@ const Index = () => {
               Explore Marketplace
             </button>
           </div>
+
+          {/* Scroll Indicator */}
+          <div
+            ref={scrollAnimRef}
+            aria-hidden="true"
+            className="pointer-events-none"
+            style={{
+              position: 'absolute',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              bottom: '-200px',
+              width: '56px',
+              height: '56px',
+              opacity: 0.9,
+              filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.25))',
+            }}
+          />
           
           
           
@@ -157,29 +222,29 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <p className="stats-intro-text">
-              Elsewhere is building the foundation for the future of travel.
+              Elsewhere is building the foundation for the future of tokenization.
             </p>
           </div>
           
           <div className="stats-grid">
             <div className="stat-item">
-              <div className="stat-number">200+</div>
-              <div className="stat-label">Destinations</div>
+              <div className="stat-number">30K</div>
+              <div className="stat-label">assets listed</div>
             </div>
             
             <div className="stat-item">
-              <div className="stat-number">50K</div>
-              <div className="stat-label">Happy Travelers</div>
+              <div className="stat-number">$1.5</div>
+              <div className="stat-label">Revenue</div>
             </div>
             
             <div className="stat-item">
-              <div className="stat-number">95%</div>
-              <div className="stat-label">Satisfaction Rate</div>
+              <div className="stat-number">05+</div>
+              <div className="stat-label">Blockchains Launched</div>
             </div>
             
             <div className="stat-item">
-              <div className="stat-number">$2.5M</div>
-              <div className="stat-label">Saved in Planning</div>
+              <div className="stat-number">50K+</div>
+              <div className="stat-label">Active Users</div>
             </div>
           </div>
         </div>
