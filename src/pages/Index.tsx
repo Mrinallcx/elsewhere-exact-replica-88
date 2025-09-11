@@ -141,9 +141,14 @@ const Index = () => {
           </div>
           
           {/* Right Side CTA */}
-          <button className={`glass-nav-btn ${pastHero ? '' : 'glass-nav-btn--light'} px-6 py-2.5 rounded-full text-sm font-medium tracking-wide uppercase hover:scale-105 transition-all duration-300`}>
+          <a
+            href="https://app-tiamonds.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`glass-nav-btn ${pastHero ? '' : 'glass-nav-btn--light'} px-6 py-2.5 rounded-full text-sm font-medium tracking-wide uppercase hover:scale-105 transition-all duration-300`}
+          >
             Launch App
-          </button>
+          </a>
         </div>
       </nav>
 
