@@ -654,6 +654,60 @@
     color: hsl(var(--travel-black) / 0.7);
   }
 
+  .platform-badges { @apply flex flex-wrap gap-2 mt-4; }
+  .platform-badge {
+    @apply text-xs sm:text-sm font-medium px-3 py-1 rounded-full;
+    background: hsl(var(--travel-black) / 0.06);
+    border: 1px solid hsl(var(--travel-black) / 0.12);
+    color: hsl(var(--travel-black));
+    width: fit-content;
+    box-shadow: 0 4px 10px hsl(var(--travel-black) / 0.06);
+    position: relative;
+    cursor: default;
+  }
+
+  /* Custom tooltip for platform badges */
+  .platform-badge[data-tip]::after {
+    content: attr(data-tip);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 8px);
+    transform: translateX(-50%) translateY(4px);
+    background: hsl(var(--travel-black));
+    color: hsl(var(--travel-white));
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.2;
+    max-width: 260px;
+    width: max-content;
+    box-shadow: 0 8px 20px hsl(var(--travel-black) / 0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .15s ease, transform .15s ease;
+    z-index: 10;
+    text-align: left;
+    white-space: normal;
+  }
+  .platform-badge[data-tip]::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: hsl(var(--travel-black));
+    opacity: 0;
+    transition: opacity .15s ease;
+  }
+  .platform-badge:hover[data-tip]::after,
+  .platform-badge:focus-visible[data-tip]::after,
+  .platform-badge:hover[data-tip]::before,
+  .platform-badge:focus-visible[data-tip]::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
   .platform-cta {
     background: hsl(var(--travel-black));
     color: hsl(var(--travel-white));

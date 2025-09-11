@@ -6,25 +6,25 @@ const Index = () => {
       {
         title: 'Regulated & Audited',
         subtitle:
-          'Built under MiCA and Liechtenstein TVTG with LCX as Physical Validator.',
+          'Operating under MiCA and Liechtenstein’s TVTG framework, with LCX as licensed Physical Validator.',
         variant: 'cash-card-blue',
       },
       {
         title: 'Redeemable Assets',
         subtitle:
-          'Assets are stored in accredited, high-security vaults in Liechtenstein',
+          'All commodities stored in accredited vaults, warehouses, or custody facilities, fully redeemable anytime.',
         variant: 'cash-card-green',
       },
       {
         title: 'Transparent Reserves',
         subtitle:
-          'Live proof-of-reserves dashboards and quarterly independent audits.',
+          'On-chain proof-of-reserves dashboards, IoT oracle feeds, and quarterly third-party audits.',
         variant: 'cash-card-purple',
       },
       {
-        title: 'Simple Fees',
+        title: 'Programmable Compliance',
         subtitle:
-          'Clear, upfront minting, trading, redemption, and no storage costs.',
+          'Smart-contract enforcement of KYC/AML, transfer restrictions, and regulatory permissions.',
         variant: 'cash-card-rose',
       },
     ],
@@ -160,25 +160,30 @@ const Index = () => {
           
           {/* Hero Headings */}
           <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-travel-white mb-2">
-            Total Tokenization
+            TOTO Invest
           </h1>
           
           <h2 className="hero-subheading text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-            Future of Commodities
+            Building the Future of Global Trade
           </h2>
           
           {/* Description Section */}
           <div className="max-w-3xl w-full mx-0 sm:mx-auto mb-6 sm:mb-8 mt-6 sm:mt-8 md:mt-10 text-left sm:text-center ">
             <p className="hero-description text-sm sm:text-base md:text-lg lg:text-xl text-travel-white mb-2 text-left sm:text-center">
-              The market leader in tokenized commodities, driving transparency and efficiency across industries.
+            At TOTO Invest, we create trusted infrastructure to bring physical commodities and settlement flows on-chain.
             </p>
           </div>
           
           {/* Call-to-Action */}
           <div className="flex flex-col items-start sm:items-center space-y-6 mb-10 sm:mb-16">
-            <button className="cta-primary px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-medium">
-              Explore Marketplace
-            </button>
+            <a
+              href="https://app-tiamonds.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-primary px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-medium"
+            >
+              Commodities Market
+            </a>
           </div>
 
           {/* Scroll Indicator */}
@@ -230,24 +235,24 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <p className="stats-intro-text">
-              Elsewhere is building the foundation for the future of tokenization.
+            TOTO Invest is building the foundation for the future of global trade.
             </p>
           </div>
           
           <div className="stats-grid">
             <div className="stat-item">
               <div className="stat-number">30K</div>
-              <div className="stat-label">assets listed</div>
+              <div className="stat-label">Assets Listed</div>
             </div>
             
             <div className="stat-item">
-              <div className="stat-number">$1.5</div>
-              <div className="stat-label">Revenue</div>
+              <div className="stat-number">$1.5M</div>
+              <div className="stat-label">Revenue Generated</div>
             </div>
             
             <div className="stat-item">
-              <div className="stat-number">05+</div>
-              <div className="stat-label">Blockchains Launched</div>
+              <div className="stat-number">5+</div>
+              <div className="stat-label">Blockchains Integrated</div>
             </div>
             
             <div className="stat-item">
@@ -262,7 +267,7 @@ const Index = () => {
       <section className="tnfts-section px-6 md:px-8 lg:px-12 py-16 md:py-32">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8 md:mb-12">
-            <h2 className="tnfts-heading text-left">Explore TNFTs</h2>
+            <h2 className="tnfts-heading text-left">Explore Assets</h2>
           </div>
 
           {/* Auto-scrolling (marquee) cards */}
@@ -299,12 +304,19 @@ const Index = () => {
           <div className="cash-grid">
             {/* Left copy */}
             <div className="cash-left">
-              <h2 className="cash-heading">Institutional-Grade RWA Asset Management</h2>
+              <h2 className="cash-heading">Institutional-Grade Commodity Tokenization</h2>
               <p className="cash-description">
-                Ensuring Transparency, Security, and Accountability in Every Transaction.
+                Trust, compliance, and transparency at the core of every transaction.
               </p>
               <div className="mt-6">
-                <button className="cash-cta">Explore Marketplace</button>
+                <a
+                  href="https://app-tiamonds.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cash-cta"
+                >
+                  Explore Marketplace
+                </a>
               </div>
             </div>
 
@@ -332,16 +344,16 @@ const Index = () => {
           <div className="mission-grid">
             <div className="mission-content">
               <div className="mission-header">
-                <p className="mission-label">Why Tiamonds</p>
+                <p className="mission-label">Why TOTO Invest</p>
               </div>
               
               <div className="mission-text">
                 <h2 className="mission-heading">
-                  Secure Your Future with Tokenized Investment
+                  Redefining How Commodities Trade
                 </h2>
                 
                 <p className="mission-description">
-                  Own, trade, and redeem assets, backed by real-world assets in secure custody. Seamless access and liquidity with full redemption rights, anytime
+                A new era in global trade with T+0 settlement, 24/7 asset-backed token trading, and fractional tokens for broader market access. Efficiency, liquidity, and inclusivity redefined.
                 </p>
                 
                 <button className="mission-cta">
@@ -524,12 +536,39 @@ const Index = () => {
               
               <div className="platform-text">
                 <h2 className="platform-heading">
-                  Utility that lowers your costs and raises your limits.
+                  Powering the Open Commodity Economy
                 </h2>
                 
                 <p className="platform-description">
-                  Stake TOTO to reduce fees, unlock higher redemption limits, and gain priority access to scarce assets.
+                  Utility that reduces costs, increases access, and fuels adoption.
                 </p>
+                
+                <div className="platform-badges">
+                  <span
+                    className="platform-badge"
+                    data-tip="Stake TOTO to reduce trading and settlement fees."
+                  >
+                    Lower Fees
+                  </span>
+                  <span
+                    className="platform-badge"
+                    data-tip="Unlock enhanced redemption and settlement thresholds."
+                  >
+                    Higher Limits
+                  </span>
+                  <span
+                    className="platform-badge"
+                    data-tip="Gain early access to scarce or high-demand commodity listings."
+                  >
+                    Priority Access
+                  </span>
+                  <span
+                    className="platform-badge"
+                    data-tip="Participate in loyalty and incentive programs across the TOTO Invest platform."
+                  >
+                    Rewards
+                  </span>
+                </div>
                 
                 <button className="platform-cta">
                   Learn more
