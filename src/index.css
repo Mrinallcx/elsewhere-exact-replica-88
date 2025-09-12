@@ -488,10 +488,6 @@
     line-height: 1.1;
   }
 
-  .experience-description {
-    @apply text-base md:text-lg leading-relaxed;
-    color: hsl(var(--travel-black) / 0.7);
-  }
 
   .experience-cta {
     background: hsl(var(--travel-black));
@@ -505,6 +501,99 @@
     background: hsl(var(--travel-black) / 0.9);
     transform: translateY(-1px);
     box-shadow: 0 8px 20px hsl(var(--travel-black) / 0.2);
+  }
+
+  .experience-description-container {
+    @apply relative mb-6;
+    min-height: 3.5rem; /* Prevent layout shift during transitions */
+  }
+
+  .experience-description {
+    @apply text-base md:text-lg leading-relaxed transition-all duration-500 ease-in-out;
+    color: hsl(var(--travel-black) / 0.7);
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .experience-description.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .experience-description.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .experience-description strong {
+    font-weight: 600;
+  }
+
+  .experience-navigation {
+    @apply flex items-center justify-center mt-4 w-full;
+  }
+
+  .experience-dots {
+    @apply flex items-center justify-center gap-2 w-full;
+  }
+
+  .experience-dot {
+    @apply w-2 h-2 rounded-full border border-gray-300 bg-white transition-all duration-200;
+  }
+
+  .experience-dot.active {
+    @apply bg-gray-800 border-gray-800;
+  }
+
+  .experience-dot:hover {
+    @apply border-gray-400 scale-110;
+  }
+
+  /* Platform Section (TOTO Token) */
+  .platform-description-container {
+    @apply relative mb-6;
+    min-height: 3.5rem; /* Prevent layout shift during transitions */
+  }
+
+  .platform-description {
+    @apply text-base md:text-lg leading-relaxed transition-all duration-500 ease-in-out;
+    color: hsl(var(--travel-black) / 0.7);
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .platform-description.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .platform-description.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .platform-description strong {
+    font-weight: 600;
+  }
+
+  .platform-navigation {
+    @apply flex items-center justify-center mt-4 w-full;
+  }
+
+  .platform-dots {
+    @apply flex items-center justify-center gap-2 w-full;
+  }
+
+  .platform-dot {
+    @apply w-2 h-2 rounded-full border border-gray-300 bg-white transition-all duration-200;
+  }
+
+  .platform-dot.active {
+    @apply bg-gray-800 border-gray-800;
+  }
+
+  .platform-dot:hover {
+    @apply border-gray-400 scale-110;
   }
 
   /* Categories Section */

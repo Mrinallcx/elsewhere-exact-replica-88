@@ -59,6 +59,10 @@ const Index = () => {
   const scrollAnimRef = useRef<HTMLDivElement | null>(null);
   const [pastHero, setPastHero] = useState(false);
   const [resourcesTab, setResourcesTab] = useState<'news' | 'updates'>('news');
+  const [currentDescription, setCurrentDescription] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [currentTokenDescription, setCurrentTokenDescription] = useState(0);
+  const [isTokenTransitioning, setIsTokenTransitioning] = useState(false);
   const partnerLogos = [
     'Cardano.svg',
     'Coingecko.svg',
@@ -73,6 +77,23 @@ const Index = () => {
     'Xrp.svg',
   ];
   const tnftCards = Array.from({ length: 16 });
+
+  // How it works descriptions
+  const howItWorksDescriptions = [
+    "The complete lifecycle of a commodity, on-chain.",
+    "Tokenize with TOTO Rails: Commodity lots stored in vaults, warehouses, or tanks are minted into 1:1 backed digital tokens with full compliance and proof-of-reserve.",
+    "Trade with TOTO Markets: Instant secondary trading, peer-to-peer or via integrated exchanges and brokers, with programmable contracts for forwards, futures, and collateralization.",
+    "Settle & Deliver with TOTO Clear: Atomic delivery-vs-payment in stablecoins. Choose to hold, redeem, or re-trade your tokens — with logistics and compliance automated by oracles."
+  ];
+
+  // TOTO Token descriptions
+  const totoTokenDescriptions = [
+    "Utility that reduces costs, increases access, and fuels adoption.",
+    "Lower Fees: Stake TOTO to reduce trading and settlement fees across the platform.",
+    "Higher Limits: Unlock enhanced redemption and settlement thresholds with TOTO holdings.",
+    "Priority Access: Gain early access to scarce or high-demand commodity listings.",
+    "Rewards: Participate in loyalty and incentive programs across the TOTO Invest platform."
+  ];
 
   useEffect(() => {
     const target = heroRef.current;
@@ -130,6 +151,77 @@ const Index = () => {
       }
     };
   }, []);
+
+  // Auto-rotate descriptions every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentDescription((prev) => (prev + 1) % howItWorksDescriptions.length);
+        setIsTransitioning(false);
+      }, 250);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [howItWorksDescriptions.length]);
+
+  // Auto-rotate TOTO Token descriptions every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTokenTransitioning(true);
+      setTimeout(() => {
+        setCurrentTokenDescription((prev) => (prev + 1) % totoTokenDescriptions.length);
+        setIsTokenTransitioning(false);
+      }, 250);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [totoTokenDescriptions.length]);
+
+  const handleDescriptionChange = (index: number) => {
+    if (index === currentDescription) return;
+    
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentDescription(index);
+      setIsTransitioning(false);
+    }, 250);
+  };
+
+  const formatDescription = (text: string) => {
+    const boldTerms = ['Tokenize with TOTO Rails', 'Trade with TOTO Markets', 'Settle & Deliver with TOTO Clear'];
+    
+    let formattedText = text;
+    boldTerms.forEach(term => {
+      const regex = new RegExp(`(${term})`, 'g');
+      formattedText = formattedText.replace(regex, '<strong>$1</strong>');
+    });
+    
+    return formattedText;
+  };
+
+  const handleTokenDescriptionChange = (index: number) => {
+    if (index === currentTokenDescription) return;
+    
+    setIsTokenTransitioning(true);
+    setTimeout(() => {
+      setCurrentTokenDescription(index);
+      setIsTokenTransitioning(false);
+    }, 250);
+  };
+
+  const formatTokenDescription = (text: string) => {
+    const boldTerms = ['Lower Fees', 'Higher Limits', 'Priority Access', 'Rewards'];
+    
+    let formattedText = text;
+    boldTerms.forEach(term => {
+      const regex = new RegExp(`(${term})`, 'g');
+      formattedText = formattedText.replace(regex, '<strong>$1</strong>');
+    });
+    
+    return formattedText;
+  };
+
 
   return <div className="min-h-screen w-full relative">
       {/* Navigation Bar */}
@@ -395,13 +487,29 @@ const Index = () => {
                   We Make Your Perfect Investment Smart
                 </h2>
                 
-                <p className="experience-description">
-                  Seamlessly plan your journey with our advanced platform that tailors every experience to match your personal preferences.
-                </p>
+                <div className="experience-description-container">
+                  <p 
+                    className={`experience-description ${isTransitioning ? 'fade-out' : 'fade-in'}`}
+                    dangerouslySetInnerHTML={{ __html: formatDescription(howItWorksDescriptions[currentDescription]) }}
+                  />
+                </div>
                 
                 <button className="experience-cta">
                   Learn More
                 </button>
+                
+                <div className="experience-navigation">
+                  <div className="experience-dots">
+                    {howItWorksDescriptions.map((_, index) => (
+                      <button
+                        key={index}
+                        className={`experience-dot ${index === currentDescription ? 'active' : ''}`}
+                        onClick={() => handleDescriptionChange(index)}
+                        aria-label={`Go to description ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -539,40 +647,29 @@ const Index = () => {
                   Powering the Open Commodity Economy
                 </h2>
                 
-                <p className="platform-description">
-                  Utility that reduces costs, increases access, and fuels adoption.
-                </p>
-                
-                <div className="platform-badges">
-                  <span
-                    className="platform-badge"
-                    data-tip="Stake TOTO to reduce trading and settlement fees."
-                  >
-                    Lower Fees
-                  </span>
-                  <span
-                    className="platform-badge"
-                    data-tip="Unlock enhanced redemption and settlement thresholds."
-                  >
-                    Higher Limits
-                  </span>
-                  <span
-                    className="platform-badge"
-                    data-tip="Gain early access to scarce or high-demand commodity listings."
-                  >
-                    Priority Access
-                  </span>
-                  <span
-                    className="platform-badge"
-                    data-tip="Participate in loyalty and incentive programs across the TOTO Invest platform."
-                  >
-                    Rewards
-                  </span>
+                <div className="platform-description-container">
+                  <p 
+                    className={`platform-description ${isTokenTransitioning ? 'fade-out' : 'fade-in'}`}
+                    dangerouslySetInnerHTML={{ __html: formatTokenDescription(totoTokenDescriptions[currentTokenDescription]) }}
+                  />
                 </div>
                 
                 <button className="platform-cta">
                   Learn more
                 </button>
+                
+                <div className="platform-navigation">
+                  <div className="platform-dots">
+                    {totoTokenDescriptions.map((_, index) => (
+                      <button
+                        key={index}
+                        className={`platform-dot ${index === currentTokenDescription ? 'active' : ''}`}
+                        onClick={() => handleTokenDescriptionChange(index)}
+                        aria-label={`Go to description ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
             
