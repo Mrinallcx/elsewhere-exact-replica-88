@@ -61,8 +61,15 @@ const Index = () => {
   const [resourcesTab, setResourcesTab] = useState<'news' | 'updates'>('news');
   const [currentDescription, setCurrentDescription] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const [currentTokenDescription, setCurrentTokenDescription] = useState(0);
   const [isTokenTransitioning, setIsTokenTransitioning] = useState(false);
+  const [animatedStats, setAnimatedStats] = useState({
+    assets: 0,
+    revenue: 0,
+    blockchains: 0,
+    users: 0
+  });
   const partnerLogos = [
     'Cardano.svg',
     'Coingecko.svg',
@@ -77,6 +84,19 @@ const Index = () => {
     'Xrp.svg',
   ];
   const tnftCards = Array.from({ length: 16 });
+  const statsRef = useRef<HTMLDivElement | null>(null);
+
+  // TNFT card images - mix of gold, silver, and platinum
+  const tnftImages = [
+    "https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/goldnft.png?alt=media&token=360a9bc9-64de-4c42-8b18-13788830ffe3",
+    "https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/silvernft.png?alt=media&token=f72e746f-91a5-436b-a6f1-2d3308446ce0",
+    "https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/platinumnft.png?alt=media&token=e7fe7e35-478e-4d60-9ae6-11eb13c6b986",
+    "https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/silvernft.png?alt=media&token=f72e746f-91a5-436b-a6f1-2d3308446ce0",
+    "https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/goldnft.png?alt=media&token=360a9bc9-64de-4c42-8b18-13788830ffe3",
+    "https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/platinumnft.png?alt=media&token=e7fe7e35-478e-4d60-9ae6-11eb13c6b986",
+    "https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/goldnft.png?alt=media&token=360a9bc9-64de-4c42-8b18-13788830ffe3",
+    "https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/platinumnft.png?alt=media&token=e7fe7e35-478e-4d60-9ae6-11eb13c6b986"
+  ];
 
   // How it works descriptions
   const howItWorksDescriptions = [
@@ -152,18 +172,20 @@ const Index = () => {
     };
   }, []);
 
-  // Auto-rotate descriptions every 4 seconds
+  // Auto-rotate descriptions every 4.5 seconds with hover pause
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentDescription((prev) => (prev + 1) % howItWorksDescriptions.length);
-        setIsTransitioning(false);
-      }, 250);
-    }, 4000);
+      if (!isHovered) { // Only auto-rotate when not hovered
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setCurrentDescription((prev) => (prev + 1) % howItWorksDescriptions.length);
+          setIsTransitioning(false);
+        }, 250);
+      }
+    }, 4500); // Reduced from 6000ms to 4500ms (4.5 seconds)
 
     return () => clearInterval(interval);
-  }, [howItWorksDescriptions.length]);
+  }, [howItWorksDescriptions.length, isHovered]);
 
   // Auto-rotate TOTO Token descriptions every 4 seconds
   useEffect(() => {
@@ -177,6 +199,62 @@ const Index = () => {
 
     return () => clearInterval(interval);
   }, [totoTokenDescriptions.length]);
+
+  // Animate stats when section comes into view
+  useEffect(() => {
+    const target = statsRef.current;
+    if (!target) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Reset stats to 0 before animating
+          setAnimatedStats({
+            assets: 0,
+            revenue: 0,
+            blockchains: 0,
+            users: 0
+          });
+          
+          // Animate each stat
+          const animateValue = (key: keyof typeof animatedStats, endValue: number, duration: number = 2000) => {
+            const startTime = Date.now();
+            const startValue = 0;
+            
+            const animate = () => {
+              const elapsed = Date.now() - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              
+              // Easing function for smooth animation
+              const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+              const currentValue = startValue + (endValue - startValue) * easeOutQuart;
+              
+              // Use Math.floor for integers, keep decimals for revenue
+              const finalValue = key === 'revenue' ? Math.round(currentValue * 10) / 10 : Math.floor(currentValue);
+              
+              setAnimatedStats(prev => ({ ...prev, [key]: finalValue }));
+              
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              }
+            };
+            
+            requestAnimationFrame(animate);
+          };
+
+          // Start animations with slight delays
+          setTimeout(() => animateValue('assets', 30), 100);
+          setTimeout(() => animateValue('revenue', 1.5, 2500), 200);
+          setTimeout(() => animateValue('blockchains', 5), 300);
+          setTimeout(() => animateValue('users', 50), 400);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, []);
 
   const handleDescriptionChange = (index: number) => {
     if (index === currentDescription) return;
@@ -246,7 +324,7 @@ const Index = () => {
 
       {/* Main Content */}
       <main ref={heroRef} className="relative flex flex-col items-start sm:items-center justify-center min-h-[90vh] md:min-h-screen text-left sm:text-center px-4 sm:px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-24 md:pb-32 overflow-hidden">
-        <video className="hero-video" autoPlay muted loop playsInline src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/test-video.mp4?alt=media&token=37ed1571-934e-475c-a56c-30bb24210165"></video>
+        <video className="hero-video" autoPlay muted loop playsInline src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/final%20bg%202.mp4?alt=media&token=6ee899c8-e239-4ff7-afc6-0077744ecde1"></video>
         <div className="hero-overlay"></div>
         <div className="relative z-10 max-w-5xl w-full mx-0 sm:mx-auto">
           
@@ -323,7 +401,7 @@ const Index = () => {
       </main>
       
       {/* Statistics Section */}
-      <section className="stats-section px-6 md:px-8 lg:px-12 py-20 md:py-40">
+      <section ref={statsRef} className="stats-section px-6 md:px-8 lg:px-12 py-20 md:py-40">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <p className="stats-intro-text">
@@ -333,22 +411,22 @@ const Index = () => {
           
           <div className="stats-grid">
             <div className="stat-item">
-              <div className="stat-number">30K</div>
+              <div className="stat-number">{animatedStats.assets}K</div>
               <div className="stat-label">Assets Listed</div>
             </div>
             
             <div className="stat-item">
-              <div className="stat-number">$1.5M</div>
+              <div className="stat-number">${animatedStats.revenue.toFixed(1)}M</div>
               <div className="stat-label">Revenue Generated</div>
             </div>
             
             <div className="stat-item">
-              <div className="stat-number">5+</div>
+              <div className="stat-number">{animatedStats.blockchains}+</div>
               <div className="stat-label">Blockchains Integrated</div>
             </div>
             
             <div className="stat-item">
-              <div className="stat-number">50K+</div>
+              <div className="stat-number">{animatedStats.users}K+</div>
               <div className="stat-label">Active Users</div>
             </div>
           </div>
@@ -369,7 +447,7 @@ const Index = () => {
                 <div className="tnft-card" key={idx}>
                   <span className="tnft-badge">1M TOTO</span>
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/goldnft.png?alt=media&token=360a9bc9-64de-4c42-8b18-13788830ffe3"
+                    src={tnftImages[idx % tnftImages.length]}
                     alt="TNFT preview"
                     className="tnft-card-img"
                   />
@@ -482,7 +560,11 @@ const Index = () => {
                 <p className="experience-label">How it works</p>
               </div>
               
-              <div className="experience-text">
+              <div 
+                className="experience-text"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
                 <h2 className="experience-heading">
                   We Make Your Perfect Investment Smart
                 </h2>
@@ -610,8 +692,8 @@ const Index = () => {
 
             <div className="category-card category-card-short group">
               <img 
-                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/agri.png?alt=media&token=296fe91e-e533-4862-8acd-468cb207add2" 
-                alt="Investor-focused luxury experience"
+                src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/agriculture.png?alt=media&token=e15ab2c5-e05d-4fb6-ab43-0624f596b314" 
+                alt="Agriculture tokenized crops and warrants"
                 className="category-card-bg"
               />
               <div className="category-overlay"></div>
@@ -1096,7 +1178,7 @@ const Index = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="newsletter-section py-20 md:py-40">
+      <section className="newsletter-section pt-20 pb-0 md:pt-40 md:pb-0">
         <div className="newsletter-bg">
           <video
             className="newsletter-video"
@@ -1104,7 +1186,7 @@ const Index = () => {
             muted
             loop
             playsInline
-            src="https://framerusercontent.com/assets/sSwM1re36kMMZd5gcHruIAdEHRI.mp4"
+            src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/footer.mov?alt=media&token=c7ab0347-66e1-44d8-9d56-9cfacea4da52"
           ></video>
           <div className="newsletter-overlay"></div>
           <div className="relative z-10 max-w-4xl mx-auto text-center px-6 md:px-8 lg:px-12">
@@ -1148,7 +1230,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="footer-section px-6 md:px-8 lg:px-12 py-24 md:py-40">
+      <footer className="footer-section px-6 md:px-8 lg:px-12 pt-16 pb-24 md:pt-20 md:pb-40">
         <div className="max-w-7xl mx-auto">
           <div className="footer-grid">
             <div className="footer-column">

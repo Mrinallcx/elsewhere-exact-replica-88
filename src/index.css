@@ -173,7 +173,7 @@
   
   .hero-overlay {
     @apply absolute inset-0;
-    background: hsl(var(--travel-black) / 0.7);
+    background: hsl(var(--travel-black) / 0.5);
     z-index: 1;
     pointer-events: none;
   }
