@@ -324,6 +324,11 @@ const Index = () => {
 
       {/* Main Content */}
       <main ref={heroRef} className="relative flex flex-col items-start sm:items-center justify-center min-h-[90vh] md:min-h-screen text-left sm:text-center px-4 sm:px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-24 md:pb-32 overflow-hidden">
+        <img 
+          className="hero-fallback" 
+          src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/fallbackbg.webp?alt=media&token=8fedb67c-4f9d-483a-8198-1f00cf5c4580" 
+          alt="Hero background fallback"
+        />
         <video className="hero-video" autoPlay muted loop playsInline src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/final%20bg%202.mp4?alt=media&token=6ee899c8-e239-4ff7-afc6-0077744ecde1"></video>
         <div className="hero-overlay"></div>
         <div className="relative z-10 max-w-5xl w-full mx-0 sm:mx-auto">

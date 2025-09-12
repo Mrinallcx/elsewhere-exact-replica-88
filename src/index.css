@@ -166,15 +166,20 @@
   }
   
   /* Hero video background */
-  .hero-video {
+  .hero-fallback {
     @apply absolute inset-0 w-full h-full object-cover;
     z-index: 0;
+  }
+  
+  .hero-video {
+    @apply absolute inset-0 w-full h-full object-cover;
+    z-index: 1;
   }
   
   .hero-overlay {
     @apply absolute inset-0;
     background: hsl(var(--travel-black) / 0.5);
-    z-index: 1;
+    z-index: 2;
     pointer-events: none;
   }
   
