@@ -1295,7 +1295,7 @@ const Index = () => {
       <section className="brand-section px-6 md:px-8 lg:px-12 py-20 md:py-36">
         <div className="max-w-7xl mx-auto">
           <div className="brand-content">
-            <h1 className="brand-text">Tiamonds Finance</h1>
+            <h1 className="brand-text">TOTO Finance</h1>
           </div>
           
           <div className="brand-footer">
