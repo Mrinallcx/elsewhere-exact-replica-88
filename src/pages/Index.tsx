@@ -72,7 +72,18 @@ const Index = () => {
   });
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isExploreDropdownOpen, setIsExploreDropdownOpen] = useState(false);
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [languageTimeout, setLanguageTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [currentLanguage, setCurrentLanguage] = useState('en');
+  
+  // Language options
+  const languages = [
+    { code: 'en', name: 'English', shortName: 'EN', flag: '🇺🇸' },
+    { code: 'fr', name: 'Français', shortName: 'FR', flag: '🇫🇷' },
+    { code: 'de', name: 'Deutsch', shortName: 'DE', flag: '🇩🇪' },
+  ];
+  
   const partnerLogos = [
     'Cardano.svg',
     'Coingecko.svg',
@@ -319,14 +330,53 @@ const Index = () => {
     setDropdownTimeout(timeout);
   };
 
-  // Cleanup timeout on unmount
+  // Language dropdown handlers
+  const handleLanguageMouseEnter = () => {
+    if (languageTimeout) {
+      clearTimeout(languageTimeout);
+      setLanguageTimeout(null);
+    }
+    setIsLanguageDropdownOpen(true);
+  };
+
+  const handleLanguageMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsLanguageDropdownOpen(false);
+    }, 500); // 500ms delay before closing
+    setLanguageTimeout(timeout);
+  };
+
+  const handleLanguageSelect = (langCode: string) => {
+    setCurrentLanguage(langCode);
+    setIsLanguageDropdownOpen(false);
+    // Here you would implement actual language switching logic
+  };
+
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
+  // Cleanup timeouts on unmount
   useEffect(() => {
     return () => {
       if (dropdownTimeout) {
         clearTimeout(dropdownTimeout);
       }
+      if (languageTimeout) {
+        clearTimeout(languageTimeout);
+      }
     };
-  }, [dropdownTimeout]);
+  }, [dropdownTimeout, languageTimeout]);
 
 
   return <div className="min-h-screen w-full relative">
@@ -426,6 +476,54 @@ const Index = () => {
             >
               Launch App
             </a>
+            
+            {/* Language Switcher */}
+            <div className="relative group">
+              <button 
+                className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300 flex items-center space-x-1`}
+                onMouseEnter={handleLanguageMouseEnter}
+                onMouseLeave={handleLanguageMouseLeave}
+              >
+                <span className="text-lg">
+                  {languages.find(lang => lang.code === currentLanguage)?.flag}
+                </span>
+                <span>{languages.find(lang => lang.code === currentLanguage)?.shortName}</span>
+                <svg className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {/* Language Dropdown Menu */}
+              <div 
+                className={`absolute top-full right-0 mt-8 w-64 bg-slate-50/95 backdrop-blur-md rounded-xl shadow-lg border border-slate-200/50 transition-all duration-300 ${isLanguageDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
+                onMouseEnter={handleLanguageMouseEnter}
+                onMouseLeave={handleLanguageMouseLeave}
+              >
+                <div className="py-2">
+                  {languages.map((language) => (
+                    <a
+                      key={language.code}
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleLanguageSelect(language.code);
+                      }}
+                      className="dropdown-item group block px-4 py-3 text-slate-700 hover:bg-slate-100/80 transition-all duration-300 hover:translate-x-2 hover:shadow-md"
+                    >
+                      <span className="flex items-center justify-between">
+                        <span className="flex items-center space-x-3">
+                          <span className="text-lg">{language.flag}</span>
+                          <span>{language.name}</span>
+                        </span>
+                        <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
           
           {/* Mobile Menu Button */}
@@ -443,85 +541,117 @@ const Index = () => {
         </div>
         
         {/* Mobile Menu */}
-        <div className={`lg:hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-          <div className="bg-white/95 backdrop-blur-md border-t border-white/20 px-4 py-4">
-            <div className="space-y-4">
-              <a 
-                href="#gold" 
-                className="block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Gold
-              </a>
-              <a 
-                href="#silver" 
-                className="block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Silver
-              </a>
-              <a 
-                href="#platinum" 
-                className="block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Platinum
-              </a>
-              
-              {/* Mobile Explore Section */}
-              <div className="border-t border-gray-200 pt-4">
-                <div className="text-sm font-medium text-gray-600 mb-2">Explore</div>
-                <div className="space-y-2 ml-4">
-                  <a 
-                    href="#marketplace" 
-                    className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Marketplace
-                  </a>
-                  <a 
-                    href="#portfolio" 
-                    className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Portfolio
-                  </a>
-                  <a 
-                    href="#analytics" 
-                    className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Analytics
-                  </a>
-                  <a 
-                    href="#learn" 
-                    className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Learn
-                  </a>
-                  <a 
-                    href="#community" 
-                    className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Community
-                  </a>
-                </div>
-              </div>
-              
-              {/* Mobile CTA */}
-              <div className="pt-4 border-t border-gray-200">
-                <a
-                  href="https://app-tiamonds.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-nav-btn w-full text-center block px-6 py-3 rounded-full text-sm font-medium tracking-wide uppercase hover:scale-105 transition-all duration-300"
+        <div className={`lg:hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+          <div className="bg-white/95 backdrop-blur-md border-t border-white/20 flex flex-col h-[80vh]">
+            {/* Scrollable Content */}
+            <div className="flex-1 overflow-y-auto px-4 py-4 mobile-menu-container">
+              <div className="space-y-4">
+                <a 
+                  href="#gold" 
+                  className="block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Launch App
+                  Gold
                 </a>
+                <a 
+                  href="#silver" 
+                  className="block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Silver
+                </a>
+                <a 
+                  href="#platinum" 
+                  className="block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Platinum
+                </a>
+                
+                {/* Mobile Explore Section */}
+                <div className="border-t border-gray-200 pt-4">
+                  <div className="text-sm font-medium text-gray-600 mb-2">Explore</div>
+                  <div className="space-y-2 ml-4">
+                    <a 
+                      href="#marketplace" 
+                      className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Marketplace
+                    </a>
+                    <a 
+                      href="#portfolio" 
+                      className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Portfolio
+                    </a>
+                    <a 
+                      href="#analytics" 
+                      className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Analytics
+                    </a>
+                    <a 
+                      href="#learn" 
+                      className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Learn
+                    </a>
+                    <a 
+                      href="#community" 
+                      className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Community
+                    </a>
+                  </div>
+                </div>
+                
+                {/* Mobile Language Switcher */}
+                <div className="pt-4 border-t border-gray-200">
+                  <div className="text-sm font-medium text-gray-600 mb-3">Language</div>
+                  <div className="space-y-1">
+                    {languages.map((language) => (
+                      <a
+                        key={language.code}
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleLanguageSelect(language.code);
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className="dropdown-item group block px-4 py-3 text-slate-700 hover:bg-slate-100/80 transition-all duration-300 hover:translate-x-2 hover:shadow-md"
+                      >
+                        <span className="flex items-center justify-between">
+                          <span className="flex items-center space-x-3">
+                            <span className="text-lg">{language.flag}</span>
+                            <span>{language.name}</span>
+                          </span>
+                          <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
+            </div>
+            
+            {/* Fixed CTA at Bottom */}
+            <div className="flex-shrink-0 border-t border-gray-200 px-4 py-4 bg-white/95">
+              <a
+                href="https://app-tiamonds.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-nav-btn w-full text-center block px-6 py-3 rounded-full text-sm font-medium tracking-wide uppercase hover:scale-105 transition-all duration-300"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Launch App
+              </a>
             </div>
           </div>
         </div>

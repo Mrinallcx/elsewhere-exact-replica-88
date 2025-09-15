@@ -280,6 +280,17 @@
     margin: 0 8px;
   }
 
+  /* Language Switcher Styles */
+  .language-item {
+    position: relative;
+    border-radius: 8px;
+    margin: 0 8px;
+  }
+
+  .language-item:hover {
+    background: linear-gradient(135deg, rgba(148, 163, 184, 0.1), rgba(148, 163, 184, 0.05));
+  }
+
   /* Mobile Menu Button Animation */
   .mobile-menu-btn {
     @apply relative w-6 h-6;
@@ -339,6 +350,30 @@
 
   .nav-link:hover::after {
     width: 100%;
+  }
+
+  /* Mobile Menu Scroll Fix */
+  .mobile-menu-container {
+    max-height: 80vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-menu-container::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .mobile-menu-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .mobile-menu-container::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.3);
+    border-radius: 2px;
+  }
+
+  .mobile-menu-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.5);
   }
 
   /* Scroll Animation Responsive Positioning */
