@@ -205,6 +205,164 @@
   .glass-nav-btn--light:hover {
     background: hsl(var(--glass-white-90));
   }
+
+  /* Navigation Links */
+  .nav-link {
+    @apply text-sm font-medium tracking-wide transition-all duration-300;
+  }
+  
+  .nav-link:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Mobile Menu Animations */
+  .mobile-menu-enter {
+    max-height: 0;
+    opacity: 0;
+  }
+  
+  .mobile-menu-enter-active {
+    max-height: 24rem;
+    opacity: 1;
+    transition: max-height 300ms ease-in-out, opacity 300ms ease-in-out;
+  }
+  
+  .mobile-menu-exit {
+    max-height: 24rem;
+    opacity: 1;
+  }
+  
+  .mobile-menu-exit-active {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 300ms ease-in-out, opacity 300ms ease-in-out;
+  }
+
+  /* Dropdown Menu */
+  .dropdown-menu {
+    @apply absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-xl shadow-lg border border-white/20;
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .dropdown-menu.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Enhanced Dropdown Item Animations */
+  .dropdown-item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dropdown-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .dropdown-item:hover::before {
+    left: 100%;
+  }
+
+  .dropdown-item:hover {
+    background: linear-gradient(135deg, rgba(148, 163, 184, 0.1), rgba(148, 163, 184, 0.05));
+    border-radius: 8px;
+    margin: 0 8px;
+  }
+
+  /* Mobile Menu Button Animation */
+  .mobile-menu-btn {
+    @apply relative w-6 h-6;
+  }
+  
+  .mobile-menu-btn span {
+    @apply absolute left-0 w-full h-0.5 bg-current transition-all duration-300;
+  }
+  
+  .mobile-menu-btn span:nth-child(1) {
+    top: 4px;
+  }
+  
+  .mobile-menu-btn span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .mobile-menu-btn span:nth-child(3) {
+    bottom: 4px;
+  }
+  
+  .mobile-menu-btn.open span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  
+  .mobile-menu-btn.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-menu-btn.open span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Navigation Link Hover Effects */
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: hsl(var(--travel-accent));
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Scroll Animation Responsive Positioning */
+  .scroll-indicator {
+    bottom: -200px;
+  }
+  
+  @media (max-width: 640px) {
+    .scroll-indicator {
+      bottom: -90px;
+    }
+  }
+  
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .scroll-indicator {
+      bottom: -300px;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .scroll-indicator {
+      bottom: -200px;
+    }
+  }
   
   /* Typography Classes */
   .hero-heading {

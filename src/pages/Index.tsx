@@ -70,6 +70,9 @@ const Index = () => {
     blockchains: 0,
     users: 0
   });
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isExploreDropdownOpen, setIsExploreDropdownOpen] = useState(false);
+  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
   const partnerLogos = [
     'Cardano.svg',
     'Coingecko.svg',
@@ -300,25 +303,227 @@ const Index = () => {
     return formattedText;
   };
 
+  // Dropdown hover handlers with delay to prevent flickering
+  const handleDropdownMouseEnter = () => {
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout);
+      setDropdownTimeout(null);
+    }
+    setIsExploreDropdownOpen(true);
+  };
+
+  const handleDropdownMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsExploreDropdownOpen(false);
+    }, 900); // 400ms delay before closing
+    setDropdownTimeout(timeout);
+  };
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (dropdownTimeout) {
+        clearTimeout(dropdownTimeout);
+      }
+    };
+  }, [dropdownTimeout]);
+
 
   return <div className="min-h-screen w-full relative">
       {/* Navigation Bar */}
       <nav className="glass-navbar fixed top-0 left-0 right-0 z-50">
-        <div className="flex justify-between items-center px-6 md:px-12 lg:px-20 py-2 md:py-1">
+        <div className="flex justify-between items-center px-4 sm:px-6 md:px-12 lg:px-20 py-2 md:py-1">
           {/* Brand */}
           <div className="brand-logo">
-            <img src="/tiamonds.svg" alt="Tiamonds" className={`h-10 md:h-12 lg:h-14 ${pastHero ? '' : 'logo-light'}`} />
+            <img src="/tiamonds.svg" alt="Tiamonds" className={`h-12 sm:h-12 md:h-14 lg:h-16 ${pastHero ? '' : 'logo-light'}`} />
           </div>
           
-          {/* Right Side CTA */}
-          <a
-            href="https://app-tiamonds.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`glass-nav-btn ${pastHero ? '' : 'glass-nav-btn--light'} px-6 py-2.5 rounded-full text-sm font-medium tracking-wide uppercase hover:scale-105 transition-all duration-300`}
+          {/* Right Side - Navigation + CTA */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {/* Desktop Navigation */}
+            <div className="flex items-center space-x-8">
+              <a href="#gold" className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300`}>
+                Gold
+              </a>
+              <a href="#silver" className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300`}>
+                Silver
+              </a>
+              <a href="#platinum" className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300`}>
+                Platinum
+              </a>
+              
+              {/* Explore Dropdown */}
+              <div className="relative group">
+                <button 
+                  className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300 flex items-center space-x-1`}
+                  onMouseEnter={handleDropdownMouseEnter}
+                  onMouseLeave={handleDropdownMouseLeave}
+                >
+                  <span>Explore</span>
+                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {/* Dropdown Menu */}
+                <div 
+                  className={`absolute top-full right-0 mt-8 w-64 bg-slate-50/95 backdrop-blur-md rounded-xl shadow-lg border border-slate-200/50 transition-all duration-300 ${isExploreDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
+                  onMouseEnter={handleDropdownMouseEnter}
+                  onMouseLeave={handleDropdownMouseLeave}
+                >
+                  <div className="py-2">
+                    <a href="#marketplace" className="dropdown-item group block px-4 py-3 text-slate-700 hover:bg-slate-100/80 transition-all duration-300 hover:translate-x-2 hover:shadow-md">
+                      <span className="flex items-center justify-between">
+                        <span>Marketplace</span>
+                        <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </a>
+                    <a href="#portfolio" className="dropdown-item group block px-4 py-3 text-slate-700 hover:bg-slate-100/80 transition-all duration-300 hover:translate-x-2 hover:shadow-md">
+                      <span className="flex items-center justify-between">
+                        <span>Portfolio</span>
+                        <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </a>
+                    <a href="#analytics" className="dropdown-item group block px-4 py-3 text-slate-700 hover:bg-slate-100/80 transition-all duration-300 hover:translate-x-2 hover:shadow-md">
+                      <span className="flex items-center justify-between">
+                        <span>Analytics</span>
+                        <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </a>
+                    <a href="#learn" className="dropdown-item group block px-4 py-3 text-slate-700 hover:bg-slate-100/80 transition-all duration-300 hover:translate-x-2 hover:shadow-md">
+                      <span className="flex items-center justify-between">
+                        <span>Learn</span>
+                        <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </a>
+                    <a href="#community" className="dropdown-item group block px-4 py-3 text-slate-700 hover:bg-slate-100/80 transition-all duration-300 hover:translate-x-2 hover:shadow-md">
+                      <span className="flex items-center justify-between">
+                        <span>Community</span>
+                        <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Desktop CTA */}
+            <a
+              href="https://app-tiamonds.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`glass-nav-btn ${pastHero ? '' : 'glass-nav-btn--light'} px-6 py-2.5 rounded-full text-sm font-medium tracking-wide uppercase hover:scale-105 transition-all duration-300`}
+            >
+              Launch App
+            </a>
+          </div>
+          
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
           >
-            Launch App
-          </a>
+            <div className={`w-6 h-6 flex flex-col justify-center space-y-1 transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45' : ''}`}>
+              <span className={`block h-0.5 bg-current transition-all duration-300 ${pastHero ? 'bg-travel-black' : 'bg-travel-white'} ${isMobileMenuOpen ? 'rotate-90 translate-y-1.5' : ''}`}></span>
+              <span className={`block h-0.5 bg-current transition-all duration-300 ${pastHero ? 'bg-travel-black' : 'bg-travel-white'} ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`block h-0.5 bg-current transition-all duration-300 ${pastHero ? 'bg-travel-black' : 'bg-travel-white'} ${isMobileMenuOpen ? '-rotate-90 -translate-y-1.5' : ''}`}></span>
+            </div>
+          </button>
+        </div>
+        
+        {/* Mobile Menu */}
+        <div className={`lg:hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+          <div className="bg-white/95 backdrop-blur-md border-t border-white/20 px-4 py-4">
+            <div className="space-y-4">
+              <a 
+                href="#gold" 
+                className="block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Gold
+              </a>
+              <a 
+                href="#silver" 
+                className="block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Silver
+              </a>
+              <a 
+                href="#platinum" 
+                className="block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Platinum
+              </a>
+              
+              {/* Mobile Explore Section */}
+              <div className="border-t border-gray-200 pt-4">
+                <div className="text-sm font-medium text-gray-600 mb-2">Explore</div>
+                <div className="space-y-2 ml-4">
+                  <a 
+                    href="#marketplace" 
+                    className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Marketplace
+                  </a>
+                  <a 
+                    href="#portfolio" 
+                    className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Portfolio
+                  </a>
+                  <a 
+                    href="#analytics" 
+                    className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Analytics
+                  </a>
+                  <a 
+                    href="#learn" 
+                    className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Learn
+                  </a>
+                  <a 
+                    href="#community" 
+                    className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Community
+                  </a>
+                </div>
+              </div>
+              
+              {/* Mobile CTA */}
+              <div className="pt-4 border-t border-gray-200">
+                <a
+                  href="https://app-tiamonds.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-nav-btn w-full text-center block px-6 py-3 rounded-full text-sm font-medium tracking-wide uppercase hover:scale-105 transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Launch App
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </nav>
 
@@ -365,15 +570,8 @@ const Index = () => {
           <div
             ref={scrollAnimRef}
             aria-hidden="true"
-            className="pointer-events-none"
+            className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-14 h-14 opacity-90 scroll-indicator"
             style={{
-              position: 'absolute',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              bottom: '-200px',
-              width: '56px',
-              height: '56px',
-              opacity: 0.9,
               filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.25))',
             }}
           />
@@ -614,7 +812,7 @@ const Index = () => {
           
           {/* Top row: 4 smaller cards */}
           <div className="categories-grid-4">
-            <div className="category-card category-card-sm group">
+            <div id="gold" className="category-card category-card-sm group">
               <img 
                 src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/gold.png?alt=media&token=2df54300-9089-416b-8f50-4cd359b415c0" 
                 alt="Adventure explorer in mountain landscape"
@@ -627,7 +825,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="category-card category-card-sm group">
+            <div id="silver" className="category-card category-card-sm group">
               <img 
                 src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/Silver.png?alt=media&token=05a8833b-11de-49cf-9bd9-bb9a66262237" 
                 alt="Luxury traveler in premium resort setting"
@@ -640,7 +838,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="category-card category-card-sm group">
+            <div id="platinum" className="category-card category-card-sm group">
               <img 
                 src="https://firebasestorage.googleapis.com/v0/b/tiamonds.firebasestorage.app/o/Platninum.png?alt=media&token=76c2d4b3-bec6-4e0d-9873-9f65e99e07b8" 
                 alt="VIP traveler with personal concierge service"
