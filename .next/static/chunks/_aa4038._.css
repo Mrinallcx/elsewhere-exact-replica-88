@@ -836,7 +836,7 @@ html {
 }
 
 .nav-link:hover {
-  color: hsl(var(--travel-white));
+  color: hsl(var(--travel-black));
 }
 
 .cta-primary {
@@ -3144,6 +3144,10 @@ html {
   height: 1px;
 }
 
+.h-\[80vh\] {
+  height: 80vh;
+}
+
 .h-\[var\(--radix-navigation-menu-viewport-height\)\] {
   height: var(--radix-navigation-menu-viewport-height);
 }
@@ -3166,10 +3170,6 @@ html {
 
 .h-svh {
   height: 100svh;
-}
-
-.h-\[80vh\] {
-  height: 80vh;
 }
 
 .max-h-0 {
@@ -4678,6 +4678,14 @@ html {
 
 .hover\:text-sidebar-accent-foreground:hover {
   color: hsl(var(--sidebar-accent-foreground));
+}
+
+.hover\:text-travel-black:hover {
+  color: hsl(var(--travel-black));
+}
+
+.hover\:text-travel-gold:hover {
+  color: hsl(var(--travel-gold));
 }
 
 .hover\:underline:hover {

@@ -392,20 +392,20 @@ const Index = () => {
           <div className="hidden lg:flex items-center space-x-8">
             {/* Desktop Navigation */}
             <div className="flex items-center space-x-8">
-              <a href="#gold" className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300`}>
+              <a href="#gold" className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300`}>
                 Gold
               </a>
-              <a href="#silver" className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300`}>
+              <a href="#silver" className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300`}>
                 Silver
               </a>
-              <a href="#platinum" className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300`}>
+              <a href="#platinum" className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300`}>
                 Platinum
               </a>
               
               {/* Explore Dropdown */}
               <div className="relative group">
                 <button 
-                  className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300 flex items-center space-x-1`}
+                  className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300 flex items-center space-x-1`}
                   onMouseEnter={handleDropdownMouseEnter}
                   onMouseLeave={handleDropdownMouseLeave}
                 >
@@ -480,7 +480,7 @@ const Index = () => {
             {/* Language Switcher */}
             <div className="relative group">
               <button 
-                className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300 flex items-center space-x-1`}
+                className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300 flex items-center space-x-1`}
                 onMouseEnter={handleLanguageMouseEnter}
                 onMouseLeave={handleLanguageMouseLeave}
               >
@@ -548,21 +548,21 @@ const Index = () => {
               <div className="space-y-4">
                 <a 
                   href="#gold" 
-                  className="block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                  className="block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Gold
                 </a>
                 <a 
                   href="#silver" 
-                  className="block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                  className="block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Silver
                 </a>
                 <a 
                   href="#platinum" 
-                  className="block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                  className="block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Platinum
@@ -574,35 +574,35 @@ const Index = () => {
                   <div className="space-y-2 ml-4">
                     <a 
                       href="#marketplace" 
-                      className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                      className="block py-1 text-travel-black hover:text-travel-gold transition-colors duration-200"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Marketplace
                     </a>
                     <a 
                       href="#portfolio" 
-                      className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                      className="block py-1 text-travel-black hover:text-travel-gold transition-colors duration-200"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Portfolio
                     </a>
                     <a 
                       href="#analytics" 
-                      className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                      className="block py-1 text-travel-black hover:text-travel-gold transition-colors duration-200"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Analytics
                     </a>
                     <a 
                       href="#learn" 
-                      className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                      className="block py-1 text-travel-black hover:text-travel-gold transition-colors duration-200"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Learn
                     </a>
                     <a 
                       href="#community" 
-                      className="block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200"
+                      className="block py-1 text-travel-black hover:text-travel-gold transition-colors duration-200"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Community

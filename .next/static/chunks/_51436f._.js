@@ -1097,7 +1097,7 @@ const Index = ()=>{
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#gold",
-                                                className: `nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300`,
+                                                className: `nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300`,
                                                 children: "Gold"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/pages/Index.tsx",
@@ -1106,7 +1106,7 @@ const Index = ()=>{
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#silver",
-                                                className: `nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300`,
+                                                className: `nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300`,
                                                 children: "Silver"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/pages/Index.tsx",
@@ -1115,7 +1115,7 @@ const Index = ()=>{
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#platinum",
-                                                className: `nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300`,
+                                                className: `nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300`,
                                                 children: "Platinum"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/pages/Index.tsx",
@@ -1126,7 +1126,7 @@ const Index = ()=>{
                                                 className: "relative group",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                        className: `nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300 flex items-center space-x-1`,
+                                                        className: `nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300 flex items-center space-x-1`,
                                                         onMouseEnter: handleDropdownMouseEnter,
                                                         onMouseLeave: handleDropdownMouseLeave,
                                                         children: [
@@ -1428,7 +1428,7 @@ const Index = ()=>{
                                         className: "relative group",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                className: `nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-accent transition-colors duration-300 flex items-center space-x-1`,
+                                                className: `nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300 flex items-center space-x-1`,
                                                 onMouseEnter: handleLanguageMouseEnter,
                                                 onMouseLeave: handleLanguageMouseLeave,
                                                 children: [
@@ -1623,7 +1623,7 @@ const Index = ()=>{
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#gold",
-                                                className: "block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200",
+                                                className: "block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200",
                                                 onClick: ()=>setIsMobileMenuOpen(false),
                                                 children: "Gold"
                                             }, void 0, false, {
@@ -1633,7 +1633,7 @@ const Index = ()=>{
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#silver",
-                                                className: "block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200",
+                                                className: "block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200",
                                                 onClick: ()=>setIsMobileMenuOpen(false),
                                                 children: "Silver"
                                             }, void 0, false, {
@@ -1643,7 +1643,7 @@ const Index = ()=>{
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#platinum",
-                                                className: "block py-2 text-travel-black hover:text-travel-accent transition-colors duration-200",
+                                                className: "block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200",
                                                 onClick: ()=>setIsMobileMenuOpen(false),
                                                 children: "Platinum"
                                             }, void 0, false, {
@@ -1667,7 +1667,7 @@ const Index = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                 href: "#marketplace",
-                                                                className: "block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200",
+                                                                className: "block py-1 text-travel-black hover:text-travel-gold transition-colors duration-200",
                                                                 onClick: ()=>setIsMobileMenuOpen(false),
                                                                 children: "Marketplace"
                                                             }, void 0, false, {
@@ -1677,7 +1677,7 @@ const Index = ()=>{
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                 href: "#portfolio",
-                                                                className: "block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200",
+                                                                className: "block py-1 text-travel-black hover:text-travel-gold transition-colors duration-200",
                                                                 onClick: ()=>setIsMobileMenuOpen(false),
                                                                 children: "Portfolio"
                                                             }, void 0, false, {
@@ -1687,7 +1687,7 @@ const Index = ()=>{
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                 href: "#analytics",
-                                                                className: "block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200",
+                                                                className: "block py-1 text-travel-black hover:text-travel-gold transition-colors duration-200",
                                                                 onClick: ()=>setIsMobileMenuOpen(false),
                                                                 children: "Analytics"
                                                             }, void 0, false, {
@@ -1697,7 +1697,7 @@ const Index = ()=>{
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                 href: "#learn",
-                                                                className: "block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200",
+                                                                className: "block py-1 text-travel-black hover:text-travel-gold transition-colors duration-200",
                                                                 onClick: ()=>setIsMobileMenuOpen(false),
                                                                 children: "Learn"
                                                             }, void 0, false, {
@@ -1707,7 +1707,7 @@ const Index = ()=>{
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                 href: "#community",
-                                                                className: "block py-1 text-travel-black hover:text-travel-accent transition-colors duration-200",
+                                                                className: "block py-1 text-travel-black hover:text-travel-gold transition-colors duration-200",
                                                                 onClick: ()=>setIsMobileMenuOpen(false),
                                                                 children: "Community"
                                                             }, void 0, false, {

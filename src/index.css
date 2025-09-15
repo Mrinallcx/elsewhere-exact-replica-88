@@ -430,7 +430,7 @@
   }
   
   .nav-link:hover {
-    color: hsl(var(--travel-white));
+    color: hsl(var(--travel-black));
   }
   
   /* Primary CTA Button */
