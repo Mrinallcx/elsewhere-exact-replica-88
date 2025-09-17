@@ -1,0 +1,17 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/app/components/SmoothScroll.tsx/proxy.mjs"],"sourcesContent":["import { registerClientReference } from \"react-server-dom-turbopack/server.edge\";\nexport default registerClientReference(\n    function() { throw new Error(\"Attempted to call the default export of [project]/app/components/SmoothScroll.tsx from the server, but it's on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.\"); },\n    \"[project]/app/components/SmoothScroll.tsx\",\n    \"default\",\n);\n"],"names":[],"mappings":";;;;;;uCACe,CAAA,GAAA,+PAAA,CAAA,0BAAuB,AAAD,EACjC;IAAa,MAAM,IAAI,MAAM;AAA+Q,GAC5S,6CACA"}},
+    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 19, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 24, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 29, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/app/layout.tsx"],"sourcesContent":["export const metadata = {\n  title: 'Tiamonds',\n  description: 'Landing',\n};\n\nimport './globals.css';\nimport SmoothScroll from './components/SmoothScroll';\n\nexport default function RootLayout({ children }: { children: React.ReactNode }) {\n  return (\n    <html lang=\"en\">\n      <body>\n        {/* Lenis smooth scroll wrapper */}\n        {/* eslint-disable-next-line react/jsx-no-useless-fragment */}\n        <SmoothScroll>{children}</SmoothScroll>\n      </body>\n    </html>\n  );\n}\n"],"names":[],"mappings":";;;;;;;;AAAO,MAAM,WAAW;IACtB,OAAO;IACP,aAAa;AACf;;;AAKe,SAAS,WAAW,EAAE,QAAQ,EAAiC;IAC5E,qBACE,wPAAC;QAAK,MAAK;kBACT,cAAA,wPAAC;sBAGC,cAAA,wPAAC,kIAAA,CAAA,UAAY;0BAAE;;;;;;;;;;;;;;;;AAIvB"}},
+    {"offset": {"line": 65, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 77, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/app/tokenized-gold/page.tsx/proxy.mjs"],"sourcesContent":["import { registerClientReference } from \"react-server-dom-turbopack/server.edge\";\nexport default registerClientReference(\n    function() { throw new Error(\"Attempted to call the default export of [project]/app/tokenized-gold/page.tsx from the server, but it's on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.\"); },\n    \"[project]/app/tokenized-gold/page.tsx\",\n    \"default\",\n);\n"],"names":[],"mappings":";;;;;;uCACe,CAAA,GAAA,+PAAA,CAAA,0BAAuB,AAAD,EACjC;IAAa,MAAM,IAAI,MAAM;AAA2Q,GACxS,yCACA"}},
+    {"offset": {"line": 86, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 91, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 96, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 108, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/.next-internal/server/app/tokenized-gold/page/actions.js"],"sourcesContent":["__turbopack_export_value__({\n});"],"names":[],"mappings":"AAAA,2BAA2B,CAC3B"}},
+    {"offset": {"line": 109, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

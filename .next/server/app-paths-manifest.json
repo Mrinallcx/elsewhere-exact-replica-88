@@ -1,4 +1,5 @@
 {
   "/page": "app/page.js",
+  "/tokenized-gold/page": "app/tokenized-gold/page.js",
   "/_not-found/page": "app/_not-found/page.js"
 }
