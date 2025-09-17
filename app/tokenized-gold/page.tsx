@@ -4,9 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 const TokenizedGoldPage = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isExploreDropdownOpen, setIsExploreDropdownOpen] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
-  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
   const [languageTimeout, setLanguageTimeout] = useState<NodeJS.Timeout | null>(null);
   const [currentLanguage, setCurrentLanguage] = useState('en');
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,20 +16,6 @@ const TokenizedGoldPage = () => {
     { code: 'de', name: 'German', shortName: 'DE', flag: '🇩🇪' }
   ];
 
-  const handleDropdownMouseEnter = () => {
-    if (dropdownTimeout) {
-      clearTimeout(dropdownTimeout);
-      setDropdownTimeout(null);
-    }
-    setIsExploreDropdownOpen(true);
-  };
-
-  const handleDropdownMouseLeave = () => {
-    const timeout = setTimeout(() => {
-      setIsExploreDropdownOpen(false);
-    }, 900);
-    setDropdownTimeout(timeout);
-  };
 
   const handleLanguageMouseEnter = () => {
     if (languageTimeout) {
@@ -56,10 +40,9 @@ const TokenizedGoldPage = () => {
   // Cleanup timeouts on unmount
   useEffect(() => {
     return () => {
-      if (dropdownTimeout) clearTimeout(dropdownTimeout);
       if (languageTimeout) clearTimeout(languageTimeout);
     };
-  }, [dropdownTimeout, languageTimeout]);
+  }, [languageTimeout]);
 
   // Prevent background scroll when mobile menu is open
   useEffect(() => {
@@ -158,18 +141,15 @@ const TokenizedGoldPage = () => {
           <div className="hidden lg:flex items-center space-x-8">
             {/* Desktop Navigation */}
             <div className="flex items-center space-x-8">
-              <a href="/tokenized-gold" className="nav-link text-travel-black hover:text-travel-black transition-colors duration-300">
-                Gold
-              </a>
-              <a href="#silver" className="nav-link text-travel-black hover:text-travel-black transition-colors duration-300">
-                Silver
-              </a>
-              <a href="#platinum" className="nav-link text-travel-black hover:text-travel-black transition-colors duration-300">
-                Platinum
-              </a>
+                <a href="/war-ready-package" className="nav-link text-travel-black hover:text-travel-black transition-colors duration-300">
+                  War package
+                </a>
+                <a href="/tokenized-gold" className="nav-link text-travel-black hover:text-travel-black transition-colors duration-300">
+                  Tgold
+                </a>
               
-              {/* Explore Dropdown */}
-              <div className="relative group">
+              {/* Explore Dropdown - Commented Out */}
+              {/* <div className="relative group">
                 <button 
                   className="nav-link text-travel-black hover:text-travel-black transition-colors duration-300 flex items-center space-x-1"
                   onMouseEnter={handleDropdownMouseEnter}
@@ -181,7 +161,6 @@ const TokenizedGoldPage = () => {
                   </svg>
                 </button>
                 
-                {/* Dropdown Menu */}
                 <div 
                   className={`absolute top-full right-0 mt-8 w-64 bg-slate-50/95 backdrop-blur-md rounded-xl shadow-lg border border-slate-200/50 transition-all duration-300 ${isExploreDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
                   onMouseEnter={handleDropdownMouseEnter}
@@ -230,7 +209,7 @@ const TokenizedGoldPage = () => {
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             
             {/* Desktop CTA */}
@@ -312,30 +291,23 @@ const TokenizedGoldPage = () => {
             {/* Scrollable Content */}
             <div className="flex-1 overflow-y-auto px-4 py-4 mobile-menu-container">
               <div className="space-y-4">
-                <a 
-                  href="/tokenized-gold" 
-                  className="block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Gold
-                </a>
-                <a 
-                  href="#silver" 
-                  className="block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Silver
-                </a>
-                <a 
-                  href="#platinum" 
-                  className="block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Platinum
-                </a>
+                 <a 
+                   href="/war-ready-package" 
+                   className="block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200"
+                   onClick={() => setIsMobileMenuOpen(false)}
+                 >
+                   War package
+                 </a>
+                 <a 
+                   href="/tokenized-gold" 
+                   className="block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200"
+                   onClick={() => setIsMobileMenuOpen(false)}
+                 >
+                   Tgold
+                 </a>
                 
-                {/* Mobile Explore Section */}
-                <div className="border-t border-gray-200 pt-4">
+                {/* Mobile Explore Section - Commented Out */}
+                {/* <div className="border-t border-gray-200 pt-4">
                   <div className="text-sm font-medium text-gray-600 mb-2">Explore</div>
                   <div className="space-y-2 ml-4">
                     <a 
@@ -374,7 +346,7 @@ const TokenizedGoldPage = () => {
                       Community
                     </a>
                   </div>
-                </div>
+                </div> */}
                 
                 {/* Mobile Language Switcher */}
                 <div className="pt-4 border-t border-gray-200">
@@ -435,16 +407,16 @@ const TokenizedGoldPage = () => {
           </div>
           
           {/* Hero Headings */}
-          <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-2">
-            <span 
-              className="bg-gradient-to-r from-yellow-800 via-yellow-500 to-yellow-800 bg-clip-text text-transparent"
-              style={{
-                animation: 'pulse 6s ease-in-out infinite'
-              }}
-            >
-              Tokenized Gold
-            </span>
-          </h1>
+            <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-2">
+              <span 
+                className="bg-gradient-to-r from-yellow-800 via-yellow-500 to-yellow-800 bg-clip-text text-transparent"
+                style={{
+                  animation: 'pulse 6s ease-in-out infinite'
+                }}
+              >
+                Gold Content
+              </span>
+            </h1>
           
           <h2 className="hero-subheading text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 md:mb-8 lg:mb-10">
             <span 
@@ -1282,7 +1254,7 @@ const TokenizedGoldPage = () => {
           </div>
         </div>
       )}
-    </div>;
+    </div>
 };
 
 export default TokenizedGoldPage;
