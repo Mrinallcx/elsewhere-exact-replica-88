@@ -399,12 +399,6 @@ const TokenizedGoldPage = () => {
       <main ref={heroRef} className="relative flex flex-col items-start sm:items-center justify-center min-h-[60vh] md:min-h-[70vh] text-left sm:text-center px-4 sm:px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-16 md:pb-20 overflow-hidden bg-white">
         <div className="relative z-10 max-w-5xl w-full mx-0 sm:mx-auto">
           
-          {/* War Ready Package Badge */}
-          <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center px-6 py-2 bg-yellow-500/15 text-gray-700 text-sm font-semibold rounded-full">
-              War Ready Package
-            </div>
-          </div>
           
           {/* Hero Headings */}
             <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-2">
