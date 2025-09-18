@@ -392,18 +392,15 @@ const Index = () => {
           <div className="hidden lg:flex items-center space-x-8">
             {/* Desktop Navigation */}
             <div className="flex items-center space-x-8">
+              <a href="/war-ready-package" className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300`}>
+                War package
+              </a>
               <a href="/tokenized-gold" className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300`}>
-                Gold
-              </a>
-              <a href="#silver" className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300`}>
-                Silver
-              </a>
-              <a href="#platinum" className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300`}>
-                Platinum
+                Tgold
               </a>
               
-              {/* Explore Dropdown */}
-              <div className="relative group">
+              {/* Explore Dropdown - Commented Out */}
+              {/* <div className="relative group">
                 <button 
                   className={`nav-link ${pastHero ? 'text-travel-black' : 'text-travel-white'} hover:text-travel-black transition-colors duration-300 flex items-center space-x-1`}
                   onMouseEnter={handleDropdownMouseEnter}
@@ -415,7 +412,6 @@ const Index = () => {
                   </svg>
                 </button>
                 
-                {/* Dropdown Menu */}
                 <div 
                   className={`absolute top-full right-0 mt-8 w-64 bg-slate-50/95 backdrop-blur-md rounded-xl shadow-lg border border-slate-200/50 transition-all duration-300 ${isExploreDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
                   onMouseEnter={handleDropdownMouseEnter}
@@ -464,7 +460,7 @@ const Index = () => {
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             
             {/* Desktop CTA */}
@@ -547,29 +543,22 @@ const Index = () => {
             <div className="flex-1 overflow-y-auto px-4 py-4 mobile-menu-container">
               <div className="space-y-4">
                 <a 
+                  href="/war-ready-package" 
+                  className="block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  War package
+                </a>
+                <a 
                   href="/tokenized-gold" 
                   className="block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Gold
-                </a>
-                <a 
-                  href="#silver" 
-                  className="block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Silver
-                </a>
-                <a 
-                  href="#platinum" 
-                  className="block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Platinum
+                  Tgold
                 </a>
                 
-                {/* Mobile Explore Section */}
-                <div className="border-t border-gray-200 pt-4">
+                {/* Mobile Explore Section - Commented Out */}
+                {/* <div className="border-t border-gray-200 pt-4">
                   <div className="text-sm font-medium text-gray-600 mb-2">Explore</div>
                   <div className="space-y-2 ml-4">
                     <a 
@@ -608,7 +597,7 @@ const Index = () => {
                       Community
                     </a>
                   </div>
-                </div>
+                </div> */}
                 
                 {/* Mobile Language Switcher */}
                 <div className="pt-4 border-t border-gray-200">
