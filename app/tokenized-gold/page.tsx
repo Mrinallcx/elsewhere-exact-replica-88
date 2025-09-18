@@ -141,8 +141,11 @@ const TokenizedGoldPage = () => {
           <div className="hidden lg:flex items-center space-x-8">
             {/* Desktop Navigation */}
             <div className="flex items-center space-x-8">
-                <a href="/war-ready-package" className="nav-link text-travel-black hover:text-travel-black transition-colors duration-300">
-                  War package
+                <a href="/war-ready-package" className="nav-link text-travel-black hover:text-travel-black transition-colors duration-300 flex items-center space-x-2">
+                  <span>War package</span>
+                  <span className="inline-flex items-center px-2 py-0.1 text-[8px] font-medium bg-purple-500 text-white rounded-full animate-pulse shadow-lg shadow-purple-500/20">
+                    NEW
+                  </span>
                 </a>
                 <a href="/tokenized-gold" className="nav-link text-travel-black hover:text-travel-black transition-colors duration-300">
                   Tgold
@@ -293,10 +296,13 @@ const TokenizedGoldPage = () => {
               <div className="space-y-4">
                  <a 
                    href="/war-ready-package" 
-                   className="block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200"
+                   className="block py-2 text-travel-black hover:text-travel-gold transition-colors duration-200 flex items-center space-x-2"
                    onClick={() => setIsMobileMenuOpen(false)}
                  >
-                   War package
+                   <span>War package</span>
+                   <span className="inline-flex items-center px-2 py-0.5 text-xs font-medium bg-blue-500 text-white rounded-full animate-pulse shadow-lg shadow-blue-500/50">
+                     NEW
+                   </span>
                  </a>
                  <a 
                    href="/tokenized-gold" 
