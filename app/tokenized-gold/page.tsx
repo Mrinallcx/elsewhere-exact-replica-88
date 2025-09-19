@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import GradualBlur from '../../src/components/GradualBlur';
+import RippleGrid from '../../src/components/RippleGrid';
 
 const TokenizedGoldPage = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -127,6 +129,15 @@ const TokenizedGoldPage = () => {
   }, []);
 
   return <div className="min-h-screen w-full relative">
+      {/* Gradual Blur Effect */}
+      <GradualBlur 
+        preset="page-footer" 
+        strength={2} 
+        height="4rem"
+        animated="scroll"
+        duration="0.5s"
+      />
+      
       {/* Navigation Bar */}
       <nav className="glass-navbar fixed top-0 left-0 right-0 z-50">
         <div className="flex justify-between items-center px-4 sm:px-6 md:px-12 lg:px-20 py-2 md:py-1">
@@ -300,7 +311,7 @@ const TokenizedGoldPage = () => {
                    onClick={() => setIsMobileMenuOpen(false)}
                  >
                    <span>War package</span>
-                   <span className="inline-flex items-center px-2 py-0.5 text-xs font-medium bg-blue-500 text-white rounded-full animate-pulse shadow-lg shadow-blue-500/50">
+                   <span className="inline-flex items-center px-2 py-0.1 text-[8px] font-medium bg-purple-500 text-white rounded-full animate-pulse shadow-lg shadow-purple-500/20">
                      NEW
                    </span>
                  </a>
@@ -403,6 +414,21 @@ const TokenizedGoldPage = () => {
 
       {/* Main Content */}
       <main ref={heroRef} className="relative flex flex-col items-start sm:items-center justify-center min-h-[60vh] md:min-h-[70vh] text-left sm:text-center px-4 sm:px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-16 md:pb-20 overflow-hidden bg-white">
+        {/* RippleGrid Background */}
+        <div className="absolute inset-0 z-0">
+          <RippleGrid
+            gridColor="#fbbf24"
+            rippleIntensity={0.02}
+            gridSize={12.0}
+            gridThickness={8.0}
+            fadeDistance={1.5}
+            vignetteStrength={2.0}
+            glowIntensity={0.08}
+            opacity={0.06}
+            mouseInteraction={true}
+            mouseInteractionRadius={0.6}
+          />
+        </div>
         <div className="relative z-10 max-w-5xl w-full mx-0 sm:mx-auto">
           
           

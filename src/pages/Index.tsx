@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import GradualBlur from '../components/GradualBlur';
 const Index = () => {
   const cashRef = useRef<HTMLDivElement | null>(null);
   const cashCards = useMemo(
@@ -380,6 +381,15 @@ const Index = () => {
 
 
   return <div className="min-h-screen w-full relative">
+      {/* Gradual Blur Effect */}
+      <GradualBlur 
+        preset="page-footer" 
+        strength={2} 
+        height="4rem"
+        animated="scroll"
+        duration="0.5s"
+      />
+      
       {/* Navigation Bar */}
       <nav className="glass-navbar fixed top-0 left-0 right-0 z-50">
         <div className="flex justify-between items-center px-4 sm:px-6 md:px-12 lg:px-20 py-2 md:py-1">
@@ -551,7 +561,7 @@ const Index = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <span>War package</span>
-                  <span className="inline-flex items-center px-2 py-0.1 text-[8px] font-medium bg-purple-500 text-white rounded-full animate-pulse shadow-lg shadow-purple-500/20">
+                  <span className="inline-flex items-center px-2 py-0.5 text-xs font-medium bg-blue-500 text-white rounded-full animate-pulse shadow-lg shadow-blue-500/50">
                     NEW
                   </span>
                 </a>
@@ -695,10 +705,10 @@ const Index = () => {
           <div
             ref={scrollAnimRef}
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-14 h-14 opacity-90 scroll-indicator"
-            style={{
-              filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.25))',
-            }}
+              className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-14 h-14 opacity-90 scroll-indicator sm:bottom-[-10rem] bottom-[-6rem]"
+              style={{
+                filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.25))',
+              }}
           />
           
           
