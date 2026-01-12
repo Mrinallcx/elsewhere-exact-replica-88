@@ -1,0 +1,15 @@
+[build]
+  command = "yarn build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+  from = "https://www.totofinance.co/*"
+  to = "https://totofinance.co/:splat"
+  status = 301
+  force = true
+
