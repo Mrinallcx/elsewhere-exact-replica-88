@@ -48,7 +48,7 @@ export function JobList({ jobs }: JobListProps) {
     if (responsibilities.length === 0) return null;
 
     // Check if it's an array of ResponsibilityCategory objects
-    if (typeof responsibilities[0] === 'object' && 'category' in responsibilities[0]) {
+    if (responsibilities[0] && typeof responsibilities[0] === 'object' && 'category' in responsibilities[0]) {
       return (
         <div className="space-y-4">
           {(responsibilities as ResponsibilityCategory[]).map((cat, idx) => (
