@@ -136,7 +136,7 @@ const nextConfig = {
           },
           {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+            value: 'camera=(), microphone=(), geolocation=()',
           },
           {
             key: 'Content-Security-Policy',
@@ -155,20 +155,13 @@ const nextConfig = {
         ],
       },
       {
-        // No cache for Next.js static files (JS, CSS, etc.) to prevent ChunkLoadError
+        // Cache Next.js static files with long-term caching (immutable)
+        // MIME types are handled by Netlify's _headers file
         source: '/_next/static/:path*',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate, max-age=0',
-          },
-          {
-            key: 'Pragma',
-            value: 'no-cache',
-          },
-          {
-            key: 'Expires',
-            value: '0',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
