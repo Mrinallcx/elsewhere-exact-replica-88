@@ -61,6 +61,32 @@ export default function DocImprintPage() {
         </div>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Tokenization Report 2025–2030 [Updated] */}
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-300">
+              <div className="mb-4">
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-medium text-gray-900 mb-2">Tokenization Report 2025–2030 [Updated]</h3>
+              </div>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Updated independent research on how blockchain-based tokenization of real-world assets is reshaping global markets, liquidity, and institutional participation.
+              </p>
+              <a 
+                href="https://toto-finance.s3.us-east-1.amazonaws.com/Updated%2BTokenization%2BReport.pdf" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+              >
+                View Report
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+
             {/* Total Tokenization - Vision & Framework */}
             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-300">
               <div className="mb-4">
@@ -75,7 +101,7 @@ export default function DocImprintPage() {
                 A global overview of Toto Finance’s long-term vision, platform architecture, and approach to tokenized real-world assets.
               </p>
               <a 
-                href="https://tiamonds.s3.us-east-1.amazonaws.com/website/Tiamonds+Toto+White+Paper+-+International+Edition.pdf" 
+                href="https://tiamonds.s3.us-east-1.amazonaws.com/Report/Toto+Finance+-+TOTO+White+Paper+-+International+Edition.pdf" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
@@ -101,7 +127,7 @@ export default function DocImprintPage() {
                 The official whitepaper describing Toto Finance’s infrastructure, tokenization model, and compliance framework under applicable regulations.
               </p>
               <a 
-                href="https://tiamonds.s3.us-east-1.amazonaws.com/website/Tiamonds+Toto+MiCAR+White+Paper+-+EU_EEA+Edition.pdf" 
+                href="https://tiamonds.s3.us-east-1.amazonaws.com/Report/Toto+Finance+-+TOTO+MiCAR+White+Paper+-+EU_EEA+Edition.pdf" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
@@ -126,30 +152,17 @@ export default function DocImprintPage() {
               <p className="text-gray-600 leading-relaxed mb-4">
                 Independent research on how blockchain-based tokenization of real-world assets is reshaping global markets, liquidity, and institutional participation.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <a 
-                  href="https://open.spotify.com/episode/0UOw0VQxsF8X7Ivyn0bk4I" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
-                >
-                  Listen
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-                <a 
-                  href="https://tiamonds.s3.us-east-1.amazonaws.com/website/Tiamonds+-+Tokenization+Report+2025-2030.pdf" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
-                >
-                  View Report
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
+              <a 
+                href="https://tiamonds.s3.us-east-1.amazonaws.com/website/Tiamonds+-+Tokenization+Report+2025-2030.pdf" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+              >
+                View Report
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
             </div>
 
             {/* Emurgo / NMKR Case Study */}
@@ -192,7 +205,7 @@ export default function DocImprintPage() {
                 Official logos, branding assets, and media materials for partners, press, and third parties.
               </p>
               <a 
-                href="https://tiamonds.s3.us-east-1.amazonaws.com/website/Media+Kit.zip" 
+                href="https://www.notion.so/Toto-Finance-Media-Kit-2d1797abde9e803fb0f0c0eed0d72f97" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
