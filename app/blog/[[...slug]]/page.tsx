@@ -1,5 +1,5 @@
 import { Navigation } from '../../components/Navigation';
-import { Footer } from '../../components/Footer';
+import Footer from '../../components/Footer';
 import { BlogIframe } from './BlogIframe';
 
 const BLOG_BASE = 'https://tiamondstestblog-wj33.vercel.app';
