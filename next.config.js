@@ -460,7 +460,13 @@ const nextConfig = {
       },
     ];
   },
-  // Blog is served via app/blog/[[...slug]] iframe (see app/blog) so navigation stays on our domain
+  async rewrites() {
+    return [
+      { source: '/blog', destination: 'https://tiamondstestblog-wj33.vercel.app/blog' },
+      { source: '/blog/', destination: 'https://tiamondstestblog-wj33.vercel.app/blog/' },
+      { source: '/blog/:path*', destination: 'https://tiamondstestblog-wj33.vercel.app/blog/:path*' },
+    ];
+  },
 };
 
 export default withBundleAnalyzer(nextConfig);
