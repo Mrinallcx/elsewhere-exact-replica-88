@@ -461,11 +461,16 @@ const nextConfig = {
     ];
   },
   async rewrites() {
-    return [
-      { source: '/blog', destination: 'https://tiamondstestblog-wj33.vercel.app/blog/' },
-      { source: '/blog/', destination: 'https://tiamondstestblog-wj33.vercel.app/blog/' },
-      { source: '/blog/:path*', destination: 'https://tiamondstestblog-wj33.vercel.app/blog/:path*' },
-    ];
+    const blogBase = 'https://tiamondstestblog-wj33.vercel.app';
+    return {
+      // Run blog rewrites before filesystem so /blog/* always proxies
+      beforeFiles: [
+        { source: '/blog', destination: `${blogBase}/blog/` },
+        { source: '/blog/', destination: `${blogBase}/blog/` },
+        { source: '/blog/:path*/', destination: `${blogBase}/blog/:path*/` },
+        { source: '/blog/:path*', destination: `${blogBase}/blog/:path*` },
+      ],
+    };
   },
 };
 
