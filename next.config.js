@@ -460,6 +460,13 @@ const nextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      { source: '/blog', destination: 'https://tiamondstestblog-wj33.vercel.app/blog/' },
+      { source: '/blog/', destination: 'https://tiamondstestblog-wj33.vercel.app/blog/' },
+      { source: '/blog/:path*', destination: 'https://tiamondstestblog-wj33.vercel.app/blog/:path*' },
+    ];
+  },
 };
 
 export default withBundleAnalyzer(nextConfig);
