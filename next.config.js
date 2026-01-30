@@ -460,18 +460,7 @@ const nextConfig = {
       },
     ];
   },
-  async rewrites() {
-    const blogBase = 'https://tiamondstestblog-wj33.vercel.app';
-    return {
-      // Run blog rewrites before filesystem so /blog/* always proxies
-      beforeFiles: [
-        { source: '/blog', destination: `${blogBase}/blog/` },
-        { source: '/blog/', destination: `${blogBase}/blog/` },
-        { source: '/blog/:path*/', destination: `${blogBase}/blog/:path*/` },
-        { source: '/blog/:path*', destination: `${blogBase}/blog/:path*` },
-      ],
-    };
-  },
+  // Blog is served via app/blog/[[...slug]] iframe (see app/blog) so navigation stays on our domain
 };
 
 export default withBundleAnalyzer(nextConfig);
