@@ -462,9 +462,22 @@ const nextConfig = {
   },
   async rewrites() {
     return [
-      { source: '/blog', destination: 'https://tiamondstestblog-wj33.vercel.app/blog' },
-      { source: '/blog/', destination: 'https://tiamondstestblog-wj33.vercel.app/blog/' },
-      { source: '/blog/:path*', destination: 'https://tiamondstestblog-wj33.vercel.app/blog/:path*' },
+      // Blog index
+      { source: '/blog', destination: '/blog/index.html' },
+      { source: '/blog/', destination: '/blog/index.html' },
+      // Article pages: /blog/posts/slug/ or /blog/posts/slug -> serve index.html in that folder
+      { source: '/blog/posts', destination: '/blog/posts/index.html' },
+      { source: '/blog/posts/', destination: '/blog/posts/index.html' },
+      { source: '/blog/posts/:path*', destination: '/blog/posts/:path*/index.html' },
+      // Pagination: /blog/page/2/ etc.
+      { source: '/blog/page/:path*', destination: '/blog/page/:path*/index.html' },
+      // Tags: /blog/tags/accessibility/ etc.
+      { source: '/blog/tags', destination: '/blog/tags/index.html' },
+      { source: '/blog/tags/', destination: '/blog/tags/index.html' },
+      { source: '/blog/tags/:path*', destination: '/blog/tags/:path*/index.html' },
+      // Imprint
+      { source: '/blog/imprint', destination: '/blog/imprint/index.html' },
+      { source: '/blog/imprint/', destination: '/blog/imprint/index.html' },
     ];
   },
 };
