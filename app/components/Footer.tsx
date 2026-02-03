@@ -34,8 +34,8 @@ const footerData = [
       { label: 'Docs', href: 'https://totofinance.co/doc-imprint' },
       {
         label: 'Blog',
-        href: 'https://blog.totofinance.co/',
-        external: true,
+        href: 'https://totofinance.co/blog',
+        external: false,
       },
       { label: 'FAQ', href: 'https://totofinance.co/faq' },
     ],

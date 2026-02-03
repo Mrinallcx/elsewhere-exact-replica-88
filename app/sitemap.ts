@@ -86,7 +86,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
-    
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+
     // FAQ Category Anchor Links (for better SEO indexing of FAQ sections)
     ...faqCategories.map((category) => ({
       url: `${baseUrl}/faq#${category}`,

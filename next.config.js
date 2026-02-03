@@ -465,10 +465,13 @@ const nextConfig = {
       // Blog index
       { source: '/blog', destination: '/blog/index.html' },
       { source: '/blog/', destination: '/blog/index.html' },
-      // Article pages: /blog/posts/slug/ or /blog/posts/slug -> serve index.html in that folder
+      // Article pages: /blog/posts/slug/ (legacy) and /blog/post/slug/ (new URL) -> serve index.html
       { source: '/blog/posts', destination: '/blog/posts/index.html' },
       { source: '/blog/posts/', destination: '/blog/posts/index.html' },
       { source: '/blog/posts/:path*', destination: '/blog/posts/:path*/index.html' },
+      { source: '/blog/post', destination: '/blog/posts/index.html' },
+      { source: '/blog/post/', destination: '/blog/posts/index.html' },
+      { source: '/blog/post/:path*', destination: '/blog/posts/:path*/index.html' },
       // Pagination: /blog/page/2/ etc.
       { source: '/blog/page/:path*', destination: '/blog/page/:path*/index.html' },
       // Tags: /blog/tags/accessibility/ etc.

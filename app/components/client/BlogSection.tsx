@@ -7,25 +7,25 @@ const blogPosts = [
     image: 'https://blog.totofinance.co/wp-content/uploads/2025/10/Blo-Banner-2.png',
     title: 'The Gold Breakthrough: $4,000/oz and the New Era of Value',
     excerpt: 'Gold surpasses $4,000, signaling a new era of tokenized assets and digital finance growth.',
-    url: 'https://blog.totofinance.co/the-gold-breakthrough-4000-oz-and-the-new-era-of-value/',
+    url: 'https://totofinance.co/blog/post/the-gold-breakthrough-4000-oz-and-the-new-era-of-value',
   },
   {
     image: 'https://blog.totofinance.co/wp-content/uploads/2025/09/image.png',
     title: 'The RWA Momentum: Why Real-World Assets Are Redefining Crypto',
     excerpt: 'Real-world assets drive crypto\'s evolution, with tokenized credit, treasuries, gold, and gemstones transforming finance.',
-    url: 'https://blog.totofinance.co/the-rwa-momentum-why-real-world-assets-are-redefining-crypto/',
+    url: 'https://totofinance.co/blog/post/the-rwa-momentum-why-real-world-assets-are-redefining-crypto',
   },
   {
     image: 'https://blog.totofinance.co/wp-content/uploads/2025/08/Peach-and-Orange-Minimal-Lead-Magnet-Opt-In-Blog-Banner-1.png',
     title: 'The Liquidity Revolution: Why Tokenized Assets Outperform Traditional Investments',
     excerpt: 'Tokenization revolutionizes asset trading, offering global liquidity and instant ownership transfer for valuable commodities.',
-    url: 'https://blog.totofinance.co/the-liquidity-revolution-why-tokenized-assets-outperform-traditional-investments/',
+    url: 'https://totofinance.co/blog/post/the-liquidity-revolution-why-tokenized-assets-outperform-traditional-investments',
   },
   {
     image: 'https://blog.totofinance.co/wp-content/uploads/2025/08/Own-without-limits.png',
     title: 'From Elite to Everyone: How Tokenization Democratizes Wealth',
     excerpt: 'Tokenization democratizes wealth, enabling anyone to own and trade once-exclusive high-value real-world assets.',
-    url: 'https://blog.totofinance.co/from-elite-to-everyone-how-tokenization-democratizes-wealth/',
+    url: 'https://totofinance.co/blog/post/from-elite-to-everyone-how-tokenization-democratizes-wealth',
   },
   {
     image: 'https://images.cointelegraph.com/cdn-cgi/image/format=auto,onerror=redirect,quality=90,width=717/https://s3.cointelegraph.com/storage/uploads/view/2927b60eedfc872f9b2f9c03999eb2ab.jpeg',
@@ -101,9 +101,7 @@ export function BlogSection() {
 
         <div className="text-center mt-12">
           <a
-            href="https://blog.totofinance.co/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://totofinance.co/blog"
             className="resources-cta"
           >
             Explore Insights

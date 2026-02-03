@@ -351,7 +351,7 @@ export default function DocImprintPage() {
                 Independent audit of the $TOTO token and smart contract infrastructure, ensuring adherence to security best practices.
               </p>
               <a 
-                href="https://blog.totofinance.co/toto-token-is-fully-audited-by-hacken/" 
+                href="https://totofinance.co/blog/post/toto-token-is-fully-audited-by-hacken/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"

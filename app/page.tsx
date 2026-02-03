@@ -334,7 +334,7 @@ export default function HomePage() {
                 </p>
               </div>
               <a
-                href="https://blog.totofinance.co/the-rwa-momentum-why-real-world-assets-are-redefining-crypto/"
+                href="https://totofinance.co/blog/post/the-rwa-momentum-why-real-world-assets-are-redefining-crypto/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mission-cta"
@@ -387,7 +387,7 @@ export default function HomePage() {
                   />
                 </div>
                 <a
-                  href="https://blog.totofinance.co/blockchain-in-rwa-tokenization/"
+                  href="https://totofinance.co/blog/post/blockchain-in-rwa-tokenization/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="experience-cta"
@@ -422,7 +422,7 @@ export default function HomePage() {
                   />
                 </div>
                 <a
-                  href="https://blog.totofinance.co/an-overview-of-tokenized-commodities/"
+                  href="https://totofinance.co/blog/post/an-overview-of-tokenized-commodities/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="platform-cta"

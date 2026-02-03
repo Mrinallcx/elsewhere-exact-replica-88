@@ -164,7 +164,7 @@ export default function Vision2030Page() {
                 </p>
                 
                 <a 
-                  href="https://blog.totofinance.co/why-liechtenstein-is-leading-the-tokenization-revolution-inside-the-tvtg-framework/"
+                  href="https://totofinance.co/blog/post/why-liechtenstein-is-leading-the-tokenization-revolution-inside-the-tvtg-framework/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mission-cta"
@@ -222,7 +222,7 @@ export default function Vision2030Page() {
                 </div>
                 
                 <a 
-                  href="https://blog.totofinance.co/tokenized-diamond-democratizing-access-to-luxury-jewelry/"
+                  href="https://totofinance.co/blog/post/tokenized-diamond-democratizing-access-to-luxury-jewelry/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="experience-cta"

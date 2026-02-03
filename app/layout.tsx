@@ -91,7 +91,7 @@ export default function RootLayout({
         {/* Firebase images load lazily, so no preconnect needed */}
         <link rel="dns-prefetch" href="https://js.hs-scripts.com" />
         <link rel="dns-prefetch" href="https://api.hubapi.com" />
-        <link rel="dns-prefetch" href="https://blog.totofinance.co" />
+        <link rel="dns-prefetch" href="https://totofinance.co" />
         {/* Preload hero fallback image for LCP optimization - highest priority */}
         {/* Preload desktop version for larger screens (most common) */}
         <link
