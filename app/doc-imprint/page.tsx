@@ -101,7 +101,7 @@ export default function DocImprintPage() {
                 A global overview of Toto Finance’s long-term vision, platform architecture, and approach to tokenized real-world assets.
               </p>
               <a 
-                href="https://tiamonds.s3.us-east-1.amazonaws.com/Report/Toto+Finance+-+TOTO+White+Paper+-+International+Edition.pdf" 
+                href="https://toto-finance.s3.us-east-1.amazonaws.com/Toto+Finance+-+TOTO+White+Paper+-+International+Edition.pdf" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
@@ -127,7 +127,7 @@ export default function DocImprintPage() {
                 The official whitepaper describing Toto Finance’s infrastructure, tokenization model, and compliance framework under applicable regulations.
               </p>
               <a 
-                href="https://tiamonds.s3.us-east-1.amazonaws.com/Report/Toto+Finance+-+TOTO+MiCAR+White+Paper+-+EU_EEA+Edition.pdf" 
+                href="https://toto-finance.s3.us-east-1.amazonaws.com/Toto+Finance+-+TOTO+MiCAR+White+Paper+-+EU_EEA+Edition.pdf" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
