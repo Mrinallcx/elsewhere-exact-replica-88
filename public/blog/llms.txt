@@ -7,7 +7,7 @@ This site is the blog section of Toto Finance, served at https://totofinance.co/
 ## Main
 
 - [Blog home](https://totofinance.co/blog/): Latest posts and featured content
-- [All posts](https://totofinance.co/blog/post/): Full post listing
+- [All posts](https://totofinance.co/blog/posts/): Full post listing
 - [Imprint](https://totofinance.co/blog/imprint/): Legal imprint and liability information
 - [Sitemap](https://totofinance.co/blog/sitemap.xml): Complete sitemap of all blog URLs for crawlers
 - [RSS feed](https://totofinance.co/blog/rss.xml): RSS feed for subscriptions
