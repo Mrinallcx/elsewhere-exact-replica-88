@@ -178,6 +178,27 @@ export function NavigationClient({ logo, pastHero: externalPastHero }: Navigatio
                     </span>
                   </Link>
                   <Link
+                    href="/blog"
+                    className="dropdown-item group block px-4 py-3 text-slate-700 hover:bg-slate-100/80 transition-all duration-300 hover:translate-x-2 hover:shadow-md"
+                  >
+                    <span className="flex items-center justify-between">
+                      <span>Blog</span>
+                      <svg
+                        className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 text-slate-500"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </span>
+                  </Link>
+                  <Link
                     href="/toto-token"
                     className="dropdown-item group block px-4 py-3 text-slate-700 hover:bg-slate-100/80 transition-all duration-300 hover:translate-x-2 hover:shadow-md"
                   >
@@ -314,6 +335,14 @@ export function NavigationClient({ logo, pastHero: externalPastHero }: Navigatio
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Vision 2030
+              </Link>
+
+              <Link
+                href="/blog"
+                className="block py-3 text-travel-black hover:text-travel-gold transition-colors duration-200"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Blog
               </Link>
 
               <Link
