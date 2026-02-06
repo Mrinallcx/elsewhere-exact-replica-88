@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://totofinance.co/blog/sitemap.xml
