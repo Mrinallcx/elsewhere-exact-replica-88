@@ -59,10 +59,10 @@ const footerData = [
 ];
 
 const footerBottomLinks = [
-  {
-    label: 'Sitemap',
-    href: '/sitemap.xml',
-  },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms of Service', href: '/terms-of-service' },
+  { label: 'Cookie Settings', href: '/cookie-settings' },
+  { label: 'Sitemap', href: '/sitemap.xml' },
 ];
 
 export default function Footer() {
@@ -106,30 +106,31 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM SECTION */}
-        <div className='footer-bottom mt-16 flex flex-col md:flex-row justify-between items-center gap-6'>
-          <div className='footer-brand'>
-            <Link href='/'>
-              <Image
-                src='/totofinance.svg'
-                alt='Toto Finance'
-                width={120}
-                height={48}
-                className='h-8 sm:h-10 md:h-12 logo-light'
-              />
-            </Link>
-          </div>
-
-          <div className='footer-legal flex flex-col md:flex-row flex-wrap gap-4 md:gap-6 text-sm'>
-            <div className='flex flex-col gap-2'>
+        <div className='footer-bottom mt-16 w-full flex flex-col gap-6'>
+          <div className='w-full flex flex-col sm:flex-row justify-between items-center sm:items-start gap-4'>
+            <div className='footer-brand shrink-0'>
+              <Link href='/'>
+                <Image
+                  src='/totofinance.svg'
+                  alt='Toto Finance'
+                  width={120}
+                  height={48}
+                  className='h-8 sm:h-10 md:h-12 logo-light'
+                />
+              </Link>
+            </div>
+            <div className='footer-legal flex flex-col gap-2 text-center sm:text-right text-sm shrink-0 max-w-full'>
               <span className='brand-copyright'>© 2026 Toto Finance AG. All rights reserved.</span>
               <span className='text-gray-300 text-xs md:text-sm'>Toto Finance - The Global Infrastructure for Tokenized Commodities</span>
             </div>
-
+          </div>
+          <div className='w-full flex flex-wrap justify-end gap-x-4 gap-y-1'>
             {footerBottomLinks.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                target='_blank'
+                target={item.href.startsWith('http') || item.href === '/sitemap.xml' ? '_blank' : undefined}
+                rel={item.href.startsWith('http') || item.href === '/sitemap.xml' ? 'noopener noreferrer' : undefined}
                 className='legal-link hover:underline'
               >
                 {item.label}
