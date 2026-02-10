@@ -122,12 +122,13 @@ export default function ProductPage() {
             
             {/* Tokenized Assets Card */}
             <ProductNavigationCard
-              imageSrc="/assset image2.webp"
+              imageSrc="/assets/images/copper.webp"
               imageAlt="Tokenized Assets"
               title="Tokenized Assets"
               description="Institutional Investor Platform Offering Tokenized Commodities."
               linkText="Coming Soon"
               badge="Coming Soon"
+              imageClassName="object-top"
             />
             
             {/* GET Green Energy Token Card */}

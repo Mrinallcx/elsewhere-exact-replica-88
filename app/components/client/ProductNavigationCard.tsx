@@ -14,6 +14,7 @@ interface ProductNavigationCardProps {
   onLinkClick?: (e: React.MouseEvent) => void;
   disabled?: boolean;
   badge?: string;
+  imageClassName?: string;
 }
 
 export function ProductNavigationCard({
@@ -26,7 +27,8 @@ export function ProductNavigationCard({
   scrollToId,
   onLinkClick,
   disabled = false,
-  badge
+  badge,
+  imageClassName
 }: ProductNavigationCardProps) {
   const handleCardClick = () => {
     if (disabled || !scrollToId) return;
@@ -63,7 +65,7 @@ export function ProductNavigationCard({
               alt={imageAlt} 
               width={400}
               height={192}
-              className="w-full h-full object-cover"
+              className={`w-full h-full object-cover ${imageClassName || ''}`}
             />
           </div>
           <h3 className="text-2xl font-medium text-gray-900 mb-4">{title}</h3>
