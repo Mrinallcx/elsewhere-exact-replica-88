@@ -48,11 +48,12 @@ const partnerLogos = [
 ];
 
 const tnftImages = [
-  '/assets/images/silver.webp',
+  '/assets/images/Silver.webp',
+  '/assets/images/Sapphire.webp',
+  '/assets/images/Platinum.webp',
+  '/assets/images/Gold.webp',
+  '/assets/images/Diamond.webp',
   '/assets/images/energy.webp',
-  '/assets/images/platinum.webp',
-  '/assets/images/gold.webp',
-  '/assets/images/diamond.webp',
   '/assets/images/carbon-credit.webp',
 ];
 
@@ -352,7 +353,7 @@ export default function HomePage() {
             </div>
             <div className="mission-image">
               <Image
-                src="/assets/images/mission-infrastructure.png"
+                src="/assets/images/mission-infrastructure.webp"
                 alt="Toto Finance tokenization platform infrastructure"
                 className="mission-img"
                 width={800}
