@@ -90,16 +90,6 @@ export function NavigationClient({ logo, pastHero: externalPastHero }: Navigatio
               Products
             </Link>
 
-            {/* Infrastructure Link */}
-            <Link
-              href="/infrastructure"
-              className={`nav-link ${
-                currentPastHero ? 'text-travel-black' : 'text-travel-white'
-              } hover:text-travel-black transition-colors duration-300`}
-            >
-              Infrastructure
-            </Link>
-
             {/* 2030 Link */}
             <Link
               href="/vision-2030"
@@ -145,6 +135,27 @@ export function NavigationClient({ logo, pastHero: externalPastHero }: Navigatio
                 onMouseLeave={handleDropdownMouseLeave}
               >
                 <div className="py-2">
+                  <Link
+                    href="/infrastructure"
+                    className="dropdown-item group block px-4 py-3 text-slate-700 hover:bg-slate-100/80 transition-all duration-300 hover:translate-x-2 hover:shadow-md"
+                  >
+                    <span className="flex items-center justify-between">
+                      <span>Infrastructure</span>
+                      <svg
+                        className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 text-slate-500"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </span>
+                  </Link>
                   <Link
                     href="/ecosystem"
                     className="dropdown-item group block px-4 py-3 text-slate-700 hover:bg-slate-100/80 transition-all duration-300 hover:translate-x-2 hover:shadow-md"
