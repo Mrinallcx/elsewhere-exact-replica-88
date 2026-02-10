@@ -61,7 +61,7 @@ export default function ProductPage() {
           fallbackImage="/hero-background/product-hero-fallback.webp"
           fallbackAlt="Hero background fallback"
           className="absolute inset-0 w-full h-full"
-          overlayClassName="absolute inset-0 bg-black/60 z-10"
+          overlayClassName="absolute inset-0 bg-black/55 z-10"
           videoClassName="absolute inset-0 w-full h-full object-cover z-[1]"
         />
          
@@ -73,13 +73,13 @@ export default function ProductPage() {
            
            {/* Hero Headings */}
            <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-2 text-white">
-             Tokenized Commodities, Built on Institutional Infrastructure
+             Tokenized Commodities, Built for Global Markets
            </h1>
            
            {/* Description Section */}
            <div className="max-w-3xl w-full mx-0 sm:mx-auto mb-6 sm:mb-8 mt-6 sm:mt-8 md:mt-10 text-left sm:text-center ">
              <p className="hero-description text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-2 text-left sm:text-center">
-             Toto Finance provides asset-backed digital commodities and tokenization products designed for secure ownership, instant settlement, and global market access.
+             Toto Finance delivers asset-backed tokenized commodities across diamonds, precious metals, and institutional assets combining compliant ownership, instant on-chain settlement, and global market access through institutional-grade infrastructure.
              </p>
            </div>
            
@@ -114,21 +114,20 @@ export default function ProductPage() {
               imageSrc="/assset image1.webp"
               imageAlt="Global Markets"
               title="Toto Global Markets"
-              description="Trade tokenized gold, silver, diamonds, and gemstones using our DeFi marketplace."
+              description="Trade, gift or redeem tokenized gold, silver, and gemstones using our marketplace."
               linkText="Explore Solutions"
               linkHref="https://app.totofinance.co/"
               scrollToId="institutional-section"
             />
             
-            {/* War Readiness Package Card */}
+            {/* Tokenized Assets Card */}
             <ProductNavigationCard
               imageSrc="/assset image2.webp"
-              imageAlt="War Readiness Package"
-              title="War Readiness Package"
-              description="Tiered packages for wealth preservation with insured gold & silver and instant liquidity."
-              linkText="View Package"
-              disabled={true}
-              badge="Launching Soon"
+              imageAlt="Tokenized Assets"
+              title="Tokenized Assets"
+              description="Institutional Investor Platform Offering Tokenized Commodities."
+              linkText="Coming Soon"
+              badge="Coming Soon"
             />
             
             {/* GET Green Energy Token Card */}
@@ -154,7 +153,7 @@ export default function ProductPage() {
                Toto Global Markets
              </h2>
              <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-8 max-w-3xl mx-auto">
-               Digital ownership and trading of real-world commodities - backed by physical assets, transparent custody, and instant settlement.
+               The world&apos;s largest tokenized diamond marketplace, launched in 2023 with more than 30,000 assets. Trade 1:1 asset-backed, Swiss-grade commodities and certified gemstones each linked to audited physical custody and on-chain settlement.
              </p>
            </div>
            
@@ -167,7 +166,7 @@ export default function ProductPage() {
                    <h3 className="text-xl font-medium text-gray-900">Assets</h3>
                  </div>
                  <p className="text-gray-700 leading-relaxed">
-                   Access tokenized diamonds, gold, silver, and platinum - each linked 1:1 to a specific, verifiable physical asset.
+                   Access tokenized gold, silver and platinum, each 1:1 backed by verified physical asset held in audited vaults.
                  </p>
              </div>
              
@@ -178,7 +177,7 @@ export default function ProductPage() {
                    <h3 className="text-xl font-medium text-gray-900">Speed</h3>
                  </div>
                  <p className="text-gray-700 leading-relaxed">
-                   Instant settlement and 24/7 trading with atomic delivery-versus-payment.
+                   Instant settlement and 24/7 trading with atomic delivery-versus-payment, eliminating counterparty and settlement risk.
                  </p>
              </div>
              
@@ -189,7 +188,7 @@ export default function ProductPage() {
                    <h3 className="text-xl font-medium text-gray-900">Utility Rewards</h3>
                  </div>
                  <p className="text-gray-700 leading-relaxed">
-                   Reduced fees and enhanced access through the TOTO utility token.
+                   Reduced fees and enhanced market access through the TOTO utility token across trading, settlement, and platform services.
                  </p>
              </div>
              
@@ -200,7 +199,7 @@ export default function ProductPage() {
                    <h3 className="text-xl font-medium text-gray-900">Global Access</h3>
                  </div>
                  <p className="text-gray-700 leading-relaxed">
-                   Participate in global commodity markets without geographic or operational barriers.
+                   Access global commodity markets through a unified digital marketplace with seamless cross-border participation and no operational barriers.
                  </p>
              </div>
              
@@ -211,7 +210,7 @@ export default function ProductPage() {
                    <h3 className="text-xl font-medium text-gray-900">Security</h3>
                  </div>
                  <p className="text-gray-700 leading-relaxed">
-                   Assets secured in audited, insured custody with institutional-grade safeguards.
+                   Assets secured in insured, third-party vaults, supported by institutional-grade custody standards and independent audits.
                  </p>
              </div>
              
@@ -222,7 +221,7 @@ export default function ProductPage() {
                    <h3 className="text-xl font-medium text-gray-900">Transparency</h3>
                  </div>
                  <p className="text-gray-700 leading-relaxed">
-                   On-chain verification, proof-of-reserves, and auditable transaction history
+                   On-chain verification, proof-of-reserves, and fully auditable transaction history for every listed asset.
                  </p>
              </div>
            </div>

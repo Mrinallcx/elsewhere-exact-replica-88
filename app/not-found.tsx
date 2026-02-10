@@ -1,5 +1,9 @@
 import Link from 'next/link'
 
+export const metadata = {
+  title: '404 | Toto Finance',
+};
+
 export default function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">

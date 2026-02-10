@@ -1318,7 +1318,7 @@ body:has(noscript) .hero-description {
 
   .newsletter-bg {
     @apply relative bg-cover bg-center bg-no-repeat;
-    min-height: 40vh;
+    min-height: 55vh;
     @apply flex items-center;
   }
 

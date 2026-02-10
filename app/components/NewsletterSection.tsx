@@ -12,7 +12,7 @@ export default function NewsletterSection() {
   const [isNewsletterVideoLoaded, setIsNewsletterVideoLoaded] = useState(false);
 
   return (
-    <section className='newsletter-section pt-12 pb-0 md:pt-24 md:pb-0'>
+    <section className='newsletter-section pt-16 pb-0 md:pt-32 md:pb-0'>
       <div className='newsletter-bg'>
         <img
           className='newsletter-fallback'

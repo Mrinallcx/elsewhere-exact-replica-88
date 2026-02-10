@@ -53,10 +53,10 @@ export default function NewsletterForm() {
   return (
     <div className="relative z-10 max-w-4xl mx-auto text-center px-6 md:px-8 lg:px-12">
       <h2 className="newsletter-heading">
-        The Future of Tokenization
+        The Future of Tokenized Commodities
       </h2>
       <p className="newsletter-subtitle">
-        Subscribe for the latest updates, insights, news.
+        Subscribe for research, insights, and market intelligence on tokenized commodities, real-world assets, and global trade infrastructure.
       </p>
       
       <form onSubmit={handleSubmit} className="newsletter-form">
