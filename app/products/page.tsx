@@ -127,7 +127,6 @@ export default function ProductPage() {
               title="Tokenized Assets"
               description="Institutional Investor Platform Offering Tokenized Commodities."
               linkText="Coming Soon"
-              badge="Coming Soon"
               imageClassName="object-top"
             />
             

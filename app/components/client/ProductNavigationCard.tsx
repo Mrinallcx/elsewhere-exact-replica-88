@@ -47,8 +47,8 @@ export function ProductNavigationCard({
 
   return (
     <div 
-      className={`bg-white p-8 rounded-2xl transition-all duration-300 group border border-gray-200 ${
-        disabled ? 'cursor-not-allowed relative' : 'cursor-pointer'
+      className={`bg-white p-8 rounded-2xl transition-all duration-300 group border border-gray-200 relative ${
+        disabled ? 'cursor-not-allowed' : 'cursor-pointer'
       }`}
       onClick={handleCardClick}
     >
