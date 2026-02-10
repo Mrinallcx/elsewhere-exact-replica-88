@@ -49,19 +49,19 @@ export default function Vision2030Page() {
     {
       title: 'Regulatory Compliance',
       subtitle:
-        'Embed compliance, permissions, and transfer rules directly into smart contracts across jurisdictions.',
+        'Embed compliance, permissions, and jurisdiction-specific transfer rules directly into smart contracts across global markets.',
       variant: 'cash-card-green',
     },
     {
       title: 'Market Accessibility',
       subtitle:
-        'Enable participation by institutions and market participants through standardized, digital rails.',
+        'Enable participation by institutions and market participants through standardized, interoperable digital rails.',
       variant: 'cash-card-purple',
     },
     {
       title: 'Infrastructure Standard',
       subtitle:
-        'Establish Toto Finance as the institutional-grade reference infrastructure for digital commodity markets.',
+        'Establish Toto Finance as the institutional-grade reference infrastructure for digital commodity markets worldwide.',
       variant: 'cash-card-rose',
     },
   ];
@@ -120,13 +120,13 @@ export default function Vision2030Page() {
           
           {/* Hero Headings */}
           <h1 className="hero-subheading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 md:mb-8 text-travel-white font-light leading-tight">
-            Vision 2030: The Infrastructure<br />Layer for Digital Commodities
+            Vision 2030: The Infrastructure for Global Tokenized Commodities
           </h1>
           
           {/* Description Section */}
           <div className="max-w-3xl w-full mx-auto mb-6 sm:mb-8 md:mb-10">
             <p className="hero-description text-base sm:text-lg md:text-xl lg:text-2xl text-travel-white leading-relaxed">
-              By 2030, Toto Finance will operate the global infrastructure enabling asset-backed tokenization, instant settlement, and compliant trade of commodities, metals, energy, and real-world assets.
+              By 2030, Toto Finance will operate the global infrastructure enabling compliant, asset-backed tokenization and instant settlement across commodities, metals, energy, and strategic real-world assets.
             </p>
           </div>
           
@@ -156,21 +156,12 @@ export default function Vision2030Page() {
               
               <div className="mission-text">
                 <h2 className="mission-heading">
-                  A Trusted Global Infrastructure for Digital Commodity Markets
+                  A Global Settlement Layer for the World&apos;s Commodities
                 </h2>
                 
                 <p className="mission-description">
-                  To establish the world's most trusted infrastructure for digital commodities - enabling secure ownership, transparent reserves, compliant settlement, and global interoperability across real-world asset markets.
+                  By 2030, Toto Finance will power the global settlement and ownership layer for commodities connecting physical assets to digital markets through verifiable reserves, programmable compliance, instant settlement, and cross-border interoperability at institutional scale.
                 </p>
-                
-                <a 
-                  href="https://totofinance.co/blog/post/why-liechtenstein-is-leading-the-tokenization-revolution-inside-the-tvtg-framework/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mission-cta"
-                >
-                  Learn about Liechtenstein framework
-                </a>
               </div>
             </div>
             
@@ -212,24 +203,14 @@ export default function Vision2030Page() {
               
               <div className="experience-text">
                 <h2 className="experience-heading">
-                  Making Real-World Assets Fast & Liquid
+                  Making Real-World Assets Programmable at Global Scale
                 </h2>
                 
                 <div className="experience-description-container">
                   <p className="experience-description">
-                    To transform physical commodities and real-world assets into programmable digital instruments - reducing friction, unlocking liquidity, and enabling real-time global settlement for institutions and markets worldwide.
+                    We transform physical commodities and real-world assets into programmable digital instruments, enabling instant settlement, compliant global access, and institutional-grade liquidity.
                   </p>
                 </div>
-                
-                <a 
-                  href="https://totofinance.co/blog/post/tokenized-diamond-democratizing-access-to-luxury-jewelry/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="experience-cta"
-                >
-                  Learn about tokenized diamonds
-                </a>
-                
               </div>
             </div>
           </div>
@@ -244,7 +225,7 @@ export default function Vision2030Page() {
             <div className="cash-left">
               <h2 className="cash-heading">Bridging Physical Assets and Digital Infrastructure</h2>
               <p className="cash-description">
-                Toto Finance focuses on solving the structural inefficiencies of global commodity markets through compliant blockchain infrastructure - connecting physical assets to digital settlement, custody, and liquidity.
+                Toto Finance addresses the structural inefficiencies of global commodity markets through compliant blockchain infrastructure connecting physical assets to digital settlement, custody, and liquidity at institutional scale.
               </p>
               <div className="mt-6">
                 <a
@@ -272,7 +253,7 @@ export default function Vision2030Page() {
               Roadmap to Global Commodity Tokenization
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              A multi-year roadmap building the infrastructure, interoperability, and liquidity required for global digital commodity markets.
+              A multi-year roadmap building the infrastructure, interoperability, and liquidity required for regulated global digital commodity markets.
             </p>
           </div>
           
@@ -293,7 +274,7 @@ export default function Vision2030Page() {
                     <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-gray-100">
                       <h3 className="text-lg sm:text-xl font-light text-gray-900 mb-3">Foundation & Global Expansion</h3>
                       <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                        Deploy scalable tokenization infrastructure, expand commodity coverage, and establish regulated frameworks for global operations.
+                        Deploy scalable tokenization infrastructure, expand commodity coverage, and establish compliant regulatory frameworks for global operations.
                       </p>
                     </div>
                   </div>
@@ -308,7 +289,7 @@ export default function Vision2030Page() {
                     <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-gray-100">
                       <h3 className="text-lg sm:text-xl font-light text-gray-900 mb-3">Metals & In-Ground Resource Integration</h3>
                       <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                        Advance tokenization of metals and in-ground resources, preparing institutional-grade access to strategic commodities.
+                        Advance tokenization of metals and in-ground resources, enabling institutional-grade access to strategic and critical commodities.
                       </p>
                     </div>
                   </div>
@@ -338,7 +319,7 @@ export default function Vision2030Page() {
                     <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-gray-100">
                       <h3 className="text-lg sm:text-xl font-light text-gray-900 mb-3">Market Infrastructure Convergence</h3>
                       <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                        Align digital commodities with broader financial infrastructure - settlement, custody, and institutional trading systems.
+                        Align digital commodities with global financial infrastructure settlement, custody, compliance, and institutional trading systems.
                       </p>
                     </div>
                   </div>
@@ -353,7 +334,7 @@ export default function Vision2030Page() {
                     <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-gray-100">
                       <h3 className="text-lg sm:text-xl font-light text-gray-900 mb-3">Interoperability & Global Access</h3>
                       <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                        Deploy cross-border value transfer rails and deepen partnerships to enable regulated global liquidity.
+                        Deploy cross-border value transfer rails and deepen institutional partnerships to enable regulated global liquidity.
                       </p>
                     </div>
                   </div>
@@ -368,7 +349,7 @@ export default function Vision2030Page() {
                     <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-gray-100">
                       <h3 className="text-lg sm:text-xl font-light text-gray-900 mb-3">Global Liquidity Network</h3>
                       <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                        Operate a fully connected ecosystem where commodities, in-ground assets, and real-world value move seamlessly and transparently worldwide.
+                        Operate a fully connected ecosystem where commodities, in-ground assets, and real-world value move seamlessly, transparently, and compliantly worldwide.
                       </p>
                     </div>
                   </div>
