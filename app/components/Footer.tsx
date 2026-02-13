@@ -9,23 +9,22 @@ const footerData = [
     links: [
       { label: 'Toto Token', href: 'http://toto.xyz/' },
       { label: 'Products', href: '/products' },
+      { label: 'Solutions', href: '/solutions' },
       { label: 'Ecosystem', href: '/ecosystem' },
       { label: 'Vision 2030', href: '/vision-2030' },
+      { label: 'Achievements', href: '/achievements' },
     ],
   },
   {
     heading: 'Assets',
     links: [
-      { label: 'Gold', href: 'https://app.totofinance.co/edition/gold' },
-      { label: 'Silver', href: 'https://app.totofinance.co/edition/silver' },
-      {
-        label: 'Platinum',
-        href: 'https://app.totofinance.co/edition/platinum',
-      },
-      {
-        label: 'Diamonds',
-        href: 'https://app.totofinance.co/edition/all-diamonds',
-      },
+      { label: 'Gold', href: '/tokenized-gold' },
+      { label: 'Silver', href: '/tokenized-silver' },
+      { label: 'Platinum', href: '/tokenized-platinum' },
+      { label: 'Diamonds', href: '/tokenized-diamonds' },
+      { label: 'Sapphire', href: '/tokenized-sapphire' },
+      { label: 'Copper', href: '/tokenized-copper' },
+      { label: 'Tin', href: '/tokenized-tin' },
     ],
   },
   {
