@@ -73,7 +73,7 @@ export default function EcosystemPage() {
       logo: '/ecosystem logo/Hacken.svg',
       title: 'Hacken - Security & Audits',
       description: 'A leading cybersecurity firm delivering smart contract audits, infrastructure security assessments, and continuous risk monitoring across blockchain systems.',
-      url: 'https://hacken.io/audits/tiamonds/'
+      url: 'https://hacken.io/audits/toto-finance/'
     }
   ];
 
