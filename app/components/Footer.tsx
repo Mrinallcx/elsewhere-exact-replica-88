@@ -60,7 +60,7 @@ const footerData = [
 
 const footerBottomLinks = [
   { label: 'Privacy Policy', href: '/privacy-policy' },
-  { label: 'Terms & Conditions', href: '/terms-of-service' },
+  { label: 'Terms & Conditions', href: '/terms-and-condition' },
   { label: 'Sitemap', href: '/sitemap.xml' },
 ];
 

@@ -18,7 +18,7 @@ export const metadata = {
   openGraph: {
     title: 'Sales Terms & Conditions — Toto Token & Assets | Toto Finance',
     description: 'Terms and conditions governing the sale, purchase, and use of the TOTO token and Toto Finance platform services.',
-    url: 'https://totofinance.co/terms-of-service',
+    url: 'https://totofinance.co/terms-and-condition',
     siteName: 'Toto Finance',
     images: [
       {
@@ -38,7 +38,7 @@ export const metadata = {
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },
   alternates: {
-    canonical: 'https://totofinance.co/terms-of-service',
+    canonical: 'https://totofinance.co/terms-and-condition',
   },
 };
 

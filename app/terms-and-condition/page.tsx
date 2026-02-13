@@ -16,17 +16,17 @@ export default function TermsOfServicePage() {
       <PageStructuredData
         title="Sales Terms & Conditions — Toto Token & Assets | Toto Finance"
         description="Terms and conditions governing the sale, purchase, and use of the TOTO token and Toto Finance platform services."
-        url="https://totofinance.co/terms-of-service"
+        url="https://totofinance.co/terms-and-condition"
         pageType="WebPage"
         breadcrumbItems={[
           { name: 'Home', item: 'https://totofinance.co' },
-          { name: 'Terms & Conditions', item: 'https://totofinance.co/terms-of-service' },
+          { name: 'Terms & Conditions', item: 'https://totofinance.co/terms-and-condition' },
         ]}
       />
       <BreadcrumbStructuredData
         items={[
           { name: 'Home', item: 'https://totofinance.co' },
-          { name: 'Terms & Conditions', item: 'https://totofinance.co/terms-of-service' },
+          { name: 'Terms & Conditions', item: 'https://totofinance.co/terms-and-condition' },
         ]}
       />
       <GradualBlur
