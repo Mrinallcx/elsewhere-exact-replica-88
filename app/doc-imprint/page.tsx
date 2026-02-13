@@ -288,6 +288,34 @@ export default function DocImprintPage() {
             </div>
 
             <div className="mb-6">
+              <h2 className="text-3xl md:text-4xl font-light text-gray-900 leading-tight mb-6 mt-12 pt-8 border-t border-gray-200">Asset Custody &amp; Storage</h2>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-2">Custody Provider</h3>
+              <p className="text-gray-600 leading-relaxed mb-2">Physical custody of tokenized assets is provided by:</p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                <strong>TotoHolding AG</strong><br />
+                Herrengasse 6<br />
+                9490 Vaduz<br />
+                Liechtenstein
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-2">Secure Vault Storage</h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                All physical assets backing Toto Finance tokens are stored in high-security vault facilities located in Liechtenstein. These facilities are situated in the Swiss Alps region, one of the world&apos;s most secure and politically stable jurisdictions for asset storage, with a centuries-long tradition of wealth preservation and financial privacy.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-2">Insurance &amp; Protection</h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Custody is backed by Lloyd&apos;s of London insurance covering potential loss, theft, or damage.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-2">Custody Transparency</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Token holders receive certified proof of ownership and can access real-time tracking of their asset&apos;s custody status.
+              </p>
+            </div>
+
+            <div className="mb-6">
               <h3 className="text-xl font-medium text-gray-900 mb-2">Purpose of This Website</h3>
               <p className="text-gray-600 leading-relaxed">
                 This website is intended to provide general information about Toto Finance Inc., its technology, infrastructure, research publications, and services, as well as broader educational content relating to blockchain technology, tokenization, real-world assets, and economic research.
