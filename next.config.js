@@ -342,11 +342,6 @@ const nextConfig = {
     return [
       // Page redirects
       {
-        source: '/tokenized-gold',
-        destination: '/products',
-        permanent: true,
-      },
-      {
         source: '/war-ready-package',
         destination: '/products',
         permanent: true,
@@ -378,21 +373,6 @@ const nextConfig = {
       },
       {
         source: '/diamonds',
-        destination: '/products',
-        permanent: true,
-      },
-      {
-        source: '/tokenized-sapphire',
-        destination: '/products',
-        permanent: true,
-      },
-      {
-        source: '/tokenized-silver',
-        destination: '/products',
-        permanent: true,
-      },
-      {
-        source: '/tokenized-platinum',
         destination: '/products',
         permanent: true,
       },
