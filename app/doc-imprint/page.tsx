@@ -288,7 +288,7 @@ export default function DocImprintPage() {
             </div>
 
             <div className="mb-6">
-              <h2 className="text-3xl md:text-4xl font-light text-gray-900 leading-tight mb-6 mt-12 pt-8 border-t border-gray-200">Asset Custody &amp; Storage</h2>
+              <h3 className="text-xl font-medium text-gray-900 mb-4 mt-12 pt-8 border-t border-gray-200">Asset Custody &amp; Storage</h3>
 
               <h3 className="text-xl font-medium text-gray-900 mb-2">Custody Provider</h3>
               <p className="text-gray-600 leading-relaxed mb-2">Physical custody of tokenized assets is provided by:</p>
