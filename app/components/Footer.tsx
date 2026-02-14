@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const footerData = [
+/* ── All footer columns in one unified section ── */
+const footerColumns = [
   {
     heading: 'Platform',
     links: [
@@ -16,7 +17,7 @@ const footerData = [
     ],
   },
   {
-    heading: 'Assets',
+    heading: 'Metals & Gems',
     links: [
       { label: 'Gold', href: '/tokenized-gold' },
       { label: 'Silver', href: '/tokenized-silver' },
@@ -31,28 +32,48 @@ const footerData = [
     heading: 'Resources',
     links: [
       { label: 'Docs', href: 'https://totofinance.co/doc-imprint' },
-      {
-        label: 'Blog',
-        href: 'https://totofinance.co/blog',
-        external: false,
-      },
+      { label: 'Blog', href: 'https://totofinance.co/blog' },
       { label: 'FAQ', href: 'https://totofinance.co/faq' },
     ],
   },
   {
     heading: 'Company',
     links: [
-      {
-        label: 'Tia Token',
-        href: 'https://toto.xyz/tia-token',
-        external: true,
-      },
-      {
-        label: 'Careers',
-        href: 'https://totofinance.co/careers',
-        external: true,
-      },
+      { label: 'Tia Token', href: 'https://toto.xyz/tia-token', external: true },
+      { label: 'Careers', href: 'https://totofinance.co/careers', external: true },
       { label: 'Products', href: 'https://totofinance.co/products' },
+    ],
+  },
+  {
+    heading: 'Rare Earths',
+    links: [
+      { label: 'Cerium', href: '/tokenized-cerium' },
+      { label: 'Dysprosium', href: '/tokenized-dysprosium' },
+      { label: 'Erbium', href: '/tokenized-erbium' },
+      { label: 'Europium', href: '/tokenized-europium' },
+      { label: 'Gadolinium', href: '/tokenized-gadolinium' },
+      { label: 'Holmium', href: '/tokenized-holmium' },
+    ],
+  },
+  {
+    heading: 'Rare Earths',
+    links: [
+      { label: 'Lanthanum', href: '/tokenized-lanthanum' },
+      { label: 'Lutetium', href: '/tokenized-lutetium' },
+      { label: 'Neodymium', href: '/tokenized-neodymium' },
+      { label: 'Praseodymium', href: '/tokenized-praseodymium' },
+      { label: 'Promethium', href: '/tokenized-promethium' },
+      { label: 'Samarium', href: '/tokenized-samarium' },
+    ],
+  },
+  {
+    heading: 'Rare Earths',
+    links: [
+      { label: 'Scandium', href: '/tokenized-scandium' },
+      { label: 'Terbium', href: '/tokenized-terbium' },
+      { label: 'Thulium', href: '/tokenized-thulium' },
+      { label: 'Ytterbium', href: '/tokenized-ytterbium' },
+      { label: 'Yttrium', href: '/tokenized-yttrium' },
     ],
   },
 ];
@@ -63,39 +84,44 @@ const footerBottomLinks = [
   { label: 'Sitemap', href: '/sitemap.xml' },
 ];
 
+/* ── Helper to render a single link ── */
+function FooterLink({ link }: { link: { label: string; href: string; external?: boolean } }) {
+  if (link.href.startsWith('http')) {
+    return (
+      <a
+        href={link.href}
+        target='_blank'
+        rel='noopener noreferrer'
+        className='footer-link hover:underline inline-flex items-center text-[13px]'
+      >
+        {link.label}
+        {link.external && <span className='external-icon ml-1 text-[11px]'>↗</span>}
+      </a>
+    );
+  }
+  return (
+    <Link href={link.href}>
+      <span className='footer-link hover:underline inline-flex items-center text-[13px]'>{link.label}</span>
+    </Link>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className='footer-section px-6 md:px-8 lg:px-12 pt-16 pb-20 md:pt-20 md:pb-28'>
       <div className='max-w-7xl mx-auto'>
-        {/* GRID SECTION */}
-        <div className='footer-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10'>
-          {footerData.map((column) => (
-            <div key={column.heading} className='footer-column'>
-              <h3 className='footer-heading font-semibold mb-4'>
+
+        {/* ── UNIFIED FOOTER GRID ── */}
+        <div className='footer-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-7 gap-x-6 gap-y-10'>
+          {footerColumns.map((column, idx) => (
+            <div key={`col-${idx}`} className='footer-column'>
+              <h3 className='footer-heading font-semibold text-[13px] mb-4 whitespace-nowrap'>
                 {column.heading}
               </h3>
               <ul className='footer-links space-y-2'>
                 {column.links.map((link) => (
                   <li key={link.label}>
-                    {link.href.startsWith('http') ? (
-                      <a
-                        href={link.href}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='footer-link hover:underline inline-flex items-center'
-                      >
-                        {link.label}
-                        {link.external && (
-                          <span className='external-icon ml-1'>↗</span>
-                        )}
-                      </a>
-                    ) : (
-                      <Link href={link.href}>
-                        <span className='footer-link hover:underline inline-flex items-center'>
-                          {link.label}
-                        </span>
-                      </Link>
-                    )}
+                    <FooterLink link={link} />
                   </li>
                 ))}
               </ul>
@@ -103,7 +129,7 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* BOTTOM SECTION */}
+        {/* ── BOTTOM SECTION ── */}
         <div className='footer-bottom mt-16 w-full flex flex-col gap-6'>
           <div className='w-full flex flex-col sm:flex-row justify-between items-center sm:items-start gap-4'>
             <div className='footer-brand shrink-0'>
