@@ -76,7 +76,7 @@ export default function TokenizedTerbiumPage() {
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
 
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
             <div>
               <span className="inline-block bg-white/10 text-lime-200 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6 border border-lime-400/30">
                 Magnet Stability &amp; Defense Material
@@ -98,37 +98,8 @@ export default function TokenizedTerbiumPage() {
                 </a>
               </div>
             </div>
-
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
-              <div className="mb-6">
-                <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Terbium (Tb) / Strategic Rare Earth</p>
-                <p className="text-sm text-gray-400">Global Heavy Rare Earth Market</p>
-              </div>
-              <div className="border-t border-white/10 pt-5 grid grid-cols-2 gap-4">
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">Classification</p>
-                  <p className="text-lg font-semibold text-white">Heavy REE</p>
-                  <p className="text-xs text-gray-500">Rare Earth</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">Key Use</p>
-                  <p className="text-lg font-semibold text-white">Magnets</p>
-                  <p className="text-xs text-gray-500">Stabilization</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">Supply</p>
-                  <p className="text-lg font-semibold text-white">Constrained</p>
-                  <p className="text-xs text-gray-500">Byproduct Only</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">Settlement</p>
-                  <p className="text-lg font-semibold text-white">T+0</p>
-                  <p className="text-xs text-gray-500">Instant</p>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
+          </div>
       </section>
 
       {/* ===================== FOLD 2: TICKER + WHY TERBIUM MATTERS ===================== */}

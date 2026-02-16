@@ -77,9 +77,7 @@ export default function TokenizedDysprosiumPage() {
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
 
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left: Text */}
-            <div>
+          <div>
               <span className="inline-block bg-white/10 text-indigo-200 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6 border border-indigo-400/30">
                 High-Temperature Magnet Material
               </span>
@@ -110,38 +108,7 @@ export default function TokenizedDysprosiumPage() {
                 </a>
               </div>
             </div>
-
-            {/* Right: Key Facts Card */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
-              <div className="mb-6">
-                <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Dysprosium (Dy) / Heavy Rare Earth</p>
-                <p className="text-sm text-gray-400">Strategic Critical Mineral</p>
-              </div>
-              <div className="border-t border-white/10 pt-5 grid grid-cols-2 gap-4">
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">Primary Use</p>
-                  <p className="text-lg font-semibold text-white">EV Magnets</p>
-                  <p className="text-xs text-gray-500">Traction motors</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">Supply Status</p>
-                  <p className="text-lg font-semibold text-white">Scarce</p>
-                  <p className="text-xs text-gray-500">Byproduct only</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">Key Sectors</p>
-                  <p className="text-lg font-semibold text-white">EV + Defense</p>
-                  <p className="text-xs text-gray-500">Wind + AI</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">Settlement</p>
-                  <p className="text-lg font-semibold text-white">T+0</p>
-                  <p className="text-xs text-gray-500">Instant</p>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
       </section>
 
       {/* ===================== FOLD 2: TICKER + WHY DYSPROSIUM MATTERS ===================== */}

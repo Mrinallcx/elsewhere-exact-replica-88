@@ -13,7 +13,6 @@ const footerColumns = [
       { label: 'Solutions', href: '/solutions' },
       { label: 'Ecosystem', href: '/ecosystem' },
       { label: 'Vision 2030', href: '/vision-2030' },
-      { label: 'Achievements', href: '/achievements' },
     ],
   },
   {

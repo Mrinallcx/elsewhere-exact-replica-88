@@ -5,11 +5,11 @@ export const metadata = {
   description: 'Toto Finance achievements: First RWA on Cardano, XRP Ledger & Solana. World\'s largest tokenized diamond marketplace. 30,000+ tokenized assets. MiCA-compliant. GIA-certified. Lloyd\'s insured.',
   keywords: 'Toto Finance achievements, RWA tokenization firsts, tokenized diamonds, first RWA Cardano, first RWA XRPL, tokenized assets milestones, Tiamonds, MiCA compliant tokenization',
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,

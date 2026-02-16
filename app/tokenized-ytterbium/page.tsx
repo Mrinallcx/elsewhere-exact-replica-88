@@ -96,7 +96,7 @@ export default function TokenizedYtterbiumPage() {
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
 
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
             <div>
               <span className="inline-block bg-white/10 text-orange-200 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6 border border-orange-400/30">
                 The Future of Rare Earth Ownership
@@ -112,10 +112,6 @@ export default function TokenizedYtterbiumPage() {
                   Explore the Vision
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                 </Link>
-                <a href="#products" className="inline-flex items-center justify-center border border-white/30 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-white/10 transition-all duration-300">
-                  Two Products
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                </a>
               </div>
             </div>
 
@@ -154,7 +150,7 @@ export default function TokenizedYtterbiumPage() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
       </section>
 
       {/* ===================== FOLD 2: TICKER + CRISIS ===================== */}
@@ -246,56 +242,7 @@ export default function TokenizedYtterbiumPage() {
         </div>
       </section>
 
-      {/* ===================== FOLD 4: TWO PRODUCTS ===================== */}
-      <section id="products" className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Two Products</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">Two Ways to Own Ytterbium Digitally</h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">Toto Finance is building two distinct tokenized ytterbium products: a 1:1 asset-backed token for refined ytterbium oxide always redeemable for physical delivery, and In-Ground Ytterbium future delivery contracts for pre-production exposure.</p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
-              <span className="inline-block bg-gray-900 text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Asset-Backed Token</span>
-              <h3 className="text-2xl font-medium text-gray-900 mb-4">1:1 Ytterbium Oxide Token</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">Every token is backed 1:1 by refined ytterbium oxide (Yb&#x2082;O&#x2083;) stored in insured, audited vault facilities. High-purity ytterbium oxide (99.9%+ Yb&#x2082;O&#x2083;), ready for fiber laser crystal production and quantum computing applications. Always redeemable for physical ytterbium on demand.</p>
-              <ul className="space-y-3">
-                {['Backed 1:1 by refined ytterbium oxide (99.9%+ purity grade)', 'Always redeemable for physical ytterbium delivery on demand', 'Stored in insured, independently audited vault and warehouse facilities', 'On-chain proof-of-reserves with real-time oracle feeds', 'Fractional ownership, 24/7 tradeable, instant stablecoin settlement', 'Ready for industrial end-use: fiber lasers, atomic clocks, quantum computing, stainless steel additives'].map((f, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
-                    <svg className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
-              <span className="inline-block bg-gray-900 text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Future Delivery Contract</span>
-              <h3 className="text-2xl font-medium text-gray-900 mb-4">In-Ground Ytterbium</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">Tokenized future delivery contracts for physical ytterbium still in the ground at certified rare earth mining operations. Access ytterbium at pre-production economics, with delivery windows from months to years.</p>
-              <ul className="space-y-3">
-                {['Backed by proven ytterbium content in heavy rare earth reserves at partner mining sites', 'Pre-production pricing with built-in supply scarcity premium', 'On-chain reserve tracking with geological data transparency', 'Physical delivery or settlement at maturity', 'Verified reserves with third-party geological audits', 'Designed for institutional, sovereign, and long-duration strategies'].map((f, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
-                    <svg className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-orange-50 rounded-2xl p-6 md:p-8 border border-orange-100">
-              <span className="inline-block text-orange-700 text-xs font-semibold uppercase tracking-wider mb-3">Short-Term Delivery</span>
-              <h3 className="text-xl font-medium text-gray-900 mb-2">1 &ndash; 12 Months</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">Near-term ytterbium delivery contracts tied to active rare earth mining operations with heavy rare earth separation approaching production. Ideal for laser manufacturers, additive manufacturing companies, near-term portfolio allocation, and buyers seeking defined delivery timelines with transparent reserve verification.</p>
-            </div>
-            <div className="bg-amber-50 rounded-2xl p-6 md:p-8 border border-amber-100">
-              <span className="inline-block text-amber-700 text-xs font-semibold uppercase tracking-wider mb-3">Long-Term Delivery</span>
-              <h3 className="text-xl font-medium text-gray-900 mb-2">1 &ndash; 6 Years</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">Strategic ytterbium positions backed by proven ytterbium content in heavy rare earth reserves at earlier-stage mining operations. Built for sovereign wealth funds, industrial laser manufacturers, quantum computing developers, and forward-looking investors positioning for the multi-year ytterbium supply deficit.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* ===================== FOLD 5: RESOURCES ===================== */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">

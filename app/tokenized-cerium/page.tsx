@@ -97,9 +97,7 @@ export default function TokenizedCeriumPage() {
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
 
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left: Text */}
-            <div>
+          <div>
               <span className="inline-block bg-white/10 text-orange-200 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6 border border-orange-400/30">
                 The Future of Rare Earth Ownership
               </span>
@@ -119,55 +117,9 @@ export default function TokenizedCeriumPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Link>
-                <a
-                  href="#products"
-                  className="inline-flex items-center justify-center border border-white/30 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-white/10 transition-all duration-300"
-                >
-                  Two Products
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </a>
               </div>
-            </div>
-
-            {/* Right: Market Data Card */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Cerium Oxide (CeO&#8322;) / 99.5% Oxide Price</p>
-                  <p className="text-sm text-gray-400">Global Rare Earth Market</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-3xl md:text-4xl font-light text-white">$2,150</p>
-                  <p className="text-sm text-green-400 font-medium">&uarr; +32% YTD</p>
-                </div>
-              </div>
-              <div className="border-t border-white/10 pt-5 grid grid-cols-2 gap-4">
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">Market Size</p>
-                  <p className="text-lg font-semibold text-white">$2.4B+</p>
-                  <p className="text-xs text-gray-500">2025</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">2025 Deficit</p>
-                  <p className="text-lg font-semibold text-white">18,500 t</p>
-                  <p className="text-xs text-gray-500">Roskill</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">2026 Forecast</p>
-                  <p className="text-lg font-semibold text-white">$2,500/mt</p>
-                  <p className="text-xs text-gray-500">Roskill</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">Settlement</p>
-                  <p className="text-lg font-semibold text-white">T+0</p>
-                  <p className="text-xs text-gray-500">Instant</p>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
+          </div>
       </section>
 
       {/* ===================== FOLD 2: TICKER + THE CERIUM CRISIS ===================== */}
@@ -293,95 +245,6 @@ export default function TokenizedCeriumPage() {
               ))}
             </div>
             <p className="text-xs text-gray-400">Sources: Roskill, Critical Minerals Institute, USGS, International Rare Earth Association.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== FOLD 4: TWO PRODUCTS ===================== */}
-      <section id="products" className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Two Products</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
-            Two Ways to Own Cerium Digitally
-          </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
-            Toto Finance is building two distinct tokenized cerium products: a 1:1 asset-backed token for refined cerium oxide always redeemable for physical delivery, and In-Ground Cerium future delivery contracts for pre-production exposure.
-          </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            {/* Product 1 */}
-            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
-              <span className="inline-block bg-gray-900 text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
-                Asset-Backed Token
-              </span>
-              <h3 className="text-2xl font-medium text-gray-900 mb-4">1:1 Cerium Oxide Token</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Every token is backed 1:1 by refined cerium oxide (CeO&#8322;) stored in insured, audited vault facilities. High-purity cerium oxide (99.5%+ CeO&#8322;), ready for automotive catalyst production, glass polishing applications, and industrial use. Always redeemable for physical cerium on demand.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  'Backed 1:1 by refined cerium oxide (99.5%+ purity grade)',
-                  'Always redeemable for physical cerium delivery on demand',
-                  'Stored in insured, independently audited vault and warehouse facilities',
-                  'On-chain proof-of-reserves with real-time oracle feeds',
-                  'Fractional ownership, 24/7 tradeable, instant stablecoin settlement',
-                  'Ready for industrial end-use: catalytic converters, glass polishing, diesel additives, ceramic coatings',
-                ].map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
-                    <svg className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Product 2 */}
-            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
-              <span className="inline-block bg-gray-900 text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
-                Future Delivery Contract
-              </span>
-              <h3 className="text-2xl font-medium text-gray-900 mb-4">In-Ground Cerium</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Tokenized future delivery contracts for physical cerium still in the ground at certified rare earth mining operations. Access cerium at pre-production economics, with delivery windows from months to years.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  'Backed by proven and probable reserves at partner rare earth mining sites',
-                  'Pre-production pricing with built-in supply scarcity premium',
-                  'On-chain reserve tracking with geological data transparency',
-                  'Physical delivery or settlement at maturity',
-                  'Verified reserves with third-party geological audits',
-                  'Designed for institutional, sovereign, and long-duration strategies',
-                ].map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
-                    <svg className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Delivery Options */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-orange-50 rounded-2xl p-6 md:p-8 border border-orange-100">
-              <span className="inline-block text-orange-700 text-xs font-semibold uppercase tracking-wider mb-3">Short-Term Delivery</span>
-              <h3 className="text-xl font-medium text-gray-900 mb-2">1 &ndash; 12 Months</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Near-term cerium delivery contracts tied to active rare earth mining operations approaching production. Ideal for automotive manufacturers, glass manufacturers, near-term portfolio allocation, and buyers seeking defined delivery timelines with transparent reserve verification.
-              </p>
-            </div>
-            <div className="bg-amber-50 rounded-2xl p-6 md:p-8 border border-amber-100">
-              <span className="inline-block text-amber-700 text-xs font-semibold uppercase tracking-wider mb-3">Long-Term Delivery</span>
-              <h3 className="text-xl font-medium text-gray-900 mb-2">1 &ndash; 6 Years</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Strategic cerium positions backed by proven reserves at earlier-stage rare earth mining operations. Built for sovereign wealth funds, automotive OEMs, glass and optics manufacturers, and forward-looking investors positioning for the multi-year cerium supply deficit.
-              </p>
-            </div>
           </div>
         </div>
       </section>
