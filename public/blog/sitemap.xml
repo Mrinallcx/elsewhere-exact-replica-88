@@ -131,6 +131,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://totofinance.co/blog/page/25/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://totofinance.co/blog/posts/copper-tokenization/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://totofinance.co/blog/posts/real-assets-next-financial-cycle/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
