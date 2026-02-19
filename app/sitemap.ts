@@ -5,25 +5,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString();
 
   // FAQ Categories (anchor links for better SEO)
-  const faqCategories = [
-    'general-overview',
-    'platform-process',
-    'toto-token',
-    'roadmap-launch',
-    'user-experience',
-    'compliance-regulation',
-    'getting-started',
-    'asset',
-  ];
+  // const faqCategories = [
+  //   'general-overview',
+  //   'platform-process',
+  //   'toto-token',
+  //   'roadmap-launch',
+  //   'user-experience',
+  //   'compliance-regulation',
+  //   'getting-started',
+  //   'asset',
+  // ];
 
-  // FAQ Asset Subcategories
-  const faqAssetSubcategories = [
-    'diamonds',
-    'gold',
-    'platinum',
-    'sapphire',
-    'silver',
-  ];
+  // // FAQ Asset Subcategories
+  // const faqAssetSubcategories = [
+  //   'diamonds',
+  //   'gold',
+  //   'platinum',
+  //   'sapphire',
+  //   'silver',
+  // ];
 
   // Product Sections (anchor links)
   const productSections = [
@@ -84,7 +84,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/tokenized-tin`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 1.0,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/tokenized-platinum`,
@@ -206,12 +206,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-    // {
-    //   url: `${baseUrl}/achievements`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly',
-    //   priority: 0.8,
-    // },
+    {
+      url: `${baseUrl}/achievements`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
     {
       url: `${baseUrl}/vision-2030`,
       lastModified: currentDate,
@@ -255,21 +261,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
 
-    // FAQ Category Anchor Links (for better SEO indexing of FAQ sections)
-    ...faqCategories.map((category) => ({
-      url: `${baseUrl}/faq#${category}`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.4,
-    })),
+    // // FAQ Category Anchor Links (for better SEO indexing of FAQ sections)
+    // ...faqCategories.map((category) => ({
+    //   url: `${baseUrl}/faq#${category}`,
+    //   lastModified: currentDate,
+    //   changeFrequency: 'monthly' as const,
+    //   priority: 0.4,
+    // })),
     
-    // FAQ Asset Subcategory Anchor Links
-    ...faqAssetSubcategories.map((subcategory) => ({
-      url: `${baseUrl}/faq#asset-${subcategory}`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.3,
-    })),
+    // // FAQ Asset Subcategory Anchor Links
+    // ...faqAssetSubcategories.map((subcategory) => ({
+    //   url: `${baseUrl}/faq#asset-${subcategory}`,
+    //   lastModified: currentDate,
+    //   changeFrequency: 'monthly' as const,
+    //   priority: 0.3,
+    // })),
     
     // Product Section Anchor Links
     ...productSections.map((section) => ({

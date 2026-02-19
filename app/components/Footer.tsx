@@ -38,6 +38,7 @@ const footerColumns = [
   {
     heading: 'Company',
     links: [
+      { label: 'About Us', href: '/about' },
       { label: 'Achievements', href: 'https://totofinance.co/achievements', },
       { label: 'Careers', href: 'https://totofinance.co/careers', external: true },
       { label: 'Products', href: 'https://totofinance.co/products' },
@@ -80,12 +81,14 @@ const footerColumns = [
 const footerBottomLinks = [
   { label: 'Privacy Policy', href: '/privacy-policy' },
   { label: 'Terms & Conditions', href: '/terms-and-condition' },
-  { label: 'Sitemap', href: '/sitemap.xml' },
+  { label: 'Sitemap', href: '/sitemap.xml' }
 ];
 
 /* ── Helper to render a single link ── */
 function FooterLink({ link }: { link: { label: string; href: string; external?: boolean } }) {
-  if (link.href.startsWith('http')) {
+  const isExternal = link.href.startsWith('http') || link.external;
+  
+  if (isExternal) {
     return (
       <a
         href={link.href}
@@ -98,6 +101,7 @@ function FooterLink({ link }: { link: { label: string; href: string; external?: 
       </a>
     );
   }
+  
   return (
     <Link href={link.href}>
       <span className='footer-link hover:underline inline-flex items-center text-[13px]'>{link.label}</span>
