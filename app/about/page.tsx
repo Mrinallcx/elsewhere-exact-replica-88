@@ -38,11 +38,7 @@ export default function AboutPage() {
       <Navigation pastHero={true} />
 
       {/* ===================== HERO SECTION ===================== */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white px-4 sm:px-6 md:px-8 lg:px-12 pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden min-h-[70vh] flex items-center mt-0 md:mt-16">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-        
-        {/* Dark overlay for better text contrast */}
-        <div className="absolute inset-0 bg-black/60 z-0"></div>
+      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white px-4 sm:px-6 md:px-8 lg:px-12 pt-20 md:pt-36 pb-16 md:pb-24 overflow-hidden min-h-[70vh] flex items-center mt-16">
 
         <div className="relative z-10 max-w-7xl mx-auto text-center w-full">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-6">
