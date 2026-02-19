@@ -45,7 +45,7 @@ export default function AchievementsPage() {
             Achievements, Firsts<br className="hidden md:block" /> &amp; Milestones
           </h1>
           <p className="text-base md:text-lg text-gray-400 leading-relaxed max-w-3xl mx-auto mb-8">
-            A track record of industry firsts in real-world asset tokenization across multiple blockchains. Over 30,000 tokenized assets issued, the world&apos;s largest tokenized diamond marketplace, and recognized as a pioneer in commodity tokenization under Liechtenstein&apos;s TVTG regulatory framework.
+            A track record of industry firsts in real-world asset tokenization across multiple blockchains. Over 30,000 tokenized assets issued, the world&apos;s largest tokenized asset marketplace, and recognized as a pioneer in commodity tokenization under Liechtenstein&apos;s TVTG regulatory framework.
           </p>
           <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-14">
             <div className="text-center">
@@ -69,16 +69,16 @@ export default function AchievementsPage() {
           {/* Achievement Navigation Badges */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 max-w-5xl mx-auto">
             {[
-              { num: 'I', title: 'First RWA on Cardano', tag: 'Cardano', id: 'milestone-1' },
-              { num: 'II', title: 'First RWA on XRPL', tag: 'XRP Ledger', id: 'milestone-2' },
-              { num: 'III', title: 'First RWA on Solana', tag: 'Solana', id: 'milestone-3' },
-              { num: 'IV', title: 'Catalyst Grant Winner', tag: 'Fund 12', id: 'milestone-4' },
-              { num: 'V', title: 'First Tokenized Sapphires', tag: 'Gemstones', id: 'milestone-5' },
-              { num: 'VI', title: 'Largest Diamond Market', tag: '30,000+ Assets', id: 'milestone-6' },
-              { num: 'VII', title: '$1.2M Diamond Tokenized', tag: '10ct D Flawless', id: 'milestone-7' },
-              { num: 'VIII', title: 'MiCA ESMA Registered', tag: 'EU Compliance', id: 'milestone-8' },
-              { num: 'IX', title: 'Gold, Silver & Platinum', tag: 'Precious Metals', id: 'milestone-9' },
-              { num: 'X', title: 'Direct Ownership', tag: 'No SPV Risk', id: 'milestone-10' },
+              { num: 'I', title: 'Largest RWA Marketplace', tag: '30,000+ Real Assets', id: 'milestone-1' },
+              { num: 'II', title: '$1.2M Diamond Tokenized ', tag: '10-Carat D Flawless', id: 'milestone-2' },
+              { num: 'III', title: 'MiCA ESMA Registered', tag: 'EU Compliance', id: 'milestone-3' },
+              { num: 'IV', title: 'Cardano Grant Winner ', tag: 'Fund 12', id: 'milestone-4' },
+              { num: 'V', title: 'Gold, Silver & Platinum', tag: 'Precious Metals', id: 'milestone-5' },
+              { num: 'VI', title: 'Cardano First Tokenized Diamonds', tag: 'Via NMKR', id: 'milestone-6' },
+              { num: 'VII', title: 'Solana’s First Tokenized Diamonds', tag: 'Via OREMOB', id: 'milestone-7' },
+              { num: 'VIII', title: 'First RWA on XRPL', tag: 'Via xrp.cafe', id: 'milestone-8' },
+              { num: 'IX', title: 'First Tokenized Sapphires ', tag: 'Ever on Blockchain', id: 'milestone-9' },
+              { num: 'X', title: 'Polygon’s First Tokenized Diamonds ', tag: 'Via Polytrade', id: 'milestone-10' },
             ].map((item) => (
               <a
                 key={item.id}
@@ -110,133 +110,169 @@ export default function AchievementsPage() {
           <div className="divide-y divide-gray-200">
             {/* Milestone 1 */}
             <div id="milestone-1" className="py-10 md:py-12 first:pt-0 scroll-mt-24">
-              <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Cardano</span>
-              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">First RWA on Cardano</h3>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">30,000+ Assets</span>
+                <span className="inline-block bg-purple-100 text-purple-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">World Record</span>
+              </div>
+              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">Largest Tokenized Asset Marketplace in the World</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                World&apos;s first real-world diamonds tokenized on the Cardano blockchain. Launched at Cardano Summit 2023 in partnership with NMKR. 34 Tiamond NFTs sold out within 48 hours. A giveaway of 10 diamond NFTs was distributed to Summit attendees via 1,000 QR codes. A follow-up batch of 15 diamonds also sold out within hours, followed by an 11-day daily drop series.
+                Toto Finance operates the world&apos;s largest tokenized real-world asset marketplace, with over 30,000 individual assets issued on-chain. Spanning certified diamonds, sapphires, gold, silver, platinum, and other physical commodities, each asset is 1:1 backed by a real-world item held in insured, audited custody. Operating under Liechtenstein&apos;s TVTG regulatory framework and EU MiCA compliance, this marketplace represents the most extensive and regulated RWA ecosystem ever built on blockchain – featured alongside JPMorgan, BlackRock, and Goldman Sachs in Plume Network&apos;s RWA market report.
               </p>
               <div className="flex flex-wrap gap-2">
-                <a href="https://www.emurgo.io/press-news/cardano-nft-case-study-nmkr-and-tiamonds/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">EMURGO Case Study <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
-                <a href="https://www.jpg.store/collection/tiamondsxnmkr" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">JPG Store <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
-                <a href="https://www.nmkr.io/clients/nmkr-x-tiamonds" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">NMKR Partnership <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
-                <a href="https://blog.tiamonds.com/world-first-real-world-diamonds-tokenized-on-cardano/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Tiamonds Blog <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://plumenetwork.xyz/blog/plumeberg-6-2025" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Plumeberg RWA Report <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://cryptorank.io/news/feed/d31af-cardano-pushes-forward-in-rwa-tokenization-genius" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">CryptoRank Coverage <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://bitcourier.co.uk/blog/tiamonds-review" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">BitCourier Review <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
               </div>
             </div>
 
             {/* Milestone 2 */}
             <div id="milestone-2" className="py-10 md:py-12 scroll-mt-24">
-              <span className="inline-block bg-purple-100 text-purple-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">XRP Ledger</span>
-              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">First RWA on XRP Ledger</h3>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="inline-block bg-emerald-100 text-emerald-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">10CT D Flawless</span>
+                <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">GIA Certified</span>
+                <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Lloyd&apos;s Insured</span>
+              </div>
+              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">Most Valuable Diamond Ever Tokenized on Blockchain</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                First RWA mint on the XRPL ecosystem via xrp.cafe, the leading NFT marketplace on the XRP Ledger. The initial collection featured real-world, non-conflict-zone diamonds backed by secure storage in Liechtenstein, verified by LCX/GIA, and insured by Lloyd&apos;s London. A follow-up &ldquo;Chocolate Collection&rdquo; (Tiamond Delights) added 10 themed diamonds on XRPL.
+                Toto Finance tokenized the most valuable diamond in blockchain history – a 10-carat, D Flawless diamond valued at $1.2 million. D color represents absolute colorlessness, the highest grading possible. Flawless (FL) clarity means zero internal or external imperfections under any magnification. GIA-certified and secured in a Liechtenstein vault insured by Lloyd&apos;s of London, this landmark tokenization was covered by Yahoo Finance and distributed via Globe Newswire – demonstrating that institutional-grade luxury assets can be transparently owned and traded on blockchain.
               </p>
               <div className="flex flex-wrap gap-2">
-                <a href="https://xrp.cafe/collection/tiamonds-rwa" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">xrp.cafe <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
-                <a href="https://messari.io/copilot/share/understanding-xrp-cafe-8eeb408d-98ac-4c50-9dd1-c55f6e62bafe" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Messari Research <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
-                <a href="https://blog.tiamonds.com/introducing-tiamonds-chocolate-collection-on-xrp-cafe/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Chocolate Collection <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://finance.yahoo.com/news/tiamonds-landmark-launch-unmissable-1-010000749.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Yahoo Finance <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://www.globenewswire.com/news-release/2023/10/06/2755872/0/en/Tiamonds-Landmark-Launch-The-Unmissable-1-2M-10-Carat-D-Flawless-Diamond.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Globe Newswire <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://blog.totofinance.co/tiamonds-sets-the-bar-1-2-million-10-carat-tokenized-diamond/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Toto Finance Blog <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
               </div>
             </div>
 
             {/* Milestone 3 */}
             <div id="milestone-3" className="py-10 md:py-12 scroll-mt-24">
-              <span className="inline-block bg-green-100 text-green-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Solana</span>
-              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">First RWA on Solana</h3>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="inline-block bg-indigo-100 text-indigo-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">EU Compliance</span>
+                <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">MiCA</span>
+                <span className="inline-block bg-purple-100 text-purple-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">ESMA</span>
+                <span className="inline-block bg-teal-100 text-teal-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">TVTG</span>
+              </div>
+              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">MiCA ESMA Registered – Built for Institutional Trust</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Among the first tokenized physical assets (diamonds) on the Solana blockchain. In partnership with OREMOB and NMKR, launched a collection of 100 exclusive tokenized diamonds on both Solana and Cardano. Users could select their preferred blockchain for minting, with fiat payments also accepted.
+                Toto Finance is registered and compliant under the EU&apos;s Markets in Crypto-Assets (MiCA) regulation – administered by ESMA (European Securities and Markets Authority). This makes Toto Finance one of a very small number of RWA tokenization platforms operating within a fully recognized, enforceable European regulatory framework. Combined with Liechtenstein&apos;s TVTG blockchain law – under which LCX serves as a licensed Physical Validator – Toto Finance offers investors one of the most legally robust and transparent ownership structures in the entire digital asset space. For institutional investors and regulated entities, this is the standard that matters.
               </p>
               <div className="flex flex-wrap gap-2">
-                <a href="https://blog.tiamonds.com/tokenized-diamonds-on-solana-in-partnership-with-oremob/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Tiamonds Blog <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://blockchainwire.io/press-release/toto-finance-debuts-new-brand-and-platform-for-tokenization-of-commodities-and-real-world-assets" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">BlockchainWire <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://tiamonds.s3.us-east-1.amazonaws.com/website/Tiamonds+TOTO+MiCAR+White+Paper+-+EU_EEA+Edition.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">MiCA Whitepaper <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://hacken.io/audits/tiamonds/sca-tiamonds-toto-contracts-jan2025/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Hacken Audit <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
               </div>
             </div>
 
             {/* Milestone 4 */}
             <div id="milestone-4" className="py-10 md:py-12 scroll-mt-24">
-              <span className="inline-block bg-orange-100 text-orange-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Cardano Catalyst</span>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Cardano</span>
+                <span className="inline-block bg-orange-100 text-orange-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Fund 12</span>
+                <span className="inline-block bg-green-100 text-green-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Community Validated</span>
+              </div>
               <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">Cardano Project Catalyst Fund 12 Grant Winner</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Won two Cardano Project Catalyst Fund 12 grants for RWA tokenization. Grant 1: &ldquo;Cardano-Powered RWA Tokenization for Real-World Diamonds&rdquo; covering migration of the marketplace to Cardano with improved security and lower costs. Grant 2: &ldquo;Cardano-based DID for RWA and Tokenized Assets&rdquo; for integrating decentralized identity with 200,000 ADA budget (100K Catalyst + 100K matched). Both projects completed successfully.
+                Toto Finance was selected as a Fund 12 winner through Cardano&apos;s community-governed Catalyst program – one of the most competitive decentralized grant programs in the blockchain industry. The grant recognized Toto Finance&apos;s contribution to real-world asset infrastructure, on-chain compliance, and the expansion of Cardano&apos;s RWA ecosystem. This milestone validates not just technical innovation, but the trust placed by the Cardano community in Toto Finance&apos;s long-term vision for tokenized commodities and real-world asset accessibility.
               </p>
               <div className="flex flex-wrap gap-2">
-                <a href="https://projectcatalyst.io/funds/12/cardano-use-cases-concept/cardano-powered-rwa-tokenization-for-real-world-diamonds" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Project Catalyst <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://projectcatalyst.io/funds/12/cardano-use-cases-concept/cardano-powered-rwa-tokenization-for-real-world-diamonds" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Cardano Catalyst <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
                 <a href="https://cryptorank.io/news/feed/d31af-cardano-pushes-forward-in-rwa-tokenization-genius" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">CryptoRank <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
               </div>
             </div>
 
             {/* Milestone 5 */}
             <div id="milestone-5" className="py-10 md:py-12 scroll-mt-24">
-              <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Gemstones</span>
-              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">World&apos;s First Tokenized Sapphire Collection</h3>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Precious Metals</span>
+                <span className="inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Gold</span>
+                <span className="inline-block bg-gray-100 text-gray-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Silver</span>
+                <span className="inline-block bg-slate-100 text-slate-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Platinum</span>
+              </div>
+              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">Tokenized Gold, Silver &amp; Platinum – On-Chain Precious Metals</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Debuted at Paris Blockchain Week 2025 in partnership with Berr &amp; Partners. Sourced from Sri Lanka (representing only 2% of global supply), these rare unheated sapphires are stored in insured Liechtenstein vaults. Each token offers on-chain proof of ownership and physical redemption. A portion of proceeds supports children&apos;s scholarships in Sri Lanka. Panel introduced by Don Tapscott.
+                Toto Finance expanded its tokenization infrastructure beyond gemstones to include the world&apos;s most trusted store-of-value assets – gold, silver, and platinum. Each tokenized metal is physically held in audited, insured custody with on-chain proof-of-reserves, oracle price feeds, and full redemption rights. This expansion positions Toto Finance as a comprehensive commodity tokenization platform, giving global investors compliant, borderless, 24/7 access to precious metals – without brokers, intermediaries, delays, or geographic restrictions.
               </p>
               <div className="flex flex-wrap gap-2">
-                <a href="https://blog.tiamonds.com/tiamonds-2025-recap/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">2025 Recap <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
-                <a href="https://app.tiamonds.com/edition/sapphire" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Sapphire Marketplace <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://blockchainwire.io/press-release/toto-finance-debuts-new-brand-and-platform-for-tokenization-of-commodities-and-real-world-assets" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">BlockchainWire <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://blockchainreporter.net/toto-finance-brings-real-world-assets-on-chain-with-rwa-tokenization" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Blockchain Reporter <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://www.mexc.com/news/365939" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">MEXC Coverage <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
               </div>
             </div>
 
             {/* Milestone 6 */}
             <div id="milestone-6" className="py-10 md:py-12 scroll-mt-24">
-              <span className="inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Marketplace</span>
-              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">World&apos;s Largest Tokenized Diamond Marketplace</h3>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Cardano</span>
+                <span className="inline-block bg-purple-100 text-purple-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Blockchain First</span>
+              </div>
+              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">First Ever Tokenized Diamonds on Cardano</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Over 20,000 investable diamonds available, with 30,000+ tokenized assets issued and traded across Ethereum, Cardano, XRPL, and Solana. All diamonds are GIA-certified, insured by Lloyd&apos;s London, stored in Liechtenstein vaults.
+                World&apos;s first real-world diamonds tokenized on the Cardano blockchain. Launched at Cardano Summit 2023 in partnership with NMKR, Toto Finance (formerly Tiamonds) debuted 34 diamond NFTs – each backed 1:1 by a certified physical diamond stored in an insured Liechtenstein vault. The collection sold out within 48 hours. A giveaway of 10 diamond NFTs was distributed to Summit attendees via 1,000 QR codes. A follow-up batch of 15 diamonds also sold out within hours, followed by an 11-day daily drop series – establishing Toto Finance as the undisputed pioneer of gemstone tokenization on Cardano.
               </p>
               <div className="flex flex-wrap gap-2">
-                <a href="https://finance.yahoo.com/news/tiamonds-landmark-launch-unmissable-1-010000749.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Yahoo Finance <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
-                <a href="https://bitcourier.co.uk/blog/tiamonds-review" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">BitCourier <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://www.emurgo.io/press-news/cardano-nft-case-study-nmkr-and-tiamonds/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">EMURGO Case Study <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://www.jpg.store/collection/tiamondsxnmkr" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">JPG Store <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://www.nmkr.io/clients/nmkr-x-tiamonds" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">NMKR Partnership <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://blog.tiamonds.com/world-first-real-world-diamonds-tokenized-on-cardano/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Tiamonds Blog <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://www.nmkr.io/drops/tiamonds-2023" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Collection <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
               </div>
             </div>
 
             {/* Milestone 7 */}
             <div id="milestone-7" className="py-10 md:py-12 scroll-mt-24">
-              <span className="inline-block bg-emerald-100 text-emerald-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Landmark Asset</span>
-              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">Tokenized $1.2M, 10-Carat D Flawless Diamond</h3>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="inline-block bg-green-100 text-green-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mr-2">Solana</span>
+                <span className="inline-block bg-emerald-100 text-emerald-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mr-2">Blockchain First</span>
+                <span className="inline-block bg-teal-100 text-teal-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Multi-Chain RWA</span>
+              </div>
+              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">First Ever Tokenized Diamonds on Solana</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Among the highest-value individual RWAs tokenized as an NFT at the time (October 2023). 10-carat, D-color, Flawless diamond valued at $1.2M, with comparable stones listed at over $2.2M. GIA-certified, Liechtenstein vault, Lloyd&apos;s insured.
+                Toto Finance extended its multi-chain RWA infrastructure to Solana, becoming the first platform to bring certified, vault-stored, insured physical diamonds on-chain within the Solana ecosystem. Each diamond NFT was backed 1:1 by a GIA-certified physical diamond, stored in an insured Liechtenstein vault and verified by LCX. This milestone made Toto Finance the only RWA project to have launched regulated, asset-backed tokenized diamonds across multiple major blockchain networks – each with live sales, verified custody, and institutional-grade compliance infrastructure.
               </p>
               <div className="flex flex-wrap gap-2">
-                <a href="https://finance.yahoo.com/news/tiamonds-landmark-launch-unmissable-1-010000749.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Yahoo Finance <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://tiamonds.oremob.io/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Collection <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://x.com/totofinance/status/1846622409400766932?s=20" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Announcements <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
               </div>
             </div>
 
             {/* Milestone 8 */}
             <div id="milestone-8" className="py-10 md:py-12 scroll-mt-24">
-              <span className="inline-block bg-indigo-100 text-indigo-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Regulatory</span>
-              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">MiCA-Compliant: ESMA Whitepaper Registration</h3>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="inline-block bg-purple-100 text-purple-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mr-2">XRP Ledger</span>
+                <span className="inline-block bg-indigo-100 text-indigo-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Blockchain First</span>
+              </div> 
+              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">First Ever RWA on the XRP Ledger</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                $TOTO whitepaper listed in the ESMA interim MiCA register as a compliant utility token. Enables trading across regulated platforms in the EU and EEA. Smart contract audit completed by Hacken. Regulatory-first approach to RWA tokenization.
-              </p>
+              Toto Finance became the first project to bring a real-world asset onto the XRP Ledger ecosystem – minting certified, physical diamond-backed NFTs via xrp.cafe, the leading NFT marketplace on XRPL. Each diamond was non-conflict-zone sourced, verified by LCX and GIA, and insured by Lloyd's of London. A follow-up themed collection – "Tiamond Delights" (Chocolate Collection) – added 10 uniquely themed diamond NFTs on XRPL, further cementing Toto Finance's position as a cross-chain RWA pioneer. Referenced by Messari in their ecosystem research on the XRP Ledger.             </p>
               <div className="flex flex-wrap gap-2">
-                <a href="https://hacken.io/audits/tiamonds/sca-tiamonds-toto-contracts-jan2025/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Hacken Audit <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
-                <a href="https://tiamonds.s3.us-east-1.amazonaws.com/website/Tiamonds+TOTO+MiCAR+White+Paper+-+EU_EEA+Edition.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">MiCA Whitepaper <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://xrp.cafe/collection/tiamonds-rwa" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Collection <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://messari.io/copilot/share/understanding-xrp-cafe-8eeb408d-98ac-4c50-9dd1-c55f6e62bafe" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Messari Research <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
               </div>
             </div>
 
             {/* Milestone 9 */}
             <div id="milestone-9" className="py-10 md:py-12 scroll-mt-24">
-              <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Precious Metals</span>
-              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">Tokenized Gold, Silver &amp; Platinum Collections</h3>
+              <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4 mr-2">Gemstones</span>
+              <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4 mr-2">World First</span>
+              <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">New Asset Class</span>
+              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">First Ever Tokenized Sapphires in the World</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Gold: 7 Swiss-refined Metalor 1-oz bars, LBMA-certified, sold out within 5 days. Silver: 100 Argor Heraeus 1-oz bars, mintable on Cardano or Ethereum. Platinum: Valcambi-refined 1-oz bars. All stored in insured Liechtenstein vaults, redeemable for physical bars.
+              Beyond diamonds, Toto Finance pioneered the world's first tokenization of sapphires on blockchain – opening an entirely new gemstone asset class to global investors. Each tokenized sapphire is physically verified, vault-stored, and insured, following the same institutional-grade custody model established with diamonds. This launch marked a pivotal expansion from a single-asset platform into a full-spectrum gemstone tokenization marketplace, laying the groundwork for Toto Finance's broader commodity and real-world asset vision
               </p>
               <div className="flex flex-wrap gap-2">
-                <a href="https://app.tiamonds.com/edition/gold" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Gold <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
-                <a href="https://app.tiamonds.com/edition/silver" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Silver <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
-                <a href="https://app.tiamonds.com/edition/platinum" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Platinum <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
-              </div>
+                <a href="https://blog.totofinance.co/introducing-tokenized-sapphires/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Blog<svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                 </div>
             </div>
 
             {/* Milestone 10 */}
             <div id="milestone-10" className="py-10 md:py-12 last:pb-0 scroll-mt-24">
-              <span className="inline-block bg-rose-100 text-rose-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Direct Ownership</span>
-              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">Unique Direct Ownership Model (No SPV Risk)</h3>
+              <span className="inline-block bg-rose-100 text-rose-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4 mr-2">Polygon</span>
+              <span className="inline-block bg-rose-100 text-rose-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Blockchain First</span>
+              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">First Ever Tokenized Diamonds on Polygon</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Every NFT is a direct ownership deed, not an SPV-backed security. Unlike most tokenization platforms that use Special Purpose Vehicles (where assets are legally tied to the company), Toto Finance ensures each NFT is a direct ownership deed for the underlying asset. Even if Toto Finance ceases operations, NFT holders retain full ownership and can redeem the physical asset at partnered vaults. This eliminates counterparty risk and ensures true decentralization of ownership.
-              </p>
+              Toto Finance launched the first-ever tokenized diamonds on the Polygon blockchain, in partnership with Polytrade – Polygon's leading RWA marketplace. Each diamond NFT was backed 1:1 by a certified physical diamond, stored in an insured Liechtenstein vault, and verified by LCX and GIA. This milestone made Toto Finance the only RWA project in the world to have launched regulated, asset-backed tokenized diamonds across four major blockchain networks – Cardano, XRP Ledger, Solana, and Polygon – each with live sales, verified custody, and institutional-grade compliance infrastructure    </p>
               <div className="flex flex-wrap gap-2">
-                <a href="https://bitcourier.co.uk/blog/tiamonds-review" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">BitCourier <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
-                <a href="https://totofinance.co/doc-imprint" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Toto Finance Docs <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://market.polytrade.app/asset-hub?market_place_v2_backend_prod%5BrefinementList%5D%5Bdata.protocol_name%5D%5B0%5D=Tiamonds" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Collection <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
+                <a href="https://blog.totofinance.co/tiamonds-partnering-with-polytrade/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-900 px-3 py-1 rounded-full transition-colors border border-amber-200/60">Blog <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
               </div>
             </div>
           </div>
@@ -253,23 +289,29 @@ export default function AchievementsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
-              { outlet: 'Yahoo Finance', title: 'Tiamonds Landmark Launch: The Unmissable $1.2M, 10-Carat, D Flawless Diamond', tag: 'Globe Newswire' },
-              { outlet: 'EMURGO (Cardano)', title: 'Cardano NFT Case Study: NMKR and Tiamonds', tag: 'Case Study' },
-              { outlet: 'Plumeberg News', title: 'Featured alongside JPMorgan, BlackRock, Goldman Sachs in RWA market report', tag: 'Plume Network' },
-              { outlet: 'Messari', title: 'Referenced Tiamonds in "Understanding XRP.Cafe" as key RWA example on XRPL', tag: 'Research' },
-              { outlet: 'CryptoRank', title: 'Cardano Pushes Forward in RWA Tokenization — names Tiamonds as key initiative', tag: 'Analysis' },
-              { outlet: 'BlockchainWire / CoinWagmi', title: 'Toto Finance Debuts New Brand and Platform for Tokenization of Commodities and RWA', tag: 'Nov 2025' },
-              { outlet: 'Blockchain Reporter / MEXC', title: 'Toto Finance Brings Real-World Assets On-Chain with RWA Tokenization', tag: 'Dec 2025' },
-              { outlet: 'BitCourier', title: 'Tiamonds: One-Stop Shop for Tokenized Real-World Assets — Full review', tag: 'Review' },
-              { outlet: 'CoinMarketCap / CoinGecko', title: 'Listed with full project profiles across major aggregators and exchanges', tag: 'Listings' },
+              { outlet: 'Yahoo Finance', title: 'Tiamonds Landmark Launch: The Unmissable $1.2M, 10-Carat, D Flawless Diamond', tag: 'Globe Newswire', link: 'https://finance.yahoo.com/news/tiamonds-landmark-launch-unmissable-1-010000749.html' },
+              { outlet: 'EMURGO (Cardano)', title: 'Cardano NFT Case Study: NMKR and Tiamonds', tag: 'Case Study', link: 'https://www.emurgo.io/press-news/cardano-nft-case-study-nmkr-and-tiamonds/' },
+              { outlet: 'Plumeberg News', title: 'Featured alongside JPMorgan, BlackRock, Goldman Sachs in RWA market report', tag: 'Plume Network' , link: 'https://plumenetwork.xyz/blog/plumeberg-6-2025'},
+              { outlet: 'Messari', title: 'Referenced Tiamonds in "Understanding XRP.Cafe" as key RWA example on XRPL', tag: 'Research', link: 'https://messari.io/copilot/share/understanding-xrp-cafe-8eeb408d-98ac-4c50-9dd1-c55f6e62bafe'},
+              { outlet: 'CryptoRank', title: 'Cardano Pushes Forward in RWA Tokenization — names Tiamonds as key initiative', tag: 'Analysis', link: 'https://cryptorank.io/news/feed/d31af-cardano-pushes-forward-in-rwa-tokenization-genius' },
+              { outlet: 'BlockchainWire / CoinWagmi', title: 'Toto Finance Debuts New Brand and Platform for Tokenization of Commodities and RWA', tag: 'Nov 2025', link: 'https://blockchainwire.io/press-release/toto-finance-debuts-new-brand-and-platform-for-tokenization-of-commodities-and-real-world-assets' },
+              { outlet: 'Blockchain Reporter / MEXC', title: 'Toto Finance Brings Real-World Assets On-Chain with RWA Tokenization', tag: 'Dec 2025', link: 'https://blockchainreporter.net/toto-finance-brings-real-world-assets-on-chain-with-rwa-tokenization' },
+              { outlet: 'BitCourier', title: 'Tiamonds: One-Stop Shop for Tokenized Real-World Assets — Full review', tag: 'Review', link: 'https://bitcourier.co.uk/blog/tiamonds-review' },
+              { outlet: 'CoinMarketCap / CoinGecko', title: 'Listed with full project profiles across major aggregators and exchanges', tag: 'Listings' , link: 'https://coinmarketcap.com/currencies/tia/'},
             ].map((item, i) => (
-              <div key={i} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+              <a
+                key={i}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-gray-300 hover:shadow-md transition-all duration-300"
+              >
                 <div className="flex items-center justify-between mb-3">
                   <p className="font-semibold text-gray-900 text-sm">{item.outlet}</p>
                   <span className="text-xs bg-gray-200 text-gray-600 px-2 py-0.5 rounded-full">{item.tag}</span>
                 </div>
                 <p className="text-sm text-gray-600 leading-relaxed">{item.title}</p>
-              </div>
+              </a>
             ))}
           </div>
 
@@ -357,7 +399,7 @@ export default function AchievementsPage() {
             Building the Future of Asset Tokenization
           </h2>
           <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-8">
-            From tokenizing the first diamond on Cardano to building the world&apos;s largest tokenized diamond marketplace, Toto Finance continues to pioneer real-world asset tokenization across blockchains.
+            From tokenizing the first diamond on Ethereum to building the world&apos;s largest tokenized assets marketplace, Toto Finance continues to pioneer real-world asset tokenization across blockchains.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -84,7 +84,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/tokenized-tin`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/tokenized-platinum`,

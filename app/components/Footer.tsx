@@ -38,7 +38,6 @@ const footerColumns = [
   {
     heading: 'Company',
     links: [
-      { label: 'Tia Token', href: 'https://toto.xyz/tia-token', external: true },
       { label: 'Careers', href: 'https://totofinance.co/careers', external: true },
       { label: 'Products', href: 'https://totofinance.co/products' },
     ],
