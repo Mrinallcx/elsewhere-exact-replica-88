@@ -38,6 +38,7 @@ const footerColumns = [
   {
     heading: 'Company',
     links: [
+      { label: 'Achievements', href: 'https://totofinance.co/achievements', },
       { label: 'Careers', href: 'https://totofinance.co/careers', external: true },
       { label: 'Products', href: 'https://totofinance.co/products' },
     ],
