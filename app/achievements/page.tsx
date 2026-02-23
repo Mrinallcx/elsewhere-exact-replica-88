@@ -1,5 +1,6 @@
 // Server Component (NO "use client")
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 60
+export const revalidate = 60;
 
 import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
@@ -12,11 +13,14 @@ const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur
 const Footer = dynamicImport(() => import('../components/Footer'));
 const NewsletterSection = dynamicImport(() => import('../components/NewsletterSection'));
 
-export async function getStaticProps() {
-    return { props: {} };
-}
-
-export default function AchievementsPage() {
+// Equivalent to getStaticProps - fetch data here
+export default async function AchievementsPage() {
+  // Example: Fetch achievements data from API if available
+  // const achievements = await fetch('https://api.example.com/achievements', {
+  //   next: { revalidate: 60 } // ISR: revalidate every 60 seconds
+  // }).then(res => res.json());
+  
+  // For now, using static data
   return (
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}

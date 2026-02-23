@@ -1,5 +1,6 @@
 // Server Component (NO "use client")
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 60
+export const revalidate = 60;
 
 import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
@@ -18,8 +19,15 @@ const GoldFAQ = dynamicImport(
   () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ }))
 );
 
-// FAQ Data
-const faqData = [
+// Equivalent to getStaticProps - fetch data here
+export default async function TokenizedGoldPage() {
+  // Example: Fetch gold data from API if available
+  // const goldData = await fetch('https://api.example.com/tokenized-gold', {
+  //   next: { revalidate: 60 } // ISR: revalidate every 60 seconds
+  // }).then(res => res.json());
+  
+  // FAQ Data (static for now, can be fetched from API)
+  const faqData = [
   {
     question: 'What is tokenized gold?',
     answer:
@@ -67,10 +75,6 @@ const faqData = [
   },
 ];
 
-export async function getStaticProps() {
-    return { props: {} };
-}
-export default function TokenizedGoldPage() {
   return (
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}

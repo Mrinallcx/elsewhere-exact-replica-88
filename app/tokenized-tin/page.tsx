@@ -1,5 +1,6 @@
 // Server Component (NO "use client")
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 60
+export const revalidate = 60;
 
 import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
@@ -18,8 +19,15 @@ const TinFAQ = dynamicImport(
   () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ }))
 );
 
-// FAQ Data
-const faqData = [
+// Equivalent to getStaticProps - fetch data here
+export default async function TokenizedTinPage() {
+  // Example: Fetch tin data from API if available
+  // const tinData = await fetch('https://api.example.com/tokenized-tin', {
+  //   next: { revalidate: 60 } // ISR: revalidate every 60 seconds
+  // }).then(res => res.json());
+  
+  // FAQ Data (static for now, can be fetched from API)
+  const faqData = [
   {
     question: 'What is tokenized tin?',
     answer:
@@ -67,11 +75,6 @@ const faqData = [
   },
 ];
 
-export async function getStaticProps() {
-    return { props: {} };
-}
-
-export default function TokenizedTinPage() {
   return (
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}

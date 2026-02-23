@@ -1,5 +1,6 @@
 // Server Component (NO "use client")
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 60
+export const revalidate = 60;
 
 import dynamicImport from 'next/dynamic';
 import { JobPostingStructuredData } from '../components/JobPostingStructuredData';
@@ -33,11 +34,14 @@ interface JobPosition {
   applyUrl?: string;
 }
 
-export async function getStaticProps() {
-    return { props: {} };
-}
-
-export default function CareersPage() {
+// Equivalent to getStaticProps - fetch data here
+export default async function CareersPage() {
+  // Example: Fetch job positions from API if available
+  // const jobPositions = await fetch('https://api.example.com/jobs', {
+  //   next: { revalidate: 60 } // ISR: revalidate every 60 seconds
+  // }).then(res => res.json());
+  
+  // For now, using static data
 
   // Placeholder job positions - replace with actual content later
   const jobPositions: JobPosition[] = [
