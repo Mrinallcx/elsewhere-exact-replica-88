@@ -67,6 +67,9 @@ const faqData = [
   },
 ];
 
+export async function getStaticProps() {
+    return { props: {} };
+}
 export default function TokenizedGoldPage() {
   return (
     <div className="min-h-screen w-full relative">

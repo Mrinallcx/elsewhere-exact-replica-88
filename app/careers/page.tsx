@@ -33,6 +33,10 @@ interface JobPosition {
   applyUrl?: string;
 }
 
+export async function getStaticProps() {
+    return { props: {} };
+}
+
 export default function CareersPage() {
 
   // Placeholder job positions - replace with actual content later

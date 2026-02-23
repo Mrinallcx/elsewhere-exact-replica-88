@@ -12,6 +12,10 @@ const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur
 const Footer = dynamicImport(() => import('../components/Footer'));
 const NewsletterSection = dynamicImport(() => import('../components/NewsletterSection'));
 
+export async function getStaticProps() {
+    return { props: {} };
+}
+
 export default function AchievementsPage() {
   return (
     <div className="min-h-screen w-full relative">
