@@ -1,0 +1,53 @@
+# Toto Finance
+
+> Toto Finance is the global infrastructure for tokenized commodities, enabling asset-backed digital ownership of metals, energy, and gems.
+
+## About
+
+Toto Finance AG is a Liechtenstein-regulated platform for institutional-grade tokenization of real-world assets. We enable compliant digital ownership with instant settlement and real-world redemption.
+
+## What We Do
+
+- Tokenize physical commodities (gold, silver, platinum, diamonds)
+- Enable 24/7 trading of asset-backed tokens
+- Provide T+0 settlement
+- Offer real-world redemption of physical assets
+
+## Key Pages
+
+- Homepage: https://totofinance.co
+- Products: https://totofinance.co/products
+- Toto Token: https://totofinance.co/toto-token
+- Ecosystem: https://totofinance.co/ecosystem
+- Vision 2030: https://totofinance.co/vision-2030
+- Careers: https://totofinance.co/careers
+- FAQ: https://totofinance.co/faq
+
+## Products
+
+- Tokenized Gold
+- Tokenized Silver
+- Tokenized Platinum
+- Tokenized Diamonds
+- Tokenized Energy
+- Tokenized Rare Earth Minerals
+
+## Company Information
+
+- Company: Toto Finance AG
+- Location: Herrengasse 6, 9490 Vaduz, Liechtenstein
+- Email: hello@totofinance.co
+- Parent Company: LCX AG
+
+## Social Media
+
+- Twitter/X: https://x.com/totofinance
+- LinkedIn: https://www.linkedin.com/company/totofinance/
+- YouTube: https://www.youtube.com/@Toto-Finance
+- Telegram: https://t.me/totofinance
+
+## Documentation
+
+- Blog: https://blog.totofinance.co
+- App: https://app.totofinance.co
+
