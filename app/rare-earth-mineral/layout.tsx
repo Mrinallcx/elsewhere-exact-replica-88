@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Critical Minerals Tokenization | Toto Finance',
   description: 'Toto Finance enables compliant, asset-backed tokenization of critical minerals including lithium, copper, and nickel - with on-chain ownership, institutional custody, and legally structured redemption.',
   keywords: 'critical minerals tokenization, rare earth tokenization, tokenized critical minerals, lithium tokenization, copper tokenization, nickel tokenization, in-ground mineral tokenization, asset-backed mineral tokenization, commodity reserve tokenization, real-world asset tokenization, RWA commodities, strategic minerals tokenization, institutional commodity tokenization, on-chain mineral ownership, physical commodity tokenization, Liechtenstein tokenization framework',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Critical Minerals Tokenization - Rare Earths & Metals | Toto Finance',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Critical Minerals Tokenization | Toto Finance',
     description: 'Toto Finance enables compliant, asset-backed tokenization of critical minerals including lithium, copper, and nickel - with on-chain ownership, institutional custody, and legally structured redemption.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Critical Minerals | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/rare-earth-mineral',

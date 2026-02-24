@@ -4,6 +4,8 @@ export const metadata = {
   title: 'War Ready Package — Tokenized Gold Investment | Toto Finance',
   description: 'War Ready Package: Own LBMA-grade tokenized gold on-chain. Secure digital gold investment starting at $1,200. Fully redeemable physical gold bars.',
   keywords: 'war ready package, tokenized gold package, LBMA gold, digital gold investment, gold tokenization package, RWA gold package, physical gold tokens, gold investment package, blockchain gold investment',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'War Ready Package — Toto Finance',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'War Ready Package — Tokenized Gold Investment | Toto Finance',
     description: 'War Ready Package: Own LBMA-grade tokenized gold on-chain. Secure, compliant digital gold investment starting at $1,200. Fully redeemable physical gold bars.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'War Ready Package | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/war-ready-package',

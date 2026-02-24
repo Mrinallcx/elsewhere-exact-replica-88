@@ -8,6 +8,9 @@ export const metadata = {
     'Toto Finance is the global infrastructure for tokenized commodities. Trade tokenized gold, silver, diamonds, and energy assets with Toto Finance.',
   keywords:
     'Toto Finance, tokenized commodities, commodity tokenization, asset-backed tokenization, tokenized metals, tokenized energy, tokenized gold, tokenized silver, tokenized diamonds, tokenized copper, real world assets, RWA infrastructure, digital commodities, on-chain settlement, commodity tokenization platform, physical asset tokenization, digital ownership, Liechtenstein tokenization, LCX validation, institutional tokenization, gold bar, silver bar, platinum bar',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  creator: 'Toto Finance',
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -39,6 +42,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Toto Finance - Asset-Backed Tokenization Platform',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -46,11 +50,18 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Toto Finance - Asset-Backed Tokenization Platform',
     description:
       "Toto Finance is the global infrastructure for tokenized commodities, enabling asset-backed digital ownership of metals, energy, and gems with instant settlement and real-world redemption.",
     images: [
-      'https://totofinance.co/assets/images/og-preview.png',
+      {
+        url: 'https://totofinance.co/assets/images/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'Toto Finance - Asset-Backed Tokenization Platform',
+      },
     ],
   },
   alternates: {
@@ -63,6 +74,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
+  themeColor: '#00375e',
 };
 
 import './globals.css';
@@ -84,6 +96,8 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head>
+        {/* Primary meta for SEO and indexing (aligns with best practices) */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         {/* Explicit favicon link for Google Search compatibility */}
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         {/* Preconnect only to critical origins that load immediately */}

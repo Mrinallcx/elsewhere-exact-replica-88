@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Tokenized Gold | Digital Gold Backed by Physical Bullion | Toto Finance',
   description: 'Tokenized gold by Toto Finance. 1:1 asset-backed gold bullion tokens, always redeemable. Physical gold vaulted in secure facilities. Instant settlement with stablecoins. 863 tonnes central bank buying in 2025. $5,000/oz forecast 2026.',
   keywords: 'tokenized gold, gold tokenization, buy tokenized gold, digital gold, gold-backed tokens, RWA gold, real world asset gold, physical gold tokens, gold instant settlement, DeFi gold, gold yield, gold collateral loans, blockchain gold',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Tokenized Gold | Toto Finance',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -35,7 +38,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Tokenized Gold | Digital Gold Backed by Physical Bullion | Toto Finance',
     description: 'Tokenized gold by Toto Finance. 1:1 asset-backed gold bullion tokens, always redeemable. 863 tonnes central bank buying in 2025. $5,000/oz forecast 2026.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Tokenized Gold | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/tokenized-gold',

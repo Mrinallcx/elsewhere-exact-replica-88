@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Vision 2030 - Digital Commodities | Toto Finance',
   description: "Toto Finance's Vision 2030 outlines the transformation of global commodity markets through asset-backed tokenization, on-chain settlement, and compliant digital infrastructure.",
   keywords: 'Vision 2030, digital commodity infrastructure, tokenized commodities future, global commodity digitization, asset-backed tokenization, RWA infrastructure, on-chain commodity settlement, institutional tokenization roadmap, future of commodity markets, digital ownership infrastructure, global trade digitization, Toto Finance vision',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Vision 2030 - Digital Commodities | Toto Finance',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Vision 2030 - Digital Commodities | Toto Finance',
     description: "Toto Finance's Vision 2030 outlines the transformation of global commodity markets through asset-backed tokenization, on-chain settlement, and compliant digital infrastructure.",
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Vision 2030 | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/vision-2030',

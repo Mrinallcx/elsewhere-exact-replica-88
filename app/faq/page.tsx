@@ -1,5 +1,6 @@
 // Server Component (NO "use client")
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 300 (5 minutes)
+export const revalidate = 300;
 
 import dynamicImport from 'next/dynamic';
 import { FAQStructuredData } from '../components/FAQStructuredData';
@@ -13,7 +14,13 @@ const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur
 const NewsletterSection = dynamicImport(() => import('../components/NewsletterSection'));
 const Footer = dynamicImport(() => import('../components/Footer'));
 
-export default function FAQPage() {
+// Equivalent to getStaticProps - fetch data here
+export default async function FAQPage() {
+  // Example: Fetch FAQ data from API if available
+  // const faqData = await fetch('https://api.example.com/faq', {
+  //   next: { revalidate: 300 } // ISR: revalidate every 5 minutes
+  // }).then(res => res.json());
+
   const categories = [
     { id: 'all', name: 'All Questions' },
     { id: 'general-overview', name: 'General Overview' },

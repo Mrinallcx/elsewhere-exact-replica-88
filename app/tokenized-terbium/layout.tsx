@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Tokenized Terbium | Strategic Rare Earth for Magnets & Defense | Toto Finance',
   description: 'Tokenized terbium by Toto Finance. Digitally represented terbium supply essential for magnet stabilization, defense electronics, solid-state lighting, and advanced AI-era technologies.',
   keywords: 'tokenized terbium, terbium tokenization, rare earth magnets, magnet stabilization materials, defense electronics terbium, strategic rare earths, digital terbium, rare earth blockchain, advanced magnet materials, solid-state lighting materials, AI hardware inputs',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,9 +28,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Tokenized Terbium | Strategic Rare Earth for Magnets & Defense | Toto Finance',
     description: 'Tokenized terbium by Toto Finance. Digitally represented terbium supply essential for magnet stabilization, defense electronics, solid-state lighting, and advanced AI-era technologies.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Tokenized Terbium | Toto Finance' }],
   },
   alternates: { canonical: 'https://totofinance.co/tokenized-terbium' },
 };

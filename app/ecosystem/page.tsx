@@ -1,5 +1,6 @@
 // Server Component (NO "use client")
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 60
+export const revalidate = 60;
 
 import { ArrowRight } from 'lucide-react';
 import dynamicImport from 'next/dynamic';
@@ -14,7 +15,15 @@ const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur
 const NewsletterForm = dynamicImport(() => import('../components/NewsletterForm'));
 const Footer = dynamicImport(() => import('../components/Footer'));
 
-export default function EcosystemPage() {
+// Equivalent to getStaticProps - fetch data here
+export default async function EcosystemPage() {
+  // Example: Fetch ecosystem data from API if available
+  // const partners = await fetch('https://api.example.com/ecosystem/partners', {
+  //   next: { revalidate: 60 } // ISR: revalidate every 60 seconds
+  // }).then(res => res.json());
+  // const stats = await fetch('https://api.example.com/stats', {
+  //   next: { revalidate: 60 }
+  // }).then(res => res.json());
 
   const statsData = {
     projectSize: 2.2,

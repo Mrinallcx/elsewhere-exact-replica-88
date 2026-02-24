@@ -1,5 +1,6 @@
 // Server Component (NO "use client")
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 60
+export const revalidate = 60;
 
 import { Globe } from 'lucide-react';
 import dynamicImport from 'next/dynamic';
@@ -12,7 +13,13 @@ const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur
 const NewsletterForm = dynamicImport(() => import('../components/NewsletterForm'));
 const Footer = dynamicImport(() => import('../components/Footer'));
 
-export default function GetPage() {
+// Equivalent to getStaticProps - fetch data here
+export default async function GetPage() {
+  // Example: Fetch GET data from API if available
+  // const getData = await fetch('https://api.example.com/get', {
+  //   next: { revalidate: 60 } // ISR: revalidate every 60 seconds
+  // }).then(res => res.json());
+
   const stats = {
     projectSize: 2200,
     tokenizedTranche: 450,

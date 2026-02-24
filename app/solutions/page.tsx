@@ -1,5 +1,6 @@
 // Server Component (NO "use client")
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 60
+export const revalidate = 60;
 
 import { Shield, Package, Eye, Lock, Database, Globe } from 'lucide-react';
 import dynamicImport from 'next/dynamic';
@@ -10,7 +11,12 @@ import { VideoBackground } from '../components/client/VideoBackground';
 const NewsletterForm = dynamicImport(() => import('../components/NewsletterForm'));
 const Footer = dynamicImport(() => import('../components/Footer'));
 
-export default function SolutionsPage() {
+// Equivalent to getStaticProps - fetch data here
+export default async function SolutionsPage() {
+  // Example: Fetch solutions data from API if available
+  // const solutionsData = await fetch('https://api.example.com/solutions', {
+  //   next: { revalidate: 60 } // ISR: revalidate every 60 seconds
+  // }).then(res => res.json());
 
   return (
     <div className="min-h-screen w-full relative">

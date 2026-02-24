@@ -186,6 +186,33 @@ export function StructuredData() {
         ],
       },
       {
+        "@type": "WebApplication",
+        "@id": "https://totofinance.co/#webapp",
+        name: "Toto Finance",
+        url: "https://totofinance.co",
+        description:
+          "Asset-backed tokenization platform for commodities. Trade tokenized gold, silver, diamonds, and energy assets with institutional-grade custody and compliance.",
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "Web",
+        browserRequirements: "Requires JavaScript.",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+          description: "Access to tokenized commodity marketplace and information",
+        },
+        featureList: [
+          "Tokenized gold, silver, platinum, diamonds, and rare earths",
+          "1:1 asset-backed tokens with proof-of-reserves",
+          "Multi-chain: Cardano, Solana, XRP Ledger, Polygon",
+          "MiCA and TVTG compliant infrastructure",
+          "Institutional custody and LCX Physical Validator",
+        ],
+        creator: {
+          "@id": "https://totofinance.co/#org",
+        },
+      },
+      {
         "@type": "FinancialService",
         "@id": "https://totofinance.co/#financialservice",
         name: "Toto Finance — Asset Tokenization Service",

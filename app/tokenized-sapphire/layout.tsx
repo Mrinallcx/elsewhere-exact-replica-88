@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Tokenized Sapphire | Certified Natural Sapphires on Blockchain | Toto Finance',
   description: 'Own certified natural sapphires digitally through blockchain tokenization. Transparent pricing, verified authenticity, secure custody, and direct ownership via Toto Finance.',
   keywords: 'tokenized sapphire, digital sapphire ownership, blockchain sapphire, certified natural sapphire, gemstone tokenization, blue sapphire, gemstone custody, sapphire certification, luxury assets blockchain, digital gemstones',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Tokenized Sapphire | Toto Finance',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Tokenized Sapphire | Certified Natural Sapphires on Blockchain | Toto Finance',
     description: 'Own certified natural sapphires digitally through blockchain tokenization. Transparent pricing, verified authenticity, secure custody, and direct ownership via Toto Finance.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Tokenized Sapphire | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/tokenized-sapphire',

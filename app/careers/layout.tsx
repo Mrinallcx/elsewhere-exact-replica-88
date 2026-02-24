@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Careers at Toto Finance - Build the Infrastructure for Tokenized Commodities',
   description: "Join Toto Finance and help build the global infrastructure for asset-backed tokenization. We're hiring across engineering, product, operations, and business to transform commodity markets.",
   keywords: 'Toto Finance careers, jobs in asset tokenization, tokenization infrastructure jobs, blockchain infrastructure careers, real-world asset technology jobs, commodity technology careers, fintech infrastructure jobs, Web3 infrastructure careers, digital asset engineering jobs, institutional blockchain careers, global fintech jobs, Liechtenstein fintech careers',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Careers at Toto Finance - Build the Infrastructure for Tokenized Commodities',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Careers at Toto Finance - Build the Infrastructure for Tokenized Commodities',
     description: "Join Toto Finance and help build the global infrastructure for asset-backed tokenization. We're hiring across engineering, product, operations, and business to transform commodity markets.",
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Careers | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/careers',

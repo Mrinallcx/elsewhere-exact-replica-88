@@ -31,7 +31,8 @@ const BlogSection = dynamicImport(() => import('./components/client/BlogSection'
   loading: () => <div className="resources-section px-6 md:px-8 lg:px-12 py-20 md:py-40"><div className="max-w-7xl mx-auto"><div className="h-96 animate-pulse bg-gray-100 rounded" /></div></div>,
 });
 
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 60
+export const revalidate = 60;
 
 // Data constants
 const partnerLogos = [
@@ -114,7 +115,16 @@ const totoTokenDescriptions = [
 ];
 
 
-export default function HomePage() {
+// Equivalent to getStaticProps - fetch data here
+export default async function HomePage() {
+  // Example: Fetch data from API if available
+  // const stats = await fetch('https://api.example.com/stats', {
+  //   next: { revalidate: 60 } // ISR: revalidate every 60 seconds
+  // }).then(res => res.json());
+  // const products = await fetch('https://api.example.com/products', {
+  //   next: { revalidate: 60 }
+  // }).then(res => res.json());
+
   return (
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}

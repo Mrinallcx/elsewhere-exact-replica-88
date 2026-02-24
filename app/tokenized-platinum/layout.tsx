@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Tokenized Platinum | Physical Platinum on Blockchain | Toto Finance',
   description: 'Own tokenized platinum backed by physical metal. Rarer than gold, essential for industry, with transparent custody and digital ownership via Toto Finance.',
   keywords: 'tokenized platinum, digital platinum ownership, blockchain platinum tokens, physical platinum tokenization, platinum metal token, industrial platinum demand, platinum scarcity, precious metals blockchain',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Tokenized Platinum | Toto Finance',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Tokenized Platinum | Physical Platinum on Blockchain | Toto Finance',
     description: 'Own tokenized platinum backed by physical metal. Rarer than gold, essential for industry, with transparent custody and digital ownership via Toto Finance.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Tokenized Platinum | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/tokenized-platinum',

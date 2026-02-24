@@ -4,6 +4,8 @@ export const metadata = {
   title: 'FAQ - Tokenized Commodities, Ownership & Redemption | Toto Finance',
   description: 'Find answers about Toto Finance, asset-backed tokenization, digital ownership, custody, settlement, and real-world redemption of commodities and assets.',
   keywords: 'Toto Finance FAQ, tokenized commodities FAQ, asset-backed tokenization FAQ, real-world asset tokenization explained, digital ownership FAQ, tokenized asset custody, tokenized asset redemption, on-chain settlement explained, RWA tokenization questions, commodity tokenization FAQ, physical asset tokenization explained, digital twin asset FAQ, LCX validation FAQ, Liechtenstein tokenization FAQ',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'FAQ - Tokenized Commodities, Ownership & Redemption | Toto Finance',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'FAQ - Tokenized Commodities, Ownership & Redemption | Toto Finance',
     description: 'Find answers about Toto Finance, asset-backed tokenization, digital ownership, custody, settlement, and real-world redemption of commodities and assets.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'FAQ | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/faq',

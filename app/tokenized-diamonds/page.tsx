@@ -1,5 +1,6 @@
 // Server Component (NO "use client")
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 60
+export const revalidate = 60;
 
 import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
@@ -44,7 +45,13 @@ const faqData = [
   },
 ];
 
-export default function TokenizedDiamondsPage() {
+// Equivalent to getStaticProps - fetch data here
+export default async function TokenizedDiamondsPage() {
+  // Example: Fetch diamonds data from API if available
+  // const diamondsData = await fetch('https://api.example.com/tokenized-diamonds', {
+  //   next: { revalidate: 60 } // ISR: revalidate every 60 seconds
+  // }).then(res => res.json());
+  
   return (
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}

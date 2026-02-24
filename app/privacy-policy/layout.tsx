@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Privacy Policy | Toto Finance Inc.',
   description: 'Privacy policy for Toto Finance Inc. How we collect, use, and protect your personal data when you use our website and services.',
   keywords: 'Toto Finance privacy policy, data protection, personal data, GDPR, privacy Toto Finance Inc.',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Privacy Policy | Toto Finance Inc.',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Privacy Policy | Toto Finance Inc.',
     description: 'Privacy policy for Toto Finance Inc. How we collect, use, and protect your personal data when you use our website and services.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Privacy Policy | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/privacy-policy',

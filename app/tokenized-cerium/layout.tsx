@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Tokenized Cerium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
   description: 'Tokenized cerium by Toto Finance. 1:1 asset-backed cerium oxide tokens, always redeemable. In-Ground Cerium future delivery contracts (1-12 months and 1-6 years). Instant settlement with stablecoins. The critical element for catalytic converters, glass polishing, and diesel fuel additives.',
   keywords: 'tokenized cerium, cerium tokenization, buy tokenized cerium, digital cerium, cerium-backed tokens, RWA cerium, real world asset cerium, in-ground cerium, cerium future delivery, cerium oxide token, cerium instant settlement, DeFi cerium, cerium yield, cerium collateral loans, catalytic converters',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Tokenized Cerium | Toto Finance',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Tokenized Cerium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
     description: 'Tokenized cerium by Toto Finance. 1:1 asset-backed cerium oxide tokens, always redeemable. In-Ground Cerium future delivery contracts. Instant stablecoin settlement.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Tokenized Cerium | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/tokenized-cerium',

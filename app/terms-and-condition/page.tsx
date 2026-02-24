@@ -1,5 +1,6 @@
 // Server Component (NO "use client")
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 3600 (1 hour, rarely changes)
+export const revalidate = 3600;
 
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
@@ -10,7 +11,13 @@ const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur
 const Footer = dynamicImport(() => import('../components/Footer'));
 const NewsletterSection = dynamicImport(() => import('../components/NewsletterSection'));
 
-export default function TermsOfServicePage() {
+// Equivalent to getStaticProps - fetch data here
+export default async function TermsOfServicePage() {
+  // Example: Fetch terms data from API if available
+  // const termsData = await fetch('https://api.example.com/terms', {
+  //   next: { revalidate: 3600 } // ISR: revalidate every hour (rarely changes)
+  // }).then(res => res.json());
+
   return (
     <div className="min-h-screen w-full relative bg-white">
       <PageStructuredData

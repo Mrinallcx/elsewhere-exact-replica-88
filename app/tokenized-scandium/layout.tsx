@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Tokenized Scandium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
   description: 'Tokenized scandium by Toto Finance. 1:1 asset-backed scandium oxide tokens, always redeemable. In-Ground Scandium future delivery contracts (1-12 months and 1-6 years). Instant settlement with stablecoins. The critical element for aluminum alloys, aerospace, and solid oxide fuel cells.',
   keywords: 'tokenized scandium, scandium tokenization, buy tokenized scandium, digital scandium, scandium-backed tokens, RWA scandium, real world asset scandium, in-ground scandium, scandium future delivery, scandium oxide token, scandium instant settlement, DeFi scandium, scandium yield, scandium collateral loans, aluminum-scandium alloys',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,9 +28,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Tokenized Scandium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
     description: 'Tokenized scandium by Toto Finance. 1:1 asset-backed scandium oxide tokens, always redeemable. In-Ground Scandium future delivery contracts. Instant stablecoin settlement.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Tokenized Scandium | Toto Finance' }],
   },
   alternates: { canonical: 'https://totofinance.co/tokenized-scandium' },
 };

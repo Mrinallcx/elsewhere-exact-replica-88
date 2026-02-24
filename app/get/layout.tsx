@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Renewable Energy Tokenization | Toto Finance',
   description: 'Institutional-grade renewable energy tokenization. Bridge real-world assets, verified carbon credits, and ESG value with blockchain.',
   keywords: 'renewable energy tokenization, ESG tokenization, carbon credits, renewable energy investment, institutional finance, energy tokenization, sustainable finance, green energy blockchain, renewable energy RWA, carbon credit tokens, ESG assets, clean energy investment',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Renewable Energy Tokenization — Toto Finance',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Renewable Energy Tokenization | Toto Finance',
     description: 'Institutional-grade access to renewable energy returns through tokenized assets. Bridge real-world renewable energy assets, verified carbon credits, and long-term ESG value.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'GET | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/get',

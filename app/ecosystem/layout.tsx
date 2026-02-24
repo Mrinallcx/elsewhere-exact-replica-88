@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Ecosystem - Infrastructure Partners & Integrations | Toto Finance',
   description: 'Discover the Toto Finance ecosystem - a network of blockchains, validators, and certification partners enabling secure, compliant, asset-backed tokenization and settlement.',
   keywords: 'Toto Finance ecosystem, tokenization ecosystem, blockchain integrations, asset tokenization partners, RWA infrastructure ecosystem, tokenization infrastructure partners, on-chain settlement ecosystem, blockchain validation partners, LCX validation, GIA certification, Cardano integration, Ethereum integration, Polygon integration, Solana integration, Multi-chain tokenization platform, Digital asset infrastructure partners, Institutional tokenization ecosystem',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Ecosystem - Infrastructure Partners & Integrations | Toto Finance',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Ecosystem - Infrastructure Partners & Integrations | Toto Finance',
     description: 'Discover the Toto Finance ecosystem - a network of blockchains, validators, and certification partners enabling secure, compliant, asset-backed tokenization and settlement.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Ecosystem | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/ecosystem',

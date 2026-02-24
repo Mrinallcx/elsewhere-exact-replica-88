@@ -4,6 +4,8 @@ export const metadata = {
   title: 'About Us - Building Infrastructure for Global Digital Commodities | Toto Finance',
   description: 'Toto Finance is building institutional-grade infrastructure that enables compliant tokenization, settlement, and global trading of real-world commodities. Learn about our mission, vision, and technology.',
   keywords: 'Toto Finance about, commodity tokenization infrastructure, RWA tokenization platform, digital commodities, asset tokenization, institutional tokenization, commodity markets, tokenized assets infrastructure',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'About Toto Finance - Infrastructure for Global Digital Commodities',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'About Us - Toto Finance',
     description: 'Building institutional-grade infrastructure for compliant tokenization and global trading of real-world commodities.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'About Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/about',

@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Tokenized Diamonds | Physical GIA-Certified Diamonds | Toto Finance',
   description: 'Own certified natural diamonds digitally through blockchain tokenization. GIA-certified stones, transparent ownership, secure custody, and direct access via Toto Finance.',
   keywords: 'tokenized diamonds, digital diamond ownership, blockchain diamond tokens, GIA certified diamonds, physical diamond tokenization, certified diamonds blockchain, digital diamond custody, transparent diamond ownership',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Tokenized Diamonds | Toto Finance',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Tokenized Diamonds | Physical GIA-Certified Diamonds | Toto Finance',
     description: 'Own certified natural diamonds digitally through blockchain tokenization. GIA-certified stones, transparent ownership, secure custody, and direct access via Toto Finance.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Tokenized Diamonds | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/tokenized-diamonds',

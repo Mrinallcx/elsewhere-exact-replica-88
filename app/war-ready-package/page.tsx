@@ -1,5 +1,6 @@
 // Server Component (NO "use client")
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 60
+export const revalidate = 60;
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,7 +15,13 @@ const RippleGrid = dynamicImport(() => import('../../src/components/RippleGrid')
 const NewsletterSection = dynamicImport(() => import('../components/NewsletterSection'));
 const Footer = dynamicImport(() => import('../components/Footer'));
 
-export default function WarReadyPackagePage() {
+// Equivalent to getStaticProps - fetch data here
+export default async function WarReadyPackagePage() {
+  // Example: Fetch war package data from API if available
+  // const warPackageData = await fetch('https://api.example.com/war-ready-package', {
+  //   next: { revalidate: 60 } // ISR: revalidate every 60 seconds
+  // }).then(res => res.json());
+
   const cashCards = [
     {
       title: 'Regulated & Audited',

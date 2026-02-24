@@ -1,5 +1,6 @@
 // Server Component (NO "use client")
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 3600 (1 hour, rarely changes)
+export const revalidate = 3600;
 
 import { Shield, Package, Eye, Lock, Database, Globe } from 'lucide-react';
 import Image from 'next/image';
@@ -16,7 +17,12 @@ const NewsletterForm = dynamicImport(() => import('../components/NewsletterForm'
 const Footer = dynamicImport(() => import('../components/Footer'));
 const NewsletterSection = dynamicImport(() => import('../components/NewsletterSection'));
 
-export default function DocImprintPage() {
+// Equivalent to getStaticProps - fetch data here
+export default async function DocImprintPage() {
+  // Example: Fetch imprint data from API if available
+  // const imprintData = await fetch('https://api.example.com/doc-imprint', {
+  //   next: { revalidate: 3600 } // ISR: revalidate every hour (rarely changes)
+  // }).then(res => res.json());
 
   return (
     <div className="min-h-screen w-full relative bg-white">

@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Tokenized Gadolinium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
   description: 'Tokenized gadolinium by Toto Finance. 1:1 asset-backed gadolinium oxide tokens, always redeemable. In-Ground Gadolinium future delivery contracts (1-12 months and 1-6 years). Instant settlement with stablecoins. The critical element for MRI contrast agents, nuclear reactors, and data storage.',
   keywords: 'tokenized gadolinium, gadolinium tokenization, buy tokenized gadolinium, digital gadolinium, gadolinium-backed tokens, RWA gadolinium, real world asset gadolinium, in-ground gadolinium, gadolinium future delivery, gadolinium oxide token, gadolinium instant settlement, DeFi gadolinium, gadolinium yield, gadolinium collateral loans, MRI contrast agents',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Tokenized Gadolinium | Toto Finance',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Tokenized Gadolinium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
     description: 'Tokenized gadolinium by Toto Finance. 1:1 asset-backed gadolinium oxide tokens, always redeemable. In-Ground Gadolinium future delivery contracts. Instant stablecoin settlement.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Tokenized Gadolinium | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/tokenized-gadolinium',

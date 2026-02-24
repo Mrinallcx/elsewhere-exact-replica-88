@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Tokenized Dysprosium | Critical Rare Earth for EV & Defense Magnets | Toto Finance',
   description: 'Tokenized dysprosium by Toto Finance. Digitally represented dysprosium supply critical for EV motors, defense systems, and high-temperature magnets powering AI and electrification.',
   keywords: 'tokenized dysprosium, dysprosium tokenization, rare earth magnets, EV motor magnets, defense magnets, high-temperature magnets, strategic rare earths, digital dysprosium, rare earth blockchain, EV supply chain metals, advanced magnet materials, AI hardware materials',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Tokenized Dysprosium | Toto Finance',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Tokenized Dysprosium | Critical Rare Earth for EV & Defense Magnets | Toto Finance',
     description: 'Tokenized dysprosium by Toto Finance. Digitally represented dysprosium supply critical for EV motors, defense systems, and high-temperature magnets.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Tokenized Dysprosium | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/tokenized-dysprosium',

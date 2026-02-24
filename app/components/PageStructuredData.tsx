@@ -31,6 +31,7 @@ export function PageStructuredData({
   const webPageSchema = {
     '@type': pageType,
     '@id': `${url}#webpage`,
+    name: title,
     url: url,
     headline: title,
     description: description,
@@ -47,6 +48,10 @@ export function PageStructuredData({
     primaryImageOfPage: {
       '@type': 'ImageObject',
       url: image || defaultImage,
+    },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      xpath: ["/html/head/title", "/html/head/meta[@name='description']/@content"],
     },
     ...(datePublished && { datePublished }),
     ...(dateModified && { dateModified }),

@@ -1,5 +1,6 @@
 // Server Component (NO "use client")
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 60
+export const revalidate = 60;
 
 import Image from 'next/image';
 import dynamicImport from 'next/dynamic';
@@ -15,7 +16,12 @@ const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur
 const NewsletterForm = dynamicImport(() => import('../components/NewsletterForm'));
 const Footer = dynamicImport(() => import('../components/Footer'));
 
-export default function Vision2030Page() {
+// Equivalent to getStaticProps - fetch data here
+export default async function Vision2030Page() {
+  // Example: Fetch vision data from API if available
+  // const visionData = await fetch('https://api.example.com/vision-2030', {
+  //   next: { revalidate: 60 } // ISR: revalidate every 60 seconds
+  // }).then(res => res.json());
   
   const partnerLogos = [
     'Cardano.svg',

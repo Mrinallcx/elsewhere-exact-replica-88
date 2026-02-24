@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Sales Terms & Conditions — Toto Token & Assets | Toto Finance',
   description: 'Terms and conditions governing the sale, purchase, and use of the TOTO token and Toto Finance platform services.',
   keywords: 'Toto Finance terms and conditions, TOTO token sale terms, token purchase agreement, Toto Finance legal, utility token terms, KYC AML compliance',
+  authors: [{ name: 'Toto Finance', url: 'https://totofinance.co' }],
+  applicationName: 'Toto Finance',
   robots: {
     index: true,
     follow: true,
@@ -26,6 +28,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Sales Terms & Conditions | Toto Finance',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -33,9 +36,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@totofinance',
+    creator: '@totofinance',
     title: 'Sales Terms & Conditions — Toto Token & Assets | Toto Finance',
     description: 'Terms and conditions governing the sale, purchase, and use of the TOTO token and Toto Finance platform services.',
-    images: ['https://totofinance.co/assets/images/og-preview.png'],
+    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Terms & Conditions | Toto Finance' }],
   },
   alternates: {
     canonical: 'https://totofinance.co/terms-and-condition',

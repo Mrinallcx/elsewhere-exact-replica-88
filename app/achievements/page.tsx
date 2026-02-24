@@ -260,7 +260,7 @@ export default async function AchievementsPage() {
             {/* Milestone 9 */}
             <div id="milestone-9" className="py-10 md:py-12 scroll-mt-24">
               <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4 mr-2">Gemstones</span>
-              <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4 mr-2">World First</span>
+              <span className="inline-block bg-purple-100 text-purple-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mr-2">World First</span>
               <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">New Asset Class</span>
               <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">First Ever Tokenized Sapphires in the World</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
@@ -274,7 +274,7 @@ export default async function AchievementsPage() {
             {/* Milestone 10 */}
             <div id="milestone-10" className="py-10 md:py-12 last:pb-0 scroll-mt-24">
               <span className="inline-block bg-rose-100 text-rose-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4 mr-2">Polygon</span>
-              <span className="inline-block bg-rose-100 text-rose-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Blockchain First</span>
+              <span className="inline-block bg-indigo-100 text-indigo-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Blockchain First</span>
               <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-3">First Ever Tokenized Diamonds on Polygon</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
               Toto Finance launched the first-ever tokenized diamonds on the Polygon blockchain, in partnership with Polytrade – Polygon's leading RWA marketplace. Each diamond NFT was backed 1:1 by a certified physical diamond, stored in an insured Liechtenstein vault, and verified by LCX and GIA. This milestone made Toto Finance the only RWA project in the world to have launched regulated, asset-backed tokenized diamonds across four major blockchain networks – Cardano, XRP Ledger, Solana, and Polygon – each with live sales, verified custody, and institutional-grade compliance infrastructure    </p>

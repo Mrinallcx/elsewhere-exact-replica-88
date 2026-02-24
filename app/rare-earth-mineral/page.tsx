@@ -1,5 +1,6 @@
 // Server Component (NO "use client")
-export const dynamic = 'force-dynamic';
+// Static Generation with ISR - equivalent to getStaticProps with revalidate: 60
+export const revalidate = 60;
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,8 +16,12 @@ const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur
 const Footer = dynamicImport(() => import('../components/Footer'));
 const NewsletterSection = dynamicImport(() => import('../components/NewsletterSection'));
 
-export default function RareEarthMineralPage() {
-  
+// Equivalent to getStaticProps - fetch data here
+export default async function RareEarthMineralPage() {
+  // Example: Fetch rare earth data from API if available
+  // const rareEarthData = await fetch('https://api.example.com/rare-earth-mineral', {
+  //   next: { revalidate: 60 } // ISR: revalidate every 60 seconds
+  // }).then(res => res.json());
 
   const cashCards = [
     {
