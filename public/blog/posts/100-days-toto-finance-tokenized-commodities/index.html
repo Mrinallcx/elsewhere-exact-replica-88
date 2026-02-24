@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-5hce7sga> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>100 Days of Toto Finance: What We Built, What We Proved</title><meta name="description" content="Over the past 100 days, Toto Finance tokenized commodities infrastructure has evolved from a growth plan into a global execution"><meta name="author" content="Toto Finance"><link rel="canonical" href="https://totofinance.co/blog/posts/100-days-toto-finance-tokenized-commodities/"><meta property="og:type" content="article"><meta property="og:title" content="100 Days of Toto Finance: What We Built, What We Proved"><meta property="og:description" content="Over the past 100 days, Toto Finance tokenized commodities infrastructure has evolved from a growth plan into a global execution"><meta property="og:image" content="https://blog.totofinance.co/wp-content/uploads/2026/02/100-days.webp"><meta property="og:url" content="https://totofinance.co/blog/posts/100-days-toto-finance-tokenized-commodities/"><meta property="og:site_name" content="Toto Finance Blog"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="100 Days of Toto Finance: What We Built, What We Proved"><meta name="twitter:description" content="Over the past 100 days, Toto Finance tokenized commodities infrastructure has evolved from a growth plan into a global execution"><meta name="twitter:image" content="https://blog.totofinance.co/wp-content/uploads/2026/02/100-days.webp"><link rel="sitemap" href="/blog/sitemap.xml"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="icon" type="image/x-icon" href="/blog/_astro/favicon.BjjAkTnV.ico"><link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/blog/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="192x192" href="/blog/favicon/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/blog/favicon/android-chrome-512x512.png"><link rel="stylesheet" href="/blog/_astro/eighth_blog_post.rvp6sDnt.css"><script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+		var script = document.createElement('script');
+		script.defer = true;
+		script.src = '/_vercel/insights/script.js';
+		var head = document.querySelector('head');
+		head.appendChild(script);
+	</script></head> <body class="flex min-h-screen flex-col bg-stone-100 font-poppins text-gray-950 dark:bg-black dark:text-white" data-astro-cid-5hce7sga> <div class="sticky top-0 z-50 w-full border-b border-gray-200/50 bg-white/80 backdrop-blur-md shadow-sm transition-all duration-300 dark:border-gray-700/50 dark:bg-stone-900/80"> <div class="mx-auto w-full max-w-screen-lg px-4 py-2"> <div class="flex items-center justify-between gap-2"> <div class="text-3xl font-bold shrink-0"> <a href="/blog/" class="flex items-center"> <img src="/blog/_astro/totofinance.CuBXFc9G.svg" alt="Toto Finance" class="h-10 w-auto"> </a> </div> <div class="flex items-center gap-2 min-w-0 flex-1 justify-end"> <!-- Desktop: Search + Nav --> <div class="hidden sm:block shrink-0"> <div class="search-bar-wrapper relative w-full min-w-0 max-w-[14rem] sm:max-w-[16rem]" role="search" aria-label="Search articles"> <label for="global-search-input" class="sr-only">Search articles</label> <div class="relative"> <span class="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" aria-hidden="true"> <svg class="h-4 w-4 sm:h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path> </svg> </span> <input id="global-search-input" type="search" autocomplete="off" placeholder="Search articles…" class="w-full rounded-lg border border-gray-200 bg-gray-50/80 py-2 pl-8 pr-3 text-sm placeholder:text-gray-500 focus:border-[#00375e] focus:outline-none focus:ring-1 focus:ring-[#00375e] dark:border-gray-600 dark:bg-stone-800/80 dark:placeholder:text-gray-400 dark:focus:border-[#004a7a] dark:focus:ring-[#004a7a]" aria-expanded="false" aria-controls="search-results-dropdown" aria-activedescendant=""> </div> <div id="search-results-dropdown" class="absolute left-0 right-0 top-full z-50 mt-1 hidden max-h-[min(70vh,20rem)] overflow-auto rounded-lg border border-gray-200 bg-white py-1 shadow-lg dark:border-gray-600 dark:bg-stone-900" role="listbox" id="search-results-dropdown" aria-label="Search results"> <!-- Results injected by script --> </div> </div> <script>(function(){const searchIndexUrl = "/blog/search-index.json";
+const baseUrl = "/blog";
+const maxResults = 8;
+
+	const input = document.getElementById('global-search-input');
+	const dropdown = document.getElementById('search-results-dropdown');
+
+	if (!input || !dropdown) throw new Error('SearchBar: missing elements');
+
+	let index = [];
+	let loaded = false;
+
+	async function loadIndex() {
+		if (loaded) return;
+		try {
+			const res = await fetch(searchIndexUrl);
+			if (res.ok) {
+				index = await res.json();
+				loaded = true;
+			}
+		} catch (_) {
+			// ignore
+		}
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement('div');
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function showResults(q) {
+		const query = q.trim().toLowerCase();
+		if (!query) {
+			dropdown.classList.add('hidden');
+			input.setAttribute('aria-expanded', 'false');
+			return;
+		}
+		const matches = index.filter(
+			(p) =>
+				p.title.toLowerCase().includes(query) ||
+				(p.excerpt && p.excerpt.toLowerCase().includes(query))
+		);
+		const slice = matches.slice(0, maxResults);
+
+		if (slice.length === 0) {
+			dropdown.innerHTML = `<div class="px-3 py-4 text-center text-sm text-gray-500 dark:text-gray-400">No articles found</div>`;
+		} else {
+			dropdown.innerHTML = slice
+				.map(
+					(p, i) =>
+						`<a href="${baseUrl}${p.url}" class="search-result-item block px-3 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-stone-800 focus:bg-gray-100 dark:focus:bg-stone-800 outline-none" role="option" id="search-result-${i}"><span class="font-medium">${escapeHtml(p.title)}</span>${p.excerpt ? `<span class="mt-0.5 block truncate text-gray-500 dark:text-gray-400">${escapeHtml(p.excerpt.slice(0, 80))}${p.excerpt.length > 80 ? '…' : ''}</span>` : ''}</a>`
+				)
+				.join('');
+		}
+		dropdown.classList.remove('hidden');
+		input.setAttribute('aria-expanded', 'true');
+	}
+
+	function hideResults() {
+		dropdown.classList.add('hidden');
+		input.setAttribute('aria-expanded', 'false');
+	}
+
+	input.addEventListener('focus', () => loadIndex());
+	input.addEventListener('input', (e) => {
+		loadIndex().then(() => showResults(e.target.value));
+	});
+	input.addEventListener('blur', () => {
+		setTimeout(hideResults, 150);
+	});
+	input.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') {
+			hideResults();
+			input.blur();
+		}
+	});
+
+	document.addEventListener('click', (e) => {
+		const wrapper = document.querySelector('.search-bar-wrapper');
+		if (wrapper && !wrapper.contains(e.target)) hideResults();
+	});
+})();</script> </div> <!-- Desktop Navigation --> <nav> <ul class="hidden flex-row items-center gap-6 sm:flex"> <li><a href="https://totofinance.co/" target="_blank" rel="noopener noreferrer" class="hover:text-brand transition-colors duration-200">About</a></li> <li><a href="https://totofinance.co/products" target="_blank" rel="noopener noreferrer" class="hover:text-brand transition-colors duration-200">Products</a></li> <li><a href="https://toto.xyz/" target="_blank" rel="noopener noreferrer" class="hover:text-brand transition-colors duration-200">TOTO Token</a></li> <li> <a href="https://app.totofinance.co/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg bg-[#00375e] px-4 py-2 text-sm font-medium text-white hover:bg-[#004a7a] transition-colors duration-200">
+Global Marketplace
+</a> </li> </ul> </nav> <!-- Mobile Menu Button --> <button id="mobile-menu-button" class="p-2 sm:hidden rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 shrink-0" aria-label="Toggle mobile menu"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> </div> </div> <!-- Mobile Menu --> <div id="mobile-menu" class="mt-4 hidden rounded-lg border border-gray-200/50 bg-white/90 backdrop-blur-md pb-2 shadow-lg transition-all duration-300 sm:hidden dark:border-gray-700/50 dark:bg-stone-900/90"> <nav class="flex flex-col p-3 gap-1"> <a href="https://totofinance.co/" target="_blank" rel="noopener noreferrer" class="border-b border-gray-200/50 py-2 hover:text-brand transition-colors duration-200 dark:border-gray-700/50">About</a> <a href="https://totofinance.co/products" target="_blank" rel="noopener noreferrer" class="border-b border-gray-200/50 py-2 hover:text-brand transition-colors duration-200 dark:border-gray-700/50">Products</a> <a href="https://toto.xyz/" target="_blank" rel="noopener noreferrer" class="border-b border-gray-200/50 py-2 hover:text-brand transition-colors duration-200 dark:border-gray-700/50">TOTO Token</a> <a href="https://app.totofinance.co/" target="_blank" rel="noopener noreferrer" class="mt-2 rounded-lg bg-[#00375e] px-4 py-2 text-center text-sm font-medium text-white hover:bg-[#004a7a] transition-colors duration-200">Global Marketplace</a> </nav> </div> </div> </div> <script type="module">const e=document.getElementById("mobile-menu-button"),n=document.getElementById("mobile-menu");e&&n&&e.addEventListener("click",()=>{const t=e.getAttribute("aria-expanded")==="true"||!1;e.setAttribute("aria-expanded",(!t).toString()),n.classList.toggle("hidden"),t?e.innerHTML=`
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+					</svg>
+				`:e.innerHTML=`
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				`});</script> <div class="flex-1" data-astro-cid-5hce7sga>  <div class="mx-auto w-full max-w-screen-md"> <div class="mx-auto w-full max-w-screen-lg px-4 py-6">  <div class="flex flex-col items-center"> <div class="relative px-14 pt-6 pb-4 text-center">  <p class="text-4xl font-bold">100 Days of Toto Finance: What We Built, What We Proved</p> </div> <div class="pb-4"> <div class="flex flex-wrap">  </div> </div> <div class="text-sm"> <span>February 24, 2026</span> - <span>6 min read</span> </div> <img src="https://blog.totofinance.co/wp-content/uploads/2026/02/100-days.webp" alt="100 days of totofinance"> </div>  </div> <div class="mx-auto w-full max-w-screen-lg px-4 py-6">  <div class="content prose dark:prose-invert prose-code:rounded-lg prose-code:bg-stone-800 prose-code:p-1 prose-code:text-brand prose-img:rounded-lg prose-img:shadow-xl prose-img:dark:shadow-stone-800 mt-8 max-w-none text-base leading-8 text-black dark:text-white">
+<p>Over the past 100 days, Toto Finance tokenized commodities infrastructure has evolved from a growth plan into a global execution model.</p>
+
+
+
+<p>Not a whitepaper. Not a roadmap. A live, daily execution plan – broadcast to the world, with no room to hide.</p>
+
+
+
+<p>For 100 consecutive days, we shipped content, education, partnerships, infrastructure updates, and community conversations across every layer of the Toto Finance ecosystem.</p>
+
+
+
+<p>Today, on Day 100, we look back at what that actually meant.</p>
+
+
+
+<h2 class="wp-block-heading">Why We Did This</h2>
+
+
+
+<p>When we rebranded from Tiamonds to Toto Finance, we weren&#8217;t just changing a name. We were signalling a bigger vision: building the global infrastructure for tokenized commodities – gold, silver, platinum, copper, tin, diamonds, sapphires, and beyond.</p>
+
+
+
+<p>But vision without execution is just marketing.</p>
+
+
+
+<p>The 100-Day Growth Plan was our answer to that. A public, transparent commitment to show – not just tell – what building real-world asset infrastructure actually looks like day by day.</p>
+
+
+
+<h2 class="wp-block-heading">What We Shipped</h2>
+
+
+
+<h3 class="wp-block-heading">Education: 10+ Commodity Deep Dives</h3>
+
+
+
+<p>One of our core beliefs is simple: people don&#8217;t adopt what they don&#8217;t understand.</p>
+
+
+
+<p>Over 100 days, we published in-depth educational threads and explainers covering:</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Gold</strong> – LBMA benchmarking, spot pricing, and why tokenization removes physical friction</li>
+
+
+
+<li><strong>Silver</strong> – Industrial demand, the LBMA silver fix, and its role in the energy transition</li>
+
+
+
+<li><strong>Platinum</strong> – LPPM pricing, catalytic converter dependency, and hydrogen fuel cell relevance</li>
+
+
+
+<li><strong>Copper</strong> – LME benchmarks, infrastructure demand, and its structural supply deficit by 2030</li>
+
+
+
+<li><strong>Nickel</strong> – EV battery chemistry, LME pricing, and why industrial demand drives value</li>
+
+
+
+<li><strong>Lithium</strong> – Energy security, supply concentration, and why it&#8217;s consumed, not stored</li>
+
+
+
+<li><strong>Aluminium</strong> – Energy-embedded pricing, recyclability, and its role in the circular economy</li>
+
+
+
+<li><strong>Uranium</strong> – Predictable demand cycles, supply constraints, and nuclear&#8217;s quiet resurgence</li>
+
+
+
+<li><strong>Crude Oil</strong> – Settlement complexity, custody layers, and where tokenization adds structure</li>
+
+
+
+<li><strong>Natural Gas</strong> – Regional pricing dynamics, seasonality, and LNG infrastructure</li>
+
+
+
+<li><strong>Carbon Credits</strong> – Verification requirements, registry issuance, and why accountability is the asset</li>
+
+
+
+<li><strong>Timber &amp; Forestry</strong> – Growth-based returns, fragmented ownership, and long-cycle value</li>
+
+
+
+<li><strong>Water Rights</strong> – Scarcity as allocation, legal complexity, and why access is the asset</li>
+
+
+
+<li><strong>Tin</strong> – Electronics dependency, zero substitution risk, and global supply constraints</li>
+</ul>
+
+
+
+<p>No jargon. No hype. Just clear, honest education on the assets powering the modern world.</p>
+
+
+
+<h3 class="wp-block-heading">Infrastructure: Building the Real Layers</h3>
+
+
+
+<p>Education alone doesn&#8217;t build trust. Infrastructure does.</p>
+
+
+
+<p>Over 100 days, we advanced the operational foundation of Toto Finance significantly:</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>7 new asset landing pages launched</strong> – each breaking down pricing mechanics, verification standards, custody details, and redemption processes for gold, silver, platinum, diamonds, sapphires, copper, and tin</li>
+
+
+
+<li><strong>MiCA/ESMA compliance confirmed</strong> – $TOTO became one of the first tokens globally to receive MiCA-aligned classification in the ESMA registry</li>
+
+
+
+<li><strong>$TIA → $TOTO token migration executed</strong> – a clean transition to the coordination token of the next phase</li>
+
+
+
+<li><strong>Tokenization Report 2025–2030 published</strong> – outlining why physical commodities are the next inflection point in institutional tokenization</li>
+
+
+
+<li><strong>AI agent launched on Moltbook</strong> – positioning Toto Finance for machine-to-machine markets and next-generation signal infrastructure</li>
+
+
+
+<li><strong>On-ramp/off-ramp integrations announced</strong> – enabling fiat-to-tokenized commodity flows for non-crypto users</li>
+
+
+
+<li><strong>$TOTO listed and verified on CoinGecko</strong> – with updated socials, documentation, and market data for broader discovery</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Partnerships: Operational Commitments, Not Logos</h3>
+
+
+
+<p>In RWAs, partnerships aren&#8217;t marketing moments. They&#8217;re legal agreements, operational dependencies, and risk-sharing frameworks.</p>
+
+
+
+<p>Over 100 days, we spotlighted and strengthened the ecosystem that powers Toto Finance:</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Cardano Foundation</strong> – featured in an official case study; listed as a partner on the Cardano Foundation website</li>
+
+
+
+<li><strong>LCX</strong> – Physical Validator License providing regulated asset verification before tokenization</li>
+
+
+
+<li><strong>Polytrade &amp; Polygon</strong> – early multi-chain expansion bringing tokenized diamonds to a chain built for accessibility and scale</li>
+
+
+
+<li><strong>XRPL &amp; xrp.cafe</strong> – the first-ever RWA project to launch on the XRP Ledger</li>
+
+
+
+<li><strong>Solana &amp; OREMOB</strong> – a curated tokenized diamond collection bridging art and real-world assets</li>
+
+
+
+<li><strong>RealFin</strong> – exploring institutional Layer 1 infrastructure for compliant, asset-backed commodities</li>
+
+
+
+<li><strong>Raffler</strong> – introducing tokenized commodities as prize assets within a Web3-native raffle ecosystem</li>
+</ul>
+
+
+
+<p>Every partner unlocks something real in the physical world. That&#8217;s the standard we hold.</p>
+
+
+
+<h3 class="wp-block-heading">Moments That Defined the 100 Days</h3>
+
+
+
+<p>Some milestones go beyond metrics.</p>
+
+
+
+<p><strong>Le Bal de Noël, Monaco</strong> – We presented a 2.07-carat Royal Blue natural unheated sapphire, auctioned by Sotheby&#8217;s at the Fondation Princesse Charlène de Monaco gala. €20,000 raised for charity. The winning bidder received both the physical gemstone and its tokenized digital twin – a verified ownership certificate under LCX&#8217;s Physical Validator License. Technology met purpose.</p>
+
+
+
+<p><strong>Davos 2026</strong> – Our team attended the World Economic Forum to represent the RWA and commodities conversation at the highest level of global economic dialogue. Institutional conversations around energy, supply chains, and regulated digital ownership.</p>
+
+
+
+<p><strong>Media Coverage</strong> – AP News, Business Insider, TradingView, BitCourier, BeInCrypto, Bitget, Gate.io, and Coindar all covered Toto Finance milestones across the 100 days. Credibility compounds.</p>
+
+
+
+<p><strong>Tokenized Copper in Global Media</strong> – Multiple major publications covered tokenized copper demand as an emerging RWA use case, citing Toto Finance as part of the narrative shift from precious metals to industrial commodities.</p>
+
+
+
+<h2 class="wp-block-heading"><strong><br></strong><strong>What the 100 Days Proved</strong></h2>
+
+
+
+<p><strong>1. Consistency is the real moat.</strong> Markets fluctuate. Narratives shift. Hype cycles come and go. But 100 days of daily execution – through quiet weeks and loud markets alike – compounds into something no single announcement can replicate.</p>
+
+
+
+<p><strong>2. Education accelerates adoption.</strong> The community that asks &#8216;how does redemption work?&#8217; instead of &#8216;wen moon?&#8217; is the community that actually drives real-world asset adoption. Every deep dive, every explainer, every infrastructure breakdown brought that community closer.</p>
+
+
+
+<p><strong>3. RWAs are won off-chain.</strong> Before a single token is minted, seven or more real-world entities have already validated the asset – refiners, graders, vault operators, insurers, compliance teams, validators, and logistics providers. The blockchain is the final signature. Trust is built long before it arrives on-chain.</p>
+
+
+
+<p><strong>4. Commodities are having a structural moment.</strong> Gold above historic highs. Copper facing a structural supply deficit by 2030. Tin with less than 13 years of known reserves at current consumption. Uranium re-entering national energy strategies. The macro backdrop for real-world asset tokenization has never been stronger.</p>
+
+
+
+<p><strong>5. Access is the product.</strong> We didn&#8217;t invent gold. We didn&#8217;t invent copper. We didn&#8217;t invent tin. What we built is the infrastructure that makes these assets – previously accessible only to institutions and industrial players – available to anyone, globally, with transparent ownership, instant settlement, and enforceable redemption rights.</p>
+
+
+
+<h2 class="wp-block-heading"><strong><br></strong><strong>What Comes Next</strong></h2>
+
+
+
+<p>The 100-Day Growth Plan was proof of model.</p>
+
+
+
+<p>2026 is about scaling it.</p>
+
+
+
+<p>More commodities tokenized. More chains integrated. More users onboarded. More institutional infrastructure delivered. More partnerships that turn real-world assets into globally accessible ownership.</p>
+
+
+
+<p>The mission hasn&#8217;t changed since we started as Tiamonds: <strong>Build trust in markets that lack transparency.</strong></p>
+
+
+
+<p>Today, as Toto Finance, that mission operates at a global scale – across gold, diamonds, industrial metals, energy assets, and beyond.</p>
+
+
+
+<p>Day 100 isn&#8217;t the finish line.</p>
+
+
+
+<p>It&#8217;s the foundation.&nbsp;</p>
+
+
+
+<p></p>
+</div>  </div> </div>  </div> <div class="mx-auto w-full max-w-screen-lg px-4 py-6">  <footer class="text-center border-t border-gray-200 dark:border-gray-700 pt-6"> <div class="mx-auto max-w-6xl text-left text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed pb-6 space-y-4"> <p>
+Digital assets, including tokenized commodities and real-world assets, are subject to significant risks, including price volatility, liquidity constraints, and regulatory uncertainty. Transacting in digital assets could result in substantial losses and may not be suitable for all investors. Digital asset markets are not regulated with the same controls or investor protections available with traditional financial products and are subject to an evolving regulatory environment.
+</p> <p>
+Toto Finance Inc. USA, Toto Finance International Inc., and Toto Holding AG (collectively "Toto Finance") provide information and services related to tokenized assets. These products have not been registered as securities under applicable laws unless explicitly stated and may not be offered or sold in certain jurisdictions without proper registration or exemption. Tokenized assets provide direct and indirect economic exposure to underlying commodities, asset backed tokens and confer ownership rights or direct claims to physical assets. Past performance is not a guide to future performance, nor is it a reliable indicator of future results. Nothing herein constitutes financial, investment, legal, or tax advice. Nothing herein constitutes an offer to sell or solicitation to purchase any digital assets. Investors should conduct thorough due diligence and consult qualified professionals before making investment decisions. Additional terms and restrictions apply.
+</p> </div> <div class="pt-4 border-t border-gray-200 dark:border-gray-700 text-center text-sm text-gray-600 dark:text-gray-400">
+Toto Finance © 2026 <a class="underline hover:text-brand" href="https://x.com/TotoFinance" target="_blank" rel="noopener noreferrer">X @TotoFinance</a> | <a class="underline hover:text-brand" href="https://totofinance.co/" target="_blank" rel="noopener noreferrer">Web TotoFinance.co</a> </div> </footer>  </div> </body></html>
