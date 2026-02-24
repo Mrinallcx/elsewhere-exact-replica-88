@@ -1,0 +1,20 @@
+# Netlify headers file for proper MIME types and caching
+# Note: This file works alongside netlify.toml headers configuration
+
+# JavaScript files - ensure correct MIME type
+/_next/static/chunks/*.js
+  Content-Type: application/javascript; charset=utf-8
+
+# CSS files - ensure correct MIME type  
+/_next/static/css/*.css
+  Content-Type: text/css; charset=utf-8
+
+# Web fonts
+/*.woff
+  Content-Type: font/woff
+
+/*.woff2
+  Content-Type: font/woff2
+
+/*.ttf
+  Content-Type: font/ttf
