@@ -24,6 +24,7 @@ const GradualBlur = dynamicImport(() => import('../src/components/GradualBlur'))
 const NewsletterForm = dynamicImport(() => import('./components/NewsletterForm'));
 
 const Footer = dynamicImport(() => import('./components/Footer'));
+const TrustComplianceBar = dynamicImport(() => import('./components/TrustComplianceBar').then(mod => ({ default: mod.TrustComplianceBar })));
 
 // Lazy load blog section - it's below the fold and has many images
 const BlogSection = dynamicImport(() => import('./components/client/BlogSection').then(mod => ({ default: mod.BlogSection })), {
@@ -61,8 +62,8 @@ const tnftCards = Array.from({ length: 16 });
 
 const cashCards = [
   {
-    title: 'Regulated & Audited',
-    subtitle: 'Operating within compliant legal frameworks, supported by independent audits, licensed partners, and continuous regulatory oversight.',
+    title: 'MiCA Registered & Hacken Audited',
+    subtitle: 'MiCA ESMA registered. Smart contracts audited by Hacken (Jan 2025). Physical validation by LCX under Liechtenstein TVTG.',
     variant: 'cash-card-blue',
   },
   {
@@ -472,6 +473,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* E-E-A-T: Trust & Compliance strip */}
+      <TrustComplianceBar variant="light" />
 
       {/* Resources/Blog Section - Lazy loaded */}
       <BlogSection />

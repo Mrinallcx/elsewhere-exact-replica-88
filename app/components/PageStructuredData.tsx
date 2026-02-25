@@ -12,6 +12,10 @@ interface PageStructuredDataProps {
   datePublished?: string; // ISO date format
   dateModified?: string; // ISO date format
   breadcrumbItems?: BreadcrumbItem[];
+  /** E-E-A-T: third-party that reviewed the content (e.g. Hacken for security). */
+  reviewedBy?: { name: string; url?: string };
+  /** E-E-A-T: last review date in ISO format. */
+  lastReviewed?: string;
 }
 
 export function PageStructuredData({
@@ -23,6 +27,8 @@ export function PageStructuredData({
   datePublished,
   dateModified,
   breadcrumbItems,
+  reviewedBy,
+  lastReviewed,
 }: PageStructuredDataProps) {
   const baseUrl = 'https://totofinance.co';
   const defaultImage =
@@ -50,6 +56,14 @@ export function PageStructuredData({
     },
     ...(datePublished && { datePublished }),
     ...(dateModified && { dateModified }),
+    ...(reviewedBy && {
+      reviewedBy: {
+        '@type': 'Organization',
+        name: reviewedBy.name,
+        ...(reviewedBy.url && { url: reviewedBy.url }),
+      },
+    }),
+    ...(lastReviewed && { lastReviewed }),
     ...(breadcrumbItems && breadcrumbItems.length > 0 && {
       breadcrumb: {
         '@type': 'BreadcrumbList',
