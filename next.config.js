@@ -179,7 +179,7 @@ const nextConfig = {
       {
         // Cache favicon for Google Search (recommended by Google)
         // Allow cache but with revalidation for updates
-        source: '/favicon.ico',
+        source: '/favicon.svg',
         headers: [
           {
             key: 'Cache-Control',
@@ -187,7 +187,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Type',
-            value: 'image/x-icon',
+            value: 'image/svg+xml',
           },
         ],
       },

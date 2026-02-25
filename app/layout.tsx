@@ -21,11 +21,8 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
-    apple: '/apple-touch-icon.png',
   },
   openGraph: {
     title: 'Toto Finance - Asset-Backed Tokenization Platform',
@@ -85,7 +82,7 @@ export default function RootLayout({
     <html lang='en'>
       <head>
         {/* Explicit favicon link for Google Search compatibility */}
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         {/* Preconnect only to critical origins that load immediately */}
         {/* GTM loads lazily, so no preconnect needed */}
         {/* Firebase images load lazily, so no preconnect needed */}
