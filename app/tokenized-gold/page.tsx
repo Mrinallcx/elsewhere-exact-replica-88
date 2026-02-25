@@ -5,6 +5,8 @@ import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
 import { PageStructuredData } from '../components/PageStructuredData';
+import { TrustComplianceBar } from '../components/TrustComplianceBar';
+import { ProductTrustSection } from '../components/ProductTrustSection';
 import { Navigation } from '../components/Navigation';
 
 // Dynamic imports for heavy components
@@ -541,6 +543,14 @@ export default function TokenizedGoldPage() {
           </div>
         </div>
       </section>
+
+      <TrustComplianceBar variant="light" />
+      <ProductTrustSection
+        assetName="Gold"
+        custody="TotoHolding AG, Vaduz"
+        vaultPartners="Loomis, Brink's, Swiss vaults, Singapore Freeport"
+        certification="LBMA Standards"
+      />
 
       {/* ===================== FOLD 7: FAQ ===================== */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">

@@ -12,6 +12,8 @@ interface PageStructuredDataProps {
   datePublished?: string; // ISO date format
   dateModified?: string; // ISO date format
   breadcrumbItems?: BreadcrumbItem[];
+  reviewedBy?: { name: string; url?: string };
+  lastReviewed?: string; // ISO date format
 }
 
 export function PageStructuredData({
@@ -23,6 +25,8 @@ export function PageStructuredData({
   datePublished,
   dateModified,
   breadcrumbItems,
+  reviewedBy,
+  lastReviewed,
 }: PageStructuredDataProps) {
   const baseUrl = 'https://totofinance.co';
   const defaultImage =
@@ -50,6 +54,8 @@ export function PageStructuredData({
     },
     ...(datePublished && { datePublished }),
     ...(dateModified && { dateModified }),
+    ...(reviewedBy && { reviewedBy: reviewedBy.url ? { '@type': 'Organization', name: reviewedBy.name, url: reviewedBy.url } : { '@type': 'Organization', name: reviewedBy.name } }),
+    ...(lastReviewed && { lastReviewed }),
     ...(breadcrumbItems && breadcrumbItems.length > 0 && {
       breadcrumb: {
         '@type': 'BreadcrumbList',

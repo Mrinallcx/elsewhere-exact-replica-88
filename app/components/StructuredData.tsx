@@ -72,6 +72,28 @@ export function StructuredData() {
           "Blockchain Technology",
           "Digital Ownership",
         ],
+        hasCredential: [
+          {
+            "@type": "EducationalOccupationalCredential",
+            credentialCategory: "professional certification",
+            name: "MiCA ESMA Registration",
+            recognizedBy: { "@type": "Organization", name: "ESMA", url: "https://www.esma.europa.eu/" },
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            credentialCategory: "professional certification",
+            name: "TVTG Compliance",
+            recognizedBy: { "@type": "Organization", name: "FMA Liechtenstein", url: "https://www.fma-li.li/" },
+          },
+        ],
+        award: [
+          "Cardano Catalyst Fund 12 Winner",
+          "First RWA on XRP Ledger",
+          "First tokenized diamonds on Cardano",
+          "First tokenized diamonds on Solana",
+          "First tokenized diamonds on Polygon",
+        ],
+        numberOfEmployees: { "@type": "QuantitativeValue", value: 10, minValue: 10, maxValue: 50 },
       },
       {
         "@type": "WebSite",
@@ -230,6 +252,13 @@ export function StructuredData() {
           "https://www.youtube.com/@Toto-Finance",
           "https://t.me/totofinance",
         ],
+        review: {
+          "@type": "Review",
+          author: { "@type": "Organization", name: "Hacken", url: "https://hacken.io" },
+          name: "Smart Contract Security Audit",
+          reviewBody: "Toto Finance smart contracts audited by Hacken (January 2025).",
+          url: "https://hacken.io/audits/tiamonds/sca-tiamonds-toto-contracts-jan2025/",
+        },
       },
     ],
   };

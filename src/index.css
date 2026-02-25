@@ -479,7 +479,21 @@ body:has(noscript) .hero-description {
     @apply text-xs font-medium tracking-widest uppercase;
     color: hsl(var(--glass-white-60));
   }
-  
+
+  /* Trusted By carousel on light background (e.g. About page) */
+  .trusted-by-on-light .social-proof-text {
+    @apply text-gray-500;
+  }
+
+  .trusted-by-on-light .logo-item {
+    color: inherit;
+  }
+
+  /* Trusted By carousel on dark background — label and logos visible */
+  .trusted-by-dark .social-proof-text {
+    @apply text-gray-400;
+  }
+
   .social-proof-logos {
     @apply flex items-center gap-8 md:gap-12 lg:gap-16 overflow-hidden;
     animation: scroll-left 60s linear infinite;

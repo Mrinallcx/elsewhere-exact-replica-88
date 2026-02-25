@@ -6,6 +6,7 @@ import Image from 'next/image';
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
 import { PageStructuredData } from '../components/PageStructuredData';
+import { PersonStructuredData, type TeamMember } from '../components/PersonStructuredData';
 import { Navigation } from '../components/Navigation';
 import { VideoBackground } from '../components/client/VideoBackground';
 
@@ -13,6 +14,71 @@ import { VideoBackground } from '../components/client/VideoBackground';
 const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur'));
 const Footer = dynamicImport(() => import('../components/Footer'));
 const NewsletterSection = dynamicImport(() => import('../components/NewsletterSection'));
+
+// Leadership team — images from public/images
+const teamMembers: TeamMember[] = [
+  {
+    name: 'Monty Metzger',
+    jobTitle: 'Founder',
+    description: 'Serial entrepreneur since 1998 — first internet company founded at age 18. Multiple successful exits across digital, tech, and venture capital. Founded Digital Leaders Ventures (Tech VC); portfolio companies with exit to Twitter and IPO. Founded and grew LCX to $500M+ market cap; leading European regulated crypto exchange and tokenization infrastructure. LCX named New Champion at the World Economic Forum and Blockchain Pioneer by Blockchain Research Institute.',
+    sameAs: ['https://www.linkedin.com/in/montymetzger/'],
+    image: '/images/monty.png',
+  },
+  {
+    name: 'Steven Gaertner',
+    jobTitle: 'President',
+    description: 'Running day-to-day operations at Toto Finance. 20+ years leading business development across Asia and Europe. Built Fischler Diamonds\' Asian operations (Hong Kong, Shanghai) with $10M+ annual sales. Deep crypto-native experience: eToro, Exotic Markets, Jenny Metaverse DAO. Track record of 100%+ monthly user growth and consistent outperformance on KPIs. Multilingual operator fluent in English, French, Dutch, Hebrew.',
+    sameAs: ['https://www.linkedin.com/in/steven-gaertner/'],
+    image: '/images/steaven.png',
+  },
+  {
+    name: 'Priyanshu Rajput',
+    jobTitle: 'CTO',
+    description: 'Blockchain engineer specializing in smart contract development and blockchain architecture. Architect of scalable Web3 infrastructure. Driving real-world asset tokenization and the convergence of traditional finance and blockchain.',
+    sameAs: ['https://www.linkedin.com/in/priyanshu-rajput-037899189/'],
+    image: '/images/priyansu.jpg',
+  },
+  {
+    name: 'Danil Kerimi',
+    jobTitle: 'Non-Executive Board Member',
+    description: 'Former Head of Technology Industries and Managing Director at the World Economic Forum. Spent a decade shaping global technology policy at the intersection of governments, Fortune 500s, and emerging tech. Board Member at SealSQ (Nasdaq) and World Smart Sustainable Cities Organization (WeGO). Advises sovereigns and multinationals on digital transformation.',
+    sameAs: ['https://www.linkedin.com/in/danil-kerimi/'],
+    image: '/images/danil.png',
+  },
+];
+
+// Trusted By logos — same as homepage
+const partnerLogos = [
+  'Cardano.svg',
+  'Coingecko.svg',
+  'Coinmarketcap.svg',
+  'Ethereum.svg',
+  'Gia.svg',
+  'LCX (1).svg',
+  'Polygon.svg',
+  'Solana (1).svg',
+  'Uniswap.svg',
+  'Xrp.svg',
+];
+
+// Featured In — press and partner coverage (replace # with actual URLs when available)
+const featuredInLinks = [
+  { label: 'Cardano Foundation Case Study, Toto Finance', url: 'https://cardanofoundation.org/' },
+  { label: 'Yahoo Finance, Tiamonds Landmark Launch', url: 'https://finance.yahoo.com/' },
+  { label: 'GlobeNewsWire, Tiamonds 10 Carat D Flawless Diamond Launch', url: 'https://www.globenewswire.com/' },
+  { label: 'EMURGO, Cardano NFT Case Study: NMKR & Tiamonds', url: 'https://emurgo.io/' },
+  { label: 'BlockchainWire, Toto Finance Debuts New Brand', url: 'https://www.blockchainwire.io/' },
+  { label: 'BitCourier, Toto Finance New Brand & RWA Platform', url: 'https://bitcourier.co.uk/' },
+  { label: 'Blockchain Reporter, Toto Finance Brings RWAs On-Chain', url: 'https://blockchainreporter.net/' },
+  { label: 'CryptoRank, Cardano Pushes Forward in RWA Tokenization', url: 'https://cryptorank.io/' },
+  { label: 'Altcoin Observer, Toto Finance Launches RWA Platform', url: 'https://altcoinobserver.com/' },
+  { label: 'BitCourier, Tiamonds Review', url: 'https://bitcourier.co.uk/' },
+  { label: 'Messari, Understanding XRP Cafe', url: 'https://messari.io/' },
+  { label: 'Gate.com, Toto Finance', url: 'https://www.gate.io/' },
+  { label: 'MEXC, Toto Finance', url: 'https://www.mexc.com/' },
+  { label: 'CoinMarketCap, TIA Token', url: 'https://coinmarketcap.com/' },
+  { label: 'NMKR, Tiamonds Drop 2023', url: 'https://nmkr.io/' },
+];
 
 export default function AboutPage() {
   return (
@@ -22,12 +88,13 @@ export default function AboutPage() {
         title="About Us - Building Infrastructure for Global Digital Commodities | Toto Finance"
         description="Toto Finance is building institutional-grade infrastructure that enables compliant tokenization, settlement, and global trading of real-world commodities."
         url="https://totofinance.co/about"
-        pageType="WebPage"
+        pageType="AboutPage"
         breadcrumbItems={[
           { name: 'Home', item: 'https://totofinance.co' },
           { name: 'About', item: 'https://totofinance.co/about' },
         ]}
       />
+      <PersonStructuredData members={teamMembers} />
       <BreadcrumbStructuredData
         items={[
           { name: 'Home', item: 'https://totofinance.co' },
@@ -44,11 +111,8 @@ export default function AboutPage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-6">
             Building Infrastructure for<br className="hidden md:block" /> Global Digital Commodities
           </h1>
-          <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mb-8">
-            Toto Finance is building institutional-grade infrastructure that enables compliant tokenization, settlement, and global trading of real-world commodities.
-          </p>
-          <p className="text-base md:text-lg text-gray-400 leading-relaxed max-w-3xl mx-auto mb-10">
-            We connect physical assets to digital markets, securely, transparently, and at scale.
+          <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10">
+            Toto Finance is building institutional-grade infrastructure that enables compliant tokenization, settlement, and global trading of real-world commodities. We bridge physical assets to digital markets securely, transparently, and at scale.
           </p>
           <Link
             href="/ecosystem"
@@ -69,17 +133,17 @@ export default function AboutPage() {
             Who We Are
           </h2>
           <div className="space-y-6 text-base md:text-lg text-gray-600 leading-relaxed">
-            <p className="text-xl md:text-2xl font-medium text-gray-900">
-              Toto Finance is a technology company focused on real-world asset markets.
+            <p>
+              Toto Finance is a technology company specializing in real-world asset markets.
             </p>
             <p>
               <strong className="text-gray-900">We are not just a marketplace.</strong>
             </p>
             <p>
-              We build the infrastructure, compliance layer, and settlement rails that make commodity tokenization work in the real economy.
+              We build the infrastructure, compliance layer, and settlement infrastructure that makes commodity tokenization feasible in the real world.
             </p>
             <p>
-              Our focus spans commodities, metals, strategic minerals, and energy assets, where real value, supply chains, and capital flows intersect.
+              Our scope of interest includes commodities, metals, strategic minerals, and energy assets where real value, supply chains, and capital flows meet.
             </p>
           </div>
         </div>
@@ -92,7 +156,7 @@ export default function AboutPage() {
             What We Build
           </h2>
           <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto mb-16 text-center">
-            A unified platform for tokenized commodities, covering the full asset lifecycle:
+            A single platform for tokenized commodities, supporting the entire asset life cycle:
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -107,7 +171,7 @@ export default function AboutPage() {
                 Tokenization Infrastructure
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Issuance of asset-backed digital commodities with embedded compliance.
+                Issuance of asset-backed digital commodities with integrated compliance.
               </p>
             </div>
 
@@ -122,7 +186,7 @@ export default function AboutPage() {
                 Global Commodity Markets
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                24/7 access to tokenized assets with instant settlement.
+                24/7 trading for tokenized assets with instant settlement.
               </p>
             </div>
 
@@ -137,7 +201,7 @@ export default function AboutPage() {
                 Compliance &amp; Custody Layer
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Structured custody, audits, and proof-of-reserves linking tokens to physical assets.
+                Structured custody, audits, and proof-of-reserves connecting tokens to physical assets.
               </p>
             </div>
 
@@ -152,7 +216,7 @@ export default function AboutPage() {
                 Institutional Asset Access
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Infrastructure designed for producers, investors, and financial institutions.
+                Infrastructure for producers, investors, and financial institutions.
               </p>
             </div>
           </div>
@@ -211,22 +275,101 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ===================== INSTITUTIONAL CREDIBILITY SECTION ===================== */}
+      {/* ===================== LEADERSHIP SECTION ===================== */}
+      <section id="leadership" className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white scroll-mt-24">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-12 text-center">
+            Leadership
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {teamMembers.map((member, idx) => (
+              <div key={idx} className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-200">
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <div className="flex-shrink-0">
+                    {member.image ? (
+                      <Image src={member.image} alt={member.name} width={96} height={96} className={`w-24 h-24 rounded-full object-cover ${member.name === 'Priyanshu Rajput' ? 'grayscale' : ''}`} />
+                    ) : (
+                      <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center text-2xl font-semibold text-gray-500">
+                        {member.name.split(' ').map((n) => n[0]).join('')}
+                      </div>
+                    )}
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
+                    <p className="text-sm font-medium text-[#00375e] mt-1">{member.jobTitle}</p>
+                    <p className="text-sm text-gray-600 mt-3 leading-relaxed">{member.description}</p>
+                    {member.sameAs?.length ? (
+                      <a href={member.sameAs[0]} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-3 text-sm font-medium text-[#00375e] hover:underline">
+                        LinkedIn <span aria-hidden="true">↗</span>
+                      </a>
+                    ) : null}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== REGULATORY & LEGAL STANDING ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Regulatory &amp; Legal Standing
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-10">
+            Toto Finance operates through legally registered entities in the United States and Liechtenstein, ensuring structural transparency, verifiable corporate identity, and regulatory clarity.
+          </p>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-10">
+            We maintain a compliance-first approach and provide publicly verifiable registration details to support institutional confidence and long-term operational integrity.
+          </p>
+
+          <div className="space-y-10">
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Operating Entity (United States)</h3>
+              <p className="font-semibold text-gray-900 mb-2">Toto Finance Inc.</p>
+              <p className="text-gray-600 mb-4">A corporation incorporated in the United States of America.</p>
+              <p className="text-gray-900 font-medium">Company Registration Number: 10480139</p>
+              <p className="text-gray-600 mt-2">Principal Business Address:</p>
+              <p className="text-gray-700">447 Broadway, 2nd Floor, Suite 3342<br />New York, NY 10013<br />United States</p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Holding Entity (Liechtenstein)</h3>
+              <p className="font-semibold text-gray-900 mb-2">TotoHolding AG</p>
+              <p className="text-gray-600 mb-4">Incorporated in Liechtenstein</p>
+              <p className="text-gray-900 font-medium">Legal Entity Identifier (LEI): 5299005UXAQFO3US5C38</p>
+              <p className="text-gray-600 mt-2">The LEI can be independently verified via the Global Legal Entity Identifier Foundation (GLEIF).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== SECURITY & AUDITS ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Security &amp; Audits
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6">
+            Toto Finance is subject to independent third-party security audits to ensure the integrity of its smart contracts and platform infrastructure.
+          </p>
+          <p className="text-base md:text-lg text-gray-900 font-medium">
+            Audit Providers: Hacken, CertiK
+          </p>
+        </div>
+      </section>
+
+      {/* ===================== INSTITUTIONAL CREDIBILITY (moved after Security & Audits) ===================== */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-8">
             Institutional Credibility
           </h2>
           <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6">
-            Toto Finance is built with institutional standards from day one:
+            Compliance-first infrastructure that is consistent with established legal frameworks
           </p>
           <ul className="space-y-4 text-base md:text-lg text-gray-600 leading-relaxed mb-8">
-            <li className="flex items-start">
-              <svg className="w-6 h-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-              <span>Compliance-first infrastructure aligned with established legal frameworks</span>
-            </li>
             <li className="flex items-start">
               <svg className="w-6 h-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -243,62 +386,55 @@ export default function AboutPage() {
               <svg className="w-6 h-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              <span>Security audits conducted by leading firms</span>
+              <span>Security audits performed by Hacken and CertiK</span>
+            </li>
+            <li className="flex items-start">
+              <svg className="w-6 h-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Registered legal entities in Liechtenstein and the United States</span>
             </li>
           </ul>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-            This foundation enables trust, scale, and long-term adoption.
-          </p>
         </div>
       </section>
 
-      {/* ===================== ECOSYSTEM & PARTNERS SNAPSHOT SECTION ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+      {/* ===================== TRUSTED BY & PARTNERS ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-4 text-center">
-            Ecosystem &amp; Partners Snapshot
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight mb-4 text-center">
+            Trusted By &amp; Partners
           </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto mb-12 text-center">
-            Toto Finance operates within a global ecosystem of infrastructure, compliance, and blockchain partners, including:
+          <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mb-12 text-center">
+            Take it from our ecosystem — blockchains, validators, and infrastructure partners powering compliant tokenization.
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
-            {/* Card 1 */}
-            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200 text-center">
-              <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
+          {/* Same carousel as homepage TRUSTED BY — dark bg so logos are visible */}
+          <div className="trusted-by-dark w-full max-w-6xl mx-auto mb-10">
+            <p className="social-proof-text mb-8">TRUSTED BY</p>
+            <div className="w-full overflow-hidden">
+              <div className="social-proof-logos">
+                {[...partnerLogos, ...partnerLogos].map((name, idx) => (
+                  <div className="logo-item" key={`pl-${idx}-${name}`}>
+                    <img
+                      src={`/logo/${name}`}
+                      alt={name.replace(/\.[^/.]+$/, '')}
+                      width={120}
+                      height={40}
+                      loading="lazy"
+                      className={`${
+                        ['Solana (1).svg', 'Xrp.svg'].includes(name)
+                          ? 'h-4 sm:h-5'
+                          : ['Uniswap.svg', 'Coingecko.svg'].includes(name)
+                            ? 'h-6 sm:h-8'
+                            : 'h-5 sm:h-6'
+                      } opacity-80 hover:opacity-100 transition`}
+                    />
+                  </div>
+                ))}
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Custody and Validation Providers</h3>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200 text-center">
-              <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Security and Audit Firms</h3>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200 text-center">
-              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Public Blockchain Networks</h3>
             </div>
           </div>
-
           <div className="text-center">
-            <Link
-              href="/ecosystem"
-              className="inline-flex items-center justify-center bg-gray-900 text-white px-8 py-3.5 rounded-full text-base font-semibold hover:bg-gray-800 transition-all duration-300"
-            >
+            <Link href="/ecosystem" className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3.5 rounded-full text-base font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300">
               View Ecosystem
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -308,18 +444,39 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ===================== FEATURED IN ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-12 text-center">
+            Featured In
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {featuredInLinks.map((item, idx) => (
+              <a
+                key={idx}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-white rounded-xl p-4 border border-gray-200 hover:border-[#00375e] hover:shadow-md transition-all duration-200 text-left"
+              >
+                <span className="text-sm font-medium text-gray-900 line-clamp-2">{item.label}</span>
+                <span className="inline-flex items-center gap-1 mt-2 text-xs text-[#00375e]">
+                  Read more <span aria-hidden="true">↗</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===================== GLOBAL IMPACT / MARKET OPPORTUNITY SECTION ===================== */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-8">
                 Global Impact / Market Opportunity
               </h2>
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-8">
-                Toto Finance is led by a team with deep experience across commodities, digital assets, and regulated financial infrastructure.
-              </p>
-              
               <div className="space-y-6">
                 <div className="bg-white rounded-xl p-6 border border-gray-200">
                   <div className="text-3xl md:text-4xl font-light text-gray-900 mb-2">$30+ Trillion</div>
@@ -328,6 +485,10 @@ export default function AboutPage() {
                 <div className="bg-white rounded-xl p-6 border border-gray-200">
                   <div className="text-3xl md:text-4xl font-light text-gray-900 mb-2">$16+ Trillion</div>
                   <p className="text-gray-600">Tokenization Market (by 2030)</p>
+                </div>
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <div className="text-3xl md:text-4xl font-light text-gray-900 mb-2">$46+ Trillion</div>
+                  <p className="text-gray-600">Combined Market Size</p>
                 </div>
               </div>
             </div>

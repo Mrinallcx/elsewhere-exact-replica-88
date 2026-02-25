@@ -5,6 +5,7 @@ import { LazyVideo } from './components/client/LazyVideo';
 import dynamicImport from 'next/dynamic';
 import { PageStructuredData } from './components/PageStructuredData';
 import { BreadcrumbStructuredData } from './components/BreadcrumbStructuredData';
+import { TrustComplianceBar } from './components/TrustComplianceBar';
 import Image from 'next/image';
 
 // Dynamic imports for heavy components - loaded only when needed
@@ -61,8 +62,8 @@ const tnftCards = Array.from({ length: 16 });
 
 const cashCards = [
   {
-    title: 'Regulated & Audited',
-    subtitle: 'Operating within compliant legal frameworks, supported by independent audits, licensed partners, and continuous regulatory oversight.',
+    title: 'MiCA Registered & Hacken Audited',
+    subtitle: 'MiCA ESMA registered. Smart contracts audited by Hacken (Jan 2025). Physical validation by LCX under Liechtenstein TVTG.',
     variant: 'cash-card-blue',
   },
   {
@@ -472,6 +473,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Trust & Compliance Bar — E-E-A-T signals */}
+      <TrustComplianceBar variant="light" />
 
       {/* Resources/Blog Section - Lazy loaded */}
       <BlogSection />
