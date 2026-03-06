@@ -20,8 +20,7 @@ export const metadata = {
     },
   },
   verification: {
-    // Add your Google Search Console verification code here when available
-    // google: 'your-verification-code',
+    google: 'PU5ePrpoHebS2k5_nj7bPg6af_2QfIIB2kKdlkhoT_E',
   },
   icons: {
     icon: '/favicon.ico',

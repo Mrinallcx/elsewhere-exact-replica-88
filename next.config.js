@@ -462,6 +462,8 @@ const nextConfig = {
       // Imprint
       { source: '/blog/imprint', destination: '/blog/imprint/index.html' },
       { source: '/blog/imprint/', destination: '/blog/imprint/index.html' },
+      // Static HTML pages served at clean URLs
+      { source: '/tokenized-iron', destination: '/tokenized-iron.html' },
     ];
   },
 };
