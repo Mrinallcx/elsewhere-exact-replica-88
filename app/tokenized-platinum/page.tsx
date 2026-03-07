@@ -1,11 +1,10 @@
 // Server Component (NO "use client")
-export const revalidate = 3600; // ISR: regenerate every hour
+export const dynamic = 'force-dynamic';
 
 import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
 import { PageStructuredData } from '../components/PageStructuredData';
-import { FAQStructuredData } from '../components/FAQStructuredData';
 import { Navigation } from '../components/Navigation';
 
 // Dynamic imports for heavy components
@@ -13,8 +12,7 @@ const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur
 const Footer = dynamicImport(() => import('../components/Footer'));
 const NewsletterSection = dynamicImport(() => import('../components/NewsletterSection'));
 const PlatinumFAQ = dynamicImport(
-  () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ })),
-  { ssr: true }
+  () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ }))
 );
 
 // FAQ Data
@@ -55,11 +53,15 @@ export default function TokenizedPlatinumPage() {
         description="Own tokenized platinum backed by physical metal. Rarer than gold, essential for industry, with transparent custody and digital ownership."
         url="https://totofinance.co/tokenized-platinum"
         pageType="WebPage"
+        breadcrumbItems={[
+          { name: 'Home', item: 'https://totofinance.co' },
+          { name: 'Products', item: 'https://totofinance.co/products' },
+          { name: 'Tokenized Platinum', item: 'https://totofinance.co/tokenized-platinum' },
+        ]}
       />
       <BreadcrumbStructuredData
         items={[
           { name: 'Home', item: 'https://totofinance.co' },
-          { name: 'Products', item: 'https://totofinance.co/products' },
           { name: 'Tokenized Platinum', item: 'https://totofinance.co/tokenized-platinum' },
         ]}
       />
@@ -372,7 +374,6 @@ export default function TokenizedPlatinumPage() {
           <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-12">
             Common questions about tokenized platinum, custody, ownership, and how it compares to traditional precious metal investment.
           </p>
-          <FAQStructuredData faqs={faqData} />
           <PlatinumFAQ faqs={faqData} />
         </div>
       </section>

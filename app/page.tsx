@@ -31,20 +31,20 @@ const BlogSection = dynamicImport(() => import('./components/client/BlogSection'
   loading: () => <div className="resources-section px-6 md:px-8 lg:px-12 py-20 md:py-40"><div className="max-w-7xl mx-auto"><div className="h-96 animate-pulse bg-gray-100 rounded" /></div></div>,
 });
 
-export const revalidate = 3600; // ISR: regenerate every hour
+export const dynamic = 'force-dynamic';
 
 // Data constants
-const partnerLogos: { file: string; alt: string }[] = [
-  { file: 'Cardano.svg', alt: 'Cardano Blockchain' },
-  { file: 'Coingecko.svg', alt: 'CoinGecko' },
-  { file: 'Coinmarketcap.svg', alt: 'CoinMarketCap' },
-  { file: 'Ethereum.svg', alt: 'Ethereum' },
-  { file: 'Gia.svg', alt: 'GIA - Gemological Institute of America' },
-  { file: 'LCX (1).svg', alt: 'LCX Exchange' },
-  { file: 'Polygon.svg', alt: 'Polygon Network' },
-  { file: 'Solana (1).svg', alt: 'Solana Blockchain' },
-  { file: 'Uniswap.svg', alt: 'Uniswap Protocol' },
-  { file: 'Xrp.svg', alt: 'XRP Ledger' },
+const partnerLogos = [
+  'Cardano.svg',
+  'Coingecko.svg',
+  'Coinmarketcap.svg',
+  'Ethereum.svg',
+  'Gia.svg',
+  'LCX (1).svg',
+  'Polygon.svg',
+  'Solana (1).svg',
+  'Uniswap.svg',
+  'Xrp.svg',
 ];
 
 const tnftImages = [
@@ -181,10 +181,10 @@ export default function HomePage() {
         <div className="relative z-10 max-w-5xl w-full mx-0 sm:mx-auto">
           <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-travel-white mb-2">
             Toto Finance
-            <span className="hero-subheading block text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-1 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-              The Global Infrastructure for Tokenized Commodities
-            </span>
           </h1>
+          <h2 className="hero-subheading text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+            The Global Infrastructure for Tokenized Commodities
+          </h2>
 
           <div className="max-w-3xl w-full mx-0 sm:mx-auto mb-6 sm:mb-8 mt-6 sm:mt-8 md:mt-10 text-left sm:text-center">
             <p className="hero-description text-sm sm:text-base md:text-lg lg:text-xl text-travel-white mb-2 text-left sm:text-center">
@@ -208,18 +208,18 @@ export default function HomePage() {
             <p className="social-proof-text mb-8">TRUSTED BY</p>
             <div className="w-full overflow-hidden">
               <div className="social-proof-logos">
-                {[...partnerLogos, ...partnerLogos].map((logo, idx) => (
-                  <div className="logo-item" key={`pl-${idx}-${logo.file}`}>
+                {[...partnerLogos, ...partnerLogos].map((name, idx) => (
+                  <div className="logo-item" key={`pl-${idx}-${name}`}>
                     <img
-                      src={`/logo/${logo.file}`}
-                      alt={logo.alt}
+                      src={`/logo/${name}`}
+                      alt={name.replace(/\.[^/.]+$/, '')}
                       width={120}
                       height={40}
                       loading="lazy"
                       className={`${
-                        ['Solana (1).svg', 'Xrp.svg'].includes(logo.file)
+                        ['Solana (1).svg', 'Xrp.svg'].includes(name)
                           ? 'h-4 sm:h-5'
-                          : ['Uniswap.svg', 'Coingecko.svg'].includes(logo.file)
+                          : ['Uniswap.svg', 'Coingecko.svg'].includes(name)
                           ? 'h-6 sm:h-8'
                           : 'h-5 sm:h-6'
                       } opacity-80 hover:opacity-100 transition`}

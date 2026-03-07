@@ -179,7 +179,7 @@ const nextConfig = {
       {
         // Cache favicon for Google Search (recommended by Google)
         // Allow cache but with revalidation for updates
-        source: '/favicon.svg',
+        source: '/favicon.ico',
         headers: [
           {
             key: 'Cache-Control',
@@ -187,7 +187,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Type',
-            value: 'image/svg+xml',
+            value: 'image/x-icon',
           },
         ],
       },
@@ -336,39 +336,6 @@ const nextConfig = {
           },
         ],
       },
-      {
-        // CDN cache for all tokenized asset pages
-        source: '/tokenized-:asset',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value:
-              'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
-          },
-        ],
-      },
-      {
-        // CDN cache for how-tokenization-works page
-        source: '/how-tokenization-works',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value:
-              'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
-          },
-        ],
-      },
-      {
-        // CDN cache for about page
-        source: '/about',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value:
-              'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
-          },
-        ],
-      },
     ];
   },
   async redirects() {
@@ -495,6 +462,8 @@ const nextConfig = {
       // Imprint
       { source: '/blog/imprint', destination: '/blog/imprint/index.html' },
       { source: '/blog/imprint/', destination: '/blog/imprint/index.html' },
+      // Static HTML pages served at clean URLs
+      { source: '/tokenized-iron', destination: '/tokenized-iron.html' },
     ];
   },
 };

@@ -1,11 +1,10 @@
 // Server Component (NO "use client")
-export const revalidate = 3600; // ISR: regenerate every hour
+export const dynamic = 'force-dynamic';
 
 import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
 import { PageStructuredData } from '../components/PageStructuredData';
-import { FAQStructuredData } from '../components/FAQStructuredData';
 import { Navigation } from '../components/Navigation';
 
 // Dynamic imports for heavy components
@@ -16,8 +15,7 @@ const TinTickerBar = dynamicImport(
   () => import('../components/client/TinTickerBar').then((mod) => ({ default: mod.TinTickerBar }))
 );
 const TinFAQ = dynamicImport(
-  () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ })),
-  { ssr: true }
+  () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ }))
 );
 
 // FAQ Data
@@ -78,11 +76,15 @@ export default function TokenizedTinPage() {
         description="Tokenized tin by Toto Finance. 1:1 asset-backed tin ingot tokens, always redeemable. In-Ground Tin future delivery contracts."
         url="https://totofinance.co/tokenized-tin"
         pageType="WebPage"
+        breadcrumbItems={[
+          { name: 'Home', item: 'https://totofinance.co' },
+          { name: 'Products', item: 'https://totofinance.co/products' },
+          { name: 'Tokenized Tin', item: 'https://totofinance.co/tokenized-tin' },
+        ]}
       />
       <BreadcrumbStructuredData
         items={[
           { name: 'Home', item: 'https://totofinance.co' },
-          { name: 'Products', item: 'https://totofinance.co/products' },
           { name: 'Tokenized Tin', item: 'https://totofinance.co/tokenized-tin' },
         ]}
       />
@@ -281,25 +283,255 @@ export default function TokenizedTinPage() {
         </div>
       </section>
 
-      {/* ===================== HOW IT WORKS CTA ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Platform</p>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 mb-4">
-            How Tokenized Tin Works
+      {/* ===================== FOLD 5B: INVESTORS ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Investors</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Who Buys Tokenized Tin
           </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-            Instant stablecoin settlement, DeFi secondary markets, collateral loans, and 24/7 global trading — all on-chain with institutional-grade compliance.
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Toto Finance serves three distinct categories of buyers seeking tin exposure for manufacturing, investment, or digital asset strategies.
           </p>
-          <Link
-            href="/how-tokenization-works"
-            className="inline-flex items-center justify-center bg-gray-900 text-white px-8 py-3.5 rounded-full text-base font-semibold hover:bg-gray-800 transition-all duration-300"
-          >
-            Learn How Tokenization Works
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </Link>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Category 1 */}
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+              <span className="inline-block bg-slate-200 text-slate-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Category 1</span>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">Industrial Clients</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                Companies that need physical tin directly for manufacturing and operations. They purchase tokenized tin for guaranteed supply, streamlined procurement, and physical redemption.
+              </p>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Electronics &amp; semiconductor manufacturers (solder), PCB fabricators, solar panel &amp; photovoltaic producers, EV battery &amp; power electronics makers, food &amp; beverage packaging, chemical manufacturers, telecommunications &amp; 5G hardware, defense &amp; aerospace electronics, consumer electronics OEMs, lead-acid battery manufacturers.
+              </p>
+            </div>
+            {/* Category 2 */}
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+              <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Category 2</span>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">Investors &amp; Commodity Brokers</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                Mid-size and smaller investment firms, commodity brokers, family offices, and individual investors who typically cannot access premium tin deals at the pricing and volumes that major smelters command.
+              </p>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Toto Finance democratizes access to institutional-grade tin positions. Fractional ownership, no minimum tonnage requirements (LME standard lot is 5 tonnes), no warehouse logistics, and no counterparty risk through intermediaries. The same tin, at competitive pricing, accessible to everyone.
+              </p>
+            </div>
+            {/* Category 3 */}
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+              <span className="inline-block bg-purple-100 text-purple-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Category 3</span>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">Crypto-Native Participants</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                Blockchain-native organizations and investors seeking real-world asset diversification, on-chain yield, and commodity-backed collateral for DeFi strategies.
+              </p>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Crypto hedge funds, digital asset funds, blockchain infrastructure foundations, protocol treasuries, DeFi protocols seeking real-world asset collateral, crypto-native investors, DAOs and decentralized investment vehicles.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== FOLD 5C: INSTANT SETTLEMENT ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Global Trade</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Instant Settlement, No Banks
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Traditional commodity trading involves a chain of middlemen, brokers, banks, clearing houses, and custodians that delay settlement by days or weeks and extract fees at every step. Toto Finance removes them all.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {/* Traditional */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Traditional Commodity Trade</h3>
+              <p className="text-sm text-gray-500 mb-6">7+ Intermediaries, Days to Settle</p>
+              <div className="space-y-3">
+                {['Mining Company', 'Commodity Broker', 'Clearing House', 'Custodian Bank', 'Correspondent Bank', 'Settlement Agent', 'Buyer'].map((step, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 text-xs font-semibold text-gray-500">{i + 1}</div>
+                    <span className="text-sm text-gray-700">{step}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 pt-4 border-t border-gray-100">
+                <p className="text-sm text-red-600 font-medium">Settlement: T+2 to T+5 (or longer)</p>
+              </div>
+            </div>
+            {/* Toto Finance */}
+            <div className="bg-gray-900 text-white rounded-2xl p-6 md:p-8">
+              <h3 className="text-lg font-semibold mb-1">Toto Finance</h3>
+              <p className="text-sm text-gray-400 mb-6">Direct Match</p>
+              <div className="space-y-3">
+                {['Mining Company / Smelter', 'Toto Finance Platform', 'Buyer'].map((step, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-xs font-semibold">{i + 1}</div>
+                    <span className="text-sm">{step}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 pt-4 border-t border-white/10">
+                <p className="text-sm text-green-400 font-medium">Settlement: T+0 (Instant)</p>
+              </div>
+              <p className="text-sm text-gray-400 mt-4 leading-relaxed">
+                Similar to how Amazon and eBay match buyers and sellers directly, Toto Finance uses blockchain technology to connect tin producers with buyers, eliminating banks, clearing houses, and settlement agents entirely.
+              </p>
+            </div>
+          </div>
+
+          {/* Stablecoins */}
+          <h3 className="text-2xl font-medium text-gray-900 mb-6">Instant Settlement with Stablecoins</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: 'USDC', issuer: 'Circle', desc: 'The most widely adopted dollar-backed stablecoin for institutional use. Full reserve transparency, monthly attestations, and broad DeFi integration.' },
+              { name: 'USDT', issuer: 'Tether', desc: 'The highest-liquidity stablecoin in the world with over $140 billion in circulation. Default settlement currency for global crypto and commodity markets.' },
+              { name: 'USAT', issuer: 'Tether (US Regulated)', desc: 'Tether\u2019s US-regulated stablecoin under the GENIUS Act framework. Designed for compliant domestic transactions, bridging traditional finance with digital assets.' },
+            ].map((coin, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-sm font-bold text-gray-700">{coin.name.charAt(0)}</div>
+                  <div>
+                    <p className="font-semibold text-gray-900">{coin.name}</p>
+                    <p className="text-xs text-gray-500">{coin.issuer}</p>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">{coin.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== FOLD 6: DeFi ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Secondary Markets</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            DeFi Trading, Yield &amp; Collateral Loans
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Once tokenized tin is purchased on Toto Finance, secondary trading happens on DeFi platforms globally. Hold, trade, hedge, earn yield, or borrow against your tin. All on-chain. All programmable.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            {[
+              { title: 'Global Secondary Trading', desc: 'Tokenized tin trades 24/7 on decentralized exchanges and DeFi platforms worldwide. Buy, sell, and transfer tin tokens across chains without gatekeepers, brokers, or trading hour restrictions. True global liquidity.' },
+              { title: 'On-Chain Yield', desc: 'Earn yield by exposing tin assets to smart contract yield contracts. Lend tokenized tin to short sellers or leveraged long traders who borrow assets and pay interest. Passive income backed by physical commodities.' },
+              { title: 'Collateral Loans', desc: 'Use tokenized tin as collateral for on-chain loans. Borrow stablecoins against tin holdings without selling the underlying asset. All managed at the protocol level \u2014 no bank approval, no credit checks, no delays.' },
+              { title: 'Programmable Finance', desc: 'Collateral loans backed by tokenized tin represent a new programmable financial model. Smart contracts automate liquidation thresholds, interest payments, and margin requirements. Physical commodity value meets decentralized financial infrastructure.' },
+            ].map((feature, i) => (
+              <div key={i} className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Token Lifecycle */}
+          <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+            <h3 className="text-xl font-medium text-gray-900 mb-6 text-center">The Lifecycle of a Tokenized Tin Token</h3>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-2 md:gap-0">
+              {[
+                'Minted on Toto Finance',
+                'Purchased with Stablecoins',
+                'Held, Traded or Transferred',
+                'Yield, Loans or Hedging',
+                'Redeemed for Physical Tin',
+              ].map((step, i) => (
+                <div key={i} className="flex items-center gap-2 md:gap-0">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-semibold mb-2">{i + 1}</div>
+                    <p className="text-xs md:text-sm text-gray-700 max-w-[120px] leading-tight">{step}</p>
+                  </div>
+                  {i < 4 && (
+                    <svg className="w-5 h-5 text-gray-300 hidden md:block mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== FOLD 6B: COMPARISON TABLE ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Why Tokenized</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Tokenized Tin vs. Traditional Tin
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            See how tokenized tin on Toto Finance compares to traditional tin ETFs, futures contracts, and physical ownership.
+          </p>
+
+          <div className="overflow-x-auto rounded-2xl border border-gray-200">
+            <table className="w-full text-sm text-left">
+              <thead>
+                <tr className="bg-gray-900 text-white">
+                  <th className="px-4 md:px-6 py-4 font-medium">Feature</th>
+                  <th className="px-4 md:px-6 py-4 font-medium">Tin ETFs</th>
+                  <th className="px-4 md:px-6 py-4 font-medium bg-white/10">Toto Finance</th>
+                  <th className="px-4 md:px-6 py-4 font-medium">Physical Tin</th>
+                  <th className="px-4 md:px-6 py-4 font-medium">Tin Futures</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white">
+                {[
+                  ['Trading Hours', 'Market hours', '24/7/365', 'OTC', 'Exchange hours'],
+                  ['Settlement', 'T+2', 'T+0 (Instant)', 'Days\u2013weeks', 'T+1'],
+                  ['Settlement Currency', 'Fiat (broker)', 'USDC, USDT, USAT', 'Wire transfer', 'Fiat (broker)'],
+                  ['Physical Backing', 'Synthetic', '1:1 Tin Ingots', 'Direct', 'Cash settled'],
+                  ['Min. Investment', '~$50+', 'From $1', '$10,000+', '$25,000+'],
+                  ['Physical Redemption', 'No', 'Yes', 'Yes', 'No'],
+                  ['On-Chain Transparency', 'No', 'Yes', 'No', 'No'],
+                  ['DeFi Yield / Loans', 'No', 'Yes', 'No', 'No'],
+                  ['Storage Costs', 'Expense ratio', 'None', 'Vault fees', 'Roll costs'],
+                  ['Intermediaries', 'Broker + Clearing', 'None (P2P)', 'Multiple', 'Broker + Exchange'],
+                ].map((row, i) => (
+                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                    <td className="px-4 md:px-6 py-3 font-medium text-gray-900">{row[0]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-600">{row[1]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-900 font-medium bg-slate-50/50">{row[2]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-600">{row[3]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-600">{row[4]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== FOLD 6C: PLATFORM FEATURES ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Platform</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Institutional-Grade Tin Tokenization
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Transparency, compliance, and programmable infrastructure embedded into every transaction.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: 'Redeemable Assets', desc: 'All tokenized tin linked to insured vaults. Redeem for physical tin ingot delivery on demand. Grade A, LME quality.' },
+              { title: 'Transparent Reserves', desc: 'On-chain proof-of-reserves, real-time oracle feeds, third-party audits. Continuous 1:1 backing verifiable on blockchain.' },
+              { title: 'Instant Settlement', desc: 'T+0 with USDC, USDT, USAT. No banks, no clearing houses, no intermediaries.' },
+              { title: 'Programmable Compliance', desc: 'Smart contracts enforce KYC/AML, transfer restrictions, and permissions at protocol level. Built into the token.' },
+              { title: 'DeFi Yield & Loans', desc: 'Earn yield through lending, use tin as collateral for on-chain loans, hedge through smart contracts.' },
+              { title: 'Multi-Chain Access', desc: 'Accessible across Ethereum, Polygon, Cardano, Solana, and XRP Ledger.' },
+            ].map((feature, i) => (
+              <div key={i} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -313,7 +545,6 @@ export default function TokenizedTinPage() {
           <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-12">
             Common questions about tokenized tin, In-Ground Tin, instant settlement, and DeFi secondary markets on Toto Finance.
           </p>
-          <FAQStructuredData faqs={faqData} />
           <TinFAQ faqs={faqData} />
         </div>
       </section>

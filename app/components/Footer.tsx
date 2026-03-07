@@ -25,6 +25,7 @@ const footerColumns = [
       { label: 'Sapphire', href: '/tokenized-sapphire' },
       { label: 'Copper', href: '/tokenized-copper' },
       { label: 'Tin', href: '/tokenized-tin' },
+      { label: 'Iron', href: '/tokenized-iron' },
     ],
   },
   {

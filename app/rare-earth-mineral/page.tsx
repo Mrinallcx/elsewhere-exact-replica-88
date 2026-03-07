@@ -1,5 +1,5 @@
 // Server Component (NO "use client")
-export const revalidate = 3600; // ISR: regenerate every hour
+export const dynamic = 'force-dynamic';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -82,13 +82,17 @@ export default function RareEarthMineralPage() {
         description="Securely tokenize lithium, copper, and nickel with 24/7 digital ownership on institutional infrastructure under Liechtenstein law."
         url="https://totofinance.co/rare-earth-mineral"
         pageType="WebPage"
+        breadcrumbItems={[
+          { name: 'Home', item: 'https://totofinance.co' },
+          { name: 'Products', item: 'https://totofinance.co/products' },
+          { name: 'Rare Earth Minerals', item: 'https://totofinance.co/rare-earth-mineral' },
+        ]}
       />
       
       {/* Breadcrumb Structured Data */}
       <BreadcrumbStructuredData
         items={[
           { name: 'Home', item: 'https://totofinance.co' },
-          { name: 'Products', item: 'https://totofinance.co/products' },
           { name: 'Rare Earth Minerals', item: 'https://totofinance.co/rare-earth-mineral' },
         ]}
       />
@@ -469,103 +473,6 @@ export default function RareEarthMineralPage() {
             >
               Explore Marketplace
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Explore Individual Rare Earth Elements */}
-      <section className="px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 leading-tight mb-6">
-              Explore Individual Rare Earth Elements
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Each rare earth element powers different industries — from EV motors and wind turbines to fiber optics and nuclear medicine. Explore asset-backed tokenized access to every element.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <Link href="/tokenized-cerium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Cerium</h3>
-              <p className="text-sm text-gray-600">Catalytic converters, glass polishing, and automotive emission control systems.</p>
-            </Link>
-            <Link href="/tokenized-dysprosium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Dysprosium</h3>
-              <p className="text-sm text-gray-600">High-performance permanent magnets for EV motors and wind turbines.</p>
-            </Link>
-            <Link href="/tokenized-erbium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Erbium</h3>
-              <p className="text-sm text-gray-600">Fiber optic amplifiers, laser technology, and telecommunications infrastructure.</p>
-            </Link>
-            <Link href="/tokenized-europium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Europium</h3>
-              <p className="text-sm text-gray-600">LED phosphors, display technology, and anti-counterfeiting for banknotes.</p>
-            </Link>
-            <Link href="/tokenized-gadolinium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Gadolinium</h3>
-              <p className="text-sm text-gray-600">MRI contrast agents, nuclear reactor shielding, and magnetic refrigeration.</p>
-            </Link>
-            <Link href="/tokenized-holmium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Holmium</h3>
-              <p className="text-sm text-gray-600">Medical lasers, magnetic flux concentrators, and nuclear control rods.</p>
-            </Link>
-            <Link href="/tokenized-lanthanum" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Lanthanum</h3>
-              <p className="text-sm text-gray-600">Hybrid vehicle batteries, petroleum refining catalysts, and optical lenses.</p>
-            </Link>
-            <Link href="/tokenized-lutetium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Lutetium</h3>
-              <p className="text-sm text-gray-600">PET scan detectors, high-density alloys, and precision dating in geology.</p>
-            </Link>
-            <Link href="/tokenized-neodymium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Neodymium</h3>
-              <p className="text-sm text-gray-600">Permanent magnets for EVs, wind generators, headphones, and hard drives.</p>
-            </Link>
-            <Link href="/tokenized-praseodymium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Praseodymium</h3>
-              <p className="text-sm text-gray-600">Aircraft engines, welder goggles, and high-strength magnet alloys.</p>
-            </Link>
-            <Link href="/tokenized-promethium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Promethium</h3>
-              <p className="text-sm text-gray-600">Nuclear batteries, luminous paint, and portable X-ray instrumentation.</p>
-            </Link>
-            <Link href="/tokenized-samarium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Samarium</h3>
-              <p className="text-sm text-gray-600">Samarium-cobalt magnets for aerospace, defense, and high-temperature applications.</p>
-            </Link>
-            <Link href="/tokenized-scandium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Scandium</h3>
-              <p className="text-sm text-gray-600">Aerospace aluminum alloys, solid oxide fuel cells, and sports equipment.</p>
-            </Link>
-            <Link href="/tokenized-terbium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Terbium</h3>
-              <p className="text-sm text-gray-600">Green phosphors for displays, solid-state devices, and naval sonar systems.</p>
-            </Link>
-            <Link href="/tokenized-thulium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Thulium</h3>
-              <p className="text-sm text-gray-600">Portable X-ray devices, surgical lasers, and high-temperature superconductors.</p>
-            </Link>
-            <Link href="/tokenized-ytterbium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Ytterbium</h3>
-              <p className="text-sm text-gray-600">Fiber lasers, atomic clocks, and stainless steel strengthening additives.</p>
-            </Link>
-            <Link href="/tokenized-yttrium" className="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Tokenized Yttrium</h3>
-              <p className="text-sm text-gray-600">LED lighting, jet engine coatings, and microwave communication filters.</p>
-            </Link>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href="/how-tokenization-works"
-              className="inline-flex items-center px-8 py-3 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-colors duration-300 hover:scale-105"
-            >
-              Learn How Tokenization Works
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Link>
           </div>
         </div>
       </section>

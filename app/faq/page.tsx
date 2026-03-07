@@ -1,5 +1,5 @@
 // Server Component (NO "use client")
-export const revalidate = 3600; // ISR: regenerate every hour
+export const dynamic = 'force-dynamic';
 
 import dynamicImport from 'next/dynamic';
 import { FAQStructuredData } from '../components/FAQStructuredData';

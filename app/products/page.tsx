@@ -1,5 +1,5 @@
 // Server Component (NO "use client")
-export const revalidate = 3600; // ISR: regenerate every hour
+export const dynamic = 'force-dynamic';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -28,6 +28,10 @@ export default function ProductPage() {
         description="Toto Finance offers secure, liquid digital commodities including gold, silver, diamonds, rare minerals, and energy assets."
         url="https://totofinance.co/products"
         pageType="CollectionPage"
+        breadcrumbItems={[
+          { name: 'Home', item: 'https://totofinance.co' },
+          { name: 'Products', item: 'https://totofinance.co/products' },
+        ]}
       />
       
       {/* Breadcrumb Structured Data */}
@@ -448,120 +452,6 @@ export default function ProductPage() {
           </div>
          </div>
        </section> */}
-
-      {/* Explore All Tokenized Assets Section */}
-      <section id="tokenized-assets" className="px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 leading-tight mb-6">
-              Explore Tokenized Assets
-            </h2>
-            <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Institutional-grade, asset-backed tokenized commodities spanning precious metals, gemstones, industrial metals, and rare earth minerals — each with audited custody and on-chain settlement.
-            </p>
-          </div>
-
-          {/* Precious Metals & Gemstones */}
-          <div className="mb-12">
-            <h3 className="text-xl font-medium text-gray-900 mb-6">Precious Metals & Gemstones</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
-              <Link href="/tokenized-gold" className="group bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Tokenized Gold</span>
-              </Link>
-              <Link href="/tokenized-silver" className="group bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Tokenized Silver</span>
-              </Link>
-              <Link href="/tokenized-platinum" className="group bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Tokenized Platinum</span>
-              </Link>
-              <Link href="/tokenized-diamonds" className="group bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Tokenized Diamonds</span>
-              </Link>
-              <Link href="/tokenized-sapphire" className="group bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Tokenized Sapphire</span>
-              </Link>
-              <Link href="/tokenized-copper" className="group bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Tokenized Copper</span>
-              </Link>
-              <Link href="/tokenized-tin" className="group bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Tokenized Tin</span>
-              </Link>
-            </div>
-          </div>
-
-          {/* Rare Earth Elements */}
-          <div className="mb-12">
-            <h3 className="text-xl font-medium text-gray-900 mb-2">Rare Earth Elements</h3>
-            <p className="text-sm text-gray-500 mb-6">Critical minerals powering AI, energy transition, and advanced manufacturing — <Link href="/rare-earth-mineral" className="text-blue-600 hover:underline">learn more about rare earth tokenization</Link>.</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3">
-              <Link href="/tokenized-cerium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Cerium</span>
-              </Link>
-              <Link href="/tokenized-dysprosium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Dysprosium</span>
-              </Link>
-              <Link href="/tokenized-erbium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Erbium</span>
-              </Link>
-              <Link href="/tokenized-europium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Europium</span>
-              </Link>
-              <Link href="/tokenized-gadolinium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Gadolinium</span>
-              </Link>
-              <Link href="/tokenized-holmium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Holmium</span>
-              </Link>
-              <Link href="/tokenized-lanthanum" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Lanthanum</span>
-              </Link>
-              <Link href="/tokenized-lutetium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Lutetium</span>
-              </Link>
-              <Link href="/tokenized-neodymium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Neodymium</span>
-              </Link>
-              <Link href="/tokenized-praseodymium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Praseodymium</span>
-              </Link>
-              <Link href="/tokenized-promethium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Promethium</span>
-              </Link>
-              <Link href="/tokenized-samarium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Samarium</span>
-              </Link>
-              <Link href="/tokenized-scandium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Scandium</span>
-              </Link>
-              <Link href="/tokenized-terbium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Terbium</span>
-              </Link>
-              <Link href="/tokenized-thulium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Thulium</span>
-              </Link>
-              <Link href="/tokenized-ytterbium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Ytterbium</span>
-              </Link>
-              <Link href="/tokenized-yttrium" className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-gray-100 hover:shadow-md transition-all duration-300">
-                <span className="text-xs font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Yttrium</span>
-              </Link>
-            </div>
-          </div>
-
-          {/* Learn More CTA */}
-          <div className="text-center mt-8">
-            <Link
-              href="/how-tokenization-works"
-              className="inline-flex items-center px-8 py-3 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-colors duration-300 hover:scale-105"
-            >
-              Learn How Tokenization Works
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
 
        {/* Newsletter Section */}
        <section className="newsletter-section pt-12 pb-0 md:pt-24 md:pb-0">

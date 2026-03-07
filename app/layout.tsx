@@ -1,3 +1,6 @@
+// SSR: Pages use force-dynamic, so we don't need ISR here
+// export const revalidate = 3600; // Removed to allow SSR on all pages
+
 export const metadata = {
   metadataBase: new URL('https://totofinance.co'),
   title: 'Toto Finance - Asset-Backed Tokenization Platform',
@@ -17,12 +20,11 @@ export const metadata = {
     },
   },
   verification: {
-    google: 'ADD_YOUR_GSC_VERIFICATION_CODE_HERE',
+    google: 'PU5ePrpoHebS2k5_nj7bPg6af_2QfIIB2kKdlkhoT_E',
   },
   icons: {
-    icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-    ],
+    icon: '/favicon.ico',
+    apple: '/favicon.ico',
   },
   openGraph: {
     title: 'Toto Finance - Asset-Backed Tokenization Platform',
@@ -82,7 +84,7 @@ export default function RootLayout({
     <html lang='en'>
       <head>
         {/* Explicit favicon link for Google Search compatibility */}
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         {/* Preconnect only to critical origins that load immediately */}
         {/* GTM loads lazily, so no preconnect needed */}
         {/* Firebase images load lazily, so no preconnect needed */}

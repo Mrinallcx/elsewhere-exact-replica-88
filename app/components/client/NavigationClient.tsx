@@ -90,16 +90,6 @@ export function NavigationClient({ logo, pastHero: externalPastHero }: Navigatio
               Products
             </Link>
 
-            {/* How It Works Link */}
-            <Link
-              href="/how-tokenization-works"
-              className={`nav-link ${
-                currentPastHero ? 'text-travel-black' : 'text-travel-white'
-              } hover:text-travel-black transition-colors duration-300`}
-            >
-              How It Works
-            </Link>
-
             {/* 2030 Link */}
             <Link
               href="/vision-2030"
@@ -337,14 +327,6 @@ export function NavigationClient({ logo, pastHero: externalPastHero }: Navigatio
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Products
-              </Link>
-
-              <Link
-                href="/how-tokenization-works"
-                className="block py-3 text-travel-black hover:text-travel-gold transition-colors duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                How It Works
               </Link>
 
               <Link

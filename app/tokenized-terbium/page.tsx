@@ -1,11 +1,10 @@
 // Server Component (NO "use client")
-export const revalidate = 3600; // ISR: regenerate every hour
+export const dynamic = 'force-dynamic';
 
 import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
 import { PageStructuredData } from '../components/PageStructuredData';
-import { FAQStructuredData } from '../components/FAQStructuredData';
 import { Navigation } from '../components/Navigation';
 
 // Dynamic imports for heavy components
@@ -16,8 +15,7 @@ const TerbiumTickerBar = dynamicImport(
   () => import('../components/client/TerbiumTickerBar').then((mod) => ({ default: mod.TerbiumTickerBar }))
 );
 const TerbiumFAQ = dynamicImport(
-  () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ })),
-  { ssr: true }
+  () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ }))
 );
 
 // FAQ Data
@@ -58,11 +56,15 @@ export default function TokenizedTerbiumPage() {
         description="Tokenized terbium by Toto Finance. Digitally represented terbium supply essential for magnet stabilization, defense electronics, solid-state lighting, and advanced AI-era technologies."
         url="https://totofinance.co/tokenized-terbium"
         pageType="WebPage"
+        breadcrumbItems={[
+          { name: 'Home', item: 'https://totofinance.co' },
+          { name: 'Products', item: 'https://totofinance.co/products' },
+          { name: 'Tokenized Terbium', item: 'https://totofinance.co/tokenized-terbium' },
+        ]}
       />
       <BreadcrumbStructuredData
         items={[
           { name: 'Home', item: 'https://totofinance.co' },
-          { name: 'Products', item: 'https://totofinance.co/products' },
           { name: 'Tokenized Terbium', item: 'https://totofinance.co/tokenized-terbium' },
         ]}
       />
@@ -250,25 +252,29 @@ export default function TokenizedTerbiumPage() {
         </div>
       </section>
 
-      {/* ===================== HOW IT WORKS CTA ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Platform</p>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 mb-4">
-            How Tokenized Terbium Works
-          </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-            Instant stablecoin settlement, DeFi secondary markets, collateral loans, and 24/7 global trading — all on-chain with institutional-grade compliance.
-          </p>
-          <Link
-            href="/how-tokenization-works"
-            className="inline-flex items-center justify-center bg-gray-900 text-white px-8 py-3.5 rounded-full text-base font-semibold hover:bg-gray-800 transition-all duration-300"
-          >
-            Learn How Tokenization Works
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </Link>
+      {/* ===================== FOLD 5: WHO USES TOKENIZED TERBIUM ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Participants</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">Who Tokenized Terbium Is For</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+              <span className="inline-block bg-lime-100 text-lime-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Industrial &amp; Strategic</span>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">Industrial &amp; Strategic Buyers</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">Defense contractors, electronics manufacturers, lighting technology firms, and advanced materials companies requiring stable magnetic and electronic performance.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+              <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Institutional</span>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">Institutional &amp; Professional Investors</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">Funds and asset managers seeking exposure to rare earth elements with high strategic value and constrained supply.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+              <span className="inline-block bg-purple-100 text-purple-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Digital Asset</span>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">Digital Asset Participants</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">Crypto-native funds and on-chain treasuries seeking real-world asset exposure tied to physical technology bottlenecks.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -278,7 +284,6 @@ export default function TokenizedTerbiumPage() {
           <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Frequently Asked Questions</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">Frequently Asked Questions</h2>
           <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-12">Common questions about tokenized terbium, its strategic importance, and how Toto Finance provides digital access to this critical rare earth element.</p>
-          <FAQStructuredData faqs={faqData} />
           <TerbiumFAQ faqs={faqData} />
         </div>
       </section>

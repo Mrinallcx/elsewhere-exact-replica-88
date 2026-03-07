@@ -1,11 +1,10 @@
 // Server Component (NO "use client")
-export const revalidate = 3600; // ISR: regenerate every hour
+export const dynamic = 'force-dynamic';
 
 import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
 import { PageStructuredData } from '../components/PageStructuredData';
-import { FAQStructuredData } from '../components/FAQStructuredData';
 import { Navigation } from '../components/Navigation';
 
 // Dynamic imports for heavy components
@@ -16,8 +15,7 @@ const GoldTickerBar = dynamicImport(
   () => import('../components/client/GoldTickerBar').then((mod) => ({ default: mod.GoldTickerBar }))
 );
 const GoldFAQ = dynamicImport(
-  () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ })),
-  { ssr: true }
+  () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ }))
 );
 
 // FAQ Data
@@ -78,11 +76,15 @@ export default function TokenizedGoldPage() {
         description="Tokenized gold by Toto Finance. 1:1 asset-backed gold bullion tokens, always redeemable. 863 tonnes central bank buying in 2025."
         url="https://totofinance.co/tokenized-gold"
         pageType="WebPage"
+        breadcrumbItems={[
+          { name: 'Home', item: 'https://totofinance.co' },
+          { name: 'Products', item: 'https://totofinance.co/products' },
+          { name: 'Tokenized Gold', item: 'https://totofinance.co/tokenized-gold' },
+        ]}
       />
       <BreadcrumbStructuredData
         items={[
           { name: 'Home', item: 'https://totofinance.co' },
-          { name: 'Products', item: 'https://totofinance.co/products' },
           { name: 'Tokenized Gold', item: 'https://totofinance.co/tokenized-gold' },
         ]}
       />
@@ -286,25 +288,257 @@ export default function TokenizedGoldPage() {
         </div>
       </section>
 
-      {/* ===================== HOW IT WORKS CTA ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Platform</p>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 mb-4">
-            How Tokenized Gold Works
+      {/* ===================== FOLD 5B: INVESTORS ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Investors</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Who Buys Tokenized Gold
           </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-            Instant stablecoin settlement, DeFi secondary markets, collateral loans, and 24/7 global trading — all on-chain with institutional-grade compliance.
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Toto Finance serves three distinct categories of buyers seeking gold exposure through blockchain technology, from institutions managing billions in assets to individual investors diversifying portfolios.
           </p>
-          <Link
-            href="/how-tokenization-works"
-            className="inline-flex items-center justify-center bg-gray-900 text-white px-8 py-3.5 rounded-full text-base font-semibold hover:bg-gray-800 transition-all duration-300"
-          >
-            Learn How Tokenization Works
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </Link>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Category 1 */}
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+              <span className="inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Category 1</span>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">Institutional Investors</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                Central banks, sovereign wealth funds, pension funds, insurance companies, and asset managers seeking efficient gold allocation. Tokenized gold provides instant settlement, transparent custody, and programmable compliance for institutional portfolios.
+              </p>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Central banks building digital gold reserves, sovereign wealth funds diversifying away from traditional assets, pension funds adding safe-haven allocation, family offices preserving multi-generational wealth, hedge funds implementing gold strategies, insurance companies meeting reserve requirements, endowments and foundations seeking inflation protection.
+              </p>
+            </div>
+            {/* Category 2 */}
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+              <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Category 2</span>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">High Net Worth &amp; Retail Investors</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                Individual investors, wealth management clients, and retail buyers seeking gold exposure without the friction of physical ownership. Fractional ownership starting from $1, no storage fees on blockchain, global liquidity 24/7.
+              </p>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Toto Finance democratizes access to institutional-grade gold storage. Fractional ownership from 0.01 grams, no minimum investment, no physical storage or insurance costs, instant global liquidity, and full redeemability. The same gold institutions own, accessible to everyone.
+              </p>
+            </div>
+            {/* Category 3 */}
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+              <span className="inline-block bg-purple-100 text-purple-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Category 3</span>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">Crypto-Native Participants</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                Blockchain-native investors and organizations seeking stable, non-correlated assets. Gold-backed tokens provide DeFi-compatible safe-haven exposure with on-chain yield opportunities and collateral utility.
+              </p>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Crypto hedge funds and digital asset funds, protocol treasuries diversifying beyond crypto, DeFi protocols seeking stable collateral assets, crypto-native investors hedging volatility, DAOs building treasury reserves, stablecoin issuers backing reserves with gold, on-chain lending protocols accepting gold collateral.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== FOLD 5C: INSTANT SETTLEMENT ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Global Trade</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Instant Settlement, No Intermediaries
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Traditional gold trading involves multiple intermediaries, settlement delays of 2&ndash;5 days, and complex custody chains. Toto Finance eliminates all friction with blockchain-based instant settlement and transparent on-chain custody.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {/* Traditional */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Traditional Gold Trade</h3>
+              <p className="text-sm text-gray-500 mb-6">Multiple Intermediaries, Days to Settle</p>
+              <div className="space-y-3">
+                {['Bullion Dealer / Broker', 'Clearing House', 'Custodian Bank', 'Vault Operator', 'Settlement Agent', 'Buyer'].map((step, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 text-xs font-semibold text-gray-500">{i + 1}</div>
+                    <span className="text-sm text-gray-700">{step}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 pt-4 border-t border-gray-100">
+                <p className="text-sm text-red-600 font-medium">Settlement: T+2 to T+5 (or longer)</p>
+              </div>
+            </div>
+            {/* Toto Finance */}
+            <div className="bg-gray-900 text-white rounded-2xl p-6 md:p-8">
+              <h3 className="text-lg font-semibold mb-1">Toto Finance</h3>
+              <p className="text-sm text-gray-400 mb-6">Direct Vault-to-Wallet</p>
+              <div className="space-y-3">
+                {['Vault Operator (Allocated Gold)', 'Toto Finance Platform', 'Buyer (Token in Wallet)'].map((step, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-xs font-semibold">{i + 1}</div>
+                    <span className="text-sm">{step}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 pt-4 border-t border-white/10">
+                <p className="text-sm text-green-400 font-medium">Settlement: T+0 (Instant)</p>
+              </div>
+              <p className="text-sm text-gray-400 mt-4 leading-relaxed">
+                Like Amazon connecting buyers and sellers directly, Toto Finance connects vaulted gold with buyers through blockchain technology. Purchase gold, receive tokens instantly, and verify your allocated bar serial numbers on-chain. No banks, no clearing houses, no settlement delays.
+              </p>
+            </div>
+          </div>
+
+          {/* Stablecoins */}
+          <h3 className="text-2xl font-medium text-gray-900 mb-6">Instant Settlement with Stablecoins</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: 'USDC', issuer: 'Circle', desc: 'The most trusted dollar-backed stablecoin for institutional gold trading. Full reserve transparency, monthly attestations by top accounting firms, and seamless integration across all major blockchain networks and DeFi protocols.' },
+              { name: 'USDT', issuer: 'Tether', desc: 'The world\u2019s largest stablecoin with over $140 billion in circulation. Dominant settlement currency for global commodity trading. Maximum liquidity across all major exchanges and trading venues.' },
+              { name: 'USAT', issuer: 'Tether (US Regulated)', desc: 'Tether\u2019s US-regulated stablecoin operating under the GENIUS Act framework. Compliant settlement for US domestic transactions with full regulatory oversight. Bridges traditional gold markets with digital asset infrastructure.' },
+            ].map((coin, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-sm font-bold text-gray-700">{coin.name.charAt(0)}</div>
+                  <div>
+                    <p className="font-semibold text-gray-900">{coin.name}</p>
+                    <p className="text-xs text-gray-500">{coin.issuer}</p>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">{coin.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== FOLD 6: DeFi ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Secondary Markets</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            DeFi Trading, Yield &amp; Collateral Loans
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Once tokenized gold is purchased on Toto Finance, secondary trading happens on DeFi platforms globally. Hold as a safe-haven asset, trade 24/7, earn yield through lending protocols, or borrow against your gold. All on-chain. All programmable.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            {[
+              { title: 'Global 24/7 Trading', desc: 'Tokenized gold trades around the clock on decentralized exchanges and DeFi platforms. Buy, sell, and transfer gold tokens across chains without intermediaries, without trading hour restrictions, without geographic limitations. True global liquidity for a global asset.' },
+              { title: 'On-Chain Yield', desc: 'Earn yield by lending tokenized gold through DeFi protocols. Institutional borrowers pay interest to access gold liquidity without selling. Passive income backed by physical gold bullion, managed entirely through smart contracts.' },
+              { title: 'Collateral Loans', desc: 'Use tokenized gold as collateral for stablecoin loans. Borrow against your gold holdings without triggering taxable events or losing gold exposure. All managed at the protocol level \u2014 no bank applications, no credit checks, instant approval.' },
+              { title: 'Cross-Chain Liquidity', desc: 'Tokenized gold is bridgeable across Ethereum, Polygon, Solana, Cardano, and XRP Ledger. Move gold between chains based on where liquidity, yield, or collateral opportunities are best. Maximum flexibility for portfolio strategies.' },
+            ].map((feature, i) => (
+              <div key={i} className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Token Lifecycle */}
+          <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+            <h3 className="text-xl font-medium text-gray-900 mb-6 text-center">The Lifecycle of a Tokenized Gold Token</h3>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-2 md:gap-0">
+              {[
+                'Gold Vaulted & Allocated',
+                'Minted as On-Chain Token',
+                'Purchased with Stablecoins',
+                'Held, Traded or Transferred',
+                'Yield, Loans or Hedging',
+                'Redeemed for Physical Gold',
+              ].map((step, i) => (
+                <div key={i} className="flex items-center gap-2 md:gap-0">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-semibold mb-2">{i + 1}</div>
+                    <p className="text-xs md:text-sm text-gray-700 max-w-[120px] leading-tight">{step}</p>
+                  </div>
+                  {i < 5 && (
+                    <svg className="w-5 h-5 text-gray-300 hidden md:block mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== FOLD 6B: COMPARISON TABLE ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Why Tokenized</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Tokenized Gold vs. Traditional Gold
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            See how tokenized gold on Toto Finance compares to traditional gold ETFs, futures contracts, and physical ownership.
+          </p>
+
+          <div className="overflow-x-auto rounded-2xl border border-gray-200">
+            <table className="w-full text-sm text-left">
+              <thead>
+                <tr className="bg-gray-900 text-white">
+                  <th className="px-4 md:px-6 py-4 font-medium">Feature</th>
+                  <th className="px-4 md:px-6 py-4 font-medium">Gold ETFs</th>
+                  <th className="px-4 md:px-6 py-4 font-medium bg-white/10">Toto Finance</th>
+                  <th className="px-4 md:px-6 py-4 font-medium">Physical Gold</th>
+                  <th className="px-4 md:px-6 py-4 font-medium">Gold Futures</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white">
+                {[
+                  ['Trading Hours', 'Market hours only', '24/7/365', 'OTC / Dealer', 'Exchange hours'],
+                  ['Settlement', 'T+2', 'T+0 (Instant)', '2\u20137 days', 'T+1'],
+                  ['Settlement Currency', 'Fiat (via broker)', 'USDC, USDT, USAT', 'Wire transfer', 'Fiat (via broker)'],
+                  ['Physical Backing', 'Paper claims', '1:1 Allocated Bars', 'Direct ownership', 'Cash settled'],
+                  ['Min. Investment', '1 share (~$150+)', 'Fractional (from $1)', '1 oz+ (~$4,000)', '$50,000+ margin'],
+                  ['Physical Redemption', 'No', 'Yes', 'Yes (owns physical)', 'No'],
+                  ['On-Chain Transparency', 'No', 'Yes', 'No', 'No'],
+                  ['DeFi Yield / Loans', 'No', 'Yes', 'No', 'No'],
+                  ['Storage Costs', 'Expense ratio 0.4%', 'None (on-chain)', '0.5\u20131% annually', 'Roll costs'],
+                  ['Bar Serial Numbers', 'No', 'Yes (verified)', 'Yes (if allocated)', 'No'],
+                  ['Intermediaries', 'Broker + Custodian', 'None (P2P)', 'Dealer + Vault', 'Broker + Exchange'],
+                ].map((row, i) => (
+                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                    <td className="px-4 md:px-6 py-3 font-medium text-gray-900">{row[0]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-600">{row[1]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-900 font-medium bg-yellow-50/50">{row[2]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-600">{row[3]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-600">{row[4]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== FOLD 6C: PLATFORM FEATURES ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Platform</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Institutional-Grade Gold Tokenization
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Transparency, security, and programmable infrastructure for the world&apos;s most trusted asset. Every token backed by allocated gold with verified serial numbers and third-party audits.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: 'Allocated Gold Bars', desc: 'All tokenized gold represents allocated physical gold bars with serial numbers and refinery certificates. Not unallocated claims. Not fractional reserves. Each token maps to specific gold bars with full chain of custody documentation.' },
+              { title: 'Transparent Reserves', desc: 'On-chain proof-of-reserves with published bar lists, serial numbers, and vault locations. Third-party audits by independent firms. Real-time verification through blockchain oracles. Every bar is tracked and verifiable 24/7.' },
+              { title: 'Instant Settlement', desc: 'T+0 settlement with USDC, USDT, and USAT. Purchase gold and receive tokens instantly. No waiting for wire transfers, no settlement delays, no counterparty risk during settlement period.' },
+              { title: 'Tier-1 Vault Security', desc: 'Gold stored in the world\u2019s most secure vault facilities: Loomis, Brink\u2019s, Swiss vaults, Singapore Freeport. Full insurance coverage, 24/7 surveillance, and armed security. Same standard as central banks use.' },
+              { title: 'DeFi Yield & Loans', desc: 'Earn yield by lending gold to institutional borrowers. Use gold as collateral for stablecoin loans. Hedge positions through DeFi protocols. Programmable finance for a 5,000-year-old asset.' },
+              { title: 'Global Redemption Network', desc: 'Redeem tokens for physical gold delivery to 50+ countries. Partner with Brink\u2019s, Loomis, and Malca-Amit for secure logistics. Full insurance during transport. Minimum 100 grams for delivery.' },
+            ].map((feature, i) => (
+              <div key={i} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -318,7 +552,6 @@ export default function TokenizedGoldPage() {
           <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-12">
             Common questions about tokenized gold, vault custody, instant settlement, physical redemption, and DeFi secondary markets on Toto Finance.
           </p>
-          <FAQStructuredData faqs={faqData} />
           <GoldFAQ faqs={faqData} />
         </div>
       </section>

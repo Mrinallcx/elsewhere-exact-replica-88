@@ -1,5 +1,5 @@
 // Server Component (NO "use client")
-export const revalidate = 86400; // ISR: regenerate every 24 hours
+export const dynamic = 'force-dynamic';
 
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';

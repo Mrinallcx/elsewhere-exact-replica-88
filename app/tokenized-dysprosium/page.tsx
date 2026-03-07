@@ -1,11 +1,10 @@
 // Server Component (NO "use client")
-export const revalidate = 3600; // ISR: regenerate every hour
+export const dynamic = 'force-dynamic';
 
 import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
 import { PageStructuredData } from '../components/PageStructuredData';
-import { FAQStructuredData } from '../components/FAQStructuredData';
 import { Navigation } from '../components/Navigation';
 
 // Dynamic imports for heavy components
@@ -16,8 +15,7 @@ const DysprosiumTickerBar = dynamicImport(
   () => import('../components/client/DysprosiumTickerBar').then((mod) => ({ default: mod.DysprosiumTickerBar }))
 );
 const DysprosiumFAQ = dynamicImport(
-  () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ })),
-  { ssr: true }
+  () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ }))
 );
 
 // FAQ Data
@@ -58,11 +56,15 @@ export default function TokenizedDysprosiumPage() {
         description="Tokenized dysprosium by Toto Finance. Digitally represented dysprosium supply critical for EV motors, defense systems, and high-temperature magnets."
         url="https://totofinance.co/tokenized-dysprosium"
         pageType="WebPage"
+        breadcrumbItems={[
+          { name: 'Home', item: 'https://totofinance.co' },
+          { name: 'Products', item: 'https://totofinance.co/products' },
+          { name: 'Tokenized Dysprosium', item: 'https://totofinance.co/tokenized-dysprosium' },
+        ]}
       />
       <BreadcrumbStructuredData
         items={[
           { name: 'Home', item: 'https://totofinance.co' },
-          { name: 'Products', item: 'https://totofinance.co/products' },
           { name: 'Tokenized Dysprosium', item: 'https://totofinance.co/tokenized-dysprosium' },
         ]}
       />
@@ -421,25 +423,32 @@ export default function TokenizedDysprosiumPage() {
         </div>
       </section>
 
-      {/* ===================== HOW IT WORKS CTA ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* ===================== FOLD 5B: PLATFORM FEATURES ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto">
           <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Platform</p>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 mb-4">
-            How Tokenized Dysprosium Works
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Institutional-Grade Dysprosium Tokenization
           </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-            Instant stablecoin settlement, DeFi secondary markets, collateral loans, and 24/7 global trading — all on-chain with institutional-grade compliance.
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Transparency, compliance, and programmable infrastructure embedded into every transaction.
           </p>
-          <Link
-            href="/how-tokenization-works"
-            className="inline-flex items-center justify-center bg-gray-900 text-white px-8 py-3.5 rounded-full text-base font-semibold hover:bg-gray-800 transition-all duration-300"
-          >
-            Learn How Tokenization Works
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </Link>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: 'Verified Sourcing', desc: 'Digitally represented dysprosium supply linked to verified mining and processing operations. Full provenance tracking from source to token with third-party validation.' },
+              { title: 'Transparent Infrastructure', desc: 'On-chain tracking, real-time oracle feeds, and third-party audits ensure continuous visibility into token backing and supply chain status.' },
+              { title: 'Instant Settlement', desc: 'T+0 settlement with USDC, USDT, and USAT eliminates counterparty risk and delays. No banks, no clearing houses, no intermediaries.' },
+              { title: 'Programmable Compliance', desc: 'Smart contracts enforce KYC/AML requirements, transfer restrictions, and permissions at the protocol level. Compliance is built into the token.' },
+              { title: 'DeFi Integration', desc: 'Earn yield through lending protocols, use dysprosium as collateral for on-chain loans, or hedge positions through smart contracts. Programmable finance for strategic materials.' },
+              { title: 'Multi-Chain Access', desc: 'Tokenized dysprosium is accessible across Ethereum, Polygon, Cardano, Solana, and XRP Ledger. Trade on the chain that works best for your strategy.' },
+            ].map((feature, i) => (
+              <div key={i} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -453,7 +462,6 @@ export default function TokenizedDysprosiumPage() {
           <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-12">
             Common questions about tokenized dysprosium, supply constraints, EV and defense applications, and digital access on Toto Finance.
           </p>
-          <FAQStructuredData faqs={faqData} />
           <DysprosiumFAQ faqs={faqData} />
         </div>
       </section>

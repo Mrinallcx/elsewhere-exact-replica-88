@@ -1,13 +1,13 @@
 // Service Worker for Toto Finance
-// Caches static assets for faster loading
-// IMPORTANT: Does NOT cache HTML pages to ensure Googlebot always gets fresh content
+// Caches static assets and API responses for offline support and faster loading
 
-const CACHE_NAME = 'toto-finance-v2';
-const STATIC_CACHE_NAME = 'toto-finance-static-v2';
-const DYNAMIC_CACHE_NAME = 'toto-finance-dynamic-v2';
+const CACHE_NAME = 'toto-finance-v1';
+const STATIC_CACHE_NAME = 'toto-finance-static-v1';
+const DYNAMIC_CACHE_NAME = 'toto-finance-dynamic-v1';
 
 // Assets to cache on install
 const STATIC_ASSETS = [
+  '/',
   '/favicon.ico',
   '/toto-icon.svg',
   '/toto-icon-white.svg',
@@ -53,26 +53,15 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // CRITICAL: Never intercept page navigations (HTML requests)
-  // This ensures Googlebot and users always get fresh server-rendered HTML
-  if (request.mode === 'navigate') {
-    return;
-  }
-
-  // Also skip document requests that aren't navigations (iframes, etc.)
-  if (request.destination === 'document') {
-    return;
-  }
-
-  // Cache First for static assets (images, videos, fonts, JS/CSS chunks)
-  if (request.destination === 'image' ||
-      request.destination === 'video' ||
+  // Cache strategy: Cache First for static assets, Network First for API
+  if (request.destination === 'image' || 
+      request.destination === 'video' || 
       request.destination === 'audio' ||
-      request.destination === 'font' ||
       request.url.includes('/_next/static/') ||
       request.url.includes('/logo/') ||
       request.url.includes('/videos/') ||
       request.url.includes('/hero-background/')) {
+    // Cache First for static assets
     event.respondWith(
       caches.match(request).then((response) => {
         return (
@@ -109,6 +98,22 @@ self.addEventListener('fetch', (event) => {
           return caches.match(request);
         })
     );
+  } else {
+    // Stale While Revalidate for HTML pages
+    event.respondWith(
+      caches.match(request).then((cachedResponse) => {
+        const fetchPromise = fetch(request).then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const responseToCache = networkResponse.clone();
+            caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
+              cache.put(request, responseToCache);
+            });
+          }
+          return networkResponse;
+        });
+        return cachedResponse || fetchPromise;
+      })
+    );
   }
-  // All other requests (scripts, stylesheets loaded via <link>, etc.) go to network directly
 });
+

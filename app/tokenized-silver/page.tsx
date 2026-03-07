@@ -1,11 +1,10 @@
 // Server Component (NO "use client")
-export const revalidate = 3600; // ISR: regenerate every hour
+export const dynamic = 'force-dynamic';
 
 import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
 import { PageStructuredData } from '../components/PageStructuredData';
-import { FAQStructuredData } from '../components/FAQStructuredData';
 import { Navigation } from '../components/Navigation';
 
 // Dynamic imports for heavy components
@@ -16,8 +15,7 @@ const SilverTickerBar = dynamicImport(
   () => import('../components/client/SilverTickerBar').then((mod) => ({ default: mod.SilverTickerBar }))
 );
 const SilverFAQ = dynamicImport(
-  () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ })),
-  { ssr: true }
+  () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ }))
 );
 
 // FAQ Data
@@ -78,11 +76,15 @@ export default function TokenizedSilverPage() {
         description="Tokenized silver by Toto Finance. 1:1 asset-backed silver bullion tokens, always redeemable. Industrial demand at record highs."
         url="https://totofinance.co/tokenized-silver"
         pageType="WebPage"
+        breadcrumbItems={[
+          { name: 'Home', item: 'https://totofinance.co' },
+          { name: 'Products', item: 'https://totofinance.co/products' },
+          { name: 'Tokenized Silver', item: 'https://totofinance.co/tokenized-silver' },
+        ]}
       />
       <BreadcrumbStructuredData
         items={[
           { name: 'Home', item: 'https://totofinance.co' },
-          { name: 'Products', item: 'https://totofinance.co/products' },
           { name: 'Tokenized Silver', item: 'https://totofinance.co/tokenized-silver' },
         ]}
       />
@@ -296,25 +298,257 @@ export default function TokenizedSilverPage() {
         </div>
       </section>
 
-      {/* ===================== HOW IT WORKS CTA ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Platform</p>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 mb-4">
-            How Tokenized Silver Works
+      {/* ===================== FOLD 5B: INVESTORS ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Investors</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Who Buys Tokenized Silver
           </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-            Instant stablecoin settlement, DeFi secondary markets, collateral loans, and 24/7 global trading — all on-chain with institutional-grade compliance.
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Toto Finance serves three distinct categories of buyers seeking silver exposure for industrial use, investment, or digital asset strategies.
           </p>
-          <Link
-            href="/how-tokenization-works"
-            className="inline-flex items-center justify-center bg-gray-900 text-white px-8 py-3.5 rounded-full text-base font-semibold hover:bg-gray-800 transition-all duration-300"
-          >
-            Learn How Tokenization Works
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </Link>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Category 1 */}
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+              <span className="inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Category 1</span>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">Industrial Clients</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                Manufacturers and industrial buyers needing physical silver for production. They purchase tokenized silver for guaranteed supply, procurement flexibility, and physical redemption.
+              </p>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Solar panel manufacturers, EV battery &amp; power electronics makers, electronics &amp; semiconductor manufacturers, medical device producers, 5G infrastructure companies, AI data center manufacturers, aerospace &amp; defense electronics.
+              </p>
+            </div>
+            {/* Category 2 */}
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+              <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Category 2</span>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">Investors &amp; Commodity Traders</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                Investment firms, commodity brokers, family offices, and retail investors seeking silver exposure as both a monetary hedge and industrial metal.
+              </p>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Fractional ownership from 1 gram, no minimum investment, no physical storage or insurance costs, instant global liquidity, and full redeemability. The same silver industrial buyers need, accessible to everyone.
+              </p>
+            </div>
+            {/* Category 3 */}
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+              <span className="inline-block bg-purple-100 text-purple-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Category 3</span>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">Crypto-Native Participants</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                Blockchain-native investors and organizations seeking real-world asset exposure with industrial fundamentals. Silver-backed tokens provide DeFi-compatible exposure to supply deficit dynamics.
+              </p>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Crypto hedge funds, protocol treasuries, DeFi protocols seeking RWA collateral, DAOs building treasury reserves, stablecoin issuers, on-chain lending protocols.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== FOLD 5C: INSTANT SETTLEMENT ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Global Trade</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Instant Settlement, No Intermediaries
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Traditional silver trading involves multiple intermediaries, settlement delays of 2&ndash;5 days, and complex custody chains. Toto Finance eliminates all friction with blockchain-based instant settlement and transparent on-chain custody.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {/* Traditional */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Traditional Silver Trade</h3>
+              <p className="text-sm text-gray-500 mb-6">Multiple Intermediaries, Days to Settle</p>
+              <div className="space-y-3">
+                {['Bullion Dealer / Broker', 'Clearing House', 'Custodian Bank', 'Vault Operator', 'Settlement Agent', 'Buyer'].map((step, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 text-xs font-semibold text-gray-500">{i + 1}</div>
+                    <span className="text-sm text-gray-700">{step}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 pt-4 border-t border-gray-100">
+                <p className="text-sm text-red-600 font-medium">Settlement: T+2 to T+5 (or longer)</p>
+              </div>
+            </div>
+            {/* Toto Finance */}
+            <div className="bg-gray-900 text-white rounded-2xl p-6 md:p-8">
+              <h3 className="text-lg font-semibold mb-1">Toto Finance</h3>
+              <p className="text-sm text-gray-400 mb-6">Direct Vault-to-Wallet</p>
+              <div className="space-y-3">
+                {['Vault Operator (Allocated Silver)', 'Toto Finance Platform', 'Buyer (Token in Wallet)'].map((step, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-xs font-semibold">{i + 1}</div>
+                    <span className="text-sm">{step}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 pt-4 border-t border-white/10">
+                <p className="text-sm text-green-400 font-medium">Settlement: T+0 (Instant)</p>
+              </div>
+              <p className="text-sm text-gray-400 mt-4 leading-relaxed">
+                Like Amazon connecting buyers and sellers directly, Toto Finance connects vaulted silver with buyers through blockchain technology. Purchase silver, receive tokens instantly, and verify your allocated bar serial numbers on-chain.
+              </p>
+            </div>
+          </div>
+
+          {/* Stablecoins */}
+          <h3 className="text-2xl font-medium text-gray-900 mb-6">Instant Settlement with Stablecoins</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: 'USDC', issuer: 'Circle', desc: 'The most trusted dollar-backed stablecoin for institutional commodity trading. Full reserve transparency, monthly attestations by top accounting firms, and seamless integration across all major blockchain networks.' },
+              { name: 'USDT', issuer: 'Tether', desc: 'The world\u2019s largest stablecoin with over $140 billion in circulation. Dominant settlement currency for global commodity trading. Maximum liquidity across all major exchanges.' },
+              { name: 'USAT', issuer: 'Tether (US Regulated)', desc: 'Tether\u2019s US-regulated stablecoin operating under the GENIUS Act framework. Compliant settlement for US domestic transactions with full regulatory oversight.' },
+            ].map((coin, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-sm font-bold text-gray-700">{coin.name.charAt(0)}</div>
+                  <div>
+                    <p className="font-semibold text-gray-900">{coin.name}</p>
+                    <p className="text-xs text-gray-500">{coin.issuer}</p>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">{coin.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== FOLD 6: DeFi ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Secondary Markets</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            DeFi Trading, Yield &amp; Collateral Loans
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Once tokenized silver is purchased on Toto Finance, secondary trading happens on DeFi platforms globally. Hold as an industrial hedge and monetary asset, trade 24/7, earn yield through lending protocols, or borrow against your silver. All on-chain. All programmable.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            {[
+              { title: 'Global 24/7 Trading', desc: 'Tokenized silver trades around the clock on decentralized exchanges and DeFi platforms. Buy, sell, and transfer silver tokens across chains without intermediaries, without trading hour restrictions, without geographic limitations.' },
+              { title: 'On-Chain Yield', desc: 'Earn yield by lending tokenized silver through DeFi protocols. Industrial buyers and institutional borrowers pay interest to access silver liquidity without selling. Passive income backed by physical silver bullion.' },
+              { title: 'Collateral Loans', desc: 'Use tokenized silver as collateral for stablecoin loans. Borrow against your silver holdings without triggering taxable events or losing silver exposure. No bank applications, no credit checks, instant approval.' },
+              { title: 'Cross-Chain Liquidity', desc: 'Tokenized silver is bridgeable across Ethereum, Polygon, Solana, Cardano, and XRP Ledger. Move silver between chains based on where liquidity, yield, or collateral opportunities are best.' },
+            ].map((feature, i) => (
+              <div key={i} className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Token Lifecycle */}
+          <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+            <h3 className="text-xl font-medium text-gray-900 mb-6 text-center">The Lifecycle of a Tokenized Silver Token</h3>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-2 md:gap-0">
+              {[
+                'Silver Vaulted & Allocated',
+                'Minted as On-Chain Token',
+                'Purchased with Stablecoins',
+                'Held, Traded or Transferred',
+                'Yield, Loans or Hedging',
+                'Redeemed for Physical Silver',
+              ].map((step, i) => (
+                <div key={i} className="flex items-center gap-2 md:gap-0">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-semibold mb-2">{i + 1}</div>
+                    <p className="text-xs md:text-sm text-gray-700 max-w-[120px] leading-tight">{step}</p>
+                  </div>
+                  {i < 5 && (
+                    <svg className="w-5 h-5 text-gray-300 hidden md:block mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== FOLD 6B: COMPARISON TABLE ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Why Tokenized</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Tokenized Silver vs. Traditional Silver
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            See how tokenized silver on Toto Finance compares to traditional silver ETFs, futures contracts, and physical ownership.
+          </p>
+
+          <div className="overflow-x-auto rounded-2xl border border-gray-200">
+            <table className="w-full text-sm text-left">
+              <thead>
+                <tr className="bg-gray-900 text-white">
+                  <th className="px-4 md:px-6 py-4 font-medium">Feature</th>
+                  <th className="px-4 md:px-6 py-4 font-medium">Silver ETFs</th>
+                  <th className="px-4 md:px-6 py-4 font-medium bg-white/10">Toto Finance</th>
+                  <th className="px-4 md:px-6 py-4 font-medium">Physical Silver</th>
+                  <th className="px-4 md:px-6 py-4 font-medium">Silver Futures</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white">
+                {[
+                  ['Trading Hours', 'Market hours only', '24/7/365', 'OTC / Dealer', 'Exchange hours'],
+                  ['Settlement', 'T+2', 'T+0 (Instant)', '2\u20137 days', 'T+1'],
+                  ['Settlement Currency', 'Fiat (via broker)', 'USDC, USDT, USAT', 'Wire transfer', 'Fiat (via broker)'],
+                  ['Physical Backing', 'Paper claims', '1:1 Allocated Bars', 'Direct ownership', 'Cash settled'],
+                  ['Min. Investment', '1 share (~$100+)', 'Fractional (from $1)', '500 oz+ (~$30,000)', '$30,000+ margin'],
+                  ['Physical Redemption', 'No', 'Yes', 'Yes (owns physical)', 'No'],
+                  ['On-Chain Transparency', 'No', 'Yes', 'No', 'No'],
+                  ['DeFi Yield / Loans', 'No', 'Yes', 'No', 'No'],
+                  ['Storage Costs', 'Expense ratio 0.5%', 'None (on-chain)', '0.5\u20131% annually', 'Roll costs'],
+                  ['Bar Serial Numbers', 'No', 'Yes (verified)', 'Yes (if allocated)', 'No'],
+                  ['Intermediaries', 'Broker + Custodian', 'None (P2P)', 'Dealer + Vault', 'Broker + Exchange'],
+                ].map((row, i) => (
+                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                    <td className="px-4 md:px-6 py-3 font-medium text-gray-900">{row[0]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-600">{row[1]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-900 font-medium bg-green-50/50">{row[2]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-600">{row[3]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-600">{row[4]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== FOLD 6C: PLATFORM FEATURES ===================== */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Platform</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Institutional-Grade Silver Tokenization
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Transparency, security, and programmable infrastructure for the industrial metal of the future. Every token backed by allocated silver with verified serial numbers and third-party audits.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: 'Allocated Silver Bars', desc: 'All tokenized silver represents allocated physical silver bars with serial numbers and refinery certificates. Not unallocated claims. Not fractional reserves. Each token maps to specific silver bars with full chain of custody documentation.' },
+              { title: 'Transparent Reserves', desc: 'On-chain proof-of-reserves with published bar lists, serial numbers, and vault locations. Third-party audits by independent firms. Real-time verification through blockchain oracles. Every bar is tracked and verifiable 24/7.' },
+              { title: 'Instant Settlement', desc: 'T+0 settlement with USDC, USDT, and USAT. Purchase silver and receive tokens instantly. No waiting for wire transfers, no settlement delays, no counterparty risk during settlement period.' },
+              { title: 'Tier-1 Vault Security', desc: 'Silver stored in the world\u2019s most secure vault facilities: Loomis, Brink\u2019s, Swiss vaults, Singapore Freeport. Full insurance coverage, 24/7 surveillance, and armed security.' },
+              { title: 'DeFi Yield & Loans', desc: 'Earn yield by lending silver to industrial borrowers and institutional traders. Use silver as collateral for stablecoin loans. Hedge positions through DeFi protocols. Programmable finance for an industrial commodity.' },
+              { title: 'Global Redemption Network', desc: 'Redeem tokens for physical silver delivery to 50+ countries. Partner with Brink\u2019s, Loomis, and Malca-Amit for secure logistics. Full insurance during transport. Minimum 500 ounces for delivery.' },
+            ].map((feature, i) => (
+              <div key={i} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -328,7 +562,6 @@ export default function TokenizedSilverPage() {
           <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-12">
             Common questions about tokenized silver, vault custody, instant settlement, physical redemption, and DeFi secondary markets on Toto Finance.
           </p>
-          <FAQStructuredData faqs={faqData} />
           <SilverFAQ faqs={faqData} />
         </div>
       </section>
