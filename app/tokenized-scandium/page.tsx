@@ -72,7 +72,7 @@ export default function TokenizedScandiumPage() {
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}
       <PageStructuredData
-        title="Tokenized Scandium | Aerospace's Most Powerful Alloying Element | Toto Finance"
+        title="Tokenized Scandium | Aerospace\u2019s Most Powerful Alloying Element | Toto Finance"
         description="Tokenized scandium by Toto Finance. 1:1 asset-backed scandium oxide tokens, always redeemable. In-Ground Scandium future delivery contracts."
         url="https://totofinance.co/tokenized-scandium"
         pageType="WebPage"
