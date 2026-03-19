@@ -72,7 +72,7 @@ export default function TokenizedYtterbiumPage() {
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}
       <PageStructuredData
-        title="Tokenized Ytterbium | Digital Rare Earth Backed by Physical Assets | Toto Finance"
+        title="Tokenized Ytterbium | High-Precision Atomic Clocks & Lasers | Toto Finance"
         description="Tokenized ytterbium by Toto Finance. 1:1 asset-backed ytterbium oxide tokens, always redeemable. In-Ground Ytterbium future delivery contracts."
         url="https://totofinance.co/tokenized-ytterbium"
         pageType="WebPage"

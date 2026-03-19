@@ -72,7 +72,7 @@ export default function TokenizedCeriumPage() {
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}
       <PageStructuredData
-        title="Tokenized Cerium | Digital Rare Earth Backed by Physical Assets | Toto Finance"
+        title="Tokenized Cerium | Critical Catalyst for Clean Emissions | Toto Finance"
         description="Tokenized cerium by Toto Finance. 1:1 asset-backed cerium oxide tokens, always redeemable. In-Ground Cerium future delivery contracts."
         url="https://totofinance.co/tokenized-cerium"
         pageType="WebPage"

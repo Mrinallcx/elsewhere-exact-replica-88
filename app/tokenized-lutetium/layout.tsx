@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'Tokenized Lutetium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+  title: 'Tokenized Lutetium | Precision PET Scan Technology | Toto Finance',
   description: 'Tokenized lutetium by Toto Finance. 1:1 asset-backed lutetium oxide tokens, always redeemable. In-Ground Lutetium future delivery contracts (1-12 months and 1-6 years). Instant settlement with stablecoins. The rarest and most expensive rare earth for cancer imaging, high-refractive optics, and scintillators.',
   keywords: 'tokenized lutetium, lutetium tokenization, buy tokenized lutetium, digital lutetium, lutetium-backed tokens, RWA lutetium, real world asset lutetium, in-ground lutetium, lutetium future delivery, lutetium oxide token, lutetium instant settlement, DeFi lutetium, lutetium yield, lutetium collateral loans, PET imaging',
   robots: {
@@ -16,7 +16,7 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Tokenized Lutetium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+    title: 'Tokenized Lutetium | Precision PET Scan Technology | Toto Finance',
     description: 'Tokenized lutetium by Toto Finance. 1:1 asset-backed lutetium oxide tokens, always redeemable. In-Ground Lutetium future delivery contracts. Instant stablecoin settlement.',
     url: 'https://totofinance.co/tokenized-lutetium',
     siteName: 'Toto Finance',
@@ -26,7 +26,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokenized Lutetium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+    title: 'Tokenized Lutetium | Precision PET Scan Technology | Toto Finance',
     description: 'Tokenized lutetium by Toto Finance. 1:1 asset-backed lutetium oxide tokens, always redeemable. In-Ground Lutetium future delivery contracts. Instant stablecoin settlement.',
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },

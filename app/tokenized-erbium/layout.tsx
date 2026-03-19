@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'Tokenized Erbium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+  title: 'Tokenized Erbium | The Element Powering Global Fiber Networks | Toto Finance',
   description: 'Tokenized erbium by Toto Finance. 1:1 asset-backed erbium oxide tokens, always redeemable. In-Ground Erbium future delivery contracts (1-12 months and 1-6 years). Instant settlement with stablecoins. The critical element for fiber optic amplifiers, medical lasers, and nuclear technology.',
   keywords: 'tokenized erbium, erbium tokenization, buy tokenized erbium, digital erbium, erbium-backed tokens, RWA erbium, real world asset erbium, in-ground erbium, erbium future delivery, erbium oxide token, erbium instant settlement, DeFi erbium, erbium yield, erbium collateral loans, fiber optic amplifiers',
   robots: {
@@ -16,7 +16,7 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Tokenized Erbium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+    title: 'Tokenized Erbium | The Element Powering Global Fiber Networks | Toto Finance',
     description: 'Tokenized erbium by Toto Finance. 1:1 asset-backed erbium oxide tokens, always redeemable. In-Ground Erbium future delivery contracts. Instant stablecoin settlement.',
     url: 'https://totofinance.co/tokenized-erbium',
     siteName: 'Toto Finance',
@@ -33,7 +33,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokenized Erbium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+    title: 'Tokenized Erbium | The Element Powering Global Fiber Networks | Toto Finance',
     description: 'Tokenized erbium by Toto Finance. 1:1 asset-backed erbium oxide tokens, always redeemable. In-Ground Erbium future delivery contracts. Instant stablecoin settlement.',
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },

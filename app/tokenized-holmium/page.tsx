@@ -72,7 +72,7 @@ export default function TokenizedHolmiumPage() {
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}
       <PageStructuredData
-        title="Tokenized Holmium | Digital Rare Earth Backed by Physical Assets | Toto Finance"
+        title="Tokenized Holmium | Essential for Surgical Lasers & Medical Tech | Toto Finance"
         description="Tokenized holmium by Toto Finance. 1:1 asset-backed holmium oxide tokens, always redeemable. In-Ground Holmium future delivery contracts."
         url="https://totofinance.co/tokenized-holmium"
         pageType="WebPage"

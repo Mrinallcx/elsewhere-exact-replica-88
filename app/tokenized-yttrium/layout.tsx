@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'Tokenized Yttrium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+  title: 'Tokenized Yttrium | Superconductors & LED Phosphors | Toto Finance',
   description: 'Tokenized yttrium by Toto Finance. 1:1 asset-backed rare earth metal tokens, always redeemable. In-Ground Yttrium future delivery contracts (1-12 months and 1-6 years). Instant settlement with stablecoins. The critical element for lasers, superconductors, and LED phosphors.',
   keywords: 'tokenized yttrium, yttrium tokenization, buy tokenized yttrium, digital rare earth, yttrium-backed tokens, RWA rare earth, real world asset yttrium, in-ground yttrium, yttrium future delivery, yttrium metal token, yttrium instant settlement, DeFi rare earth, yttrium yield, yttrium collateral loans, YAG lasers',
   robots: {
@@ -16,7 +16,7 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Tokenized Yttrium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+    title: 'Tokenized Yttrium | Superconductors & LED Phosphors | Toto Finance',
     description: 'Tokenized yttrium by Toto Finance. 1:1 asset-backed rare earth metal tokens, always redeemable. In-Ground Yttrium future delivery contracts. Instant stablecoin settlement.',
     url: 'https://totofinance.co/tokenized-yttrium',
     siteName: 'Toto Finance',
@@ -26,7 +26,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokenized Yttrium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+    title: 'Tokenized Yttrium | Superconductors & LED Phosphors | Toto Finance',
     description: 'Tokenized yttrium by Toto Finance. 1:1 asset-backed rare earth metal tokens, always redeemable. In-Ground Yttrium future delivery contracts. Instant stablecoin settlement.',
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },

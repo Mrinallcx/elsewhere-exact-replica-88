@@ -72,7 +72,7 @@ export default function TokenizedYttriumPage() {
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}
       <PageStructuredData
-        title="Tokenized Yttrium | Digital Rare Earth Backed by Physical Assets | Toto Finance"
+        title="Tokenized Yttrium | Superconductors & LED Phosphors | Toto Finance"
         description="Tokenized yttrium by Toto Finance. 1:1 asset-backed rare earth metal tokens, always redeemable. In-Ground Yttrium future delivery contracts."
         url="https://totofinance.co/tokenized-yttrium"
         pageType="WebPage"

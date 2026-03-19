@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'Tokenized Ytterbium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+  title: 'Tokenized Ytterbium | High-Precision Atomic Clocks & Lasers | Toto Finance',
   description: 'Tokenized ytterbium by Toto Finance. 1:1 asset-backed ytterbium oxide tokens, always redeemable. In-Ground Ytterbium future delivery contracts (1-12 months and 1-6 years). Instant settlement with stablecoins. The critical element for high-power fiber lasers, atomic clocks, and quantum computing.',
   keywords: 'tokenized ytterbium, ytterbium tokenization, buy tokenized ytterbium, digital ytterbium, ytterbium-backed tokens, RWA ytterbium, real world asset ytterbium, in-ground ytterbium, ytterbium future delivery, ytterbium oxide token, ytterbium instant settlement, DeFi ytterbium, ytterbium yield, ytterbium collateral loans, fiber lasers',
   robots: {
@@ -16,7 +16,7 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Tokenized Ytterbium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+    title: 'Tokenized Ytterbium | High-Precision Atomic Clocks & Lasers | Toto Finance',
     description: 'Tokenized ytterbium by Toto Finance. 1:1 asset-backed ytterbium oxide tokens, always redeemable. In-Ground Ytterbium future delivery contracts. Instant stablecoin settlement.',
     url: 'https://totofinance.co/tokenized-ytterbium',
     siteName: 'Toto Finance',
@@ -26,7 +26,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokenized Ytterbium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+    title: 'Tokenized Ytterbium | High-Precision Atomic Clocks & Lasers | Toto Finance',
     description: 'Tokenized ytterbium by Toto Finance. 1:1 asset-backed ytterbium oxide tokens, always redeemable. In-Ground Ytterbium future delivery contracts. Instant stablecoin settlement.',
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },

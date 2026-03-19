@@ -72,7 +72,7 @@ export default function TokenizedLanthanumPage() {
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}
       <PageStructuredData
-        title="Tokenized Lanthanum | Digital Rare Earth Backed by Physical Assets | Toto Finance"
+        title="Tokenized Lanthanum | The Refinery Metal Powering Clean Energy | Toto Finance"
         description="Tokenized lanthanum by Toto Finance. 1:1 asset-backed lanthanum oxide tokens, always redeemable. In-Ground Lanthanum future delivery contracts."
         url="https://totofinance.co/tokenized-lanthanum"
         pageType="WebPage"

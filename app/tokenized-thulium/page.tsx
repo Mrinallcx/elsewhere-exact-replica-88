@@ -72,7 +72,7 @@ export default function TokenizedThuliumPage() {
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}
       <PageStructuredData
-        title="Tokenized Thulium | Digital Rare Earth Backed by Physical Assets | Toto Finance"
+        title="Tokenized Thulium | Rare Element for Portable X-Ray Devices | Toto Finance"
         description="Tokenized thulium by Toto Finance. 1:1 asset-backed thulium oxide tokens, always redeemable. In-Ground Thulium future delivery contracts."
         url="https://totofinance.co/tokenized-thulium"
         pageType="WebPage"

@@ -72,7 +72,7 @@ export default function TokenizedLutetiumPage() {
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}
       <PageStructuredData
-        title="Tokenized Lutetium | Digital Rare Earth Backed by Physical Assets | Toto Finance"
+        title="Tokenized Lutetium | Precision PET Scan Technology | Toto Finance"
         description="Tokenized lutetium by Toto Finance. 1:1 asset-backed lutetium oxide tokens, always redeemable. In-Ground Lutetium future delivery contracts."
         url="https://totofinance.co/tokenized-lutetium"
         pageType="WebPage"

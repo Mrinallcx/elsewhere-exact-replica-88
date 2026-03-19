@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'Tokenized Holmium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+  title: 'Tokenized Holmium | Essential for Surgical Lasers & Medical Tech | Toto Finance',
   description: 'Tokenized holmium by Toto Finance. 1:1 asset-backed holmium oxide tokens, always redeemable. In-Ground Holmium future delivery contracts (1-12 months and 1-6 years). Instant settlement with stablecoins. The critical element for medical lasers, nuclear reactors, and magnetic materials.',
   keywords: 'tokenized holmium, holmium tokenization, buy tokenized holmium, digital holmium, holmium-backed tokens, RWA holmium, real world asset holmium, in-ground holmium, holmium future delivery, holmium oxide token, holmium instant settlement, DeFi holmium, holmium yield, holmium collateral loans, holmium lasers',
   robots: {
@@ -16,7 +16,7 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Tokenized Holmium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+    title: 'Tokenized Holmium | Essential for Surgical Lasers & Medical Tech | Toto Finance',
     description: 'Tokenized holmium by Toto Finance. 1:1 asset-backed holmium oxide tokens, always redeemable. In-Ground Holmium future delivery contracts. Instant stablecoin settlement.',
     url: 'https://totofinance.co/tokenized-holmium',
     siteName: 'Toto Finance',
@@ -26,7 +26,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokenized Holmium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+    title: 'Tokenized Holmium | Essential for Surgical Lasers & Medical Tech | Toto Finance',
     description: 'Tokenized holmium by Toto Finance. 1:1 asset-backed holmium oxide tokens, always redeemable. In-Ground Holmium future delivery contracts. Instant stablecoin settlement.',
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },

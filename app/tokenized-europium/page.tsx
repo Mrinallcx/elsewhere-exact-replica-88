@@ -72,7 +72,7 @@ export default function TokenizedEuropiumPage() {
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}
       <PageStructuredData
-        title="Tokenized Europium | Digital Rare Earth Backed by Physical Assets | Toto Finance"
+        title="Tokenized Europium | Behind Every Bright Red Display | Toto Finance"
         description="Tokenized europium by Toto Finance. 1:1 asset-backed rare earth tokens, always redeemable. In-Ground Europium future delivery contracts."
         url="https://totofinance.co/tokenized-europium"
         pageType="WebPage"

@@ -72,7 +72,7 @@ export default function TokenizedErbiumPage() {
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}
       <PageStructuredData
-        title="Tokenized Erbium | Digital Rare Earth Backed by Physical Assets | Toto Finance"
+        title="Tokenized Erbium | The Element Powering Global Fiber Networks | Toto Finance"
         description="Tokenized erbium by Toto Finance. 1:1 asset-backed erbium oxide tokens, always redeemable. In-Ground Erbium future delivery contracts."
         url="https://totofinance.co/tokenized-erbium"
         pageType="WebPage"

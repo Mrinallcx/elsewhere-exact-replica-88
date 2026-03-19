@@ -72,7 +72,7 @@ export default function TokenizedSamariumPage() {
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}
       <PageStructuredData
-        title="Tokenized Samarium | Digital Rare Earth Backed by Physical Assets | Toto Finance"
+        title="Tokenized Samarium | Permanent Magnets for Extreme Environments | Toto Finance"
         description="Tokenized samarium by Toto Finance. 1:1 asset-backed rare earth metal tokens, always redeemable. In-Ground Samarium future delivery contracts."
         url="https://totofinance.co/tokenized-samarium"
         pageType="WebPage"

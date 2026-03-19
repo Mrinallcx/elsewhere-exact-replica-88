@@ -407,6 +407,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/blog/post',
+        destination: '/blog/posts',
+        permanent: true,
+      },
+      {
+        source: '/blog/post/:slug*',
+        destination: '/blog/posts/:slug*',
+        permanent: true,
+      },
+      {
         source: '/:path*',
         has: [
           {
@@ -450,9 +460,6 @@ const nextConfig = {
       { source: '/blog/posts', destination: '/blog/posts/index.html' },
       { source: '/blog/posts/', destination: '/blog/posts/index.html' },
       { source: '/blog/posts/:path*', destination: '/blog/posts/:path*/index.html' },
-      { source: '/blog/post', destination: '/blog/posts/index.html' },
-      { source: '/blog/post/', destination: '/blog/posts/index.html' },
-      { source: '/blog/post/:path*', destination: '/blog/posts/:path*/index.html' },
       // Pagination: /blog/page/2/ etc.
       { source: '/blog/page/:path*', destination: '/blog/page/:path*/index.html' },
       // Tags: /blog/tags/accessibility/ etc.

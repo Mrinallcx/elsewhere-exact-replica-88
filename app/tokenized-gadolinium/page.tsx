@@ -72,7 +72,7 @@ export default function TokenizedGadoliniumPage() {
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}
       <PageStructuredData
-        title="Tokenized Gadolinium | Digital Rare Earth Backed by Physical Assets | Toto Finance"
+        title="Tokenized Gadolinium | Essential for MRI Contrast Agents | Toto Finance"
         description="Tokenized gadolinium by Toto Finance. 1:1 asset-backed gadolinium oxide tokens, always redeemable. In-Ground Gadolinium future delivery contracts."
         url="https://totofinance.co/tokenized-gadolinium"
         pageType="WebPage"

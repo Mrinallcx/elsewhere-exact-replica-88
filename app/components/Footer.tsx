@@ -8,7 +8,7 @@ const footerColumns = [
   {
     heading: 'Platform',
     links: [
-      { label: 'Toto Token', href: 'http://toto.xyz/' },
+      { label: 'Toto Token', href: '/toto-token' },
       { label: 'Products', href: '/products' },
       { label: 'Solutions', href: '/solutions' },
       { label: 'Ecosystem', href: '/ecosystem' },
@@ -42,7 +42,6 @@ const footerColumns = [
       { label: 'About Us', href: '/about' },
       { label: 'Achievements', href: 'https://totofinance.co/achievements', },
       { label: 'Careers', href: 'https://totofinance.co/careers', external: true },
-      { label: 'Products', href: 'https://totofinance.co/products' },
     ],
   },
   {

@@ -72,7 +72,7 @@ export default function TokenizedPraseodymiumPage() {
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}
       <PageStructuredData
-        title="Tokenized Praseodymium | Digital Rare Earth Backed by Physical Assets | Toto Finance"
+        title="Tokenized Praseodymium | High-Strength Alloys for Green Aviation | Toto Finance"
         description="Tokenized praseodymium by Toto Finance. 1:1 asset-backed rare earth metal tokens, always redeemable. In-Ground Praseodymium future delivery contracts."
         url="https://totofinance.co/tokenized-praseodymium"
         pageType="WebPage"

@@ -72,7 +72,7 @@ export default function TokenizedPromethiumPage() {
     <div className="min-h-screen w-full relative">
       {/* Structured Data */}
       <PageStructuredData
-        title="Tokenized Promethium | Digital Rare Earth Backed by Physical Assets | Toto Finance"
+        title="Tokenized Promethium | Radioactive Rare Earth for Nuclear & Space Power | Toto Finance"
         description="Tokenized promethium by Toto Finance. 1:1 asset-backed promethium isotope tokens, always redeemable. In-Ground Promethium future delivery contracts."
         url="https://totofinance.co/tokenized-promethium"
         pageType="WebPage"

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'Tokenized Thulium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+  title: 'Tokenized Thulium | Rare Element for Portable X-Ray Devices | Toto Finance',
   description: 'Tokenized thulium by Toto Finance. 1:1 asset-backed thulium oxide tokens, always redeemable. In-Ground Thulium future delivery contracts (1-12 months and 1-6 years). Instant settlement with stablecoins. The critical element for medical lasers, portable X-ray devices, and high-temperature superconductors.',
   keywords: 'tokenized thulium, thulium tokenization, buy tokenized thulium, digital thulium, thulium-backed tokens, RWA thulium, real world asset thulium, in-ground thulium, thulium future delivery, thulium oxide token, thulium instant settlement, DeFi thulium, thulium yield, thulium collateral loans, thulium fiber lasers',
   robots: {
@@ -16,7 +16,7 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Tokenized Thulium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+    title: 'Tokenized Thulium | Rare Element for Portable X-Ray Devices | Toto Finance',
     description: 'Tokenized thulium by Toto Finance. 1:1 asset-backed thulium oxide tokens, always redeemable. In-Ground Thulium future delivery contracts. Instant stablecoin settlement.',
     url: 'https://totofinance.co/tokenized-thulium',
     siteName: 'Toto Finance',
@@ -26,7 +26,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokenized Thulium | Digital Rare Earth Backed by Physical Assets | Toto Finance',
+    title: 'Tokenized Thulium | Rare Element for Portable X-Ray Devices | Toto Finance',
     description: 'Tokenized thulium by Toto Finance. 1:1 asset-backed thulium oxide tokens, always redeemable. In-Ground Thulium future delivery contracts. Instant stablecoin settlement.',
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },
