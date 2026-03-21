@@ -2,7 +2,8 @@ import { ReactNode } from 'react';
 
 export const metadata = {
   title: 'Ecosystem - Infrastructure Partners & Integrations | Toto Finance',
-  description: 'Discover the Toto Finance ecosystem - a network of blockchains, validators, and certification partners enabling secure, compliant, asset-backed tokenization and settlement.',
+  description:
+    'An integrated worldwide network of companies, infrastructure providers, blockchains, custodians, and data suppliers facilitating compliant, asset-backed tokenization of real-world commodities.',
   keywords: 'Toto Finance ecosystem, tokenization ecosystem, blockchain integrations, asset tokenization partners, RWA infrastructure ecosystem, tokenization infrastructure partners, on-chain settlement ecosystem, blockchain validation partners, LCX validation, GIA certification, Cardano integration, Ethereum integration, Polygon integration, Solana integration, Multi-chain tokenization platform, Digital asset infrastructure partners, Institutional tokenization ecosystem',
   robots: {
     index: true,
@@ -17,7 +18,8 @@ export const metadata = {
   },
   openGraph: {
     title: 'Ecosystem - Infrastructure Partners & Integrations | Toto Finance',
-    description: 'Discover the Toto Finance ecosystem - a network of blockchains, validators, and certification partners enabling secure, compliant, asset-backed tokenization and settlement.',
+    description:
+    'An integrated worldwide network of companies, infrastructure providers, blockchains, custodians, and data suppliers facilitating compliant, asset-backed tokenization of real-world commodities.',
     url: 'https://totofinance.co/ecosystem',
     siteName: 'Toto Finance',
     images: [
@@ -34,7 +36,8 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Ecosystem - Infrastructure Partners & Integrations | Toto Finance',
-    description: 'Discover the Toto Finance ecosystem - a network of blockchains, validators, and certification partners enabling secure, compliant, asset-backed tokenization and settlement.',
+    description:
+    'An integrated worldwide network of companies, infrastructure providers, blockchains, custodians, and data suppliers facilitating compliant, asset-backed tokenization of real-world commodities.',
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },
   alternates: {

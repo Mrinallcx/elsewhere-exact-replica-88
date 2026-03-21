@@ -7,7 +7,6 @@ import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData
 import { PageStructuredData } from '../components/PageStructuredData';
 import { Navigation } from '../components/Navigation';
 import { VideoBackground } from '../components/client/VideoBackground';
-import { AnimatedStats } from '../components/client/AnimatedStats';
 
 // Dynamic imports for heavy components
 const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur'));
@@ -15,81 +14,83 @@ const NewsletterForm = dynamicImport(() => import('../components/NewsletterForm'
 const Footer = dynamicImport(() => import('../components/Footer'));
 
 export default function EcosystemPage() {
-
-  const statsData = {
-    projectSize: 2.2,
-    tokenizedTranche: 450,
-    expectedYield: 8,
-    term: 25
-  };
-
   const partners = [
     {
       logo: '/ecosystem logo/Cardano.svg',
       title: 'Cardano',
-      description: 'A research-driven blockchain providing secure, sustainable infrastructure for regulated, long-term digital asset issuance and settlement.',
-      url: 'https://cardano.org/'
+      description:
+        'A research-oriented blockchain offering secure and sustainable infrastructure for regulated, long-term digital asset issuance and settlement.',
+      url: 'https://cardano.org/',
     },
     {
       logo: '/ecosystem logo/ETH.svg',
       title: 'Ethereum',
-      description: 'The leading programmable settlement layer supporting smart contracts, decentralized applications, and deep global liquidity for tokenized real-world assets.',
-      url: 'https://ethereum.org/'
+      description:
+        'The world’s most popular programmable settlement infrastructure for smart contracts, decentralized apps, and extensive global liquidity for tokenized real-world assets.',
+      url: 'https://ethereum.org/',
     },
     {
       logo: '/ecosystem logo/Polygon.svg',
       title: 'Polygon',
-      description: 'A scalable execution layer extending Ethereum\'s settlement capabilities with lower fees and higher throughput for efficient on-chain commodity settlement.',
-      url: 'https://polygon.technology/'
+      description:
+        'A scalable execution layer complementing Ethereum’s settlement infrastructure with lower costs and greater throughput for efficient on-chain commodity settlement.',
+      url: 'https://polygon.technology/',
     },
     {
       logo: '/ecosystem logo/Solana.svg',
       title: 'Solana',
-      description: 'A high-performance blockchain enabling fast execution and scalable transaction processing for real-time digital commodity markets.',
-      url: 'https://solana.com/'
+      description:
+        'A high-performance blockchain enabling fast execution and scalable transaction processing for real-time digital commodity markets.',
+      url: 'https://solana.com/',
     },
     {
       logo: '/ecosystem logo/XRP.svg',
       title: 'XRP Ledger / XRP.cafe',
-      description: 'Settlement infrastructure enabling fast, low-cost value transfer and digital asset trading within the XRP ecosystem.',
-      url: 'https://xrp.cafe/collection/tiamonds-rwa'
-    }
+      description:
+        'Settlement infrastructure for fast, low-cost value transfer and digital asset trading in the XRP ecosystem.',
+      url: 'https://xrp.cafe/collection/tiamonds-rwa',
+    },
   ];
 
   const validationPartners = [
     {
       logo: '/ecosystem logo/LCX.svg',
       title: 'LCX - Physical Validator',
-      description: 'A globally recognized Physical Validator under the Liechtenstein Blockchain Act, enabling legally enforceable linkage between physical assets and on-chain tokens through regulated validation frameworks.',
-      url: 'https://exchange.lcx.com/'
+      description:
+        'Internationally respected Physical Validator according to the Liechtenstein Blockchain Act, allowing for a legally binding connection between physical assets and blockchain tokens via certified validation processes.',
+      url: 'https://exchange.lcx.com/',
     },
     {
       logo: '/ecosystem logo/GIA.svg',
       title: 'GIA - Diamond Certification',
-      description: 'The world\'s leading authority on diamond grading and certification, providing standardized, verifiable provenance and quality assurance for tokenized diamonds.',
-      url: 'https://www.gia.edu/'
+      description:
+        'World’s most trusted diamond grading and certification authority, ensuring standardized and verifiable origin and quality for tokenized diamonds.',
+      url: 'https://www.gia.edu/',
     },
     {
       logo: '/ecosystem logo/Hacken.svg',
       title: 'Hacken - Security & Audits',
-      description: 'A leading cybersecurity firm delivering smart contract audits, infrastructure security assessments, and continuous risk monitoring across blockchain systems.',
-      url: 'https://hacken.io/audits/toto-finance/'
-    }
+      description:
+        'Specialized cybersecurity service provider for smart contract audits, infrastructure security analysis, and ongoing risk monitoring on blockchain networks.',
+      url: 'https://hacken.io/audits/toto-finance/',
+    },
   ];
 
   const tokenizationPartners = [
     {
       logo: '/ecosystem logo/NMKR.svg',
       title: 'NMKR',
-      description: 'Institutional tokenization infrastructure on Cardano supporting compliant issuance, asset lifecycle management, and programmable ownership for regulated digital assets.',
-      url: 'https://www.nmkr.io/drops/tiamonds-2023'
+      description:
+        'Compliant institutional tokenization infrastructure on the Cardano blockchain, supporting regulated digital assets with lifecycle management and programmable ownership.',
+      url: 'https://www.nmkr.io/drops/tiamonds-2023',
     },
     {
       logo: '/ecosystem logo/Uniswap.svg',
       title: 'Uniswap',
-      description: 'A decentralized liquidity protocol enabling secondary market access, price discovery, and on-chain settlement for supported tokenized assets.',
-      url: 'https://app.uniswap.org/explore/pools/ethereum/0x2f65b1737a4cc3c7cc8ddbf969b9427c0f2be9ab19a5b117dcc7c07d2c008498'
-    }
+      description:
+        'Decentralized liquidity protocol providing secondary market access, price discovery, and on-chain settlement for supported tokenized assets.',
+      url: 'https://app.uniswap.org/explore/pools/ethereum/0x2f65b1737a4cc3c7cc8ddbf969b9427c0f2be9ab19a5b117dcc7c07d2c008498',
+    },
   ];
 
 
@@ -98,7 +99,7 @@ export default function EcosystemPage() {
       {/* Page Structured Data */}
       <PageStructuredData
         title="Ecosystem — Partners & Integrations | Toto Finance"
-        description="Explore Toto Finance partners like Cardano, Ethereum, Polygon, Solana, LCX, and GIA driving the future of tokenized assets."
+        description="An integrated worldwide network of companies, infrastructure providers, blockchains, custodians, and data suppliers facilitating compliant, asset-backed tokenization of real-world commodities."
         url="https://totofinance.co/ecosystem"
         pageType="WebPage"
         breadcrumbItems={[
@@ -134,7 +135,8 @@ export default function EcosystemPage() {
             Toto Finance Ecosystem
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
-            A globally integrated network of enterprises, infrastructure partners, blockchains, custodians, and data providers powering compliant, asset-backed tokenization of real-world commodities.
+            An integrated worldwide network of companies, infrastructure providers, blockchains, custodians, and data
+            suppliers facilitating compliant, asset-backed tokenization of real-world commodities.
           </p>
         </div>
       </section>
@@ -224,7 +226,7 @@ export default function EcosystemPage() {
             Tokenization & Market Access
           </h2>
           <p className="text-lg md:text-xl text-gray-600 mt-4 max-w-3xl">
-            Standards-based token issuance and liquidity access across primary and secondary markets.
+            Compliant token issuance and secondary market access based on industry standards.
           </p>
         </div>
         <div className="max-w-7xl mx-auto">
@@ -263,10 +265,12 @@ export default function EcosystemPage() {
       <section className="closing-framing-section px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 leading-tight mb-6">
-            Orchestrating Trust Across Physical and Digital Markets
+            Trust Weaving in Physical and Online Markets
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed">
-            By integrating blockchains, physical validators, auditors, data providers, and liquidity protocols, Toto Finance delivers a unified infrastructure where real-world assets can be tokenized, traded, settled, and redeemed with transparency, regulatory integrity, and legal certainty.
+            Toto Finance brings together blockchains, physical validators, auditors, data providers, and liquidity
+            protocols to provide a comprehensive framework where real-world assets can be tokenized, traded, settled,
+            and redeemed in a transparent, regulatory, and legal manner.
           </p>
         </div>
       </section>

@@ -1,7 +1,6 @@
 // Server Component (NO "use client")
 export const dynamic = 'force-dynamic';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { Shield, Package, Eye, Lock, Database, Globe } from 'lucide-react';
 import dynamicImport from 'next/dynamic';
@@ -18,6 +17,36 @@ const NewsletterForm = dynamicImport(() => import('../components/NewsletterForm'
 const Footer = dynamicImport(() => import('../components/Footer'));
 import { ScrollToButton } from '../components/client/ScrollToButton';
 
+const preciousMetalLinks = [
+  { label: 'Tokenized Gold', href: '/tokenized-gold' },
+  { label: 'Tokenized Silver', href: '/tokenized-silver' },
+  { label: 'Tokenized Platinum', href: '/tokenized-platinum' },
+  { label: 'Tokenized Diamonds', href: '/tokenized-diamonds' },
+  { label: 'Tokenized Sapphire', href: '/tokenized-sapphire' },
+  { label: 'Tokenized Copper', href: '/tokenized-copper' },
+  { label: 'Tokenized Tin', href: '/tokenized-tin' },
+] as const;
+
+const rareEarthLinks = [
+  { label: 'Cerium', href: '/tokenized-cerium' },
+  { label: 'Dysprosium', href: '/tokenized-dysprosium' },
+  { label: 'Erbium', href: '/tokenized-erbium' },
+  { label: 'Europium', href: '/tokenized-europium' },
+  { label: 'Gadolinium', href: '/tokenized-gadolinium' },
+  { label: 'Holmium', href: '/tokenized-holmium' },
+  { label: 'Lanthanum', href: '/tokenized-lanthanum' },
+  { label: 'Lutetium', href: '/tokenized-lutetium' },
+  { label: 'Neodymium', href: '/tokenized-neodymium' },
+  { label: 'Praseodymium', href: '/tokenized-praseodymium' },
+  { label: 'Promethium', href: '/tokenized-promethium' },
+  { label: 'Samarium', href: '/tokenized-samarium' },
+  { label: 'Scandium', href: '/tokenized-scandium' },
+  { label: 'Terbium', href: '/tokenized-terbium' },
+  { label: 'Thulium', href: '/tokenized-thulium' },
+  { label: 'Ytterbium', href: '/tokenized-ytterbium' },
+  { label: 'Yttrium', href: '/tokenized-yttrium' },
+] as const;
+
 export default function ProductPage() {
 
   return (
@@ -25,7 +54,7 @@ export default function ProductPage() {
       {/* Page Structured Data */}
       <PageStructuredData
         title="Products — Tokenized Commodities & Assets | Toto Finance"
-        description="Toto Finance offers secure, liquid digital commodities including gold, silver, diamonds, rare minerals, and energy assets."
+        description="Toto Finance provides asset-backed tokenized commodities in diamonds, precious metals, and institutional assets that combine compliant ownership, instant on-chain settlement, and global market access through institutional-grade infrastructure."
         url="https://totofinance.co/products"
         pageType="CollectionPage"
         breadcrumbItems={[
@@ -79,7 +108,7 @@ export default function ProductPage() {
            {/* Description Section */}
            <div className="max-w-3xl w-full mx-0 sm:mx-auto mb-6 sm:mb-8 mt-6 sm:mt-8 md:mt-10 text-left sm:text-center ">
              <p className="hero-description text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-2 text-left sm:text-center">
-             Toto Finance delivers asset-backed tokenized commodities across diamonds, precious metals, and institutional assets combining compliant ownership, instant on-chain settlement, and global market access through institutional-grade infrastructure.
+             Toto Finance provides asset-backed tokenized commodities in diamonds, precious metals, and institutional assets that combine compliant ownership, instant on-chain settlement, and global market access through institutional-grade infrastructure.
              </p>
            </div>
            
@@ -107,20 +136,17 @@ export default function ProductPage() {
       {/* Product Navigation Cards Section */}
       <section id="product-navigation" className="px-6 md:px-8 lg:px-12 pt-16 md:pt-24 pb-20 md:pb-32 bg-white">
         <div className="max-w-7xl mx-auto">
-          {/* 3 Product Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Global Markets Card */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <ProductNavigationCard
               imageSrc="/assset image1.webp"
               imageAlt="Global Markets"
               title="Toto Global Markets"
-              description="Trade, gift or redeem tokenized gold, silver, and gemstones using our marketplace."
+              description="Trade, give, or redeem tokenized gold, silver, and precious gems on our marketplace."
               linkText="Explore Solutions"
               linkHref="https://app.totofinance.co/"
               scrollToId="institutional-section"
             />
-            
-            {/* Tokenized Assets Card */}
+
             <ProductNavigationCard
               imageSrc="/assets/images/copper.webp"
               imageAlt="Tokenized Assets"
@@ -128,17 +154,6 @@ export default function ProductPage() {
               description="Institutional Investor Platform Offering Tokenized Commodities."
               linkText="Coming Soon"
               imageClassName="object-top"
-            />
-            
-            {/* GET Green Energy Token Card */}
-            <ProductNavigationCard
-              imageSrc="/assset image3.webp"
-              imageAlt="GET Green Energy Token"
-              title="GET – Green Energy Token"
-              description="Sustainable yield with institutional-grade compliance, backed by a $2.2B solar project."
-              linkText="Start Trading"
-              disabled={true}
-              badge="Launching Soon"
             />
           </div>
         </div>
@@ -153,7 +168,7 @@ export default function ProductPage() {
                Toto Global Markets
              </h2>
              <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-8 max-w-3xl mx-auto">
-               The world&apos;s largest tokenized diamond marketplace, launched in 2023 with more than 30,000 assets. Trade 1:1 asset-backed, Swiss-grade commodities and certified gemstones each linked to audited physical custody and on-chain settlement.
+               The world&apos;s largest tokenized diamond marketplace, launched in 2023 with over 30,000 assets. Trade 1:1 asset-backed, Swiss-grade commodities and certified gemstones each tied to audited physical assets and on-chain settlement.
              </p>
            </div>
            
@@ -166,7 +181,7 @@ export default function ProductPage() {
                    <h3 className="text-xl font-medium text-gray-900">Assets</h3>
                  </div>
                  <p className="text-gray-700 leading-relaxed">
-                   Access tokenized gold, silver and platinum, each 1:1 backed by verified physical asset held in audited vaults.
+                   Access tokenized gold, silver, and platinum, each 1:1 redeemable for a verified physical asset stored in audited vaults.
                  </p>
              </div>
              
@@ -177,7 +192,7 @@ export default function ProductPage() {
                    <h3 className="text-xl font-medium text-gray-900">Speed</h3>
                  </div>
                  <p className="text-gray-700 leading-relaxed">
-                   Instant settlement and 24/7 trading with atomic delivery-versus-payment, eliminating counterparty and settlement risk.
+                   Instant settlement and 24/7 trading with atomic delivery-versus-payment, removing counterparty and settlement risk.
                  </p>
              </div>
              
@@ -188,7 +203,7 @@ export default function ProductPage() {
                    <h3 className="text-xl font-medium text-gray-900">Utility Rewards</h3>
                  </div>
                  <p className="text-gray-700 leading-relaxed">
-                   Reduced fees and enhanced market access through the TOTO utility token across trading, settlement, and platform services.
+                   Lower fees and improved market access through the TOTO utility token for trading, settlement, and platform services.
                  </p>
              </div>
              
@@ -199,7 +214,7 @@ export default function ProductPage() {
                    <h3 className="text-xl font-medium text-gray-900">Global Access</h3>
                  </div>
                  <p className="text-gray-700 leading-relaxed">
-                   Access global commodity markets through a unified digital marketplace with seamless cross-border participation and no operational barriers.
+                   Trade global commodity markets on a single digital marketplace with seamless cross-border trading and no operational hurdles.
                  </p>
              </div>
              
@@ -210,7 +225,7 @@ export default function ProductPage() {
                    <h3 className="text-xl font-medium text-gray-900">Security</h3>
                  </div>
                  <p className="text-gray-700 leading-relaxed">
-                   Assets secured in insured, third-party vaults, supported by institutional-grade custody standards and independent audits.
+                   Assets stored in insured, third-party vaults with institutional-grade custody best practices and independent audits.
                  </p>
              </div>
              
@@ -248,7 +263,74 @@ export default function ProductPage() {
           </div>
          </div>
        </section>
-       
+
+      {/* Section 4: Explore Tokenized Assets (Product.docx.md) */}
+      <section
+        id="explore-tokenized-assets"
+        className="px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white border-t border-gray-100"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 leading-tight mb-6">
+              Investigate Tokenized Assets
+            </h2>
+            <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Institutional-quality, asset-backed, tokenized commodities in precious metals, gemstones, industrial
+              metals, and rare earth elements, all with audited custody and on-chain settlement.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-6">Precious Metals &amp; Gemstones</h3>
+              <ul className="space-y-3">
+                {preciousMetalLinks.map(({ label, href }) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className="text-gray-700 hover:text-gray-900 underline-offset-2 hover:underline text-base"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Rare Earth Elements</h3>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6">
+                Critical materials for AI, energy, and advanced manufacturing,{' '}
+                <Link href="/rare-earth-mineral" className="text-[#00375e] font-medium hover:underline">
+                  learn more about rare earth tokenization
+                </Link>
+                {'.'}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3">
+                {rareEarthLinks.map(({ label, href }) => (
+                  <div key={href}>
+                    <Link
+                      href={href}
+                      className="text-gray-700 hover:text-gray-900 underline-offset-2 hover:underline text-base"
+                    >
+                      {label}
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-14">
+            <Link
+              href="/how-tokenization-works"
+              className="inline-flex items-center justify-center bg-black text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Learn How Tokenization Works
+            </Link>
+          </div>
+        </div>
+      </section>
+
        {/* War Readiness Package Section - Commented out for now */}
        {/* <section id="war-readiness-section" className="px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
          <div className="max-w-7xl mx-auto">

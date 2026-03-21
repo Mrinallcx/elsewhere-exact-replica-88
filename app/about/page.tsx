@@ -8,7 +8,6 @@ import { PageStructuredData } from '../components/PageStructuredData';
 import { PersonStructuredData, type TeamMember } from '../components/PersonStructuredData';
 import { LeadershipAvatar } from '../components/client/LeadershipAvatar';
 import { Navigation } from '../components/Navigation';
-import { VideoBackground } from '../components/client/VideoBackground';
 
 // Dynamic imports for heavy components
 const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur'));
@@ -20,7 +19,8 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Monty Metzger',
     jobTitle: 'Founder',
-    description: 'Serial entrepreneur since 1998 — first internet company founded at age 18. Multiple successful exits across digital, tech, and venture capital. Founded Digital Leaders Ventures (Tech VC); portfolio companies with exit to Twitter and IPO. Founded and grew LCX to $500M+ market cap; leading European regulated crypto exchange and tokenization infrastructure. LCX named New Champion at the World Economic Forum and Blockchain Pioneer by Blockchain Research Institute.',
+    description:
+      'Serial entrepreneur since 1998 - first internet company founded at age 18. Multiple successful exits across digital, tech, and venture capital. Founded Digital Leaders Ventures (Tech VC) - invested in technology companies globally. Portfolio Companies with Exit to Twitter and IPO. Found and grew LCX to $500M+ market cap; leading european regulated crypto exchange and tokenization infrastructure. LCX named New Champion at the World Economic Forum and Blockchain Pioneer by Blockchain Research Institute.',
     sameAs: ['https://www.linkedin.com/in/montymetzger/'],
     image: '/images/monty.png',
   },
@@ -61,23 +61,68 @@ const partnerLogos = [
   'Xrp.svg',
 ];
 
-// Featured In — press and partner coverage (replace # with actual URLs when available)
+// Featured In — URLs per About Page.docx.md
 const featuredInLinks = [
-  { label: 'Cardano Foundation Case Study, Toto Finance', url: 'https://cardanofoundation.org/' },
-  { label: 'Yahoo Finance, Tiamonds Landmark Launch', url: 'https://finance.yahoo.com/' },
-  { label: 'GlobeNewsWire, Tiamonds 10 Carat D Flawless Diamond Launch', url: 'https://www.globenewswire.com/' },
-  { label: 'EMURGO, Cardano NFT Case Study: NMKR & Tiamonds', url: 'https://emurgo.io/' },
-  { label: 'BlockchainWire, Toto Finance Debuts New Brand', url: 'https://www.blockchainwire.io/' },
-  { label: 'BitCourier, Toto Finance New Brand & RWA Platform', url: 'https://bitcourier.co.uk/' },
-  { label: 'Blockchain Reporter, Toto Finance Brings RWAs On-Chain', url: 'https://blockchainreporter.net/' },
-  { label: 'CryptoRank, Cardano Pushes Forward in RWA Tokenization', url: 'https://cryptorank.io/' },
-  { label: 'Altcoin Observer, Toto Finance Launches RWA Platform', url: 'https://altcoinobserver.com/' },
-  { label: 'BitCourier, Tiamonds Review', url: 'https://bitcourier.co.uk/' },
-  { label: 'Messari, Understanding XRP Cafe', url: 'https://messari.io/' },
-  { label: 'Gate.com, Toto Finance', url: 'https://www.gate.io/' },
-  { label: 'MEXC, Toto Finance', url: 'https://www.mexc.com/' },
-  { label: 'CoinMarketCap, TIA Token', url: 'https://coinmarketcap.com/' },
-  { label: 'NMKR, Tiamonds Drop 2023', url: 'https://nmkr.io/' },
+  {
+    label: 'Cardano Foundation Case Study, Toto Finance',
+    url: 'https://cardanofoundation.org/case-studies/toto-finance',
+  },
+  {
+    label: 'Yahoo Finance, Tiamonds Landmark Launch',
+    url: 'https://finance.yahoo.com/news/tiamonds-landmark-launch-unmissable-1-010000749.html',
+  },
+  {
+    label: 'GlobeNewsWire, Tiamonds 10 Carat D Flawless Diamond Launch',
+    url: 'https://www.globenewswire.com/news-release/2023/10/06/2755872/0/en/Tiamonds-Landmark-Launch-The-Unmissable-1-2M-10-Carat-D-Flawless-Diamond.html',
+  },
+  {
+    label: 'EMURGO, Cardano NFT Case Study: NMKR & Tiamonds',
+    url: 'https://www.emurgo.io/press-news/cardano-nft-case-study-nmkr-and-tiamonds/',
+  },
+  {
+    label: 'BlockchainWire, Toto Finance Debuts New Brand',
+    url: 'https://blockchainwire.io/press-release/toto-finance-debuts-new-brand-and-platform-for-tokenization-of-commodities-and-real-world-assets',
+  },
+  {
+    label: 'BitCourier, Toto Finance New Brand & RWA Platform',
+    url: 'https://bitcourier.co.uk/news/toto-finance-new-brand-and-rwa-platform',
+  },
+  {
+    label: 'Blockchain Reporter, Toto Finance Brings RWAs On-Chain',
+    url: 'https://blockchainreporter.net/toto-finance-brings-real-world-assets-on-chain-with-rwa-tokenization/',
+  },
+  {
+    label: 'CryptoRank, Cardano Pushes Forward in RWA Tokenization',
+    url: 'https://cryptorank.io/news/feed/d31af-cardano-pushes-forward-in-rwa-tokenization-genius',
+  },
+  {
+    label: 'Altcoin Observer, Toto Finance Launches RWA Platform',
+    url: 'https://altcoin.observer/toto-finance-launches-new-brand-and-platform-for-tokenization-of-commodities-and-real-world-assets/',
+  },
+  {
+    label: 'BitCourier, Tiamonds Review',
+    url: 'https://bitcourier.co.uk/blog/tiamonds-review',
+  },
+  {
+    label: 'Messari, Understanding XRP Cafe',
+    url: 'https://messari.io/copilot/share/understanding-xrp-cafe-8eeb408d-98ac-4c50-9dd1-c55f6e62bafe',
+  },
+  {
+    label: 'Gate.com, Toto Finance',
+    url: 'https://www.gate.com/tr/news/detail/17259427',
+  },
+  {
+    label: 'MEXC, Toto Finance',
+    url: 'https://www.mexc.co/en-IN/news/365939',
+  },
+  {
+    label: 'CoinMarketCap, TIA Token',
+    url: 'https://coinmarketcap.com/currencies/tia/',
+  },
+  {
+    label: 'NMKR, Tiamonds Drop 2023',
+    url: 'https://www.nmkr.io/drops/tiamonds-2023',
+  },
 ];
 
 export default function AboutPage() {
@@ -267,7 +312,7 @@ export default function AboutPage() {
                   <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">Our Vision</h3>
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed font-medium">
-                  To become the global infrastructure standard for tokenized commodities.
+                  To be the global infrastructure standard for tokenized commodities.
                 </p>
               </div>
             </div>
@@ -335,7 +380,18 @@ export default function AboutPage() {
               <p className="font-semibold text-gray-900 mb-2">TotoHolding AG</p>
               <p className="text-gray-600 mb-4">Incorporated in Liechtenstein</p>
               <p className="text-gray-900 font-medium">Legal Entity Identifier (LEI): 5299005UXAQFO3US5C38</p>
-              <p className="text-gray-600 mt-2">The LEI can be independently verified via the Global Legal Entity Identifier Foundation (GLEIF).</p>
+              <p className="text-gray-600 mt-2">
+                The LEI can be independently verified via the Global Legal Entity Identifier Foundation (
+                <a
+                  href="https://search.gleif.org/#/search/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#00375e] font-medium hover:underline"
+                >
+                  GLEIF
+                </a>
+                ).
+              </p>
             </div>
           </div>
         </div>
@@ -351,7 +407,24 @@ export default function AboutPage() {
             Toto Finance is subject to independent third-party security audits to ensure the integrity of its smart contracts and platform infrastructure.
           </p>
           <p className="text-base md:text-lg text-gray-900 font-medium">
-            Audit Providers: Hacken, CertiK
+            Audit Providers:{' '}
+            <a
+              href="https://hacken.io/audits/toto-finance/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#00375e] hover:underline"
+            >
+              Hacken
+            </a>
+            ,{' '}
+            <a
+              href="https://skynet.certik.com/projects/tiamonds"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#00375e] hover:underline"
+            >
+              CertiK
+            </a>
           </p>
         </div>
       </section>
@@ -401,7 +474,16 @@ export default function AboutPage() {
             Trusted By &amp; Partners
           </h2>
           <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mb-12 text-center">
-            Take it from our ecosystem — blockchains, validators, and infrastructure partners powering compliant tokenization.
+            Take it from the{' '}
+            <a
+              href="https://totofinance.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white font-medium underline underline-offset-2 hover:text-gray-200"
+            >
+              homepage
+            </a>
+            .
           </p>
           {/* Same carousel as homepage TRUSTED BY — dark bg so logos are visible */}
           <div className="trusted-by-dark w-full max-w-6xl mx-auto mb-10">
@@ -479,7 +561,7 @@ export default function AboutPage() {
                   <p className="text-gray-600">Commodity Market Size</p>
                 </div>
                 <div className="bg-white rounded-xl p-6 border border-gray-200">
-                  <div className="text-3xl md:text-4xl font-light text-gray-900 mb-2">$16+ Trillion</div>
+                  <div className="text-3xl md:text-4xl font-light text-gray-900 mb-2">$16+Trillion</div>
                   <p className="text-gray-600">Tokenization Market (by 2030)</p>
                 </div>
                 <div className="bg-white rounded-xl p-6 border border-gray-200">
@@ -503,7 +585,7 @@ export default function AboutPage() {
                       </svg>
                     </div>
                     <div className="text-center">
-                      <div className="text-sm md:text-base font-bold text-white">$16T</div>
+                      <div className="text-sm md:text-base font-bold text-white">$16+T</div>
                       <div className="text-[10px] md:text-xs text-gray-300">Tokenization</div>
                     </div>
                   </div>

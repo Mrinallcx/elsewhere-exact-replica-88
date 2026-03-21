@@ -6,7 +6,6 @@ import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
 import { PageStructuredData } from '../components/PageStructuredData';
 import { FAQStructuredData } from '../components/FAQStructuredData';
-import { TrustComplianceBar } from '../components/TrustComplianceBar';
 import { ProductTrustSection } from '../components/ProductTrustSection';
 import { Navigation } from '../components/Navigation';
 
@@ -360,7 +359,6 @@ export default function TokenizedDiamondsPage() {
         </div>
       </section>
 
-      <TrustComplianceBar variant="light" />
       <ProductTrustSection
         assetName="Tokenized Diamonds"
         regulatory={{

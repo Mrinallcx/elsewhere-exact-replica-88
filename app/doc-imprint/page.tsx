@@ -1,18 +1,13 @@
 // Server Component (NO "use client")
 export const dynamic = 'force-dynamic';
 
-import { Shield, Package, Eye, Lock, Database, Globe } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
 import { PageStructuredData } from '../components/PageStructuredData';
 import { Navigation } from '../components/Navigation';
-import { VideoBackground } from '../components/client/VideoBackground';
 
 // Dynamic imports for heavy components
 const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur'));
-const NewsletterForm = dynamicImport(() => import('../components/NewsletterForm'));
 const Footer = dynamicImport(() => import('../components/Footer'));
 const NewsletterSection = dynamicImport(() => import('../components/NewsletterSection'));
 
@@ -72,7 +67,8 @@ export default function DocImprintPage() {
                 <h3 className="text-xl font-medium text-gray-900 mb-2">Tokenization Report 2025&ndash;2030</h3>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Independent research published in December 2025 examining how tokenization is reshaping commodities, capital markets, and the digital transformation of real-world value, with a focus on liquidity, market access, and institutional adoption.
+                Independent research published in December 2025 analyzing the impact of tokenization on the commodities
+                markets, capital markets, and the digital transformation of real-world value.
               </p>
               <a 
                 href="https://toto-finance.s3.us-east-1.amazonaws.com/Updated%2BTokenization%2BReport.pdf" 
@@ -98,7 +94,9 @@ export default function DocImprintPage() {
                 <h3 className="text-xl font-medium text-gray-900 mb-2">MiCA-Compliant Whitepaper</h3>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
-                The official regulatory whitepaper detailing Toto Finance&apos;s infrastructure, tokenization model, governance, and compliance framework in alignment with applicable MiCA and international regulatory standards.
+                The official regulatory whitepaper describing Toto Finance&apos;s infrastructure, tokenization framework,
+                governance structure, and regulatory compliance framework in accordance with relevant MiCA and
+                international regulations.
               </p>
               <a 
                 href="https://toto-finance.s3.us-east-1.amazonaws.com/Toto+Finance+-+TOTO+MiCAR+White+Paper+-+EU_EEA+Edition.pdf" 
@@ -124,7 +122,9 @@ export default function DocImprintPage() {
                 <h3 className="text-xl font-medium text-gray-900 mb-2">Total Tokenization: Global Vision & Architecture</h3>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Toto Finance&apos;s international whitepaper outlining the long-term vision of Total Tokenization, including platform architecture, asset coverage, settlement layers, custody design, and the evolution of programmable real-world assets at global scale.
+                The international whitepaper of Toto Finance, describing the global vision of Total Tokenization,
+                including platform architecture, asset coverage, settlement layers, and the design of programmable
+                real-world assets on a global scale.
               </p>
               <a 
                 href="https://toto-finance.s3.us-east-1.amazonaws.com/Toto+Finance+-+TOTO+White+Paper+-+International+Edition.pdf" 
@@ -150,7 +150,9 @@ export default function DocImprintPage() {
                 <h3 className="text-xl font-medium text-gray-900 mb-2">The Future of Asset Tokenization</h3>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
-                A strategic research report released on the occasion of the first Crypto Summit in Washington, D.C. (March 7, 2025), exploring how blockchain infrastructure will reshape global markets by 2030, financial rails, and real-world asset distribution over the next decade.
+                A strategic research report published on the occasion of the first Crypto Summit in Washington, D.C.
+                (March 7, 2025), analyzing the impact of blockchain infrastructure on global markets by 2030, financial
+                infrastructure, and real-world asset distribution.
               </p>
               <a 
                 href="https://toto-finance.s3.us-east-1.amazonaws.com/Tokenization%2BReport%2B2025-2030.pdf" 
@@ -176,7 +178,9 @@ export default function DocImprintPage() {
                 <h3 className="text-xl font-medium text-gray-900 mb-2">Cardano Foundation Case Study: Toto Finance</h3>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
-                An institutional case study published by the Cardano Foundation examining how Toto Finance approached real-world asset tokenization as an engineering and infrastructure challenge, focusing on security, verification, and production-grade implementation rather than speculation.
+                A published institutional case study by the Cardano Foundation analyzing Toto Finance&apos;s approach to
+                real-world asset tokenization as an infrastructure and engineering problem, rather than a speculative
+                one, focusing on security, verification, and production-level implementation.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a 
@@ -215,7 +219,8 @@ export default function DocImprintPage() {
                 <h3 className="text-xl font-medium text-gray-900 mb-2">Media Kit</h3>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Official Toto Finance logos, brand guidelines, visuals, and approved media materials for partners, press, and third-party use.
+                Official Toto Finance logos, brand assets, and approved media resources for partners, media, and
+                third-party use.
               </p>
               <a 
                 href="https://www.notion.so/Toto-Finance-Media-Kit-2d1797abde9e803fb0f0c0eed0d72f97" 
@@ -271,54 +276,81 @@ export default function DocImprintPage() {
             <div className="mb-6">
               <h3 className="text-xl font-medium text-gray-900 mb-2">Disclaimer</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Digital assets, including tokenized commodities and other real-world assets, involve significant risks, including price volatility, liquidity constraints, counterparty risk, and regulatory uncertainty. Digital asset markets may not offer the same protections as traditional financial markets and are subject to evolving regulatory regimes.
+                Digital assets, such as tokenized commodities and other real-world assets, are associated with material
+                risks, including price volatility, illiquidity, counterparty risk, and regulatory uncertainty. Digital
+                asset markets may lack the same level of protections as traditional financial markets and are subject to
+                changing regulatory environments.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Toto Finance Inc. provides information and services related to blockchain-based tokenization and digital representations of real-world assets. Unless explicitly stated otherwise, products or services referenced on this website have not been registered as securities under applicable laws and may not be offered or sold in certain jurisdictions without appropriate registration or exemption.
+                Toto Finance Inc. offers information and services related to blockchain tokenization and digital
+                representations of real-world assets. Unless otherwise stated, products and services mentioned on this
+                website have not been registered as securities under applicable laws and regulations and may not be
+                offered or sold in certain jurisdictions without registration or exemption.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Tokenized assets may provide direct or indirect economic exposure to underlying assets and may or may not confer ownership rights or direct legal claims, depending on the applicable structure, documentation, and jurisdiction.
+                Tokenized assets may represent direct or indirect economic interests in underlying assets and may or may
+                not represent ownership rights or direct legal claims, depending on the applicable structure,
+                documentation, and jurisdiction.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Nothing on this website constitutes financial, investment, legal, or tax advice, nor an offer or solicitation to buy or sell any asset. Users are responsible for conducting independent due diligence and should consult qualified professional advisers before engaging with any product or service.
+                Nothing on this website should be considered financial, investment, legal, or tax advice, or an offer or
+                solicitation to purchase or sell any asset. It is the responsibility of the user to conduct their own
+                due diligence and seek the advice of professional experts before participating in any product or
+                service.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Additional terms, conditions, and jurisdictional restrictions may apply.
+                Additional terms, conditions, and geographical restrictions may apply.
               </p>
             </div>
 
             <div className="mb-6">
-              <h3 className="text-xl font-medium text-gray-900 mb-4 mt-12 pt-8 border-t border-gray-200">Asset Custody &amp; Storage</h3>
+              <h3 className="text-xl font-medium text-gray-900 mb-4 mt-12 pt-8 border-t border-gray-200">
+                Asset Custody &amp; Storage
+              </h3>
 
-              <h3 className="text-xl font-medium text-gray-900 mb-2">Custody Provider</h3>
-              <p className="text-gray-600 leading-relaxed mb-2">Physical custody of tokenized assets is provided by:</p>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                <strong>TotoHolding AG</strong><br />
-                Herrengasse 6<br />
-                9490 Vaduz<br />
+              <h3 className="text-xl font-medium text-gray-900 mb-2">Custody Service Provider</h3>
+              <p className="text-gray-600 leading-relaxed mb-2">
+                Physical asset custody for tokenized assets is offered by:
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                <strong>TotoHolding AG</strong>
+                <br />
+                Herrengasse 6
+                <br />
+                9490 Vaduz
+                <br />
                 Liechtenstein
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                <strong>Legal Entity Identifier (LEI): 5299005UXAQFO3US5C38</strong>
               </p>
 
               <h3 className="text-xl font-medium text-gray-900 mb-2">Secure Vault Storage</h3>
               <p className="text-gray-600 leading-relaxed mb-6">
-                All physical assets backing Toto Finance tokens are stored in high-security vault facilities located in Liechtenstein. These facilities are situated in the Swiss Alps region, one of the world&apos;s most secure and politically stable jurisdictions for asset storage, with a centuries-long tradition of wealth preservation and financial privacy.
+                The physical assets that underlie Toto Finance tokens are stored in secure vault storage facilities in
+                Liechtenstein. The vault storage facilities are located in the Swiss Alps, which is one of the most
+                secure and politically neutral regions in the world for asset storage, with a history of wealth
+                preservation and financial secrecy dating back centuries.
               </p>
 
               <h3 className="text-xl font-medium text-gray-900 mb-2">Insurance &amp; Protection</h3>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Custody is backed by Lloyd&apos;s of London insurance covering potential loss, theft, or damage.
+                The custody service is insured against loss, theft, or damage by Lloyd&apos;s of London.
               </p>
 
               <h3 className="text-xl font-medium text-gray-900 mb-2">Custody Transparency</h3>
               <p className="text-gray-600 leading-relaxed">
-                Token holders receive certified proof of ownership and can access real-time tracking of their asset&apos;s custody status.
+                Token holders are provided with notarized evidence of ownership and real-time access to their
+                asset&apos;s custody status.
               </p>
             </div>
 
             <div className="mb-6">
               <h3 className="text-xl font-medium text-gray-900 mb-2">Purpose of This Website</h3>
               <p className="text-gray-600 leading-relaxed">
-                This website is intended to provide general information about Toto Finance Inc., its technology, infrastructure, research publications, and services, as well as broader educational content relating to blockchain technology, tokenization, real-world assets, and economic research.
+                The purpose of this website is to offer general information about Toto Finance Inc., its technology,
+                infrastructure, research publications, and services, as well as general educational content on blockchain
+                technology, tokenization, real-world assets, and economic research.
               </p>
             </div>
 
@@ -327,9 +359,9 @@ export default function DocImprintPage() {
               <div className="text-gray-600 leading-relaxed space-y-2">
                 <p>
                   <strong>Website:</strong>{' '}
-                  <a 
-                    href="https://www.totofinance.co" 
-                    target="_blank" 
+                  <a
+                    href="https://www.totofinance.co"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-700 underline"
                   >
@@ -338,13 +370,35 @@ export default function DocImprintPage() {
                 </p>
                 <p>
                   <strong>X (Twitter):</strong>{' '}
-                  <a 
-                    href="https://x.com/totofinance" 
-                    target="_blank" 
+                  <a
+                    href="https://x.com/totofinance"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-700 underline"
                   >
                     @TotoFinance
+                  </a>
+                </p>
+                <p>
+                  <strong>LinkedIn:</strong>{' '}
+                  <a
+                    href="https://www.linkedin.com/company/totofinance/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-700 underline"
+                  >
+                    Toto Finance
+                  </a>
+                </p>
+                <p>
+                  <strong>Telegram:</strong>{' '}
+                  <a
+                    href="https://t.me/totofinance"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-700 underline"
+                  >
+                    Toto Finance
                   </a>
                 </p>
               </div>
@@ -353,7 +407,8 @@ export default function DocImprintPage() {
             <div className="mb-6">
               <h3 className="text-xl font-medium text-gray-900 mb-2">Compliance &amp; Legal Inquiries</h3>
               <p className="text-gray-600 leading-relaxed mb-2">
-                Toto Finance Inc. considers regulatory compliance and legal clarity essential to the long-term development of digital finance and real-world asset tokenization.
+                Toto Finance Inc. believes that regulatory compliance and legal clarity are critical to the future
+                success of digital finance and real-world asset tokenization.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 For legal or compliance-related inquiries, please contact:{' '}

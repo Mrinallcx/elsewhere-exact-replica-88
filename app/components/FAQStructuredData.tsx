@@ -10,11 +10,17 @@ interface FAQStructuredDataProps {
   faqs: FAQ[];
 }
 
+/** Flatten [label](url) in FAQ answers for schema.org (plain text + URL). */
+function answerForStructuredData(answer: string): string {
+  return answer.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1 ($2)');
+}
+
 export function FAQStructuredData({ faqs }: FAQStructuredDataProps) {
   // Validate and filter FAQs to ensure mainEntity is never empty
   // Schema.org requires at least one Question in mainEntity
   const validFAQs = (faqs || []).filter(
-    (faq) => faq && faq.question && faq.answer && faq.question.trim() && faq.answer.trim()
+    (faq) =>
+      faq && faq.question?.trim() && faq.answer?.trim()
   );
 
   // If no valid FAQs, don't render structured data (prevents invalid schema)
@@ -31,7 +37,7 @@ export function FAQStructuredData({ faqs }: FAQStructuredDataProps) {
       name: faq.question.trim(),
       acceptedAnswer: {
         '@type': 'Answer',
-        text: faq.answer.trim(),
+        text: answerForStructuredData(faq.answer).trim(),
       },
     })),
   };

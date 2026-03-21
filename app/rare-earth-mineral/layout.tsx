@@ -1,8 +1,11 @@
 import { ReactNode } from 'react';
 
+const pageDescription =
+  'Institutional-grade access to critical minerals driving AI, energy transition, and global infrastructure tokenized directly from verified in-ground reserves with compliant ownership, audited custody, and on-chain settlement.';
+
 export const metadata = {
   title: 'Critical Minerals Tokenization | Toto Finance',
-  description: 'Toto Finance enables compliant, asset-backed tokenization of critical minerals including lithium, copper, and nickel - with on-chain ownership, institutional custody, and legally structured redemption.',
+  description: pageDescription,
   keywords: 'critical minerals tokenization, rare earth tokenization, tokenized critical minerals, lithium tokenization, copper tokenization, nickel tokenization, in-ground mineral tokenization, asset-backed mineral tokenization, commodity reserve tokenization, real-world asset tokenization, RWA commodities, strategic minerals tokenization, institutional commodity tokenization, on-chain mineral ownership, physical commodity tokenization, Liechtenstein tokenization framework',
   robots: {
     index: true,
@@ -17,7 +20,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Critical Minerals Tokenization | Toto Finance',
-    description: 'Toto Finance enables compliant, asset-backed tokenization of critical minerals including lithium, copper, and nickel - with on-chain ownership, institutional custody, and legally structured redemption.',
+    description: pageDescription,
     url: 'https://totofinance.co/rare-earth-mineral',
     siteName: 'Toto Finance',
     images: [
@@ -34,7 +37,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Critical Minerals Tokenization | Toto Finance',
-    description: 'Toto Finance enables compliant, asset-backed tokenization of critical minerals including lithium, copper, and nickel - with on-chain ownership, institutional custody, and legally structured redemption.',
+    description: pageDescription,
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },
   alternates: {

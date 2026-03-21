@@ -1,7 +1,6 @@
 // Server Component (NO "use client")
 export const dynamic = 'force-dynamic';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
@@ -15,59 +14,145 @@ const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur
 const Footer = dynamicImport(() => import('../components/Footer'));
 const NewsletterSection = dynamicImport(() => import('../components/NewsletterSection'));
 
-export default function RareEarthMineralPage() {
-  
+const rareEarthElements = [
+  {
+    href: '/tokenized-cerium',
+    label: 'Tokenized Cerium',
+    description: 'Catalytic converters, glass polishing, and automotive emission control systems.',
+  },
+  {
+    href: '/tokenized-dysprosium',
+    label: 'Tokenized Dysprosium',
+    description: 'High-performance permanent magnets for electric vehicle motors and wind turbines.',
+  },
+  {
+    href: '/tokenized-erbium',
+    label: 'Tokenized Erbium',
+    description: 'Fiber optic amplifiers, laser technology, and telecommunication infrastructure.',
+  },
+  {
+    href: '/tokenized-europium',
+    label: 'Tokenized Europium',
+    description: 'LED phosphors, display technology, and anti-counterfeiting for banknotes.',
+  },
+  {
+    href: '/tokenized-gadolinium',
+    label: 'Tokenized Gadolinium',
+    description: 'MRI contrast agents, nuclear reactor shielding, and magnetic refrigeration.',
+  },
+  {
+    href: '/tokenized-holmium',
+    label: 'Tokenized Holmium',
+    description: 'Medical lasers, magnetic flux concentrators, and nuclear control rods.',
+  },
+  {
+    href: '/tokenized-lanthanum',
+    label: 'Tokenized Lanthanum',
+    description: 'Hybrid vehicle batteries, petroleum refining catalysts, and optical lenses.',
+  },
+  {
+    href: '/tokenized-lutetium',
+    label: 'Tokenized Lutetium',
+    description: 'PET scan detectors, high-density alloys, and geologic precision dating.',
+  },
+  {
+    href: '/tokenized-neodymium',
+    label: 'Tokenized Neodymium',
+    description: 'Permanent magnets for electric vehicles, wind turbines, headphones, and hard drives.',
+  },
+  {
+    href: '/tokenized-praseodymium',
+    label: 'Tokenized Praseodymium',
+    description: 'Aircraft engines, welder goggles, and high-strength magnet alloys.',
+  },
+  {
+    href: '/tokenized-promethium',
+    label: 'Tokenized Promethium',
+    description: 'Nuclear batteries, luminous paint, and portable X-ray equipment.',
+  },
+  {
+    href: '/tokenized-samarium',
+    label: 'Tokenized Samarium',
+    description: 'Samarium-cobalt magnets for aerospace, military, and high-temperature applications.',
+  },
+  {
+    href: '/tokenized-scandium',
+    label: 'Tokenized Scandium',
+    description: 'Aerospace aluminum alloys, solid oxide fuel cells, and sports equipment.',
+  },
+  {
+    href: '/tokenized-terbium',
+    label: 'Tokenized Terbium',
+    description: 'Green phosphors for displays, solid-state devices, and naval sonar systems.',
+  },
+  {
+    href: '/tokenized-thulium',
+    label: 'Tokenized Thulium',
+    description: 'Portable X-ray devices, surgical lasers, and high-temperature superconductors.',
+  },
+  {
+    href: '/tokenized-ytterbium',
+    label: 'Tokenized Ytterbium',
+    description: 'Fiber lasers, atomic clocks, and stainless steel strengthening additives.',
+  },
+  {
+    href: '/tokenized-yttrium',
+    label: 'Tokenized Yttrium',
+    description: 'LED lighting, jet engine coatings, and microwave communication filters.',
+  },
+] as const;
 
+export default function RareEarthMineralPage() {
   const cashCards = [
     {
       title: 'Institutional-Grade Structure',
       subtitle:
-        'Regulated legal frameworks with audited custody, verified reserve data, and enforceable asset backing for in-ground mineral reserves.',
+        'Legal structures with audited custody, notifiable reserve information, and asset support for in-ground mineral reserves.',
       variant: 'cash-card-blue',
     },
     {
       title: 'Collateralized Liquidity',
       subtitle:
-        'Unlock financing, structured liquidity, and transferability against verified mineral reserve without waiting for extraction or production cycles.',
+        'Financing, liquidity, and transferability of notifiable mineral reserves without the wait for extraction and production cycles.',
       variant: 'cash-card-green',
     },
     {
       title: 'Programmable Compliance',
       subtitle:
-        'KYC, AML, and jurisdiction-specific transfer controls enforced programmatically at the protocol level.',
+        'KYC, AML, and transfer rules for jurisdictions enforced programmatically at the protocol level.',
       variant: 'cash-card-purple',
     },
     {
       title: 'Transparent Supply Chains',
       subtitle:
-        'Immutable on-chain records tracking reserves from geological verification through custody, financing, and delivery.',
+        'Immutable on-chain records of reserves from geological verification to custody, financing, and delivery.',
       variant: 'cash-card-rose',
     },
   ];
 
   const reversedCashCards = [
     {
-      title: 'Asset Scope',
+      title: 'Asset Coverage',
       subtitle:
-        'Tokenization of verified in-ground reserves, above-ground inventories, or offtake rights structured by asset type, lifecycle stage, and jurisdiction.',
+        'Tokenization of proven in-ground reserves, above-ground inventories, or offtake rights categorized by asset type, stage of development, and geographical location.',
       variant: 'cash-card-blue',
     },
     {
       title: 'Traceability',
       subtitle:
-        'On-chain linkage of geological reports (NI 43-101, JORC Code), assay results, provenance records, and audited custody data from source to market.',
+        'Chain linking of geological assessments (NI 43-101, JORC Code), assay data, provenance, and audited custody information from source to market.',
       variant: 'cash-card-green',
     },
     {
-      title: 'Liquidity Options',
+      title: 'Liquidity Mechanisms',
       subtitle:
-        'Primary issuance with controlled secondary transfers between eligible institutional counterparties, subject to compliance rules.',
+        'Controlled primary market issuance with limited secondary market trading between qualified counterparties, as governed by regulatory requirements.',
       variant: 'cash-card-purple',
     },
     {
       title: 'Data Layer',
       subtitle:
-        'On-chain proof-of-reserves, third-party validation attestations, and periodic independent audit reports anchored immutably on-chain.',
+        'On-chain proof-of-reserves, validation statements, and regular independent audit reports immutably fixed on-chain.',
       variant: 'cash-card-rose',
     },
   ];
@@ -79,7 +164,7 @@ export default function RareEarthMineralPage() {
       {/* Page Structured Data */}
       <PageStructuredData
         title="Rare Earth Minerals Tokenization — Toto Finance"
-        description="Securely tokenize lithium, copper, and nickel with 24/7 digital ownership on institutional infrastructure under Liechtenstein law."
+        description="Institutional-grade access to critical minerals driving AI, energy transition, and global infrastructure tokenized directly from verified in-ground reserves with compliant ownership, audited custody, and on-chain settlement."
         url="https://totofinance.co/rare-earth-mineral"
         pageType="WebPage"
         breadcrumbItems={[
@@ -130,7 +215,9 @@ export default function RareEarthMineralPage() {
           {/* Description Section */}
           <div className="max-w-3xl w-full mx-0 sm:mx-auto mb-6 sm:mb-8 mt-6 sm:mt-8 md:mt-10 text-left sm:text-center ">
             <p className="hero-description text-sm sm:text-base md:text-lg lg:text-xl text-travel-white mb-2 text-left sm:text-center">
-              Institutional-grade access to critical minerals powering AI, energy transition, and global infrastructure tokenized directly from verified in-ground reserves with compliant ownership, audited custody, and on-chain settlement.
+              Institutional-grade access to critical minerals driving AI, energy transition, and global infrastructure
+              tokenized directly from verified in-ground reserves with compliant ownership, audited custody, and
+              on-chain settlement.
             </p>
           </div>
           
@@ -153,9 +240,11 @@ export default function RareEarthMineralPage() {
           <div className="cash-grid">
             {/* Left copy */}
             <div className="cash-left">
-              <h2 className="cash-heading">Bridging In-Ground Minerals and Institutional Capital Markets</h2>
+              <h2 className="cash-heading">Connecting In-Ground Minerals and Institutional Capital Markets</h2>
               <p className="cash-description">
-                Toto Finance enables the tokenization of verified in-ground critical mineral reserves through compliant legal structures, audited custody frameworks, and on-chain settlement purpose-built for institutional investors, mining operators, and strategic supply chains.
+                Toto Finance facilitates the tokenization of notifiable in-ground critical mineral reserves via legal
+                structures, custody models, and on-chain settlement systems specifically designed for institutional
+                investors, mining companies, and strategic supply chains.
               </p>
               <div className="mt-6">
                 <a
@@ -186,9 +275,10 @@ export default function RareEarthMineralPage() {
 
             {/* Right copy */}
             <div className="cash-left lg:order-2">
-              <h2 className="cash-heading">Designed for Strategic Mineral Assets</h2>
+              <h2 className="cash-heading">Built for Strategic Mineral Resources</h2>
               <p className="cash-description">
-                Toto Finance tokenizes critical minerals across the full value chain from verified reserves and inventories to structured offtake rights enabling traceable, asset-backed digital ownership from mine to market.
+                Toto Finance tokenizes strategic minerals end-to-end from proven reserves and inventories to offtake
+                rights for traceable, asset-backed digital ownership from mine to market.
               </p>
               <div className="mt-6">
                 <a
@@ -213,7 +303,8 @@ export default function RareEarthMineralPage() {
               Institutional-Grade Asset Specifications
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Clear standards defining how critical mineral assets are validated, structured, settled, and accessed across Toto Finance&apos;s digital commodity infrastructure.
+              Specific guidelines for the validation, structuring, settlement, and access of critical mineral assets
+              within the digital commodity infrastructure of Toto Finance.
             </p>
           </div>
           
@@ -229,7 +320,8 @@ export default function RareEarthMineralPage() {
                 <h3 className="text-xl font-light text-gray-900">Assets Covered</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                Lithium, copper, nickel, and strategic mineral concentrates supporting energy transition, AI infrastructure, and industrial supply chains.
+                Lithium, copper, nickel, and strategic mineral concentrates for energy transition, AI infrastructure,
+                and industrial supply chains.
               </p>
             </div>
 
@@ -244,7 +336,8 @@ export default function RareEarthMineralPage() {
                 <h3 className="text-xl font-light text-gray-900">Participation Models</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                Reserve-backed, inventory-based, or cash-flow-linked token structures, depending on asset lifecycle stage and commercial profile.
+                Reserve-backed, inventory-based, or cash flow-linked token models, depending on the stage and commercial
+                characteristics of the assets.
               </p>
             </div>
 
@@ -259,7 +352,8 @@ export default function RareEarthMineralPage() {
                 <h3 className="text-xl font-light text-gray-900">Access Models</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                Primarily B2B (institutional and industrial participants), with controlled access for qualified investors where jurisdictionally permitted.
+                Primarily B2B (institutional and industrial), with restricted access for qualified investors, where and
+                when permitted by jurisdiction.
               </p>
             </div>
 
@@ -274,7 +368,8 @@ export default function RareEarthMineralPage() {
                 <h3 className="text-xl font-light text-gray-900">Settlement</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                Atomic, on-chain settlement using stablecoins, with wallet whitelisting, permissioned transfers, and programmable compliance enforcement.
+                Atomic, on-chain settlement with stablecoins, wallet whitelisting, permissioned transfers, and
+                programmable compliance enforcement.
               </p>
             </div>
 
@@ -289,7 +384,8 @@ export default function RareEarthMineralPage() {
                 <h3 className="text-xl font-light text-gray-900">Custody</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                Third-party custody for above-ground inventories via warehouse warrants, with insured, audited storage and legally enforceable asset backing.
+                Third-party custody for above-ground inventories through warehouse warrants, with insured, audited
+                storage and legally enforceable asset backing.
               </p>
             </div>
 
@@ -304,7 +400,8 @@ export default function RareEarthMineralPage() {
                 <h3 className="text-xl font-light text-gray-900">Reporting</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                On-chain proof-of-reserves, validation attestations, and recurring independent audit reports anchored immutably.
+                On-chain proof-of-reserves, validation statements, and regular independent audit reports immutably
+                anchored.
               </p>
             </div>
           </div>
@@ -327,10 +424,11 @@ export default function RareEarthMineralPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-4">
-              Digitizing Critical Minerals Across the Full Value Chain
+              Digitizing Critical Minerals Across the Entire Value Chain
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              From verified reserves to controlled market access, each stage of the mineral lifecycle is secured through compliance-first structuring, audited custody, and programmable on-chain settlement.
+              From reserves to market access, every step of the mineral value chain is protected through
+              compliance-first structuring, audited asset holding, and programmable on-chain settlement.
             </p>
           </div>
           
@@ -344,7 +442,8 @@ export default function RareEarthMineralPage() {
               </div>
               <h3 className="text-xl font-light text-gray-900 mb-4">Sourcing & Verification</h3>
               <p className="text-gray-600 leading-relaxed">
-                Licensed counterparties providing verified mineral reserves, inventories, or offtake rights, supported by geological reports, assay data, and third-party validation.
+                Partnered counterparties offering access to verified mineral reserves, holdings, or offtake agreements,
+                verified by geological surveys, assay analysis, and independent validation.
               </p>
             </div>
 
@@ -357,7 +456,8 @@ export default function RareEarthMineralPage() {
               </div>
               <h3 className="text-xl font-light text-gray-900 mb-4">Legal Structuring</h3>
               <p className="text-gray-600 leading-relaxed">
-                Economic rights mapped to digital tokens under compliant legal frameworks, with jurisdictional eligibility controls and enforceable ownership structures.
+                Economic interests tokenized under compliant legal systems, with eligibility for jurisdictions and
+                enforceable ownership rules.
               </p>
             </div>
 
@@ -371,7 +471,8 @@ export default function RareEarthMineralPage() {
               </div>
               <h3 className="text-xl font-light text-gray-900 mb-4">Tokenization & Controls</h3>
               <p className="text-gray-600 leading-relaxed">
-                Assets issued as digital tokens with embedded transfer restrictions, compliance logic, and lifecycle rules enforced at the protocol level.
+                Assets tokenized with transfer restrictions, compliance rules, and life cycle rules enforced at the
+                protocol level.
               </p>
             </div>
 
@@ -384,7 +485,8 @@ export default function RareEarthMineralPage() {
               </div>
               <h3 className="text-xl font-light text-gray-900 mb-4">Market Access & Settlement</h3>
               <p className="text-gray-600 leading-relaxed">
-                Tokens tradable between verified participants with instant collateralization, atomic settlement, and programmable delivery-versus-payment.
+                Tokens transferable between verified parties with immediate collateralization, atomic settlement, and
+                programmable delivery versus payment.
               </p>
             </div>
           </div>
@@ -410,7 +512,9 @@ export default function RareEarthMineralPage() {
               Institutional Infrastructure & Proven Track Record
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Toto Finance operates a regulated, production-grade infrastructure for tokenized commodities. Since 2023, the platform has delivered live, asset-backed tokenization across precious metals, Gemstones combining compliance, audited custody, and on-chain settlement.
+              Toto Finance provides a regulated, production-level infrastructure for tokenized commodities. Since 2023,
+              the service has provided real-world, asset-backed tokenization for precious metals, Gemstones, combining
+              compliance, audited custody, and on-chain settlement.
             </p>
           </div>
           
@@ -419,7 +523,7 @@ export default function RareEarthMineralPage() {
             <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
               <h3 className="text-xl font-light text-gray-900 mb-4">Regulated Infrastructure</h3>
               <p className="text-gray-600 leading-relaxed">
-                LCX acting as Physical Validator to legally link verified assets to on-chain tokens.
+                LCX as Physical Validator to provide a legal connection between verified assets and on-chain tokens.
               </p>
             </div>
 
@@ -427,7 +531,8 @@ export default function RareEarthMineralPage() {
             <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
               <h3 className="text-xl font-light text-gray-900 mb-4">Operational & Proven</h3>
               <p className="text-gray-600 leading-relaxed">
-                Live since 2023 with institutional-grade custody and over 30,000 tokenized assets across commodities and real-world assets.
+                In operation since 2023 with institutional-level custody and over 30,000 asset tokens in commodities and
+                real-world assets.
               </p>
             </div>
 
@@ -435,7 +540,8 @@ export default function RareEarthMineralPage() {
             <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
               <h3 className="text-xl font-light text-gray-900 mb-4">Verified Reserves & Custody</h3>
               <p className="text-gray-600 leading-relaxed">
-                Every token is backed by audited physical assets stored in secure, insured, third-party facilities, with independent validation and reporting.
+                Each token is collateralized by audited physical assets held in secure, insured third-party storage
+                facilities, with independent verification and reporting.
               </p>
             </div>
 
@@ -443,7 +549,8 @@ export default function RareEarthMineralPage() {
             <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
               <h3 className="text-xl font-light text-gray-900 mb-4">Multichain Deployment</h3>
               <p className="text-gray-600 leading-relaxed">
-                Deployed across Ethereum, Cardano, and additional blockchain networks to support global settlement, interoperability, and institutional access.
+                Operational on Ethereum, Cardano, and other blockchain platforms to enable global settlement,
+                interoperability, and institutional participation.
               </p>
             </div>
 
@@ -451,7 +558,8 @@ export default function RareEarthMineralPage() {
             <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
               <h3 className="text-xl font-light text-gray-900 mb-4">Transparent & Auditable</h3>
               <p className="text-gray-600 leading-relaxed">
-                On-chain proof-of-reserves dashboards, compliant lifecycle management, and continuous third-party audits ensure full transparency.
+                On-chain proof-of-reserves displays, compliant life cycle management, and ongoing third-party audits
+                provide complete transparency.
               </p>
             </div>
 
@@ -459,7 +567,7 @@ export default function RareEarthMineralPage() {
             <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
               <h3 className="text-xl font-light text-gray-900 mb-4">Enterprise-Ready Infrastructure</h3>
               <p className="text-gray-600 leading-relaxed">
-                Designed for institutional integration, reporting, compliance, and scalability across global commodity markets.
+                Built for institutional integration, reporting, compliance, and scalability on a global commodity market.
               </p>
             </div>
           </div>
@@ -473,6 +581,44 @@ export default function RareEarthMineralPage() {
             >
               Explore Marketplace
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Investigate individual rare earth elements */}
+      <section className="trading-solutions-section px-6 md:px-8 lg:px-12 py-20 md:py-40 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-4">
+              Investigate Individual Rare Earth Elements
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Each element has a dedicated tokenized asset page covering primary industrial applications and how
+              compliant, audited on-chain exposure maps to real reserves and custody.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8 mb-14">
+            {rareEarthElements.map(({ href, label, description }) => (
+              <div key={href} className="text-left">
+                <Link
+                  href={href}
+                  className="text-base font-medium text-gray-900 underline-offset-2 hover:underline hover:text-[#00375e]"
+                >
+                  {label}
+                </Link>
+                <p className="mt-2 text-sm md:text-base text-gray-600 leading-relaxed">{description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="/how-tokenization-works"
+              className="inline-flex items-center px-8 py-3 bg-black text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-colors duration-300 hover:scale-105"
+            >
+              Find Out How Tokenization Works
+            </Link>
           </div>
         </div>
       </section>

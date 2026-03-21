@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from 'react';
 import {
   Accordion,
   AccordionContent,
@@ -19,58 +20,102 @@ interface FAQListProps {
   faqs: FAQ[];
 }
 
-export function FAQList({ faqs }: FAQListProps) {
-  const renderAnswer = (answer: string) => {
-    // Match:
-    // - Full URLs with protocol
-    // - Bare domains with or without www
-    // - Email addresses
-    const linkRegex = /(https?:\/\/[^\s]+|www\.[^\s]+|\b(?:[a-z0-9-]+\.)+[a-z]{2,}(?:\/[\w#?&=._\-/%+]*)?|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})/gi;
+const linkClass = 'text-blue-600 hover:text-blue-800 underline font-medium';
 
-    const parts = answer.split(linkRegex);
+function normalizeHref(raw: string): string {
+  const t = raw.trim();
+  if (/^mailto:/i.test(t)) return t;
+  if (/^https?:\/\//i.test(t)) return t;
+  if (t.includes('@') && !/\s/.test(t)) return `mailto:${t}`;
+  return `https://${t}`;
+}
 
-    return (
-      <>
-        {parts.map((part, index) => {
-          if (!part) return null;
+/** Auto-link bare URLs/emails only in segments without markdown links. */
+function renderPlainSegment(text: string, keyPrefix: string): ReactNode[] {
+  const linkRegex =
+    /(https?:\/\/[^\s]+|www\.[^\s]+|\b(?:[a-z0-9-]+\.)+[a-z]{2,}(?:\/[\w#?&=._\-/%+]*)?|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})/gi;
+  const parts = text.split(linkRegex);
+  return parts
+    .map((part, index) => {
+      if (!part) return null;
 
-          const isEmail = /@/.test(part) && /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/.test(part);
-          const hasProtocol = /^https?:\/\//i.test(part);
-          const looksLikeDomain = /^(www\.|[a-z0-9-]+\.[a-z]{2,})/i.test(part);
+      const isEmail =
+        /@/.test(part) && /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/.test(part);
+      const hasProtocol = /^https?:\/\//i.test(part);
+      const looksLikeDomain = /^(www\.|[a-z0-9-]+\.[a-z]{2,})/i.test(part);
 
-          if (isEmail) {
-            return (
-              <a
-                key={index}
-                href={`mailto:${part}`}
-                className="text-blue-600 hover:text-blue-800 underline"
-              >
-                {part}
-              </a>
-            );
-          }
+      if (isEmail) {
+        return (
+          <a
+            key={`${keyPrefix}-e-${index}`}
+            href={`mailto:${part}`}
+            className={linkClass}
+          >
+            {part}
+          </a>
+        );
+      }
 
-          if (hasProtocol || looksLikeDomain) {
-            const href = hasProtocol ? part : `https://${part}`;
-            return (
-              <a
-                key={index}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:text-blue-800 underline"
-              >
-                {part}
-              </a>
-            );
-          }
+      if (hasProtocol || looksLikeDomain) {
+        const href = hasProtocol ? part : `https://${part}`;
+        return (
+          <a
+            key={`${keyPrefix}-u-${index}`}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClass}
+          >
+            {part}
+          </a>
+        );
+      }
 
-          return <span key={index}>{part}</span>;
-        })}
-      </>
+      return <span key={`${keyPrefix}-t-${index}`}>{part}</span>;
+    })
+    .filter(Boolean) as ReactNode[];
+}
+
+function renderAnswer(answer: string): ReactNode {
+  const mdLink = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const nodes: ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let prefix = 0;
+
+  while ((match = mdLink.exec(answer)) !== null) {
+    const before = answer.slice(lastIndex, match.index);
+    if (before) {
+      nodes.push(...renderPlainSegment(before, `p${prefix++}`));
+    }
+
+    const label = match[1];
+    const href = normalizeHref(match[2]);
+    const isMail = /^mailto:/i.test(href);
+
+    nodes.push(
+      <a
+        key={`md-${match.index}`}
+        href={href}
+        {...(!isMail ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        className={linkClass}
+      >
+        {label}
+      </a>
     );
-  };
 
+    lastIndex = match.index + match[0].length;
+  }
+
+  const tail = answer.slice(lastIndex);
+  if (tail) {
+    nodes.push(...renderPlainSegment(tail, `p${prefix}`));
+  }
+
+  return <>{nodes}</>;
+}
+
+export function FAQList({ faqs }: FAQListProps) {
   if (faqs.length === 0) {
     return (
       <div className="text-center py-12">
@@ -100,4 +145,3 @@ export function FAQList({ faqs }: FAQListProps) {
     </div>
   );
 }
-

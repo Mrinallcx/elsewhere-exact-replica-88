@@ -15,8 +15,6 @@ const StatsCounter = dynamicImport(() => import('./components/client/StatsCounte
 
 const AnimatedSection = dynamicImport(() => import('./components/client/AnimatedSection').then(mod => ({ default: mod.AnimatedSection })));
 
-const DescriptionRotator = dynamicImport(() => import('./components/client/DescriptionRotator').then(mod => ({ default: mod.DescriptionRotator })));
-
 const CashCardsSection = dynamicImport(() => import('./components/client/CashCardsSection').then(mod => ({ default: mod.CashCardsSection })));
 
 const GradualBlur = dynamicImport(() => import('../src/components/GradualBlur'));
@@ -24,7 +22,6 @@ const GradualBlur = dynamicImport(() => import('../src/components/GradualBlur'))
 const NewsletterForm = dynamicImport(() => import('./components/NewsletterForm'));
 
 const Footer = dynamicImport(() => import('./components/Footer'));
-const TrustComplianceBar = dynamicImport(() => import('./components/TrustComplianceBar').then(mod => ({ default: mod.TrustComplianceBar })));
 
 // Lazy load blog section - it's below the fold and has many images
 const BlogSection = dynamicImport(() => import('./components/client/BlogSection').then(mod => ({ default: mod.BlogSection })), {
@@ -62,9 +59,9 @@ const tnftCards = Array.from({ length: 16 });
 
 const cashCards = [
   {
-    title: 'MiCA Registered & Hacken Audited',
+    title: 'Regulated & Audited',
     subtitle:
-      'MiCA ESMA registered. Smart contracts audited by Hacken (Jan 2025). Physical validation by LCX under Liechtenstein TVTG.',
+      'Compliant with legal systems, with independent audits, licensed partners, and ongoing regulatory compliance.',
     variant: 'cash-card-blue',
   },
   {
@@ -103,14 +100,6 @@ const bottomStatsData = [
   { key: 'tokenizedToday', value: 0.1, prefix: '<', suffix: '%', label: 'Assets Tokenized Today', isDecimal: true },
   { key: 'preciousMetals', value: 12, prefix: '$', suffix: 'T+', label: 'Precious Metals Market' },
 ];
-
-const totoTokenDescriptions = [
-  'Higher Limits: Unlock higher redemption and settlement thresholds across markets.',
-  'Lower Fees: Stake TOTO to reduce tokenization, trading, and settlement fees.',
-  'Priority Access: Early access to scarce, institutional-grade commodity listings.',
-  'Ecosystem Rewards: Participate in loyalty and incentive programs aligned with platform usage.',
-];
-
 
 export default function HomePage() {
   return (
@@ -409,13 +398,6 @@ export default function HomePage() {
                 <p className="platform-intro-description">
                   The TOTO token is the universal utility powering tokenization, settlement, fees, and access within the Toto Finance ecosystem.
                 </p>
-                <div className="platform-description-container">
-                  <DescriptionRotator
-                    descriptions={totoTokenDescriptions}
-                    interval={4000}
-                    boldTerms={['Lower Fees', 'Higher Limits', 'Priority Access', 'Rewards']}
-                  />
-                </div>
                 <a
                   href="https://totofinance.co/blog/post/an-overview-of-tokenized-commodities/"
                   target="_blank"
@@ -462,9 +444,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* E-E-A-T: Trust & Compliance strip */}
-      <TrustComplianceBar variant="light" />
 
       {/* Resources/Blog Section - Lazy loaded */}
       <BlogSection />
