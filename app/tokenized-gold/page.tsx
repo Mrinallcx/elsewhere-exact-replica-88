@@ -5,6 +5,9 @@ import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
 import { PageStructuredData } from '../components/PageStructuredData';
+import { FAQStructuredData } from '../components/FAQStructuredData';
+import { TrustComplianceBar } from '../components/TrustComplianceBar';
+import { ProductTrustSection } from '../components/ProductTrustSection';
 import { Navigation } from '../components/Navigation';
 
 // Dynamic imports for heavy components
@@ -541,6 +544,27 @@ export default function TokenizedGoldPage() {
           </div>
         </div>
       </section>
+
+      {/* E-E-A-T: Trust strip + product trust section */}
+      <TrustComplianceBar variant="light" />
+      <ProductTrustSection
+        assetName="Tokenized Gold"
+        regulatory={{
+          frameworks: 'MiCA (ESMA), TVTG (FMA Liechtenstein). Operating within EU and Liechtenstein regulatory frameworks.',
+          proofLink: 'https://totofinance.co/achievements',
+        }}
+        custody={{
+          entity: 'TotoHolding AG',
+          location: 'Vaduz',
+          insurance: "Lloyd's of London vault insurance.",
+          vaultPartners: "Loomis, Brink's, Swiss vaults, Singapore Freeport.",
+        }}
+        audit={{
+          summary: 'Hacken smart contract audit (Jan 2025). Independent third-party security verification.',
+          auditLink: 'https://totofinance.co/achievements',
+          certification: 'LBMA Standards.',
+        }}
+      />
 
       {/* ===================== FOLD 7: FAQ ===================== */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">

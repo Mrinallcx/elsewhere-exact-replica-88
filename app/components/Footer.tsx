@@ -40,6 +40,7 @@ const footerColumns = [
     heading: 'Company',
     links: [
       { label: 'About Us', href: '/about' },
+      { label: 'Trust & Compliance', href: '/about#leadership' },
       { label: 'Achievements', href: 'https://totofinance.co/achievements', },
       { label: 'Careers', href: 'https://totofinance.co/careers', external: true },
     ],
@@ -113,6 +114,30 @@ export default function Footer() {
   return (
     <footer className='footer-section px-6 md:px-8 lg:px-12 pt-16 pb-20 md:pt-20 md:pb-28'>
       <div className='max-w-7xl mx-auto'>
+
+        {/* ── E-E-A-T: Trust credentials row (visible on every page) ── */}
+        <div className='trust-credentials border-b border-gray-700/50 pb-8 mb-8'>
+          <div className='flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-4'>
+            <span className='inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-800 text-gray-300 text-xs font-medium'>
+              🛡 MiCA Registered
+            </span>
+            <span className='inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-800 text-gray-300 text-xs font-medium'>
+              ⚖ TVTG Compliant
+            </span>
+            <span className='inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-800 text-gray-300 text-xs font-medium'>
+              🔒 Hacken Audited
+            </span>
+            <span className='inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-800 text-gray-300 text-xs font-medium'>
+              🏦 Lloyd&apos;s Insured
+            </span>
+            <span className='inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-800 text-gray-300 text-xs font-medium'>
+              ✓ LCX Validated
+            </span>
+          </div>
+          <p className='text-center text-gray-400 text-xs md:text-sm'>
+            Company Reg: 10480139 (USA) · LEI: 5299005UXAQFO3US5C38 · Custody: TotoHolding AG, Vaduz
+          </p>
+        </div>
 
         {/* ── UNIFIED FOOTER GRID ── */}
         <div className='footer-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-7 gap-x-6 gap-y-10'>

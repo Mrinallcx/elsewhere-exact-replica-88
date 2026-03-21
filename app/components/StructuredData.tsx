@@ -60,10 +60,46 @@ export function StructuredData() {
           name: "LCX AG",
         },
         areaServed: "Worldwide",
-        identifier: {
-          "@type": "PropertyValue",
-          propertyID: "LEI",
-          value: "5299005UXAQFO3US5C38",
+        identifier: [
+          {
+            "@type": "PropertyValue",
+            propertyID: "LEI",
+            value: "5299005UXAQFO3US5C38",
+          },
+          {
+            "@type": "PropertyValue",
+            propertyID: "Company Registration Number (USA)",
+            value: "10480139",
+          },
+        ],
+        hasCredential: [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "MiCA ESMA Registration",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "ESMA",
+              "url": "https://www.esma.europa.eu",
+            },
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "TVTG Compliance",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "FMA Liechtenstein",
+              "url": "https://www.fma-li.li",
+            },
+          },
+        ],
+        award: [
+          "Cardano Catalyst Fund 12 Winner",
+          "First RWA on XRP Ledger",
+        ],
+        numberOfEmployees: {
+          "@type": "QuantitativeValue",
+          minValue: 10,
+          maxValue: 50,
         },
         knowsAbout: [
           "Asset Tokenization",
@@ -222,6 +258,16 @@ export function StructuredData() {
           "https://www.youtube.com/@Toto-Finance",
           "https://t.me/totofinance",
         ],
+        review: {
+          "@type": "Review",
+          "author": {
+            "@type": "Organization",
+            "name": "Hacken",
+            "url": "https://hacken.io",
+          },
+          "reviewBody": "Smart contract security audit",
+          "url": "https://totofinance.co/achievements",
+        },
       },
     ],
   };
