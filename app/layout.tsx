@@ -91,24 +91,13 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://js.hs-scripts.com" />
         <link rel="dns-prefetch" href="https://api.hubapi.com" />
         <link rel="dns-prefetch" href="https://totofinance.co" />
-        {/* Preload hero fallback image for LCP optimization - highest priority */}
-        {/* Preload desktop version for larger screens (most common) */}
+        {/* Preload home hero fallback (matches app/page.tsx LCP picture) */}
         <link
           rel="preload"
           as="image"
-          href="/hero-background/hero-desktop.webp"
+          href="/hero-background/totofinance%20main.webp"
           type="image/webp"
           fetchPriority="high"
-          media="(min-width: 768px)"
-        />
-        {/* Preload mobile version for smaller screens */}
-        <link
-          rel="preload"
-          as="image"
-          href="/hero-background/hero-mobile.webp"
-          type="image/webp"
-          fetchPriority="high"
-          media="(max-width: 767px)"
         />
         {/* CRITICAL: Inline styles for hero - renders before CSS loads to eliminate render delay */}
         <style

@@ -135,25 +135,23 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <main className="hero-container relative flex flex-col items-start sm:items-center justify-center min-h-[90vh] md:min-h-screen text-left sm:text-center px-4 sm:px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-24 md:pb-32 overflow-hidden">
-        {/* Server-rendered LCP image with fetchpriority - responsive images for optimal loading */}
-        {/* Desktop: 1504x846 (2x for retina at 752x423), Mobile: 480x850 */}
-        {/* Hero background image - native img with width/height to prevent layout calculation delay */}
+        {/* Server-rendered LCP image with fetchpriority — matches video fallback (totofinance main.webp) */}
         <picture className="hero-bg-img">
           <source
             media="(min-width: 768px)"
-            srcSet="/hero-background/hero-desktop.webp"
+            srcSet="/hero-background/totofinance%20main.webp"
             type="image/webp"
           />
           <source
             media="(max-width: 767px)"
-            srcSet="/hero-background/hero-mobile.webp"
+            srcSet="/hero-background/totofinance%20main.webp"
             type="image/webp"
           />
           <img
-            src="/hero-background/hero-mobile.webp"
+            src="/hero-background/totofinance%20main.webp"
             alt=""
-            width={480}
-            height={850}
+            width={1920}
+            height={1080}
             fetchPriority="high"
             decoding="sync"
             loading="eager"
@@ -169,8 +167,8 @@ export default function HomePage() {
           />
         </picture>
         <VideoBackground
-          videoSrc="/videos/main-landing-hero.mp4"
-          fallbackImage="/hero-background/hero-desktop.webp"
+          videoSrc="https://res.cloudinary.com/djsb5ye4c/video/upload/v1773754964/totofinance%20background%2001.mp4"
+          fallbackImage="/hero-background/totofinance%20main.webp"
           fallbackAlt="Hero background fallback"
           className="hero-fallback"
           overlayClassName="hero-overlay"
