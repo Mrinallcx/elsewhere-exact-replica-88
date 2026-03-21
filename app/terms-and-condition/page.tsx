@@ -15,7 +15,7 @@ export default function TermsOfServicePage() {
     <div className="min-h-screen w-full relative bg-white">
       <PageStructuredData
         title="Sales Terms & Conditions — Toto Token & Assets | Toto Finance"
-        description="Terms and conditions governing the sale, purchase, and use of the TOTO token and Toto Finance platform services."
+        description="Terms and conditions governing the sale, purchase, and use of the TOTO token and Toto Finance platform services. Toto Finance Inc. is the main operator; TotoHolding AG provides Liechtenstein physical custody of stones and assets."
         url="https://totofinance.co/terms-and-condition"
         pageType="WebPage"
         breadcrumbItems={[
@@ -66,7 +66,10 @@ export default function TermsOfServicePage() {
             <section>
               <h2 className="text-2xl font-medium text-gray-900 mb-4">2. Parties and Roles</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                <strong>Toto Finance AG</strong> (Herrengasse 6, 9490 Vaduz, Liechtenstein) is the licensing company responsible for management custody of commodities and operating the Toto Finance – Total Tokenization platform.
+                <strong>Toto Finance Inc.</strong> (United States) is the principal operating entity for the Toto Finance – Total Tokenization platform. Toto Finance Inc. operates the website, digital platform, and related services described in these Terms, and is your primary counterparty for platform access, user agreements, and non-custodial digital services except where another entity is expressly identified.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                <strong>TotoHolding AG</strong> (Herrengasse 6, 9490 Vaduz, Liechtenstein) holds physical custody in Liechtenstein of vaulted stones, gemstones, precious metals, commodities, and other tangible assets that back or relate to tokenized products offered through the ecosystem, in accordance with applicable custody arrangements, insurance, and verification standards. TotoHolding AG does not operate as &quot;Toto Finance AG&quot;; no entity by that name exists. All references in prior materials to licensing or custody attributed to &quot;Toto Finance AG&quot; at this address are superseded by the roles of Toto Finance Inc. (operations) and TotoHolding AG (Liechtenstein physical custody).
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 <strong>LCX AG</strong> (Herrengasse 6, 9490 Vaduz, Liechtenstein) is a regulated Virtual Asset Service Provider under the Liechtenstein Token and TT Service Provider Act (TVTG) since 2020, registered with the Financial Market Authority of Liechtenstein (FMA) under registration No. 288159. LCX AG serves as:
@@ -86,11 +89,8 @@ export default function TermsOfServicePage() {
                 <li>TT Identity Service Provider</li>
                 <li>TT Token Issuer (for its own account and for third parties)</li>
               </ul>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                <strong>Toto Finance Inc.</strong> (New York, United States) provides infrastructure and operational support for certain services.
-              </p>
               <p className="text-gray-600 leading-relaxed">
-                References to &quot;Toto Finance,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot; in these Terms refer collectively to Toto Finance AG, LCX AG, and their affiliates as applicable to the relevant service or obligation.
+                References to &quot;Toto Finance,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot; in these Terms refer collectively to <strong>Toto Finance Inc.</strong> (as main operator), <strong>TotoHolding AG</strong> (as to Liechtenstein physical custody of stones and assets), <strong>LCX AG</strong>, and their affiliates, as applicable to the relevant service or obligation.
               </p>
             </section>
 
@@ -104,7 +104,7 @@ export default function TermsOfServicePage() {
                 The TOTO Token was originally issued as the TIA Token on June 5, 2023 under Liechtenstein&apos;s TVTG Blockchain Laws. The TOTO Token is an upgrade of the TIA Token, with migration occurring at a 1:1 ratio.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                TOTO Tokens are not distributed through an initial coin offering (ICO), initial exchange offering (IEO), or any form of public sale conducted by Toto Finance or LCX AG. Tokens may only be acquired through:
+                TOTO Tokens are not distributed through an initial coin offering (ICO), initial exchange offering (IEO), or any form of public sale conducted by Toto Finance Inc. or LCX AG. Tokens may only be acquired through:
               </p>
               <ul className="list-disc pl-6 text-gray-600 leading-relaxed space-y-2 mb-4">
                 <li><strong>LCX Exchange</strong> (<a href="https://LCX.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">LCX.com</a>) — A regulated exchange operated by LCX AG under Liechtenstein&apos;s TVTG framework</li>
@@ -113,7 +113,7 @@ export default function TermsOfServicePage() {
                 <li><strong>Token migration</strong> — Existing TIA Token holders may migrate their tokens to TOTO at a 1:1 ratio. <a href="https://www.toto.xyz/upgrade" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">https://www.toto.xyz/upgrade</a> (Note: Upgrade available until March 4, 2026)</li>
               </ul>
               <p className="text-gray-600 leading-relaxed">
-                <strong>Disclaimer regarding decentralized exchanges:</strong> Decentralized exchanges such as Uniswap are not operated, controlled, or endorsed by Toto Finance, LCX AG, or any affiliated entity. Trading on decentralized platforms is conducted entirely at your own risk. We make no representations regarding liquidity, pricing, or security on such platforms.
+                <strong>Disclaimer regarding decentralized exchanges:</strong> Decentralized exchanges such as Uniswap are not operated, controlled, or endorsed by Toto Finance Inc., LCX AG, or any affiliated entity. Trading on decentralized platforms is conducted entirely at your own risk. We make no representations regarding liquidity, pricing, or security on such platforms.
               </p>
             </section>
 
@@ -145,7 +145,7 @@ export default function TermsOfServicePage() {
                 <li>Smart contract-enabled automated fee reductions and reward distributions</li>
               </ul>
               <p className="text-gray-600 leading-relaxed font-semibold">
-                The TOTO Token does not represent equity, debt, ownership, profit-sharing rights, voting rights, or any claim to dividends or distributions from Toto Finance, LCX AG, or any affiliated entity.
+                The TOTO Token does not represent equity, debt, ownership, profit-sharing rights, voting rights, or any claim to dividends or distributions from Toto Finance Inc., LCX AG, TotoHolding AG, or any affiliated entity.
               </p>
             </section>
 
@@ -198,7 +198,7 @@ export default function TermsOfServicePage() {
 
               <h3 className="text-xl font-medium text-gray-900 mb-3">6.2 Decentralized Exchanges</h3>
               <p className="text-gray-600 leading-relaxed mb-4">TOTO Tokens may be available on decentralized exchanges such as Uniswap.</p>
-              <p className="text-gray-600 leading-relaxed mb-4"><strong>Important:</strong> Decentralized exchanges are NOT operated, controlled, or endorsed by Toto Finance or LCX AG. When using decentralized exchanges:</p>
+              <p className="text-gray-600 leading-relaxed mb-4"><strong>Important:</strong> Decentralized exchanges are NOT operated, controlled, or endorsed by Toto Finance Inc. or LCX AG. When using decentralized exchanges:</p>
               <ul className="list-disc pl-6 text-gray-600 leading-relaxed space-y-1 mb-6">
                 <li>You are solely responsible for verifying the correct token contract address</li>
                 <li>There is no customer support or recourse for errors</li>
@@ -261,7 +261,9 @@ export default function TermsOfServicePage() {
               </ul>
 
               <h3 className="text-xl font-medium text-gray-900 mb-3">8.2 Asset Custody</h3>
-              <p className="text-gray-600 leading-relaxed mb-4">Physical assets underlying tokenized products are:</p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Physical stones, gemstones, precious metals, and other vaulted tangible assets underlying applicable tokenized products in Liechtenstein are held under the custody arrangements of <strong>TotoHolding AG</strong> (Herrengasse 6, 9490 Vaduz, Liechtenstein), subject to product-specific documentation. Such physical assets are:
+              </p>
               <ul className="list-disc pl-6 text-gray-600 leading-relaxed space-y-1 mb-6">
                 <li>Securely held in insured custody facilities</li>
                 <li>Certified by recognized authorities (e.g., GIA for diamonds)</li>
@@ -297,10 +299,10 @@ export default function TermsOfServicePage() {
               </p>
 
               <h3 className="text-xl font-medium text-gray-900 mb-3">9.1 Tokens are Non-Refundable</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">Toto Finance and LCX AG are not obliged to provide token holders with a refund for any reason. Token holders cannot request an exchange or redemption of monetary value vis-à-vis Toto Finance or LCX AG except as specifically provided for tokenized assets with redemption rights.</p>
+              <p className="text-gray-600 leading-relaxed mb-6">Toto Finance Inc. and LCX AG are not obliged to provide token holders with a refund for any reason. Token holders cannot request an exchange or redemption of monetary value vis-à-vis Toto Finance Inc. or LCX AG except as specifically provided for tokenized assets with redemption rights.</p>
 
               <h3 className="text-xl font-medium text-gray-900 mb-3">9.2 Tokens are Provided on an &quot;As Is&quot; Basis</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">Tokens are provided on an &quot;as is&quot; basis. Toto Finance, LCX AG, and their respective directors, officers, employees, and affiliates make no representations or warranties of any kind, whether express, implied, or statutory. Digital assets are part of a new and rapidly evolving industry, and the value of TOTO Tokens depends on the development and acceptance of this industry.</p>
+              <p className="text-gray-600 leading-relaxed mb-6">Tokens are provided on an &quot;as is&quot; basis. Toto Finance Inc., LCX AG, TotoHolding AG, and their respective directors, officers, employees, and affiliates make no representations or warranties of any kind, whether express, implied, or statutory. Digital assets are part of a new and rapidly evolving industry, and the value of TOTO Tokens depends on the development and acceptance of this industry.</p>
 
               <h3 className="text-xl font-medium text-gray-900 mb-3">9.3 Market and Volatility Risks</h3>
               <ul className="list-disc pl-6 text-gray-600 leading-relaxed space-y-1 mb-6">
@@ -329,7 +331,7 @@ export default function TermsOfServicePage() {
               <h3 className="text-xl font-medium text-gray-900 mb-3">9.6 Loss of Private Keys</h3>
               <ul className="list-disc pl-6 text-gray-600 leading-relaxed space-y-1 mb-6">
                 <li>If a private key is lost, destroyed, or compromised and no backup is accessible, you will not be able to access your tokens</li>
-                <li>Neither Toto Finance nor LCX AG can restore lost private keys</li>
+                <li>Neither Toto Finance Inc. nor LCX AG can restore lost private keys</li>
                 <li>Loss of private keys results in permanent, irreversible loss of tokens</li>
               </ul>
 
@@ -337,7 +339,7 @@ export default function TermsOfServicePage() {
               <ul className="list-disc pl-6 text-gray-600 leading-relaxed space-y-1 mb-6">
                 <li>Transactions recorded on the blockchain generally cannot be undone</li>
                 <li>Even erroneous or fraudulent transactions are not reversible</li>
-                <li>Neither Toto Finance nor LCX AG can replace missing tokens or seek reimbursement for erroneous transfers or theft</li>
+                <li>Neither Toto Finance Inc. nor LCX AG can replace missing tokens or seek reimbursement for erroneous transfers or theft</li>
               </ul>
 
               <h3 className="text-xl font-medium text-gray-900 mb-3">9.8 Risk of Wallet Loss, Hack, or Data Theft</h3>
@@ -345,7 +347,7 @@ export default function TermsOfServicePage() {
                 <li>Tokens are held in wallets with coded access</li>
                 <li>If you lose wallet access, tokens will be permanently lost</li>
                 <li>If unauthorized third parties gain access to your wallet, tokens may be stolen</li>
-                <li>Neither Toto Finance nor LCX AG can issue replacement tokens</li>
+                <li>Neither Toto Finance Inc. nor LCX AG can issue replacement tokens</li>
               </ul>
 
               <h3 className="text-xl font-medium text-gray-900 mb-3">9.9 Regulatory Risks</h3>
@@ -429,7 +431,7 @@ export default function TermsOfServicePage() {
               <h2 className="text-2xl font-medium text-gray-900 mb-4">12. Intellectual Property</h2>
 
               <h3 className="text-xl font-medium text-gray-900 mb-3">12.1 Ownership</h3>
-              <p className="text-gray-600 leading-relaxed mb-4">Toto Finance, LCX AG, and their licensors retain all rights, title, and interest in:</p>
+              <p className="text-gray-600 leading-relaxed mb-4">Toto Finance Inc., LCX AG, and their licensors retain all rights, title, and interest in:</p>
               <ul className="list-disc pl-6 text-gray-600 leading-relaxed space-y-1 mb-6">
                 <li>The Toto Finance platform, software, and technology</li>
                 <li>All trademarks, logos, and branding (including &quot;Toto Finance,&quot; &quot;TOTO,&quot; and &quot;Total Tokenization&quot;)</li>
@@ -466,7 +468,7 @@ export default function TermsOfServicePage() {
               <h3 className="text-xl font-medium text-gray-900 mb-3">13.2 Limitation of Liability</h3>
               <p className="text-gray-600 leading-relaxed mb-4 uppercase font-semibold text-sm">To the maximum extent permitted by applicable law:</p>
               <ul className="list-disc pl-6 text-gray-600 leading-relaxed space-y-2 mb-6 uppercase font-semibold text-sm">
-                <li>In no event shall Toto Finance, LCX AG, or their affiliates, directors, officers, employees, or agents be liable for any indirect, incidental, special, consequential, or punitive damages</li>
+                <li>In no event shall Toto Finance Inc., LCX AG, TotoHolding AG, or their affiliates, directors, officers, employees, or agents be liable for any indirect, incidental, special, consequential, or punitive damages</li>
                 <li>Our total liability shall not exceed the amount you paid for tokens in the 12 months preceding the claim</li>
                 <li>We are not liable for losses arising from third-party actions, blockchain network issues, or events outside our reasonable control</li>
               </ul>
@@ -485,7 +487,7 @@ export default function TermsOfServicePage() {
             {/* 14. Indemnification */}
             <section>
               <h2 className="text-2xl font-medium text-gray-900 mb-4">14. Indemnification</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">You agree to indemnify, defend, and hold harmless Toto Finance, LCX AG, their affiliates, and their respective directors, officers, employees, and agents from any claims, damages, losses, liabilities, costs, and expenses (including legal fees) arising from:</p>
+              <p className="text-gray-600 leading-relaxed mb-4">You agree to indemnify, defend, and hold harmless Toto Finance Inc., LCX AG, TotoHolding AG, their affiliates, and their respective directors, officers, employees, and agents from any claims, damages, losses, liabilities, costs, and expenses (including legal fees) arising from:</p>
               <ul className="list-disc pl-6 text-gray-600 leading-relaxed space-y-1">
                 <li>Your breach of these Terms</li>
                 <li>Your violation of applicable laws</li>
@@ -587,7 +589,7 @@ export default function TermsOfServicePage() {
             {/* 23. Entire Agreement */}
             <section>
               <h2 className="text-2xl font-medium text-gray-900 mb-4">23. Entire Agreement</h2>
-              <p className="text-gray-600 leading-relaxed">These Terms, together with the Privacy Policy and any other documents expressly incorporated by reference, constitute the entire agreement between you and Toto Finance regarding the Token Sale and supersede all prior agreements and understandings.</p>
+              <p className="text-gray-600 leading-relaxed">These Terms, together with the Privacy Policy and any other documents expressly incorporated by reference, constitute the entire agreement between you and Toto Finance Inc. (and, as applicable, the other entities identified in Section 2) regarding the Token Sale and supersede all prior agreements and understandings.</p>
             </section>
 
             {/* 24. Governing Law and Jurisdiction */}
@@ -607,10 +609,13 @@ export default function TermsOfServicePage() {
             {/* 25. Contact Information */}
             <section>
               <h2 className="text-2xl font-medium text-gray-900 mb-4">25. Contact Information</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">For questions regarding the Token Sale or these Terms:</p>
-              <p className="text-gray-600 leading-relaxed mb-2"><strong>Toto Finance</strong></p>
+              <p className="text-gray-600 leading-relaxed mb-4">For questions regarding the Token Sale, the platform, or these Terms:</p>
+              <p className="text-gray-600 leading-relaxed mb-2"><strong>Toto Finance Inc.</strong> (main operator)</p>
               <p className="text-gray-600 leading-relaxed mb-1">Email: <a href="mailto:hello@totofinance.co" className="text-blue-600 hover:text-blue-700 underline">hello@totofinance.co</a></p>
               <p className="text-gray-600 leading-relaxed mb-6">Website: <a href="https://totofinance.co" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">totofinance.co</a></p>
+              <p className="text-gray-600 leading-relaxed mb-2"><strong>TotoHolding AG</strong> (Liechtenstein physical custody of stones and assets)</p>
+              <p className="text-gray-600 leading-relaxed mb-1">Herrengasse 6, 9490 Vaduz, Liechtenstein</p>
+              <p className="text-gray-600 leading-relaxed mb-6">For custody-related inquiries, contact through the channels listed on the website or <a href="mailto:legal@totofinance.co" className="text-blue-600 hover:text-blue-700 underline">legal@totofinance.co</a>.</p>
               <p className="text-gray-600 leading-relaxed mb-1">For legal inquiries:</p>
               <p className="text-gray-600 leading-relaxed">Email: <a href="mailto:legal@totofinance.co" className="text-blue-600 hover:text-blue-700 underline">legal@totofinance.co</a></p>
             </section>

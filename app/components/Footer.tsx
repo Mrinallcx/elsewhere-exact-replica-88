@@ -147,7 +147,7 @@ export default function Footer() {
               </Link>
             </div>
             <div className='footer-legal flex flex-col gap-2 text-center sm:text-right text-sm shrink-0 max-w-full'>
-              <span className='brand-copyright'>© 2026 Toto Finance AG. All rights reserved.</span>
+              <span className='brand-copyright'>© 2026 Toto Finance Inc. All Rights Reserved</span>
               <span className='text-gray-300 text-xs md:text-sm'>Toto Finance - The Global Infrastructure for Tokenized Commodities</span>
             </div>
           </div>
