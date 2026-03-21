@@ -48,7 +48,7 @@ export function BlogSection() {
         <div className="text-center mb-12">
           <h2 className="resources-heading">Insights & Market Intelligence</h2>
           <p className="resources-subtitle">
-            Research, analysis, and market updates on tokenized commodities, real-world assets, and the infrastructure powering global trade.
+            Research, analysis, and market updates on tokenized commodities, real-world assets, and the infrastructure that powers global trade.
           </p>
         </div>
 

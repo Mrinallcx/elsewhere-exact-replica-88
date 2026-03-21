@@ -63,22 +63,26 @@ const tnftCards = Array.from({ length: 16 });
 const cashCards = [
   {
     title: 'MiCA Registered & Hacken Audited',
-    subtitle: 'MiCA ESMA registered. Smart contracts audited by Hacken (Jan 2025). Physical validation by LCX under Liechtenstein TVTG.',
+    subtitle:
+      'MiCA ESMA registered. Smart contracts audited by Hacken (Jan 2025). Physical validation by LCX under Liechtenstein TVTG.',
     variant: 'cash-card-blue',
   },
   {
     title: 'Redeemable Assets',
-    subtitle: 'All tokenized commodities are linked to insured vaults, warehouses, or custody providers, with physical redemption available on demand.',
+    subtitle:
+      'Each tokenized commodity is tied to an insured vault, warehouse, or custody solution, and redeemable in physical form on demand.',
     variant: 'cash-card-green',
   },
   {
     title: 'Transparent Reserves',
-    subtitle: 'On-chain proof-of-reserves, oracle verification, and third-party audits ensure continuous 1:1 asset backing.',
+    subtitle:
+      'On-chain proof-of-reserves, oracle validation, and independent audits ensure ongoing 1:1 asset backing.',
     variant: 'cash-card-purple',
   },
   {
     title: 'Programmable Compliance',
-    subtitle: 'Smart contracts enforce KYC/AML, transfer permissions, jurisdictional rules, and regulatory controls at protocol level.',
+    subtitle:
+      'Smart contracts implement KYC/AML, transfer restrictions, geographical restrictions, and regulatory requirements at the protocol level.',
     variant: 'cash-card-rose',
   },
 ];
@@ -98,13 +102,6 @@ const marketStatsData = [
 const bottomStatsData = [
   { key: 'tokenizedToday', value: 0.1, prefix: '<', suffix: '%', label: 'Assets Tokenized Today', isDecimal: true },
   { key: 'preciousMetals', value: 12, prefix: '$', suffix: 'T+', label: 'Precious Metals Market' },
-];
-
-const howItWorksDescriptions = [
-  'The complete lifecycle of a commodity - on-chain and auditable.',
-  'Tokenize with Toto Rails: Commodities stored in vaults, warehouses, or tanks are minted into 1:1 asset-backed tokens with built-in compliance and proof-of-reserves.',
-  'Trade with Toto Markets: Peer-to-peer or exchange-integrated trading with programmable contracts for spot, forwards, collateralization, and secondary liquidity.',
-  'Settle & Deliver with Toto Clear: Atomic delivery-versus-payment using stablecoins. Hold, redeem, or re-trade - with settlement, logistics, and compliance automated via oracles.',
 ];
 
 const totoTokenDescriptions = [
@@ -187,7 +184,7 @@ export default function HomePage() {
 
           <div className="max-w-3xl w-full mx-0 sm:mx-auto mb-6 sm:mb-8 mt-6 sm:mt-8 md:mt-10 text-left sm:text-center">
             <p className="hero-description text-sm sm:text-base md:text-lg lg:text-xl text-travel-white mb-2 text-left sm:text-center">
-              Toto Finance is building the digital infrastructure for tokenized commodities - enabling asset-backed ownership, instant settlement, and compliant global trade across metals, energy, and real-world assets.
+              Toto Finance is building the global infrastructure for tokenized commodities facilitating asset-backed ownership, immediate settlement, and compliant global trade for metals, energy, and real-world assets.
             </p>
           </div>
 
@@ -239,17 +236,9 @@ export default function HomePage() {
             introText="Toto Finance is building the infrastructure layer for tokenized global commodities."
           />
 
-          <div className="col-span-2 md:col-span-3 mb-0 md:mb-0 mt-12">
-            <p className="stats-intro-text">Commodity tokenization market signals.</p>
-          </div>
+          <StatsCounter stats={marketStatsData} className="mt-12 md:mt-16" />
 
-          <StatsCounter stats={marketStatsData} />
-
-          <div className="col-span-2 md:col-span-3 mb-0 md:mb-0 mt-12">
-            <p className="stats-intro-text">Bottom Metrics (Why Now)</p>
-          </div>
-
-          <StatsCounter stats={bottomStatsData} />
+          <StatsCounter stats={bottomStatsData} className="mt-12 md:mt-16" />
         </div>
       </section>
 
@@ -259,7 +248,7 @@ export default function HomePage() {
           <div className="mb-8 md:mb-12">
             <h2 className="tnfts-heading text-left">Tokenized Commodities, Live on Global Markets</h2>
             <p className="text-base md:text-lg lg:text-xl text-gray-700 mt-4 md:mt-6 max-w-3xl">
-              Access real-world, asset-backed commodities across metals, gemstones, energy, and environmental assets tokenized for instant settlement, transparent ownership, and compliant global trade.
+              Access real-world, asset-backed commodities in metals, gemstones, energy, and environmental assets tokenized for instant settlement, transparent ownership, and compliant global trade.
             </p>
           </div>
 
@@ -289,9 +278,9 @@ export default function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
               className="tnfts-more"
-              aria-label="Explore Markets"
+              aria-label="Explore Market"
             >
-              <span className="tnfts-more-text">Explore Markets</span>
+              <span className="tnfts-more-text">Explore Market</span>
               <svg viewBox="0 0 17 17" fill="none" className="tnfts-more-icon">
                 <path
                   d="M14.446 2.083L4.779 2.083C4.365 2.083 4.029 2.419 4.029 2.833C4.029 3.247 4.365 3.583 4.779 3.583L12.635 3.583L2.582 13.636C2.289 13.929 2.289 14.404 2.582 14.697C2.875 14.99 3.35 14.99 3.643 14.697L13.696 4.644L13.696 12.5C13.696 12.914 14.031 13.25 14.446 13.25C14.86 13.25 15.196 12.914 15.196 12.5L15.196 2.833C15.196 2.419 14.86 2.083 14.446 2.083Z"
@@ -309,7 +298,9 @@ export default function HomePage() {
           <div className="cash-grid">
             <div className="cash-left">
               <h2 className="cash-heading">Institutional-Grade Commodity Tokenization</h2>
-              <p className="cash-description">Trust, compliance, and transparency embedded at the protocol level.</p>
+              <p className="cash-description">
+                Trust, compliance, and transparency built into the protocol.
+              </p>
               <div className="mt-6">
                 <a
                   href="https://app.totofinance.co/"
@@ -338,7 +329,7 @@ export default function HomePage() {
               <div className="mission-text">
                 <h2 className="mission-heading">Redefining How Commodities Trade</h2>
                 <p className="mission-description">
-                  Toto Finance introduces the infrastructure layer for tokenized commodities enabling T+0 settlement, 24/7 global markets, programmable ownership, and on-chain liquidity for assets traditionally constrained by manual processes, intermediaries, and settlement delays.
+                  Toto Finance brings the infrastructure to tokenized commodities that supports T+0 settlement, 24/7 markets, programmable ownership, and on-chain liquidity for assets that have been historically limited by manual processes, intermediaries, and settlement times.
                 </p>
               </div>
               <a
@@ -416,7 +407,7 @@ export default function HomePage() {
                 <h2 className="platform-heading">The TOTO Token</h2>
                 <h3 className="platform-subheading">Powering the Open Commodity Economy</h3>
                 <p className="platform-intro-description">
-                  The TOTO token is the universal utility powering tokenization, settlement, fees, and access across the Toto Finance ecosystem.
+                  The TOTO token is the universal utility powering tokenization, settlement, fees, and access within the Toto Finance ecosystem.
                 </p>
                 <div className="platform-description-container">
                   <DescriptionRotator
@@ -462,10 +453,10 @@ export default function HomePage() {
             </h2>
             <div className="max-w-4xl mx-auto text-left md:text-center">
               <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed mb-4">
-                Toto Finance pioneered the world&apos;s first tokenized diamond marketplace now the largest globally, with over 30,000 certified diamonds live on-chain. Founded in Liechtenstein, Toto Finance delivers institutional-grade infrastructure for tokenized commodities with transparency, compliance, and global access by design.
+                Toto Finance led the charge in the world&apos;s first tokenized diamond market, which is now the largest in the world, with more than 30,000 verified diamonds live on-chain. Toto Finance, based in Liechtenstein, provides institutional-grade infrastructure for tokenized commodities with a focus on transparency, compliance, and worldwide accessibility.
               </p>
               <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                Today, Toto Finance is expanding that proven foundation across the $25 trillion global commodity market, including gold, silver, copper, lithium, rare earth minerals, and energy. Beyond vault-held assets, Toto Finance tokenizes in-ground reserves, unlocking liquidity for producers and enabling early exposure to the resources powering AI data centers, energy transition, and critical supply chains.
+                Today, Toto Finance is leveraging this successful track record in the $25 trillion global commodity market, including gold, silver, copper, lithium, rare earth elements, and energy. Beyond vaulted assets, Toto Finance tokenizes in-ground assets, providing liquidity to producers and early access to the resources that fuel AI data centers, the energy transition, and critical supply chains.
               </p>
             </div>
           </div>
