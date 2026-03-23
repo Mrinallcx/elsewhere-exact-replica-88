@@ -5,9 +5,9 @@ import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
 import { PageStructuredData } from '../components/PageStructuredData';
+import { FAQStructuredData } from '../components/FAQStructuredData';
 import { Navigation } from '../components/Navigation';
 
-// Dynamic imports for heavy components
 const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur'));
 const Footer = dynamicImport(() => import('../components/Footer'));
 const NewsletterSection = dynamicImport(() => import('../components/NewsletterSection'));
@@ -18,363 +18,811 @@ const LutetiumFAQ = dynamicImport(
   () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ }))
 );
 
-// FAQ Data
+const PAGE_URL = 'https://totofinance.co/tokenized-lutetium';
+const PAGE_TITLE = 'Tokenized Lutetium | Digital Rare Earth Backed by Physical Assets | Toto Finance';
+const PAGE_DESCRIPTION =
+  'Every PET scanner that detects cancer depends on lutetium. Toto Finance brings the rarest and most expensive rare earth on-chain from 1:1 redeemable oxide tokens to In-Ground future delivery contracts. The element that finds cancer before it spreads. Instant stablecoin settlement. DeFi secondary markets.';
+
+const breadcrumbItems = [
+  { name: 'Home', item: 'https://totofinance.co' },
+  { name: 'Products', item: 'https://totofinance.co/products' },
+  { name: 'Tokenized Lutetium', item: PAGE_URL },
+];
+
 const faqData = [
   {
     question: 'What is tokenized lutetium?',
     answer:
-      'Tokenized lutetium is a blockchain-based digital asset backed 1:1 by refined lutetium oxide (Lu₂O₃) stored in insured, audited vaults. Ultra-high-purity lutetium oxide (99.99%+ Lu₂O₃), ready for PET scintillator crystal production and radiopharmaceutical applications. Each token is always redeemable for physical lutetium on demand. Toto Finance is building the infrastructure to bring this to market with instant stablecoin settlement and DeFi secondary markets.',
+      'A blockchain-based digital asset backed 1:1 by refined lutetium oxide (Lu₂O₃) in insured, audited vaults. Ultra-high-purity grade (99.99%+ Lu₂O₃), ready for PET scintillator crystal production, radiopharmaceutical manufacturing, and precision optics fabrication. Redeemable for physical lutetium on demand. Toto Finance is building the infrastructure to bring lutetium on-chain with instant stablecoin settlement and DeFi secondary markets.',
   },
   {
-    question: 'What is In-Ground Lutetium by Toto Finance?',
+    question: 'What is In-Ground Lutetium?',
     answer:
-      'In-Ground Lutetium is a tokenized future delivery contract for physical lutetium still in the ground at certified rare earth mining operations with heavy rare earth content. Short-term delivery (1-12 months) is tied to active operations, and long-term delivery (1-6 years) is backed by proven lutetium content in heavy rare earth reserves. Designed for medical device manufacturers, radiopharmaceutical companies, sovereign wealth funds, and investors positioning for the structural lutetium deficit.',
+      'A tokenized future delivery contract for lutetium still contained in heavy rare earth deposits at certified mining operations. Short-term (1 to 12 months) for operations with active ultra-purification capacity, long-term (1 to 6 years) for earlier-stage deposits. Built for PET scanner manufacturers, radiopharmaceutical companies, sovereign funds, and institutional investors positioning for the structural lutetium deficit.',
   },
   {
-    question: 'Where does Toto Finance source its lutetium?',
+    question: 'Where does the lutetium come from?',
     answer:
-      'Toto Finance works directly with rare earth mining companies and specialized heavy rare earth separation facilities across China (92% of production from ionic clay deposits), North America (USA and Canada developing specialized extraction for medical supply chains), Australia (Northern Territory heavy rare earth deposits), Southeast Asia and Vietnam (highest lutetium concentration deposits globally), and Greenland/Scandinavia (strategic European supply). Sourcing covers developed operations in active production and new specialized lutetium extraction projects. No middlemen. Direct from source.',
+      'Directly from rare earth mining companies and specialized heavy rare earth separation facilities across China (92% of production from ionic clay deposits in Jiangxi and Guangdong), North America (USA and Canada developing specialized heavy rare earth extraction), Australia (Northern Territory heavy rare earth deposits), Southeast Asia and Vietnam (highest lutetium concentration ionic clay deposits globally), and Greenland and Scandinavia (strategic European and NATO supply). No middlemen. No intermediary traders. More on partnerships and sourcing: https://totofinance.co/about.',
   },
   {
     question: 'Who buys tokenized lutetium?',
     answer:
-      'Three categories: (1) Industrial clients needing physical lutetium — medical imaging equipment manufacturers (PET scanners), scintillator crystal manufacturers (LSO and LYSO), radiopharmaceutical companies (Lu-177 therapies), nuclear medicine centers and hospitals, particle physics laboratories and research institutions, high-energy physics detector manufacturers, precision optics and lens manufacturers, semiconductor lithography equipment producers, advanced laser system manufacturers, and scientific research institutions. (2) Investors and commodity brokers, especially mid-size firms who cannot typically access premium lutetium deals. (3) Crypto-native participants including funds, protocol treasuries, blockchain foundations, and DAOs seeking real-world asset diversification.',
+      'Three groups: (1) Oncology and physics operators, including PET scanner manufacturers, scintillator crystal producers, radiopharmaceutical companies, nuclear medicine centers, particle physics laboratories, high-energy physics detector manufacturers, precision optics producers, EUV lithography equipment makers, advanced laser developers. (2) Frontier science investors, including funds and allocators seeking direct exposure to the most expensive rare earth element at the intersection of oncology growth and geological scarcity, without company-specific operational risk. (3) On-chain participants, including crypto funds, protocol treasuries, and DeFi protocols seeking ultra-high-value real-world collateral with demand driven by cancer incidence and scientific research.',
   },
   {
     question: 'How does instant settlement work?',
     answer:
-      'Toto Finance enables T+0 instant settlement using stablecoins: USDC (Circle), USDT (Tether), and USAT (Tether\'s US coin under the GENIUS Act). This eliminates brokers, banks, clearing houses, custodians, and settlement agents. Like Amazon matching buyers and sellers directly, Toto Finance connects lutetium producers with buyers on-chain.',
+      'T+0 settlement using USDC, USDT, or USAT. Traditional lutetium procurement involves locating one of a handful of ultra-purification specialists, negotiating without price references, coordinating high-value international logistics, and banking settlement measured in weeks. Toto Finance connects lutetium sources with buyers directly on-chain, eliminating every intermediary and settling transactions instantly.',
   },
   {
     question: 'Can I trade tokenized lutetium on DeFi platforms?',
     answer:
-      'Yes. Once purchased, secondary trading happens on DeFi platforms globally. Holders can buy, sell, hedge, earn yield through smart contract lending, or use lutetium as collateral for on-chain loans. Investors can expose assets to short sellers or long traders who borrow and pay interest, all managed at the protocol level. Collateral loans backed by tokenized lutetium represent a new programmable financial model.',
+      'Yes. After acquisition, trade on decentralized exchanges globally, generate yield by lending to counterparties, or use lutetium tokens as collateral for stablecoin loans. Lutetium has never had secondary market infrastructure of any kind. Tokenization creates it for the first time, making the most expensive rare earth element accessible through fractional ownership at any scale.',
   },
   {
     question: 'Why is lutetium the most expensive rare earth element?',
     answer:
-      'Lutetium is the rarest rare earth at just 0.5 parts per million in the Earth\'s crust, and it\'s the final element in heavy rare earth separation cascades, making extraction extremely challenging and expensive. Global production is only 6.5 tonnes annually — less than a luxury sedan\'s weight. With 90% of demand from medical PET imaging (8 million scans annually, 15-25 kg per scanner) and Lu-177 radiopharmaceuticals growing 45% annually, supply cannot meet accelerating healthcare demand. At $2.85 million per tonne, lutetium trades at 1,460x the price of cerium.',
+      'Lutetium exists at just 0.5 parts per million in the earth\'s crust, making it the rarest rare earth element by geological concentration. It is the final element extracted in heavy rare earth separation cascades, requiring more processing stages and higher purification energy than any other lanthanide. Global production is only 6.5 tonnes annually. With 90% of demand from PET scanner scintillator crystals (8 million scans per year, 15 to 25 kilograms per scanner) and Lu-177 radiopharmaceuticals growing at 45% annually, supply cannot match the accelerating pace of oncology infrastructure expansion. At $2.85 million per tonne, lutetium trades at over 1,400 times the price of cerium.',
   },
   {
-    question: 'What is the lutetium price forecast for 2026?',
+    question: 'What is the lutetium price outlook?',
     answer:
-      'Roskill forecasts $3,200,000/mt in 2026. Critical Minerals Intelligence projects prices exceeding $3,500,000/mt by 2027 as PET scanner installations accelerate globally and Lu-177 cancer therapies gain FDA approvals. The structural deficit is expected to intensify through 2030 as medical imaging demand grows 12% annually and targeted radionuclide therapy adoption scales worldwide.',
+      'Roskill forecasts $3,200,000/mt in 2026. Critical Minerals Intelligence projects exceeding $3,500,000/mt by 2027 as PET scanner installations accelerate globally and Lu-177 cancer therapy indications expand through FDA and international regulatory approvals. The deficit is expected to intensify through 2030 as oncology infrastructure scales to meet rising global cancer incidence and targeted radionuclide therapy adoption reaches mainstream clinical practice.',
   },
   {
-    question: 'How can I get early access?',
+    question: 'How do I get early access?',
     answer:
-      'Visit totofinance.co to explore the platform and stay updated on launch announcements. Institutional investors, mining partners, medical device manufacturers, radiopharmaceutical companies, and industrial buyers can reach out directly for partnership inquiries and early allocation discussions.',
+      'Visit https://totofinance.co/. Medical device manufacturers, radiopharmaceutical companies, research institutions, institutional investors, mining partners, and industrial buyers can reach out directly for partnership and early allocation discussions.',
   },
 ];
+
+const orgAndProductsJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://totofinance.co#org',
+      name: 'Toto Finance',
+      url: 'https://totofinance.co',
+      logo: 'https://totofinance.co/assets/images/og-preview.png',
+      description:
+        'Tokenized commodity platform offering 1:1 asset-backed lutetium oxide tokens and In-Ground Lutetium future delivery contracts with instant stablecoin settlement.',
+    },
+    {
+      '@type': 'Product',
+      name: '1:1 Lutetium Oxide Token',
+      description:
+        'Digital asset backed 1:1 by refined lutetium oxide (Lu₂O₃) in insured custody, redeemable for physical delivery. Category: Tokenized Commodity.',
+      category: 'Tokenized Commodity',
+      brand: { '@type': 'Brand', name: 'Toto Finance' },
+      url: PAGE_URL,
+    },
+    {
+      '@type': 'Product',
+      name: 'In-Ground Lutetium',
+      description:
+        'Tokenized future delivery contract for lutetium in heavy rare earth deposits at certified mining operations. Category: Commodity Future Delivery Contract.',
+      category: 'Commodity Future Delivery Contract',
+      brand: { '@type': 'Brand', name: 'Toto Finance' },
+      url: PAGE_URL,
+    },
+  ],
+};
 
 export default function TokenizedLutetiumPage() {
   return (
     <div className="min-h-screen w-full relative">
-      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgAndProductsJsonLd) }}
+      />
       <PageStructuredData
-        title="Tokenized Lutetium | Precision PET Scan Technology | Toto Finance"
-        description="Tokenized lutetium by Toto Finance. 1:1 asset-backed lutetium oxide tokens, always redeemable. In-Ground Lutetium future delivery contracts."
-        url="https://totofinance.co/tokenized-lutetium"
+        title={PAGE_TITLE}
+        description={PAGE_DESCRIPTION}
+        url={PAGE_URL}
         pageType="WebPage"
-        breadcrumbItems={[
-          { name: 'Home', item: 'https://totofinance.co' },
-          { name: 'Products', item: 'https://totofinance.co/products' },
-          { name: 'Tokenized Lutetium', item: 'https://totofinance.co/tokenized-lutetium' },
-        ]}
+        datePublished="2026-02-01"
+        dateModified="2026-03-21"
+        breadcrumbItems={breadcrumbItems}
       />
-      <BreadcrumbStructuredData
-        items={[
-          { name: 'Home', item: 'https://totofinance.co' },
-          { name: 'Tokenized Lutetium', item: 'https://totofinance.co/tokenized-lutetium' },
-        ]}
-      />
+      <BreadcrumbStructuredData items={breadcrumbItems} />
+      <FAQStructuredData faqs={faqData} />
+
       <GradualBlur preset="page-footer" strength={2} height="4rem" animated="scroll" duration="0.5s" />
       <Navigation pastHero={true} />
 
-      {/* ===================== FOLD 1: HERO SECTION ===================== */}
+      {/* FOLD 1: Hero */}
       <section className="relative bg-gradient-to-br from-fuchsia-900 via-fuchsia-800 to-gray-900 text-white px-4 sm:px-6 md:px-8 lg:px-12 pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div>
-            <div>
-              <span className="inline-block bg-white/10 text-fuchsia-200 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6 border border-fuchsia-400/30">
-                The Future of Rare Earth Ownership
-              </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-6">
-                Tokenized Lutetium
-              </h1>
-              <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-8 max-w-xl">
-                The rarest and most expensive rare earth element powering cancer detection, high-energy physics, and precision optics is facing extreme supply constraints. Toto Finance is building the infrastructure to tokenize lutetium &mdash; from 1:1 redeemable refined oxide to In-Ground future delivery contracts &mdash; with instant stablecoin settlement and DeFi secondary markets.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/products" className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300">
-                  Explore the Vision
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Lutetium Oxide (Lu&#8322;O&#8323;) / 99.99% Oxide Price</p>
-                  <p className="text-sm text-gray-400">Global Rare Earth Market</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-3xl md:text-4xl font-light text-white">$2,850,000</p>
-                  <p className="text-sm text-green-400 font-medium">&uarr; +118% YTD</p>
-                </div>
-              </div>
-              <div className="border-t border-white/10 pt-5 grid grid-cols-2 gap-4">
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">Market Size</p>
-                  <p className="text-lg font-semibold text-white">$48M+</p>
-                  <p className="text-xs text-gray-500">2025</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">2025 Deficit</p>
-                  <p className="text-lg font-semibold text-white">2.8 t</p>
-                  <p className="text-xs text-gray-500">Roskill</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">2026 Forecast</p>
-                  <p className="text-lg font-semibold text-white">$3.2M/mt</p>
-                  <p className="text-xs text-gray-500">Roskill</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-xs text-gray-400 mb-1">Settlement</p>
-                  <p className="text-lg font-semibold text-white">T+0</p>
-                  <p className="text-xs text-gray-500">Instant</p>
-                </div>
-              </div>
-            </div>
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px',
+          }}
+        />
+        <div className="relative z-10 max-w-5xl mx-auto text-center">
+          <h1 className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-fuchsia-200/90 mb-4">
+            Tokenized Lutetium by Toto Finance
+          </h1>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8">
+            Every PET Scanner That Finds Cancer Depends on Lutetium. Now Anyone Can Own It.
+          </h2>
+          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto text-left md:text-center">
+            Right now, in oncology departments around the world, PET scanners are detecting cancers that would otherwise remain invisible until it
+            is too late. Inside every one of those scanners, lutetium oxyorthosilicate crystals are converting gamma radiation into the signals
+            that reveal tumors at their earliest, most treatable stages. Global lutetium production is just 6.5 tonnes per year, less than the
+            weight of a single luxury sedan, and 90% of it goes directly into medical imaging. Lutetium exists at 0.5 parts per million in the
+            earth&apos;s crust. It is the rarest, the densest, and at $2.85 million per tonne, the most expensive rare earth element in commercial
+            use. Yet access to lutetium as an investable asset has never existed outside a handful of specialized heavy rare earth traders.{' '}
+            <Link href="/" className="text-white underline underline-offset-2 hover:text-fuchsia-200">
+              Toto Finance
+            </Link>{' '}
+            is changing that by bringing the element that finds cancer on-chain for the first time.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/products"
+              className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300"
+            >
+              See How We&apos;re Doing It
+            </Link>
+            <a
+              href="#crisis"
+              className="inline-flex items-center justify-center border border-white/30 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-white/10 transition-all duration-300"
+            >
+              Why Lutetium Matters
+            </a>
           </div>
-          </div>
+        </div>
       </section>
 
-      {/* ===================== FOLD 2: TICKER + CRISIS ===================== */}
       <LutetiumTickerBar />
 
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+      {/* FOLD 2: Crisis */}
+      <section id="crisis" className="scroll-mt-24 px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">The Lutetium Crisis</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">Why Lutetium Is the Rarest Rare Earth on Earth</h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">The world is running out of lutetium. Medical imaging providers, particle physics laboratories, and precision optics manufacturers are creating unprecedented demand while global supply remains virtually non-existent. This is not a cycle. It is a critical scarcity of the rarest commercial element.</p>
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">THE WHY</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            The Rarest Rare Earth on Earth. And Oncology Cannot Function Without It.
+          </h2>
+          <div className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12 space-y-4">
+            <p>
+              We chose lutetium because it represents scarcity at its absolute limit. Not scarcity as a market condition. Scarcity as a
+              geological fact.
+            </p>
+            <p>
+              Lutetium exists at just 0.5 parts per million in the earth&apos;s crust. It is the final element extracted in heavy rare earth
+              separation cascades, the last fraction of the last fraction, requiring the most processing steps and the highest purification costs
+              of any lanthanide. Total global production is 6.5 tonnes per year. The entire world&apos;s annual output would not fill a bathtub.
+              And 90% of that output goes directly into the scintillator crystals that power PET scanners, the diagnostic tool that oncologists
+              rely on to detect cancers, monitor treatment response, and identify metastatic disease before it becomes untreatable. Simultaneously,
+              lutetium-177 radiopharmaceuticals are emerging as one of the most promising targeted cancer therapies in modern medicine,
+              delivering radiation directly to tumor cells while sparing healthy tissue. The element that finds cancer and the element that treats
+              cancer are the same element. And the world produces 6.5 tonnes of it.
+            </p>
+            <p className="font-medium text-gray-900">That is why we exist.</p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
-              <p className="text-4xl md:text-5xl font-light text-gray-900 mb-3">2.8 t</p>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">2025 Supply Deficit</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">Roskill forecasts a 2.8-tonne lutetium deficit in 2025, with the gap widening through 2030. Global lutetium production is only 6.5 tonnes annually &mdash; less than the weight of a luxury sedan. Lutetium is the rarest and most expensive rare earth element, existing at just 0.5 parts per million in the Earth&apos;s crust.</p>
+              <p className="text-4xl md:text-5xl font-light text-gray-900 mb-3">2.8 tonnes</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">A Deficit Measured in Grams, Felt in Oncology Departments</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Roskill forecasts a 2.8-tonne lutetium deficit in 2025, with the gap widening through 2030. Global production is only 6.5 tonnes
+                annually. Lutetium is the rarest commercially viable rare earth element, existing at 0.5 parts per million in the earth&apos;s
+                crust. It is the last element extracted in separation cascades, making production extremely challenging and prohibitively expensive
+                to scale.
+              </p>
             </div>
             <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
               <p className="text-4xl md:text-5xl font-light text-gray-900 mb-3">90%</p>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Medical PET Imaging Demand</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">Lutetium-177 radioisotopes and lutetium oxyorthosilicate (LSO) crystals power positron emission tomography (PET) scanners for cancer detection and monitoring. 90% of global lutetium demand comes from medical imaging applications where lutetium&apos;s high density and stopping power make it irreplaceable for detecting gamma radiation.</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">One Element. Cancer Detection and Cancer Treatment.</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Lutetium oxyorthosilicate and lutetium yttrium oxyorthosilicate crystals power PET scanner detectors worldwide, providing the
+                timing resolution and gamma ray stopping power that no other material matches. 90% of global lutetium demand comes from medical
+                imaging applications. Simultaneously, Lu-177 radiopharmaceuticals are revolutionizing targeted cancer therapy. The element is both
+                diagnostic and therapeutic.
+              </p>
             </div>
             <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
-              <p className="text-4xl md:text-5xl font-light text-gray-900 mb-3">12 t</p>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">2030 Supply Gap</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">Global lutetium demand is projected to reach 28 tonnes per year by 2030, while supply from existing and planned rare earth mines will deliver only 16 tonnes. The 12-tonne gap represents a 43% shortfall, according to Critical Minerals Institute projections.</p>
+              <p className="text-4xl md:text-5xl font-light text-gray-900 mb-3">12 tonnes</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">A Gap That Grows with Every PET Scanner Installed</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Global lutetium demand is projected to reach 28 tonnes per year by 2030, while supply from existing and planned rare earth mines will
+                deliver only 16 tonnes. The 12-tonne gap represents a 43% shortfall. Every new oncology center, every PET scanner installation,
+                every Lu-177 therapy approval widens it further.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===================== FOLD 3: MEDICAL & SCIENTIFIC DEMAND ===================== */}
+      {/* FOLD 3: THE ELEMENT */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Medical Imaging &amp; Particle Physics</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">The Cancer Detection Revolution Is Exhausting Lutetium Supply</h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">Every PET scan, every particle detector, every high-refractive lens, every radiation therapy dose requires lutetium. The element&apos;s unique nuclear and optical properties make it irreplaceable for cancer diagnostics, high-energy physics research, and precision optical systems.</p>
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3 text-center">THE ELEMENT</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-4 text-center">
+            Understanding Why Lutetium Has No Substitute
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto text-center mb-14">
+            The rarest, densest, and most expensive rare earth element. Essential for the PET scanners that detect cancer and the
+            radiopharmaceuticals that treat it.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+              <div
+                className="rounded-xl bg-gradient-to-br from-fuchsia-900 to-slate-950 text-white p-6 mb-4 font-mono text-sm"
+                role="img"
+                aria-label="Lutetium element card showing Lu symbol, atomic number 71, density, melting point, and PET scintillator classification"
+              >
+                <p className="text-3xl font-light mb-1">Lu</p>
+                <ul className="space-y-1 text-fuchsia-100/90">
+                  <li>Atomic Number: 71</li>
+                  <li>Density: 9,841 kg/m³</li>
+                  <li>Melting Point: 1,663°C</li>
+                  <li>Crustal Abundance: 0.5 ppm</li>
+                  <li>Classification: PET Scintillator and Radiopharmaceutical Core</li>
+                </ul>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">The Element</h3>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+              <div
+                className="rounded-xl bg-gradient-to-br from-purple-900/70 to-slate-900 min-h-[160px] mb-4"
+                role="img"
+                aria-label="Heavy rare earth mining operation extracting xenotime and ionic clay minerals containing trace lutetium concentrations"
+              />
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Where It Comes From</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Extracted from monazite, bastnäsite, and xenotime minerals, with the highest concentrations found in ionic clay deposits in southern
+                China and Vietnam. Lutetium is the final element in the heavy rare earth separation cascade, requiring the most processing stages
+                and the highest purification energy of any lanthanide. Global production is just 6.5 tonnes per year, with 92% originating from
+                Chinese facilities.
+              </p>
+              <p className="text-xs text-gray-500 mt-3 font-mono">
+                Ore → Chemical Separation → Multi-Stage Ion Exchange → Ultra-Purification → 99.99% Pure Lutetium Oxide
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+              <div
+                className="rounded-xl bg-gradient-to-br from-fuchsia-800/50 to-slate-900 min-h-[160px] mb-4"
+                role="img"
+                aria-label="Lutetium scintillator crystal exhibiting gamma radiation detection properties used in PET scanner medical imaging systems"
+              />
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">The Density That Makes It See Through the Human Body</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Possesses the highest density, highest melting point, and greatest hardness of all lanthanide elements. When grown into
+                oxyorthosilicate crystals, lutetium provides exceptional gamma ray stopping power and scintillation timing resolution, converting
+                invisible radiation into the signals that create PET scan images. Its Lu-177 isotope emits beta radiation at energies ideal for
+                targeted tumor destruction, making lutetium simultaneously diagnostic and therapeutic.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+              <div
+                className="rounded-xl bg-gradient-to-br from-slate-700 to-slate-900 min-h-[160px] mb-4"
+                role="img"
+                aria-label="Applications of lutetium including PET scanner scintillator crystals, Lu-177 cancer radiotherapy, particle physics detectors, and precision optics"
+              />
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Where It Goes</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                PET scanner scintillator crystals (LSO and LYSO detectors), Lu-177 targeted radionuclide cancer therapy, particle physics
+                detectors (CERN, Fermilab), high-refractive-index precision optics, semiconductor EUV lithography components, advanced laser
+                systems, atomic clock calibration, X-ray phosphor systems.
+              </p>
+              <p className="text-sm font-semibold text-fuchsia-900 bg-fuchsia-50 rounded-lg px-3 py-2">
+                $48M+ global market ($2.85M per metric tonne, 6.5 tonnes annual production)
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOLD 4: THE CATALYST */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">THE CATALYST</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Cancer Detection Is Scaling Globally. Lutetium Production Cannot Be Willed Into Existence.
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            There is a direct physical link between the expansion of oncology infrastructure worldwide and the consumption of lutetium. Every PET
+            scanner installed requires 15 to 25 kilograms of lutetium scintillator crystals. Every Lu-177 therapy dose administered consumes
+            lutetium isotopes. Every particle physics upgrade demands lutetium detectors. PET scanner installations are growing at 12% annually.
+            Lutetium production, locked at the end of the heaviest rare earth separation cascade, has no mechanism to scale independently.
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
-              <div className="w-10 h-10 bg-fuchsia-50 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-5 h-5 text-fuchsia-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-              </div>
-              <h3 className="text-xl font-medium text-gray-900 mb-3">PET Imaging Scintillator Crystals (90% of Demand)</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">Lutetium oxyorthosilicate (LSO) and lutetium yttrium oxyorthosilicate (LYSO) crystals are the gold standard for PET scanner detectors, offering superior timing resolution and detection efficiency. With 8 million PET scans performed annually worldwide and each scanner requiring 15&ndash;25 kg of lutetium crystals, medical imaging consumes 5.8 tonnes per year, growing at 12% CAGR.</p>
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+              <h3 className="text-xl font-medium text-gray-900 mb-3">PET Scintillator Crystals: 90% of All Lutetium Demand</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Lutetium oxyorthosilicate (LSO) and lutetium yttrium oxyorthosilicate (LYSO) crystals are the gold standard for PET scanner
+                detectors, offering superior timing resolution and gamma ray detection efficiency that no alternative crystal matches. With 8
+                million PET scans performed annually worldwide and each scanner requiring 15 to 25 kilograms of lutetium crystals, medical imaging
+                alone consumes 5.8 tonnes per year. PET scanner installations are growing at 12% compound annual growth as oncology infrastructure
+                expands across every continent.
+              </p>
             </div>
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
-              <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-              </div>
-              <h3 className="text-xl font-medium text-gray-900 mb-3">Lutetium-177 Radiopharmaceuticals</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">Lutetium-177 enables targeted radionuclide therapy (TRT) for neuroendocrine tumors and prostate cancer, delivering radiation directly to cancer cells while sparing healthy tissue. FDA approval of Lu-177 therapies has driven 45% annual growth, with demand reaching 0.8 tonnes annually as treatment protocols expand globally.</p>
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+              <h3 className="text-xl font-medium text-gray-900 mb-3">Lu-177 Radiopharmaceuticals: Cancer Treatment at the Molecular Level</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Lutetium-177 enables targeted radionuclide therapy that delivers radiation directly to cancer cells while preserving surrounding
+                healthy tissue. FDA-approved Lu-177 therapies for neuroendocrine tumors and metastatic prostate cancer have triggered 45% annual
+                demand growth, with consumption reaching 0.8 tonnes per year. As clinical trials expand Lu-177 indications to additional cancer
+                types, therapeutic demand is emerging as the fastest-growing segment of lutetium consumption.
+              </p>
             </div>
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
-              <div className="w-10 h-10 bg-yellow-50 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-              </div>
-              <h3 className="text-xl font-medium text-gray-900 mb-3">Particle Physics Detectors</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">High-energy physics experiments at CERN, Fermilab, and other particle accelerators use lutetium-based scintillators for detecting subatomic particles. The Large Hadron Collider upgrade and next-generation collider projects consume 0.4 tonnes annually, with demand accelerating as detector technology advances.</p>
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+              <h3 className="text-xl font-medium text-gray-900 mb-3">Particle Physics Detectors: Seeing the Invisible at CERN Scale</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                High-energy physics experiments at CERN, Fermilab, and particle accelerator facilities worldwide use lutetium-based scintillator
+                crystals for detecting subatomic particles. The Large Hadron Collider upgrade and next-generation collider projects consume 0.4
+                tonnes of lutetium annually. As detector technology advances and new physics experiments demand higher resolution and faster timing,
+                lutetium-based scintillators remain the only material capable of meeting performance requirements.
+              </p>
             </div>
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
-              <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
-              </div>
-              <h3 className="text-xl font-medium text-gray-900 mb-3">High-Refractive Index Optics</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">Lutetium oxide enables ultra-high-refractive-index glass for advanced optics, laser systems, and semiconductor lithography. The precision optics sector consumes 0.3 tonnes annually, with demand growing at 25% CAGR as extreme ultraviolet (EUV) lithography scales for next-generation semiconductor manufacturing.</p>
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+              <h3 className="text-xl font-medium text-gray-900 mb-3">Precision Optics and EUV Lithography: Clarity at the Nanometer Scale</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Lutetium oxide enables ultra-high-refractive-index glass for advanced optical systems, laser components, and the extreme
+                ultraviolet lithography equipment that manufactures next-generation semiconductors. The precision optics sector consumes 0.3 tonnes
+                annually, growing at 25% compound annual growth as EUV lithography scales for sub-3nm chip fabrication and advanced optical systems
+                demand materials with optical properties beyond what conventional glass chemistry can provide.
+              </p>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
-            <h3 className="text-xl font-medium text-gray-900 mb-6">Lutetium Demand Projection (Tonnes/Year)</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
+          <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-200">
+            <h3 className="text-xl font-medium text-gray-900 mb-2">A Deficit That Grows with Every Cancer Diagnosis</h3>
+            <p className="text-sm text-gray-500 mb-6">
+              Bar chart showing global lutetium demand rising from 9.3 tonnes in 2025 to 28 tonnes by 2030, with supply reaching approximately 16
+              tonnes, creating a 12 tonne annual deficit.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
               {[
-                { year: '2025', val: '9.3 t', note: 'Current' },
-                { year: '2028', val: '18.0 t', note: 'Projected' },
-                { year: '2030', val: '28.0 t', note: 'Projected' },
-                { year: '2035', val: '45.0 t', note: 'Roskill' },
-                { year: 'Supply \'30', val: '~16.0 t', note: 'Gap: 12+' },
+                { year: '2025', val: '9.3', note: 'Demand (t)' },
+                { year: '2028', val: '18.0', note: 'Demand (t)' },
+                { year: '2030', val: '28.0', note: 'Demand (t)' },
+                { year: '2035', val: '45.0', note: 'Roskill' },
+                { year: '2030 Supply', val: '~16.0', note: 'Gap: 12+ t' },
               ].map((d, i) => (
-                <div key={i} className={`text-center p-4 rounded-xl ${i === 4 ? 'bg-red-50' : i >= 3 ? 'bg-fuchsia-50' : 'bg-gray-50'}`}>
-                  <p className={`text-sm mb-2 ${i === 4 ? 'text-red-700 font-medium' : i >= 3 ? 'text-fuchsia-700 font-medium' : 'text-gray-500'}`}>{d.year}</p>
-                  <p className="text-sm font-semibold text-gray-900">{d.val}</p>
+                <div
+                  key={d.year}
+                  className={`text-center p-4 rounded-xl ${i === 4 ? 'bg-red-50 border border-red-100' : i === 3 ? 'bg-fuchsia-50' : 'bg-white border border-gray-100'}`}
+                >
+                  <p className={`text-sm mb-2 ${i === 4 ? 'text-red-800 font-medium' : 'text-gray-500'}`}>{d.year}</p>
+                  <p className="text-sm font-semibold text-gray-900">{d.val} t</p>
                   <p className="text-xs text-gray-500 mt-1">{d.note}</p>
                 </div>
               ))}
             </div>
-            <p className="text-xs text-gray-400">Sources: Roskill, Critical Minerals Intelligence, USGS, Society of Nuclear Medicine.</p>
+            <p className="text-xs text-gray-400">
+              Sources: Roskill, Critical Minerals Intelligence, USGS, Society of Nuclear Medicine.
+            </p>
           </div>
         </div>
       </section>
 
-      
-
-      {/* ===================== FOLD 5: RESOURCES ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
+      {/* FOLD 5: TWO PRODUCTS */}
+      <section id="products" className="scroll-mt-24 px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Resources</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">Where the Lutetium Comes From</h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">Toto Finance works directly with rare earth mining companies and heavy rare earth separation facilities, securing lutetium assets at the producer and refinery level. No middlemen. No intermediary traders. Direct from source.</p>
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3 text-center">TWO PRODUCTS</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6 text-center">
+            Two Ways to Own Tokenized Lutetium
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto text-center mb-14">
+            Everything we believe about opening access to critical oncology materials comes to life in two products. One for lutetium that is
+            already refined and vaulted. One for lutetium still locked in heavy rare earth deposits awaiting the most complex separation process in
+            rare earth chemistry. Both backed by physical assets. Both settleable in stablecoins. Both built to give the medical device companies,
+            radiopharmaceutical manufacturers, and investors confronting a 6.5-tonne annual bottleneck a way to secure the element that detects
+            and treats cancer.
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+              <span className="inline-block text-xs font-bold tracking-wider text-fuchsia-800 bg-fuchsia-100 px-3 py-1 rounded-full mb-4">
+                ASSET-BACKED TOKEN
+              </span>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <Link href="/products" className="hover:text-fuchsia-700 underline-offset-2 hover:underline">
+                  1:1 Lutetium Oxide Token
+                </Link>
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                Digital ownership of physical lutetium. Every token is backed 1:1 by refined lutetium oxide (Lu₂O₃) in insured, audited vaults.
+                Ultra-high-purity grade (99.99%+ Lu₂O₃), ready for scintillator crystal growth, radiopharmaceutical production, particle detector
+                manufacturing, and precision optics fabrication. Redeemable for physical lutetium on demand. Not a derivative. Not a tracker. The
+                actual material.
+              </p>
+              <ul className="text-sm text-gray-700 space-y-2 list-disc pl-5">
+                <li>Backed 1:1 by refined lutetium oxide (99.99%+ purity grade)</li>
+                <li>Always redeemable for physical lutetium delivery on demand</li>
+                <li>Stored in insured, independently audited vault and warehouse facilities</li>
+                <li>On-chain proof-of-reserves with real-time oracle feeds</li>
+                <li>Fractional ownership, from $1, tradeable 24/7 with instant stablecoin settlement</li>
+                <li>Ready for industrial end-use: PET scintillator crystals, Lu-177 radiopharmaceuticals, particle detectors, EUV lithography optics</li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+              <span className="inline-block text-xs font-bold tracking-wider text-slate-800 bg-slate-200 px-3 py-1 rounded-full mb-4">
+                FUTURE DELIVERY CONTRACT
+              </span>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <Link href="/products" className="hover:text-fuchsia-700 underline-offset-2 hover:underline">
+                  In-Ground Lutetium
+                </Link>
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                Forward positions in lutetium that has not been separated yet. Tokenized future delivery contracts backed by proven lutetium content
+                in heavy rare earth deposits at certified mining operations. For organizations that understand that 6.5 tonnes of annual
+                production serving a 28-tonne demand curve by 2030 creates a pricing trajectory where $2.85 million per tonne may prove to be the
+                entry point, not the ceiling.
+              </p>
+              <ul className="text-sm text-gray-700 space-y-2 list-disc pl-5">
+                <li>Backed by proven lutetium content in heavy rare earth reserves at partner mining sites</li>
+                <li>Pre-production pricing reflecting end-of-cascade extraction complexity and extreme scarcity</li>
+                <li>On-chain reserve tracking with geological data transparency</li>
+                <li>Physical delivery or settlement at maturity</li>
+                <li>Verified reserves with third-party geological audits</li>
+                <li>Built for medical device manufacturers, radiopharmaceutical companies, sovereign funds, and institutional allocators</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-fuchsia-900/10 border border-fuchsia-200 rounded-2xl p-6 md:p-8">
+              <p className="text-xs font-bold text-fuchsia-900 uppercase tracking-wider mb-2">SHORT-TERM DELIVERY</p>
+              <p className="text-lg font-semibold text-gray-900 mb-3">1 to 12 Months</p>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Near-term lutetium delivery contracts tied to active heavy rare earth operations with ultra-purification capacity. For PET scanner
+                manufacturers managing crystal production schedules, radiopharmaceutical companies securing isotope feedstock, and commodity
+                specialists trading near-term pricing dynamics in the most expensive rare earth market on earth.
+              </p>
+            </div>
+            <div className="bg-slate-100 border border-slate-200 rounded-2xl p-6 md:p-8">
+              <p className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">LONG-TERM DELIVERY</p>
+              <p className="text-lg font-semibold text-gray-900 mb-3">1 to 6 Years</p>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Multi-year lutetium positions backed by proven heavy rare earth reserves at earlier-stage operations. Built for sovereign strategic
+                reserves, medical imaging companies planning decade-scale scanner production, and institutional allocators who recognize that an
+                element produced at 6.5 tonnes per year and priced at $2.85 million per tonne represents the highest-conviction supply constraint in
+                the entire rare earth periodic table.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOLD 6: SOURCING */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3 text-center">SOURCING</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6 text-center">
+            Securing the Rarest Commercial Element on the Periodic Table. Directly.
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto text-center mb-14">
+            Lutetium does not have a dedicated mine. It does not even have a dedicated separation process. It is the final fraction extracted at
+            the very end of heavy rare earth separation cascades, requiring more processing stages than any other lanthanide and yielding less
+            material per tonne of ore than any commercially traded element. 92% of global output originates from Chinese facilities. Toto Finance
+            works directly with{' '}
+            <Link href="/about" className="text-fuchsia-800 font-medium underline underline-offset-2 hover:text-fuchsia-600">
+              rare earth mining companies and specialized heavy rare earth separation facilities
+            </Link>{' '}
+            to secure lutetium at the ultra-purification stage, bypassing the minuscule trader network that controls access to this element.
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             {[
-              { region: 'China', desc: 'China produces 92% of global lutetium from ionic clay deposits in southern provinces, particularly Jiangxi and Guangdong. Lutetium is the final element extracted in heavy rare earth separation cascades, making production extremely challenging and expensive. Chinese facilities produce ultra-high-purity lutetium oxide for medical and scientific applications.' },
-              { region: 'North America (USA & Canada)', desc: 'United States and Canadian rare earth operations developing heavy rare earth separation capabilities, including specialized extraction for lutetium. Critical mineral designation has prioritized domestic lutetium supply for medical imaging and scientific research infrastructure security.' },
-              { region: 'Australia', desc: 'Australia\'s heavy rare earth deposits in Northern Territory contain trace lutetium concentrations. Advanced separation technologies are being developed to economically extract lutetium from xenotime and ionic clay sources for medical applications.' },
-              { region: 'Southeast Asia & Vietnam', desc: 'Vietnam\'s ionic clay deposits contain the highest lutetium concentrations of any rare earth deposit globally. Emerging Southeast Asian heavy rare earth processing facilities are developing specialized lutetium extraction capabilities.' },
-              { region: 'Greenland & Scandinavia', desc: 'Greenland\'s heavy rare earth projects and Scandinavian deposits contain lutetium. Strategic importance for European and NATO medical imaging and scientific research supply chains.' },
-              { region: 'Exploration & Preparation', desc: 'New heavy rare earth fields in preparation and exploration phases across Africa and Central Asia, offering In-Ground Lutetium positions at pre-production economics before reserves reach market.' },
-            ].map((s, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{s.region}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{s.desc}</p>
+              {
+                title: 'China',
+                text: 'China produces 92% of global lutetium from ionic clay deposits in southern provinces, particularly Jiangxi and Guangdong. Lutetium is the final element extracted in multi-stage separation cascades at specialized heavy rare earth facilities, making Chinese ultra-purification infrastructure the single critical node in the global lutetium supply chain. Domestic demand for PET scanner manufacturing and radiopharmaceutical research is claiming an increasing share of output.',
+              },
+              {
+                title: 'North America (USA and Canada)',
+                text: 'US and Canadian rare earth projects are developing specialized heavy rare earth extraction capabilities, including advanced separation technology designed to reach the end-of-cascade elements like lutetium. Critical mineral designation has prioritized domestic lutetium supply to ensure that PET scanner manufacturing and radiopharmaceutical production maintain access independent of Chinese processing monopoly.',
+              },
+              {
+                title: 'Australia',
+                text: 'Northern Territory heavy rare earth deposits contain trace lutetium concentrations in xenotime and ionic clay formations. Advanced separation technologies under development aim to economically extract lutetium from these sources, establishing an allied-nation supply pathway for medical imaging and scientific research applications.',
+              },
+              {
+                title: 'Southeast Asia and Vietnam',
+                text: 'Vietnamese ionic clay deposits contain the highest lutetium concentrations of any rare earth deposit type globally. Emerging Southeast Asian heavy rare earth processing facilities are developing specialized end-of-cascade extraction capabilities that could meaningfully increase non-Chinese lutetium supply within the next decade.',
+              },
+              {
+                title: 'Greenland and Scandinavia',
+                text: "Greenland's heavy rare earth projects and Scandinavian rare earth deposits contain lutetium concentrations of strategic significance for European and NATO medical imaging infrastructure. These deposits represent supply security for PET scanner production and radiopharmaceutical development outside Asian processing dominance.",
+              },
+              {
+                title: 'Exploration and Development',
+                text: 'New heavy rare earth projects across Africa and Central Asia are in exploration and feasibility stages. These represent the next generation of lutetium supply, and In-Ground Lutetium positions offer access at pre-production economics before the most complex separation output in rare earth chemistry reaches the market.',
+              },
+            ].map((c) => (
+              <div key={c.title} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{c.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{c.text}</p>
               </div>
             ))}
           </div>
 
           <div className="bg-gray-900 text-white rounded-2xl p-6 md:p-8">
-            <p className="text-sm md:text-base leading-relaxed"><strong>Secured at source.</strong> Toto Finance eliminates commodity brokers and trading intermediaries by working directly with rare earth mining companies and specialized heavy rare earth separation facilities. Better pricing, verified provenance, and a transparent chain of custody from mine to token.</p>
+            <p className="text-sm md:text-base leading-relaxed">
+              <strong>Secured at the ultra-purification stage.</strong> Lutetium does not come from a mine. It does not even come from a standard
+              separation facility. It comes from the final stage of the most complex purification cascade in rare earth processing. Toto Finance
+              works at this critical endpoint, eliminating the tiny number of traders who control access to the world&apos;s rarest commercial
+              element. Verified provenance. Transparent chain of custody from{' '}
+              <Link href="/how-tokenization-works" className="underline underline-offset-2 hover:text-fuchsia-200">
+                mine to token
+              </Link>
+              . Access at the point where lutetium actually emerges, not behind layers of intermediation.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ===================== FOLD 5B: INVESTORS ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Investors</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">Who Buys Tokenized Lutetium</h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">Toto Finance serves three distinct categories of buyers, each with different motivations for accessing tokenized lutetium and In-Ground Lutetium contracts.</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
-              <span className="inline-block bg-fuchsia-100 text-fuchsia-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Category 1</span>
-              <h3 className="text-xl font-medium text-gray-900 mb-3">Industrial Clients</h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-4">Companies that need physical lutetium directly for manufacturing and operations. They purchase tokenized lutetium for guaranteed supply, streamlined procurement, and physical redemption.</p>
-              <p className="text-xs text-gray-500 leading-relaxed">Medical imaging equipment manufacturers (PET scanners), scintillator crystal manufacturers (LSO and LYSO), radiopharmaceutical companies (Lu-177 therapies), nuclear medicine centers and hospitals, particle physics laboratories and research institutions, high-energy physics detector manufacturers, precision optics and lens manufacturers, semiconductor lithography equipment producers, advanced laser system manufacturers, scientific research institutions.</p>
-            </div>
-            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
-              <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Category 2</span>
-              <h3 className="text-xl font-medium text-gray-900 mb-3">Investors &amp; Commodity Brokers</h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-4">Mid-size and smaller investment firms, commodity brokers, family offices, and individual investors who typically cannot access premium lutetium deals at the pricing and scale that major institutions command.</p>
-              <p className="text-xs text-gray-500 leading-relaxed">Toto Finance democratizes access to institutional-grade lutetium positions. Fractional ownership, no minimum gram requirements, no warehouse logistics, and no counterparty risk through intermediaries. The same lutetium, at competitive pricing, accessible to everyone.</p>
-            </div>
-            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
-              <span className="inline-block bg-purple-100 text-purple-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Category 3</span>
-              <h3 className="text-xl font-medium text-gray-900 mb-3">Crypto-Native Participants</h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-4">Blockchain-native organizations and investors seeking real-world asset diversification, on-chain yield, and commodity-backed collateral for DeFi strategies.</p>
-              <p className="text-xs text-gray-500 leading-relaxed">Crypto hedge funds and digital asset funds, blockchain infrastructure foundations and protocol treasuries, DeFi protocols seeking real-world collateral, crypto-native investors diversifying into commodity-backed tokens, DAOs and decentralized investment vehicles.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== FOLD 5C: INSTANT SETTLEMENT ===================== */}
+      {/* FOLD 7: PARTICIPANTS */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Global Trade</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">Instant Settlement, No Banks</h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">Traditional rare earth trading involves a chain of middlemen, brokers, banks, clearing houses, and custodians that delay settlement by days or weeks and extract fees at every step. Toto Finance removes them all.</p>
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3 text-center">PARTICIPANTS</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6 text-center">
+            Who Buys Tokenized Lutetium
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto text-center mb-14">
+            Lutetium has always traded in quantities measured in grams, through a vanishingly small circle of heavy rare earth specialists, at
+            prices that reflect its status as the most expensive commercially traded element on the periodic table. The medical device companies and
+            research institutions that need it have had no transparent procurement mechanism, no price discovery tool, and no ability to secure
+            forward supply in a market this tiny. Toto Finance opens that access for the first time.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200">
+              <span className="text-xs font-bold tracking-widest text-fuchsia-800">ONCOLOGY AND PHYSICS OPERATORS</span>
+              <h3 className="text-xl font-semibold text-gray-900 mt-3 mb-4">The Organizations Where Lutetium Saves Lives and Reveals the Universe</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                These buyers do not speculate on lutetium prices. They consume lutetium in the scintillator crystals that detect cancers, in the
+                radiopharmaceuticals that destroy tumors, in the particle detectors that probe the fundamental structure of matter. Tokenized
+                lutetium gives them{' '}
+                <Link href="/products" className="text-fuchsia-800 font-medium underline underline-offset-2">
+                  supply continuity
+                </Link>
+                , transparent procurement, and physical delivery capability in a market where a single delayed shipment of grams can halt
+                production of equipment that saves human lives.
+              </p>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                PET scanner and medical imaging equipment manufacturers, scintillator crystal manufacturers (LSO and LYSO), radiopharmaceutical
+                companies developing Lu-177 therapies, nuclear medicine centers and hospital oncology departments, particle physics laboratories
+                (CERN, Fermilab, and global facilities), high-energy physics detector manufacturers, precision optics and high-refractive-index lens
+                producers, semiconductor EUV lithography equipment manufacturers, advanced laser system developers, scientific research
+                institutions and national laboratories.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-8 border border-gray-200">
+              <span className="text-xs font-bold tracking-widest text-blue-800">FRONTIER SCIENCE INVESTORS</span>
+              <h3 className="text-xl font-semibold text-gray-900 mt-3 mb-4">Investing in the Most Expensive Element in Commercial Use</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Investors allocate billions to pharmaceutical stocks, medical device companies, and oncology biotech, yet the physical element that
+                makes PET-based cancer detection and Lu-177 cancer therapy possible has been entirely uninvestable. Until now. Tokenized lutetium
+                offers direct exposure to a material priced at $2.85 million per tonne with 12% annual demand growth driven by PET scanner
+                expansion and radiopharmaceutical approvals, fractional access from $1, and zero dependence on any company&apos;s operational
+                execution. The thesis is geological: lutetium exists at 0.5 parts per million, production is 6.5 tonnes per year, and cancer does
+                not wait for supply chains to catch up.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-8 border border-gray-200">
+              <span className="text-xs font-bold tracking-widest text-purple-800">ON-CHAIN INFRASTRUCTURE</span>
+              <h3 className="text-xl font-semibold text-gray-900 mt-3 mb-4">Backing Digital Assets with the Most Valuable Element in Rare Earth Chemistry</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                At $2.85 million per metric tonne, lutetium is the highest-value rare earth element and among the most valuable materials traded in
+                any commodity market. Tokenized lutetium offers on-chain participants collateral with extraordinary value density: a single tonne
+                represents nearly $3 million in material backed by medical demand that is driven by cancer incidence, not market sentiment. For
+                protocols, treasuries, and funds seeking real-world assets where scarcity is defined by geology and demand is defined by biology.
+              </p>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Crypto funds seeking oncology-correlated ultra-rare commodity exposure, protocol treasuries diversifying into the highest-value
+                segment of physical rare earth markets, DeFi protocols building collateral pools with extreme value density per unit, blockchain
+                foundations investing in materials at the intersection of medical technology and geological scarcity, DAOs with life sciences and
+                frontier technology investment mandates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOLD 8: Settlement */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">GLOBAL TRADE</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Instant Settlement for Tokenized Lutetium. No Rare Earth Traders. No Delays.
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Lutetium does not merely lack an exchange listing. It lacks a market in any conventional sense of the word. Fewer traders handle
+            lutetium globally than can be counted on one hand. There is no public price, no industry benchmark, no standardized quantity or
+            purity specification that buyers can reference. For the material that powers the diagnostic tool oncologists depend on to find cancer
+            early enough to treat it, the procurement experience is a conversation with one of three or four people on earth who can supply it. We
+            built something that matches the value of this element with the transparency it deserves.
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
-              <h3 className="text-lg font-semibold text-gray-900 mb-1">Traditional Rare Earth Trade</h3>
-              <p className="text-sm text-gray-500 mb-6">7+ Intermediaries, Days to Settle</p>
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">The Old Way</h3>
+              <p className="text-sm text-gray-500 mb-6">8+ Intermediaries. Weeks to Settle. Opaque Pricing.</p>
               <div className="space-y-3">
-                {['Mining Company / Producer', 'Processing Facility / Heavy REE Separation', 'Commodity Broker / Trader', 'Clearing House', 'Custodian Bank', 'Correspondent Bank', 'Settlement Agent', 'Buyer'].map((step, i) => (
-                  <div key={i} className="flex items-center gap-3"><div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 text-xs font-semibold text-gray-500">{i + 1}</div><span className="text-sm text-gray-700">{step}</span></div>
+                {[
+                  'Mining Company / Ore Producer',
+                  'Heavy Rare Earth Separation Facility',
+                  'Ultra-Purification Specialist',
+                  'Specialized Heavy REE Trader',
+                  'Clearing Agent',
+                  'Custodian Bank',
+                  'Correspondent Bank',
+                  'Buyer',
+                ].map((step, i) => (
+                  <div key={step} className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0 text-xs font-semibold text-gray-600">
+                      {i + 1}
+                    </div>
+                    <span className="text-sm text-gray-700">{step}</span>
+                  </div>
                 ))}
               </div>
-              <div className="mt-6 pt-4 border-t border-gray-100"><p className="text-sm text-red-600 font-medium">Settlement: T+2 to T+5 (or longer)</p></div>
+              <p className="text-sm text-red-600 font-medium mt-6 pt-4 border-t border-gray-200">
+                Settlement: T+5 to T+30 (standard for rare earth transactions)
+              </p>
             </div>
+
             <div className="bg-gray-900 text-white rounded-2xl p-6 md:p-8">
-              <h3 className="text-lg font-semibold mb-1">Toto Finance</h3>
-              <p className="text-sm text-gray-400 mb-6">Buyer &harr; Seller, Direct Match</p>
+              <h3 className="text-lg font-semibold mb-1">The Toto Finance Way</h3>
+              <p className="text-sm text-gray-400 mb-6">Source ↔ Buyer. Direct. Instant.</p>
               <div className="space-y-3">
-                {['Mining Company / Producer', 'Toto Finance Platform', 'Buyer'].map((step, i) => (
-                  <div key={i} className="flex items-center gap-3"><div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-xs font-semibold">{i + 1}</div><span className="text-sm">{step}</span></div>
+                {['Mining / Ultra-Purification Operation', 'Toto Finance Platform', 'Buyer'].map((step, i) => (
+                  <div key={step} className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-xs font-semibold">
+                      {i + 1}
+                    </div>
+                    <span className="text-sm">
+                      {i === 1 ? (
+                        <Link href="/products" className="underline underline-offset-2 hover:text-fuchsia-200">
+                          Toto Finance Platform
+                        </Link>
+                      ) : (
+                        step
+                      )}
+                    </span>
+                  </div>
                 ))}
               </div>
-              <div className="mt-6 pt-4 border-t border-white/10"><p className="text-sm text-green-400 font-medium">Settlement: T+0 (Instant)</p></div>
-              <p className="text-sm text-gray-400 mt-4 leading-relaxed">Similar to how Amazon and eBay match buyers and sellers directly for physical goods, Toto Finance uses blockchain technology to connect lutetium producers with buyers, eliminating banks, clearing houses, and settlement agents entirely.</p>
+              <p className="text-sm text-green-400 font-medium mt-6 pt-4 border-t border-white/10">Settlement: T+0 (Instant)</p>
+              <p className="text-sm text-gray-400 mt-4 leading-relaxed">
+                The lutetium market is not merely opaque. It is nearly invisible. A handful of specialized traders globally handle the entire
+                commercial supply of the rarest rare earth element. No pricing benchmarks exist. No standard contracts govern transactions. No
+                settlement infrastructure supports the market. Toto Finance uses blockchain to build what has never existed for lutetium: a
+                transparent, instant-settlement mechanism connecting ultra-purification output directly with the medical device manufacturers,
+                research institutions, and investors who need access to the most valuable element in rare earth chemistry.
+              </p>
             </div>
           </div>
 
-          <h3 className="text-2xl font-medium text-gray-900 mb-6">Instant Settlement with Stablecoins</h3>
+          <h3 className="text-2xl font-medium text-gray-900 mb-6 text-center">Settlement at the Speed of a PET Scan</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: 'USDC', issuer: 'Circle', desc: 'The most widely adopted dollar-backed stablecoin for institutional use. Full reserve transparency, monthly attestations, and broad DeFi integration across all major chains.' },
-              { name: 'USDT', issuer: 'Tether', desc: 'The highest-liquidity stablecoin in the world with over $140 billion in circulation. The default settlement currency for global crypto trading and commodity markets.' },
-              { name: 'USAT', issuer: 'Tether (US Framework)', desc: 'Tether\'s US stablecoin under the GENIUS Act framework. Designed for compliant domestic transactions, bridging traditional finance with digital asset infrastructure.' },
-            ].map((coin, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-3"><div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-sm font-bold text-gray-700">{coin.name.charAt(0)}</div><div><p className="font-semibold text-gray-900">{coin.name}</p><p className="text-xs text-gray-500">{coin.issuer}</p></div></div>
-                <p className="text-sm text-gray-600 leading-relaxed">{coin.desc}</p>
+              {
+                name: 'USDC',
+                issuer: 'Circle',
+                detail:
+                  'Fully reserved and independently attested dollar stablecoin built for the highest-value transactions in digital settlement. The compliance rigor and institutional trust architecture that medical device procurement and six-figure-per-kilogram lutetium transactions demand.',
+              },
+              {
+                name: 'USDT',
+                issuer: 'Tether',
+                detail:
+                  'Over $140 billion in global circulation providing settlement depth for materials priced in millions per tonne. When lutetium transactions require immediate execution at values that reflect the most expensive rare earth on earth, USDT delivers the liquidity infrastructure to settle without delay.',
+              },
+              {
+                name: 'USAT',
+                issuer: 'Tether (US Regulated)',
+                detail:
+                  'US-regulated stablecoin under the GENIUS Act framework. Purpose-built for high-value medical supply transactions where domestic compliance infrastructure, FDA-adjacent procurement audit trails, and US jurisdictional requirements govern the acquisition of materials destined for oncology applications.',
+              },
+            ].map((coin) => (
+              <div key={coin.name} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                <p className="font-semibold text-gray-900">{coin.name}</p>
+                <p className="text-xs text-gray-500 mb-3">{coin.issuer}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{coin.detail}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===================== FOLD 6: DeFi ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+      {/* FOLD 9: DeFi */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Secondary Markets</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">DeFi Trading, Yield &amp; Collateral Loans</h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">Once tokenized lutetium is purchased on Toto Finance, secondary trading happens on DeFi platforms globally. Hold, trade, hedge, earn yield, or borrow against your lutetium. All on-chain. All programmable.</p>
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">SECONDARY MARKETS</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            DeFi Infrastructure for Tokenized Lutetium
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Lutetium has had zero financial infrastructure since its discovery in 1907. No exchange listing. No ETF. No futures market. No lending
+            facility. No collateral framework. For over a century, the rarest rare earth element has existed in a procurement vacuum accessible
+            only to a handful of specialists. Tokenization does not merely digitize lutetium. It creates an entire financial universe around an
+            element whose total annual production would not fill a single shipping drum.
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            {[
-              { title: 'Global Secondary Trading', desc: 'Tokenized lutetium trades 24/7 on decentralized exchanges and DeFi platforms worldwide. Buy, sell, and transfer lutetium tokens across chains without gatekeepers, brokers, or trading hour restrictions. True global liquidity.' },
-              { title: 'On-Chain Yield', desc: 'Earn yield by exposing lutetium assets to smart contract yield contracts. Lend tokenized lutetium to short sellers or leveraged long traders who borrow assets and pay interest. Passive income backed by physical rare earth metals.' },
-              { title: 'Collateral Loans', desc: 'Use tokenized lutetium as collateral for on-chain loans. Borrow stablecoins against lutetium holdings without selling the underlying asset. All managed at the protocol level — no bank approval, no credit checks, no delays.' },
-              { title: 'Programmable Finance', desc: 'Collateral loans backed by tokenized lutetium represent a new programmable financial model. Smart contracts automate liquidation thresholds, interest payments, and margin requirements. Physical rare earth value meets decentralized infrastructure.' },
-            ].map((feature, i) => (
-              <div key={i} className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100"><h3 className="text-lg font-semibold text-gray-900 mb-3">{feature.title}</h3><p className="text-sm text-gray-600 leading-relaxed">{feature.desc}</p></div>
-            ))}
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">A Market Where None Could Have Existed Before</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Before tokenization, acquiring lutetium meant knowing someone who could supply it. There was no market. No venue. No price to
+                discover. The transaction was a relationship, not a trade. Tokenized lutetium creates the first trading venue in this element&apos;s
+                118-year commercial history: a continuous secondary market on decentralized exchanges where pricing forms transparently, transfers
+                execute instantly, and fractional ownership makes the most expensive rare earth accessible to participants who could never have
+                entered this market at $2.85 million per tonne minimum. This is not market innovation. This is market origination.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Yield Derived from Oncology Infrastructure Expansion</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Lend lutetium tokens to counterparties seeking leveraged exposure to ultra-rare earth pricing or hedged positions in oncology
+                materials. Interest rates reflect real-world demand for lutetium exposure, tied to PET scanner installation rates, Lu-177 therapy
+                approval timelines, and particle physics upgrade schedules. Yield generated by the global expansion of cancer detection
+                infrastructure, not by token emission mechanics or protocol governance subsidies.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Liquidity from the Most Illiquid Market in Commodities</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Medical device manufacturers and institutional investors holding lutetium positions have historically had no mechanism for accessing
+                capital from those holdings. Selling meant finding one of a handful of traders willing to negotiate. Tokenized lutetium transforms
+                the most illiquid commodity market in existence.{' '}
+                <Link href="/products" className="text-fuchsia-800 font-medium underline underline-offset-2">
+                  Borrow against lutetium
+                </Link>{' '}
+                tokens to receive stablecoins while maintaining full exposure. For PET scanner manufacturers managing production against multi-year
+                crystal growth commitments, this unlocks capital without surrendering material that takes years to procure.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Risk Architecture for a Market Priced in Millions</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Lutetium&apos;s market is the smallest, most concentrated, and highest-value per unit of any commercially traded rare earth. A single
+                ultra-purification facility maintenance shutdown can remove meaningful percentage of global annual supply. At $2.85 million per
+                tonne, position management errors carry consequences measured in hundreds of thousands of dollars per kilogram. Smart contract
+                infrastructure automates collateral monitoring, margin management, and position adjustment in real time, providing institutional-grade
+                risk controls for a market where the margin of error is defined by the price tag.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
-            <h3 className="text-xl font-medium text-gray-900 mb-6 text-center">The Lifecycle of a Tokenized Lutetium Token</h3>
-            <div className="flex flex-col md:flex-row items-center justify-between gap-2 md:gap-0">
-              {['Minted on Toto Finance', 'Purchased with Stablecoins', 'Held, Traded or Transferred', 'Yield, Loans or Hedging', 'Redeemed for Physical Lutetium Oxide'].map((step, i) => (
-                <div key={i} className="flex items-center gap-2 md:gap-0">
-                  <div className="flex flex-col items-center text-center"><div className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-semibold mb-2">{i + 1}</div><p className="text-xs md:text-sm text-gray-700 max-w-[120px] leading-tight">{step}</p></div>
-                  {i < 4 && <svg className="w-5 h-5 text-gray-300 hidden md:block mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>}
+          <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+            <h3 className="text-xl font-medium text-gray-900 mb-6 text-center">
+              From Ultra-Purification to Global Digital Market: The Lutetium Token Path
+            </h3>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              {[
+                'Purified: Lutetium oxide verified at ultra-purification endpoint, secured in insured custody, and bound to on-chain token identity',
+                'Acquired: Purchased with USDC, USDT, or USAT at transparent pricing reflecting real-time oncology and scientific demand',
+                'Positioned: Held in wallet, traded on secondary markets, or bridged across chains to integrate with holder procurement infrastructure',
+                'Activated: Deployed into yield protocols, pledged as loan collateral, or structured for ultra-rare supply disruption hedging',
+                'Delivered: Redeemed for physical lutetium oxide (Lu₂O₃) for scintillator crystal growth, radiopharmaceutical production, or precision optics fabrication',
+              ].map((step, i) => (
+                <div key={i} className="flex items-center gap-2 md:gap-0 w-full md:w-auto">
+                  <div className="flex flex-col items-center text-center flex-1">
+                    <div className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-semibold mb-2">
+                      {i + 1}
+                    </div>
+                    <p className="text-xs text-gray-700 max-w-[168px] leading-tight">{step}</p>
+                  </div>
+                  {i < 4 && (
+                    <svg className="w-5 h-5 text-gray-300 hidden md:block flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  )}
                 </div>
               ))}
             </div>
@@ -382,30 +830,55 @@ export default function TokenizedLutetiumPage() {
         </div>
       </section>
 
-      {/* ===================== FOLD 6B: COMPARISON TABLE ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
+      {/* FOLD 10: Comparison */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Why Tokenized</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">Tokenized Lutetium vs. Traditional Rare Earth Investment</h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">See how tokenized lutetium on Toto Finance compares to traditional rare earth ETFs, futures contracts, and physical ownership.</p>
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">WHY TOKENIZED</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Tokenized Lutetium vs Every Other Way to Get Exposure
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            There has never been any way to invest in lutetium. Rare earth ETFs dilute exposure across dozens of elements where lutetium does not
+            even register as a line item. Mining stocks carry operational risk unrelated to lutetium pricing. Physical procurement requires
+            relationships with the handful of ultra-purification specialists who handle this element, and minimum quantities carry six-figure price
+            tags per kilogram. Toto Finance built what could not have existed before blockchain made fractional ownership of $2.85M-per-tonne
+            materials possible.
+          </p>
 
-          <div className="overflow-x-auto rounded-2xl border border-gray-200">
-            <table className="w-full text-sm text-left">
-              <thead><tr className="bg-gray-900 text-white"><th className="px-4 md:px-6 py-4 font-medium">Feature</th><th className="px-4 md:px-6 py-4 font-medium">Rare Earth ETFs</th><th className="px-4 md:px-6 py-4 font-medium bg-white/10">Toto Finance</th><th className="px-4 md:px-6 py-4 font-medium">Physical Lutetium</th><th className="px-4 md:px-6 py-4 font-medium">Mining Stocks</th></tr></thead>
+          <div
+            className="overflow-x-auto rounded-2xl border border-gray-200"
+            aria-label="Comparison table of tokenized lutetium on Toto Finance versus rare earth ETFs, physical lutetium procurement, and mining stocks across 10 features including lutetium-specific exposure, settlement speed, price transparency, and DeFi access."
+          >
+            <table className="w-full text-sm text-left min-w-[720px]">
+              <thead>
+                <tr className="bg-gray-900 text-white">
+                  <th className="px-4 md:px-6 py-4 font-medium">Feature</th>
+                  <th className="px-4 md:px-6 py-4 font-medium">Rare Earth ETFs</th>
+                  <th className="px-4 md:px-6 py-4 font-medium bg-white/10">Toto Finance</th>
+                  <th className="px-4 md:px-6 py-4 font-medium">Physical Lutetium</th>
+                  <th className="px-4 md:px-6 py-4 font-medium">Mining Stocks</th>
+                </tr>
+              </thead>
               <tbody className="bg-white">
                 {[
-                  ['Trading Hours', 'Market hours only', '24/7/365', 'OTC / Dealer', 'Market hours only'],
+                  ['Lutetium-Specific', 'No (basket)', 'Yes (1:1)', 'Yes', 'No (equity)'],
+                  ['Trading Hours', 'Market hours only', '24/7/365', 'Private negotiation', 'Market hours only'],
                   ['Settlement', 'T+2', 'T+0 (Instant)', 'Weeks to months', 'T+2'],
                   ['Settlement Currency', 'Fiat (via broker)', 'USDC, USDT, USAT', 'Wire transfer', 'Fiat (via broker)'],
-                  ['Physical Backing', 'Synthetic / Basket', '1:1 Lutetium Oxide', 'Direct ownership', 'No (equity)'],
-                  ['Min. Investment', '1 share (~$50+)', 'Fractional (from $1)', '$250,000+', '1 share (~$10+)'],
+                  ['Min. Investment', '1 share (~$50+)', 'Fractional (from $1)', '$250,000+ (gram scale)', '1 share (~$10+)'],
                   ['Physical Redemption', 'No', 'Yes', 'Yes', 'No'],
                   ['On-Chain Transparency', 'No', 'Yes', 'No', 'No'],
                   ['DeFi Yield / Loans', 'No', 'Yes', 'No', 'No'],
-                  ['Storage Costs', 'Expense ratio', 'None', 'Vault fees', 'None'],
-                  ['Intermediaries', 'Broker + Clearing', 'None (P2P)', 'Multiple', 'Broker'],
+                  ['Price Transparency', 'NAV-based', 'Real-time oracle', 'Private negotiation', 'Stock price only'],
+                  ['Intermediaries', 'Broker + Clearing', 'None (P2P)', 'Handful of specialists', 'Broker'],
                 ].map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}><td className="px-4 md:px-6 py-3 font-medium text-gray-900">{row[0]}</td><td className="px-4 md:px-6 py-3 text-gray-600">{row[1]}</td><td className="px-4 md:px-6 py-3 text-gray-900 font-medium bg-fuchsia-50/50">{row[2]}</td><td className="px-4 md:px-6 py-3 text-gray-600">{row[3]}</td><td className="px-4 md:px-6 py-3 text-gray-600">{row[4]}</td></tr>
+                  <tr key={row[0]} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                    <td className="px-4 md:px-6 py-3 font-medium text-gray-900">{row[0]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-600">{row[1]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-900 font-medium bg-fuchsia-50/50">{row[2]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-600">{row[3]}</td>
+                    <td className="px-4 md:px-6 py-3 text-gray-600">{row[4]}</td>
+                  </tr>
                 ))}
               </tbody>
             </table>
@@ -413,53 +886,100 @@ export default function TokenizedLutetiumPage() {
         </div>
       </section>
 
-      {/* ===================== FOLD 6C: PLATFORM FEATURES ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+      {/* FOLD 11: Platform */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Platform</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">Institutional-Grade Lutetium Tokenization</h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">Transparency, compliance, and programmable infrastructure embedded into every transaction.</p>
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">PLATFORM</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
+            Building Financial Infrastructure for the Most Valuable Rare Earth on the Periodic Table
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
+            Lutetium has been procured through a vanishingly small circle of ultra-specialized heavy rare earth traders since it became
+            commercially relevant for medical imaging in the late 20th century. No standardized contracts. No public pricing benchmarks. No
+            settlement infrastructure. No collateral frameworks. Every feature of the Toto Finance platform for lutetium was engineered from
+            absolute zero because this element&apos;s market was too small, too specialized, and too expensive for any traditional financial
+            infrastructure to have been built around it.
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'Redeemable Assets', desc: 'All tokenized lutetium is linked to insured vaults and custody facilities. Redeem tokens for physical lutetium oxide delivery on demand. Ultra-high-purity grade (99.99%+ Lu₂O₃), ready for industrial use.' },
-              { title: 'Transparent Reserves', desc: 'On-chain proof-of-reserves, real-time oracle feeds, and third-party audits ensure continuous 1:1 asset backing. Every token is verifiable on the blockchain at any time.' },
-              { title: 'Instant Settlement', desc: 'T+0 settlement with USDC, USDT, and USAT eliminates counterparty risk and delays. No banks, no clearing houses, no intermediaries.' },
-              { title: 'Programmable Compliance', desc: 'Smart contracts enforce KYC/AML requirements, transfer restrictions, and permissions at the protocol level. Compliance is built into the token, not bolted on.' },
-              { title: 'DeFi Yield & Loans', desc: 'Earn yield through lending protocols, use lutetium as collateral for on-chain loans, or hedge positions through smart contracts. Programmable finance for physical assets.' },
-              { title: 'Multi-Chain Access', desc: 'Tokenized lutetium is accessible across Ethereum, Polygon, Cardano, Solana, and XRP Ledger. Trade on the chain that works best for your strategy.' },
-            ].map((f, i) => (
-              <div key={i} className="bg-gray-50 rounded-2xl p-6 border border-gray-100"><h3 className="text-lg font-semibold text-gray-900 mb-3">{f.title}</h3><p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p></div>
+              {
+                t: 'Physical Backing with Ultra-Purity Delivery',
+                b: 'Every lutetium token connects to verified lutetium oxide (Lu₂O₃, 99.99%+) in insured custody. Request physical delivery and receive material ready for scintillator crystal growth, radiopharmaceutical feedstock preparation, or precision optics fabrication. In a market where supply verification has always meant trusting one of three or four people globally, on-chain proof-of-reserves replaces personal reputation with cryptographic certainty at a scale that the lutetium market has never had access to.',
+              },
+              {
+                t: 'Price Discovery for an Element That Has Never Had a Public Price',
+                b: "Lutetium has never had a published benchmark price. The handful of transactions that occur annually are negotiated privately between ultra-purification specialists and medical device manufacturers, with no reference point available to anyone outside those conversations. Toto Finance's oracle feeds and on-chain trading activity create the first transparent lutetium pricing mechanism in history: real-time, independently verifiable, and accessible to every participant.",
+              },
+              {
+                t: 'Instant Settlement for a Market That Operates in Grams and Months',
+                b: 'Traditional lutetium procurement is measured in grams, priced in thousands per gram, and scheduled in months. Ultra-purification timelines, quality certification for medical applications, international logistics for high-value shipments, and banking settlement across jurisdictions compound into procurement cycles that can stretch across quarters. Token settlement is T+0 with stablecoins. For medical device manufacturers managing crystal production against oncology equipment delivery schedules, instant execution transforms a quarter-long procurement cycle into a single transaction.',
+              },
+              {
+                t: 'Compliance for the Most Regulated End-Use Applications',
+                b: 'Lutetium trade crosses jurisdictions with heavy rare earth export controls, strategic material designations, medical device manufacturing regulations, and radiopharmaceutical supply chain requirements that represent among the most complex compliance environments in commodity trade. Smart contracts embed KYC/AML verification, transfer restrictions, and jurisdiction-specific regulatory rules directly into token architecture, ensuring every transaction automatically satisfies applicable requirements without the documentation overhead that compounds in a market this specialized.',
+              },
+              {
+                t: 'Complete Financial Infrastructure for a 6.5-Tonne Market',
+                b: 'Lending, borrowing, hedging, and collateral management for lutetium: functions that have never existed in any form for an element with annual production that weighs less than a sedan. Smart contract protocols enable yield generation from lutetium positions, stablecoin borrowing against holdings, and programmable hedging strategies. An entire financial stack, purpose-built for what may be the most valuable and simultaneously smallest commodity market in the world.',
+              },
+              {
+                t: 'Multi-Chain Presence',
+                b: 'Tokenized lutetium is deployed across Ethereum, Polygon, Cardano, Solana, and XRP Ledger. Institutional custodians, DeFi protocols, medical device procurement platforms, and individual holders can interact with lutetium tokens on whatever chain infrastructure their operations already use. No migration required, no ecosystem lock-in.',
+              },
+            ].map((x) => (
+              <div key={x.t} className="bg-white rounded-2xl p-6 border border-gray-200">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{x.t}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{x.b}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===================== FOLD 7: FAQ ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
+      {/* FOLD 12: FAQ */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
         <div className="max-w-3xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Frequently Asked Questions</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">Everything About Tokenized Lutetium</h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-12">Common questions about tokenized lutetium, In-Ground Lutetium, instant settlement, and DeFi secondary markets on Toto Finance.</p>
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">QUESTIONS</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">Tokenized Lutetium FAQ</h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-12">
+            Direct answers about tokenized lutetium, In-Ground Lutetium, oncology and scientific demand, and how Toto Finance provides access to
+            the rarest and most expensive rare earth element in commercial use.
+          </p>
           <LutetiumFAQ faqs={faqData} />
         </div>
       </section>
 
-      {/* ===================== FOLD 7B: FINAL CTA ===================== */}
+      {/* FOLD 13: Final CTA */}
       <section className="relative bg-gradient-to-br from-fuchsia-900 via-fuchsia-800 to-gray-900 text-white px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px',
+          }}
+        />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">Be First</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight mb-6">The Lutetium Deficit Is Here</h2>
-          <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-8">The world needs 28 tonnes of lutetium by 2030. Supply will fall short by over 12 tonnes. Toto Finance is building the platform to tokenize lutetium &mdash; from 1:1 redeemable refined oxide to In-Ground future delivery &mdash; with instant stablecoin settlement and DeFi secondary markets.</p>
-          <Link href="/products" className="inline-flex items-center justify-center bg-white text-gray-900 px-8 py-3.5 rounded-full text-base font-semibold hover:bg-gray-100 transition-all duration-300">
+          <p className="text-xs uppercase tracking-widest text-fuchsia-200/80 font-semibold mb-3">THIS IS WHY</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight mb-8">
+            Cancer Incidence Grows Every Year. Lutetium Production Remains at 6.5 Tonnes.
+          </h2>
+          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10">
+            Every PET scan that detects cancer depends on lutetium. Every Lu-177 therapy that treats cancer depends on lutetium. Every particle
+            physics detector probing the structure of matter depends on lutetium. The world needs 28 tonnes by 2030. Supply will deliver 16. The
+            12-tonne gap compounds with every PET scanner installed, every radiopharmaceutical approved, every oncology center commissioned. Toto
+            Finance is building the infrastructure to bring the rarest and most expensive rare earth element to an open, transparent,
+            instant-settlement market for the first time in its 118-year history.
+          </p>
+          <Link
+            href="/products"
+            className="inline-flex items-center justify-center bg-white text-gray-900 px-8 py-3.5 rounded-full text-base font-semibold hover:bg-gray-100 transition-all duration-300"
+          >
             Get Early Access
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
           </Link>
         </div>
       </section>
 
-      {/* ===================== NEWSLETTER + FOOTER ===================== */}
       <NewsletterSection />
       <Footer />
     </div>

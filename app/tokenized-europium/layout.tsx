@@ -1,9 +1,15 @@
 import { ReactNode } from 'react';
 
+const PAGE_TITLE = 'Tokenized Europium | Digital Rare Earth Backed by Physical Assets | Toto Finance';
+const PAGE_DESCRIPTION =
+  'Every color on every screen starts with europium. Toto Finance brings the rarest commercial rare earth on-chain from 1:1 redeemable oxide tokens to In-Ground future delivery contracts. The element that gives displays their light. Instant stablecoin settlement. DeFi secondary markets.';
+const KEYWORDS =
+  'tokenized europium, europium tokenization, buy tokenized europium, digital europium, europium-backed tokens, RWA europium, real world asset europium, in-ground europium, europium future delivery, europium oxide token, europium instant settlement, DeFi europium, europium yield, europium collateral loans, red phosphor rare earth, OLED europium, LED europium display';
+
 export const metadata = {
-  title: 'Tokenized Europium | Behind Every Bright Red Display | Toto Finance',
-  description: 'Tokenized europium by Toto Finance. 1:1 asset-backed rare earth metal tokens, always redeemable. In-Ground Europium future delivery contracts (1-12 months and 1-6 years). Instant settlement with stablecoins. The luminescent element powering displays and lighting.',
-  keywords: 'tokenized europium, europium tokenization, buy tokenized europium, digital rare earth, europium-backed tokens, RWA rare earth, real world asset europium, in-ground europium, europium future delivery, europium metal token, europium instant settlement, DeFi rare earth, europium yield, europium collateral loans, red phosphor',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: KEYWORDS,
   robots: {
     index: true,
     follow: true,
@@ -16,8 +22,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Tokenized Europium | Behind Every Bright Red Display | Toto Finance',
-    description: 'Tokenized europium by Toto Finance. 1:1 asset-backed rare earth tokens, always redeemable. In-Ground Europium future delivery contracts. Instant stablecoin settlement.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: 'https://totofinance.co/tokenized-europium',
     siteName: 'Toto Finance',
     images: [
@@ -33,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokenized Europium | Behind Every Bright Red Display | Toto Finance',
-    description: 'Tokenized europium by Toto Finance. 1:1 asset-backed rare earth tokens, always redeemable. In-Ground Europium future delivery contracts. Instant stablecoin settlement.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },
   alternates: {
@@ -42,10 +48,6 @@ export const metadata = {
   },
 };
 
-export default function TokenizedEuropiumLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function TokenizedEuropiumLayout({ children }: { children: ReactNode }) {
   return children;
 }

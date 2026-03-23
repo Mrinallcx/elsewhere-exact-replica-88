@@ -5,11 +5,11 @@ export function CeriumTickerBar() {
     '$2.4B+ Global Cerium Market',
     '45% Automotive Catalyst Demand',
     '65,000 Tonne Supply Gap by 2030',
+    '88% of Production from One Country',
     '1:1 Backed Redeemable Cerium Oxide',
-    'In-Ground Cerium Future Delivery Contracts',
     'USDC + USDT + USAT Instant Settlement',
     'DeFi Yield, Loans & Secondary Trading',
-    '$16T+ Tokenized Asset Market by 2030',
+    'Access Has Never Been This Concentrated',
   ];
 
   const tickerContent = items.map((item) => `${item}  \u2022  `).join('');

@@ -2,14 +2,14 @@
 
 export function NeodymiumTickerBar() {
   const items = [
-    'Critical Rare Earth for AI & Magnets',
-    'NdFeB Permanent Magnets',
-    'AI Data Centers & Robotics',
-    'EV Traction Motors',
-    'Wind Turbine Direct-Drive Systems',
-    'Defense & Aerospace Applications',
-    'Instant Stablecoin Settlement',
-    '$16T+ Tokenized Asset Market by 2030',
+    '$12B+ Global NdFeB Magnet Market',
+    '87% Processing Controlled by China',
+    '45,000 Tonne Supply Gap by 2030',
+    '1 kg Neodymium per EV Motor',
+    '600 kg per Offshore Wind Turbine',
+    '1:1 Backed Redeemable Neodymium Oxide',
+    'USDC + USDT + USAT Settlement',
+    '12% Annual Demand Growth',
   ];
 
   const tickerContent = items.map((item) => `${item}  \u2022  `).join('');

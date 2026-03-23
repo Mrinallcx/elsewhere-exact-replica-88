@@ -1,9 +1,15 @@
 import { ReactNode } from 'react';
 
+const PAGE_TITLE = 'Tokenized Copper | Digital Copper Backed by Physical Assets | Toto Finance';
+const PAGE_DESCRIPTION =
+  "The world is running out of the metal that powers the future. Toto Finance exists to make copper ownership borderless, instant, and fair from 1:1 redeemable cathode tokens to In-Ground future delivery contracts. Settle in stablecoins. Trade on DeFi. Own the metal that matters.";
+const KEYWORDS =
+  'tokenized copper, copper tokenization, buy tokenized copper, digital copper, copper-backed tokens, RWA copper, real world asset copper, in-ground copper, copper future delivery, copper cathode token, copper instant settlement, DeFi copper, copper yield, copper collateral loans';
+
 export const metadata = {
-  title: 'Tokenized Copper | Digital Copper Backed by Physical Assets | Toto Finance',
-  description: 'Tokenized copper by Toto Finance. 1:1 asset-backed copper cathode tokens, always redeemable. In-Ground Copper future delivery contracts (1-12 months and 1-6 years). Instant settlement with stablecoins. The new oil of the AI era.',
-  keywords: 'tokenized copper, copper tokenization, buy tokenized copper, digital copper, copper-backed tokens, RWA copper, real world asset copper, in-ground copper, copper future delivery, copper cathode token, copper instant settlement, DeFi copper, copper yield, copper collateral loans',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: KEYWORDS,
   robots: {
     index: true,
     follow: true,
@@ -16,8 +22,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Tokenized Copper | Digital Copper Backed by Physical Assets | Toto Finance',
-    description: 'Tokenized copper by Toto Finance. 1:1 asset-backed copper cathode tokens, always redeemable. In-Ground Copper future delivery contracts. Instant settlement with stablecoins.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: 'https://totofinance.co/tokenized-copper',
     siteName: 'Toto Finance',
     images: [
@@ -33,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokenized Copper | Digital Copper Backed by Physical Assets | Toto Finance',
-    description: 'Tokenized copper by Toto Finance. 1:1 asset-backed copper cathode tokens, always redeemable. In-Ground Copper future delivery contracts. The new oil of the AI era.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },
   alternates: {
@@ -42,10 +48,6 @@ export const metadata = {
   },
 };
 
-export default function TokenizedCopperLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function TokenizedCopperLayout({ children }: { children: ReactNode }) {
   return children;
 }

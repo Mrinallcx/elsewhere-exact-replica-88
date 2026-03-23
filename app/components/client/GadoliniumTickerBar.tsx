@@ -3,13 +3,13 @@
 export function GadoliniumTickerBar() {
   const items = [
     '$420M+ Global Gadolinium Market',
-    '95% MRI & Medical Demand',
+    '100M+ MRI Scans Annually',
     '950 Tonne Supply Gap by 2030',
+    '95% Demand from Healthcare Applications',
     '1:1 Backed Redeemable Gadolinium Oxide',
+    'USDC + USDT + USAT Settlement',
+    '8% Annual Growth in Contrast MRI',
     'In-Ground Gadolinium Future Delivery Contracts',
-    'USDC + USDT + USAT Instant Settlement',
-    'DeFi Yield, Loans & Secondary Trading',
-    '$16T+ Tokenized Asset Market by 2030',
   ];
 
   const tickerContent = items.map((item) => `${item}  \u2022  `).join('');

@@ -7,7 +7,7 @@ export function PromethiumTickerBar() {
     '<100g Annual Production',
     '1:1 Backed Redeemable Promethium Isotopes',
     'In-Ground Promethium Future Delivery Contracts',
-    'USDC + USDT + USAT Instant Settlement',
+    'USDC + USDT + USAT Settlement',
     'DeFi Yield, Loans & Secondary Trading',
     '$16T+ Tokenized Asset Market by 2030',
   ];

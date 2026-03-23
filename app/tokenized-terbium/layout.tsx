@@ -1,9 +1,15 @@
 import { ReactNode } from 'react';
 
+const PAGE_TITLE = 'Tokenized Terbium | Digital Rare Earth Backed by Physical Assets | Toto Finance';
+const PAGE_DESCRIPTION =
+  'Without terbium, the magnets inside every EV motor and wind turbine demagnetize at operating temperature. Toto Finance brings the magnet stabilizer on-chain from 1:1 redeemable oxide tokens to In-Ground future delivery contracts. The heavy rare earth that prevents permanent magnets from failing under heat. Instant stablecoin settlement. DeFi secondary markets.';
+const KEYWORDS =
+  'tokenized terbium, terbium tokenization, buy tokenized terbium, digital terbium, terbium-backed tokens, RWA terbium, real world asset terbium, in-ground terbium, terbium future delivery, terbium oxide token, terbium instant settlement, DeFi terbium, terbium yield, terbium collateral loans, magnet stabilization terbium, Terfenol-D, green phosphor terbium, defense electronics terbium, NdFeB magnet terbium';
+
 export const metadata = {
-  title: 'Tokenized Terbium | Strategic Rare Earth for Magnets & Defense | Toto Finance',
-  description: 'Tokenized terbium by Toto Finance. Digitally represented terbium supply essential for magnet stabilization, defense electronics, solid-state lighting, and advanced AI-era technologies.',
-  keywords: 'tokenized terbium, terbium tokenization, rare earth magnets, magnet stabilization materials, defense electronics terbium, strategic rare earths, digital terbium, rare earth blockchain, advanced magnet materials, solid-state lighting materials, AI hardware inputs',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: KEYWORDS,
   robots: {
     index: true,
     follow: true,
@@ -16,21 +22,30 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Tokenized Terbium | Strategic Rare Earth for Magnets & Defense | Toto Finance',
-    description: 'Tokenized terbium by Toto Finance. Digitally represented terbium supply essential for magnet stabilization, defense electronics, solid-state lighting, and advanced AI-era technologies.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: 'https://totofinance.co/tokenized-terbium',
     siteName: 'Toto Finance',
-    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Tokenized Terbium | Toto Finance' }],
+    images: [
+      {
+        url: 'https://totofinance.co/assets/images/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'Tokenized Terbium | Toto Finance',
+      },
+    ],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokenized Terbium | Strategic Rare Earth for Magnets & Defense | Toto Finance',
-    description: 'Tokenized terbium by Toto Finance. Digitally represented terbium supply essential for magnet stabilization, defense electronics, solid-state lighting, and advanced AI-era technologies.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },
-  alternates: { canonical: 'https://totofinance.co/tokenized-terbium' },
+  alternates: {
+    canonical: 'https://totofinance.co/tokenized-terbium',
+  },
 };
 
 export default function TokenizedTerbiumLayout({ children }: { children: ReactNode }) {

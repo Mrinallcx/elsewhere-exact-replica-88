@@ -3,13 +3,13 @@
 export function EuropiumTickerBar() {
   const items = [
     '$1.2B+ Global Europium Market',
-    '95% Display & Lighting Demand',
+    'Only 0.05% of Rare Earth Deposits',
     '650 Tonne Supply Gap by 2030',
+    '95% Demand from Display & Lighting Phosphors',
     '1:1 Backed Redeemable Europium Oxide',
+    'USDC + USDT + USAT Settlement',
+    '18% CAGR Display Market Growth',
     'In-Ground Europium Future Delivery Contracts',
-    'USDC + USDT + USAT Instant Settlement',
-    'DeFi Yield, Loans & Secondary Trading',
-    '$16T+ Tokenized Asset Market by 2030',
   ];
 
   const tickerContent = items.map((item) => `${item}  \u2022  `).join('');

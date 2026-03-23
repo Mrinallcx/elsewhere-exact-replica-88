@@ -2,15 +2,14 @@
 
 export function DysprosiumTickerBar() {
   const items = [
-    'Critical Heavy Rare Earth Element',
-    'EV Traction Motor Magnet Material',
-    'Defense & Aerospace Systems',
-    'Wind Turbine Permanent Magnets',
-    'AI & Advanced Robotics Hardware',
-    'Geologically Scarce Byproduct',
-    'Digitally Represented Dysprosium Supply',
-    'USDC + USDT + USAT Instant Settlement',
+    '98% of Heavy Rare Earths from China & Myanmar',
+    '10%+ Annual Demand Growth',
+    'Every EV Motor Needs Dysprosium',
+    'Defense Magnet Supply at Risk',
+    '1:1 Backed Dysprosium Tokens',
+    'USDC + USDT + USAT Settlement',
     'DeFi Yield, Loans & Secondary Trading',
+    'The Bottleneck No One Sees Coming',
   ];
 
   const tickerContent = items.map((item) => `${item}  \u2022  `).join('');

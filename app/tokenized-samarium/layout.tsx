@@ -1,9 +1,15 @@
 import { ReactNode } from 'react';
 
+const PAGE_TITLE = 'Tokenized Samarium | Digital Rare Earth Backed by Physical Assets | Toto Finance';
+const PAGE_DESCRIPTION =
+  'When neodymium magnets fail from heat, samarium-cobalt magnets keep working. Toto Finance brings the extreme-temperature rare earth on-chain from 1:1 redeemable metal tokens to In-Ground future delivery contracts. The magnet inside every fighter jet, missile, and satellite. Instant stablecoin settlement. DeFi secondary markets.';
+const KEYWORDS =
+  'tokenized samarium, samarium tokenization, buy tokenized samarium, digital samarium, samarium-backed tokens, RWA samarium, real world asset samarium, in-ground samarium, samarium future delivery, samarium metal token, samarium instant settlement, DeFi samarium, samarium yield, samarium collateral loans, SmCo magnets, samarium cobalt aerospace, defense rare earth samarium';
+
 export const metadata = {
-  title: 'Tokenized Samarium | Permanent Magnets for Extreme Environments | Toto Finance',
-  description: 'Tokenized samarium by Toto Finance. 1:1 asset-backed rare earth metal tokens, always redeemable. In-Ground Samarium future delivery contracts (1-12 months and 1-6 years). Instant settlement with stablecoins. The high-temperature magnet element for aerospace and defense.',
-  keywords: 'tokenized samarium, samarium tokenization, buy tokenized samarium, digital rare earth, samarium-backed tokens, RWA rare earth, real world asset samarium, in-ground samarium, samarium future delivery, samarium metal token, samarium instant settlement, DeFi rare earth, samarium yield, samarium collateral loans, SmCo magnets',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: KEYWORDS,
   robots: {
     index: true,
     follow: true,
@@ -16,21 +22,30 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Tokenized Samarium | Permanent Magnets for Extreme Environments | Toto Finance',
-    description: 'Tokenized samarium by Toto Finance. 1:1 asset-backed rare earth metal tokens, always redeemable. In-Ground Samarium future delivery contracts. Instant stablecoin settlement.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: 'https://totofinance.co/tokenized-samarium',
     siteName: 'Toto Finance',
-    images: [{ url: 'https://totofinance.co/assets/images/og-preview.png', width: 1200, height: 630, alt: 'Tokenized Samarium | Toto Finance' }],
+    images: [
+      {
+        url: 'https://totofinance.co/assets/images/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'Tokenized Samarium | Toto Finance',
+      },
+    ],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokenized Samarium | Permanent Magnets for Extreme Environments | Toto Finance',
-    description: 'Tokenized samarium by Toto Finance. 1:1 asset-backed rare earth metal tokens, always redeemable. In-Ground Samarium future delivery contracts. Instant stablecoin settlement.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },
-  alternates: { canonical: 'https://totofinance.co/tokenized-samarium' },
+  alternates: {
+    canonical: 'https://totofinance.co/tokenized-samarium',
+  },
 };
 
 export default function TokenizedSamariumLayout({ children }: { children: ReactNode }) {

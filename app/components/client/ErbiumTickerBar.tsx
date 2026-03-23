@@ -3,13 +3,13 @@
 export function ErbiumTickerBar() {
   const items = [
     '$320M+ Global Erbium Market',
-    '1.55 μm Wavelength Fiber Amplification',
+    'Only 385 Tonnes Produced Annually',
     '350 Tonne Supply Gap by 2030',
+    '70% Demand from Fiber Optic Amplifiers',
+    "1.55 μm: The Internet's Wavelength",
     '1:1 Backed Redeemable Erbium Oxide',
-    'In-Ground Erbium Future Delivery Contracts',
-    'USDC + USDT + USAT Instant Settlement',
-    'DeFi Yield, Loans & Secondary Trading',
-    '$16T+ Tokenized Asset Market by 2030',
+    'USDC + USDT + USAT Settlement',
+    '28% Annual Internet Traffic Growth',
   ];
 
   const tickerContent = items.map((item) => `${item}  \u2022  `).join('');

@@ -5,11 +5,9 @@ export function CopperTickerBar() {
     '$350B+ Global Copper Market',
     '42.7 Mt Demand by 2035',
     '6M Tonne Supply Gap by 2035',
-    '1:1 Backed Redeemable Copper Cathodes',
-    'In-Ground Copper Future Delivery Contracts',
-    'USDC + USDT + USAT Instant Settlement',
-    'DeFi Yield, Loans & Secondary Trading',
-    '$16T+ Tokenized Asset Market by 2030',
+    'The AI Era Runs on Copper',
+    'Access Has Never Been This Unequal',
+    'The Deficit Is Already Here',
   ];
 
   const tickerContent = items.map((item) => `${item}  \u2022  `).join('');
