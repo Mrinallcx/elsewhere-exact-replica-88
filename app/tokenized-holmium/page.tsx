@@ -141,14 +141,14 @@ export default function TokenizedHolmiumPage() {
             backgroundSize: '40px 40px',
           }}
         />
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 max-w-7xl mx-auto text-left">
           <h1 className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-emerald-200/90 mb-4">
             Tokenized Holmium by Toto Finance
           </h1>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8">
             Every Surgical Laser That Saves a Life Depends on Holmium. Now Anyone Can Own It.
           </h2>
-          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto text-left md:text-center">
+          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl text-left">
             Right now, in an operating room somewhere in the world, a surgeon is using a holmium laser to remove a kidney stone, vaporize prostate
             tissue, or perform minimally invasive joint surgery. Over 1.2 million laser lithotripsy procedures are performed every year, and
             every single one requires a holmium-doped YAG crystal emitting at exactly 2.1 micrometers, the wavelength where water absorption
@@ -160,7 +160,7 @@ export default function TokenizedHolmiumPage() {
             </Link>{' '}
             is changing that by bringing the element that powers the scalpel of light on-chain for the first time.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link
               href="/products"
               className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300"

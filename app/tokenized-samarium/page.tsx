@@ -142,14 +142,14 @@ export default function TokenizedSamariumPage() {
             backgroundSize: '40px 40px',
           }}
         />
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 max-w-7xl mx-auto text-left">
           <h1 className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-slate-200/90 mb-4">
             Tokenized Samarium by Toto Finance
           </h1>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8">
             Where Neodymium Fails from Heat, Samarium Keeps Working. Now Anyone Can Own It.
           </h2>
-          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto text-left md:text-center">
+          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl text-left">
             At 150°C, neodymium magnets begin to lose their grip. At 200°C, they degrade. At 350°C, they are useless. But inside a fighter jet engine,
             a missile guidance system, a satellite reaction wheel, or a downhole drilling motor, 350°C is not an extreme scenario. It is the operating
             environment. That is where samarium takes over. Samarium-cobalt magnets maintain full magnetic performance at temperatures that would destroy
@@ -162,7 +162,7 @@ export default function TokenizedSamariumPage() {
             </Link>{' '}
             is changing that by bringing the magnet metal that operates where no other can on-chain for the first time.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link
               href="/products"
               className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300"

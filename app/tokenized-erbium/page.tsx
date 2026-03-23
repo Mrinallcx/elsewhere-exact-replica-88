@@ -141,14 +141,14 @@ export default function TokenizedErbiumPage() {
             backgroundSize: '40px 40px',
           }}
         />
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 max-w-7xl mx-auto text-left">
           <h1 className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-rose-200/90 mb-4">
             Tokenized Erbium by Toto Finance
           </h1>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8">
             Every Signal Traveling Through Fiber Depends on Erbium. Now Anyone Can Own It.
           </h2>
-          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto text-left md:text-center">
+          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl text-left">
             Right now, a signal carrying this webpage traveled through erbium-doped fiber amplifiers to reach you. Every streaming
             service, every cloud application, every financial transaction crossing fiber optic networks depends on a rare earth element
             that only 385 tonnes of is produced annually, all as a byproduct of other mining. Supply is in structural deficit. Yet
@@ -158,7 +158,7 @@ export default function TokenizedErbiumPage() {
             </Link>{' '}
             is changing that by bringing the element powering global internet infrastructure on-chain for the first time.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link
               href="/products"
               className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300"

@@ -141,14 +141,14 @@ export default function TokenizedDysprosiumPage() {
             backgroundSize: '40px 40px',
           }}
         />
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 max-w-7xl mx-auto text-left">
           <h1 className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-indigo-200/90 mb-4">
             Tokenized Dysprosium by Toto Finance
           </h1>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8">
             The Metal That Makes Every EV Motor and Defense Magnet Work Under Pressure. Now Accessible to Everyone.
           </h2>
-          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto text-left md:text-center">
+          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl text-left">
             Without dysprosium, permanent magnets fail under heat. EV motors lose power. Defense guidance systems degrade. Wind turbines
             underperform. Yet this critical heavy rare earth is geologically scarce, produced as a byproduct, and controlled by a handful
             of nations. Access to dysprosium as an asset has never existed outside industrial procurement contracts and state-backed
@@ -158,7 +158,7 @@ export default function TokenizedDysprosiumPage() {
             </Link>{' '}
             is changing that, bringing dysprosium ownership on-chain with instant stablecoin settlement and DeFi secondary markets.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link
               href="/products"
               className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300"

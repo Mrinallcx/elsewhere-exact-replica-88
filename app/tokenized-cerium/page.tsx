@@ -141,14 +141,14 @@ export default function TokenizedCeriumPage() {
             backgroundSize: '40px 40px',
           }}
         />
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 max-w-7xl mx-auto text-left">
           <h1 className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-orange-200/90 mb-4">
             Tokenized Cerium by Toto Finance
           </h1>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8">
             Every Catalytic Converter and Every Polished Screen Depends on Cerium. Everyone Deserves Access to It.
           </h2>
-          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto text-left md:text-center">
+          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl text-left">
             The most abundant rare earth element powers every catalytic converter rolling off the line and every precision lens
             polished to optical grade. Yet 88% of global cerium production is concentrated in a single country, and supply is
             entering structural deficit. Access to cerium as an asset remains locked behind rare earth brokers, processing
@@ -158,7 +158,7 @@ export default function TokenizedCeriumPage() {
             </Link>{' '}
             exists to change it, making cerium ownership instant, borderless, and open to everyone.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link
               href="/products"
               className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300"

@@ -141,14 +141,14 @@ export default function TokenizedNeodymiumPage() {
             backgroundSize: '40px 40px',
           }}
         />
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 max-w-7xl mx-auto text-left">
           <h1 className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-sky-200/90 mb-4">
             Tokenized Neodymium by Toto Finance
           </h1>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8">
             Every Electric Motor, Every Wind Turbine, Every AI Data Center Fan Depends on Neodymium. Now Anyone Can Own It.
           </h2>
-          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto text-left md:text-center">
+          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl text-left">
             Right now, the world&apos;s electrification runs on NdFeB permanent magnets—and neodymium is the element that makes those magnets
             possible. EV traction motors, offshore wind generators, precision robotics, defense systems, and the cooling and storage stacks
             behind modern compute all draw from the same constrained supply chain: roughly 87% of processing still tied to a single geopolitical
@@ -161,7 +161,7 @@ export default function TokenizedNeodymiumPage() {
             is changing that by bringing the element that moves the modern economy on-chain for the first time—from 1:1 redeemable oxide to
             In-Ground future delivery—with instant stablecoin settlement and DeFi-native secondary markets.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link
               href="/products"
               className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300"

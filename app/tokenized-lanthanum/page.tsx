@@ -141,14 +141,14 @@ export default function TokenizedLanthanumPage() {
             backgroundSize: '40px 40px',
           }}
         />
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 max-w-7xl mx-auto text-left">
           <h1 className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-cyan-200/90 mb-4">
             Tokenized Lanthanum by Toto Finance
           </h1>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8">
             Every Barrel of Gasoline Refined Passes Through Lanthanum. Now Anyone Can Own It.
           </h2>
-          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto text-left md:text-center">
+          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl text-left">
             Right now, every petroleum refinery on earth is running fluid catalytic cracking units loaded with lanthanum-based catalysts. Every
             high-end camera lens, every precision microscope, every hybrid vehicle battery depends on lanthanum compounds. It is the most
             abundant rare earth element, yet 85% of global production is controlled by China, and the gap between what the world consumes and
@@ -160,7 +160,7 @@ export default function TokenizedLanthanumPage() {
             </Link>{' '}
             is changing that by bringing the element that fuels, focuses, and powers modern industry on-chain for the first time.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link
               href="/products"
               className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300"

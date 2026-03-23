@@ -141,14 +141,14 @@ export default function TokenizedLutetiumPage() {
             backgroundSize: '40px 40px',
           }}
         />
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 max-w-7xl mx-auto text-left">
           <h1 className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-fuchsia-200/90 mb-4">
             Tokenized Lutetium by Toto Finance
           </h1>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8">
             Every PET Scanner That Finds Cancer Depends on Lutetium. Now Anyone Can Own It.
           </h2>
-          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto text-left md:text-center">
+          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl text-left">
             Right now, in oncology departments around the world, PET scanners are detecting cancers that would otherwise remain invisible until it
             is too late. Inside every one of those scanners, lutetium oxyorthosilicate crystals are converting gamma radiation into the signals
             that reveal tumors at their earliest, most treatable stages. Global lutetium production is just 6.5 tonnes per year, less than the
@@ -160,7 +160,7 @@ export default function TokenizedLutetiumPage() {
             </Link>{' '}
             is changing that by bringing the element that finds cancer on-chain for the first time.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link
               href="/products"
               className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300"

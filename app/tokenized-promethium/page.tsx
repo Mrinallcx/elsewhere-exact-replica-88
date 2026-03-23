@@ -142,14 +142,14 @@ export default function TokenizedPromethiumPage() {
             backgroundSize: '40px 40px',
           }}
         />
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 max-w-7xl mx-auto text-left">
           <h1 className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-amber-200/90 mb-4">
             Tokenized Promethium by Toto Finance
           </h1>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8">
             No Mine on Earth Produces Promethium. Every Gram Is Born Inside a Reactor. Now It Is On-Chain.
           </h2>
-          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto text-left md:text-center">
+          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl text-left">
             There is no promethium mine. There is no promethium deposit. There is no promethium ore body waiting to be discovered. Promethium is the
             only rare earth element that does not exist naturally on Earth in any meaningful quantity, because every one of its isotopes is
             radioactive. Every gram of promethium-147 powering nuclear batteries in deep-space probes, sustaining autonomous sensors on ocean floors,
@@ -162,7 +162,7 @@ export default function TokenizedPromethiumPage() {
             is building the infrastructure to bring this reactor-born element on-chain for the first time, from 1:1 redeemable refined isotopes to
             In-Ground future delivery contracts, settled instantly in stablecoins with full DeFi secondary market access.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link
               href="/products"
               className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300"

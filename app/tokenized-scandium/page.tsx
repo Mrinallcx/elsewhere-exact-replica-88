@@ -142,14 +142,14 @@ export default function TokenizedScandiumPage() {
             backgroundSize: '40px 40px',
           }}
         />
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 max-w-7xl mx-auto text-left">
           <h1 className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-slate-200/90 mb-4">
             Tokenized Scandium by Toto Finance
           </h1>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8">
             0.15% Changes Everything. Triple the Strength. 20% Less Weight. And the World Produces Less Than 25 Tonnes a Year.
           </h2>
-          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto text-left md:text-center">
+          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl text-left">
             There is no dedicated scandium mine anywhere on Earth. Every gram of scandium produced globally is recovered as a byproduct of someone
             else&apos;s mining operation: uranium tailings, nickel laterite processing, titanium dioxide waste streams. Total annual output sits below
             25 tonnes, less than the empty weight of a single commercial aircraft. Yet this element, added at just 0.1 to 0.15% concentration,
@@ -163,7 +163,7 @@ export default function TokenizedScandiumPage() {
             is building the infrastructure to bring the most transformative alloying element in metallurgy on-chain for the first time, from 1:1
             redeemable refined oxide to In-Ground future delivery contracts, settled instantly in stablecoins with full DeFi secondary market access.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link
               href="/products"
               className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300"

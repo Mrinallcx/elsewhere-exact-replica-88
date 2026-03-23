@@ -141,14 +141,14 @@ export default function TokenizedPraseodymiumPage() {
             backgroundSize: '40px 40px',
           }}
         />
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 max-w-7xl mx-auto text-left">
           <h1 className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-lime-200/90 mb-4">
             Tokenized Praseodymium by Toto Finance
           </h1>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8">
             No Permanent Magnet Works Without Praseodymium. Now Anyone Can Own It.
           </h2>
-          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto text-left md:text-center">
+          <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-10 max-w-3xl text-left">
             The magnet industry calls it NdPr for a reason. Every high-performance permanent magnet contains not just neodymium but praseodymium,
             the element that improves thermal stability, increases coercivity, and enables magnets to maintain performance at the operating
             temperatures inside EV motors and wind turbine generators. Without praseodymium, NdFeB magnets lose strength at the exact temperatures
@@ -161,7 +161,7 @@ export default function TokenizedPraseodymiumPage() {
             </Link>{' '}
             is changing that by bringing the overlooked half of every permanent magnet on-chain for the first time.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link
               href="/products"
               className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300"
