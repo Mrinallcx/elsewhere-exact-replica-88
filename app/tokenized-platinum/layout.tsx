@@ -1,9 +1,15 @@
 import { ReactNode } from 'react';
 
+const PAGE_TITLE = 'Tokenized Platinum | Invest in Rare Platinum On Chain | Toto Finance';
+const PAGE_DESCRIPTION =
+  'Invest in tokenized platinum backed by real, vault stored metal. Trade 24/7, redeem for physical delivery, and enjoy full on chain transparency on Toto Finance.';
+const KEYWORDS =
+  'tokenized platinum, buy tokenized platinum, platinum backed tokens, platinum tokenization, invest platinum blockchain, digital platinum ownership, platinum investment, physical platinum tokens';
+
 export const metadata = {
-  title: 'Tokenized Platinum | Physical Platinum on Blockchain | Toto Finance',
-  description: 'Own tokenized platinum backed by physical metal. Rarer than gold, essential for industry, with transparent custody and digital ownership via Toto Finance.',
-  keywords: 'tokenized platinum, digital platinum ownership, blockchain platinum tokens, physical platinum tokenization, platinum metal token, industrial platinum demand, platinum scarcity, precious metals blockchain',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: KEYWORDS,
   robots: {
     index: true,
     follow: true,
@@ -16,8 +22,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Tokenized Platinum | Physical Platinum on Blockchain | Toto Finance',
-    description: 'Own tokenized platinum backed by physical metal. Rarer than gold, essential for industry, with transparent custody and digital ownership via Toto Finance.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: 'https://totofinance.co/tokenized-platinum',
     siteName: 'Toto Finance',
     images: [
@@ -33,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokenized Platinum | Physical Platinum on Blockchain | Toto Finance',
-    description: 'Own tokenized platinum backed by physical metal. Rarer than gold, essential for industry, with transparent custody and digital ownership via Toto Finance.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },
   alternates: {
@@ -42,10 +48,6 @@ export const metadata = {
   },
 };
 
-export default function TokenizedPlatinumLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function TokenizedPlatinumLayout({ children }: { children: ReactNode }) {
   return children;
 }

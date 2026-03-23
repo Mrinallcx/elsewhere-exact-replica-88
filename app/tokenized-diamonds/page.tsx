@@ -1,15 +1,13 @@
 // Server Component (NO "use client")
 export const dynamic = 'force-dynamic';
 
-import Link from 'next/link';
+import type { ReactNode } from 'react';
 import dynamicImport from 'next/dynamic';
 import { BreadcrumbStructuredData } from '../components/BreadcrumbStructuredData';
 import { PageStructuredData } from '../components/PageStructuredData';
 import { FAQStructuredData } from '../components/FAQStructuredData';
-import { ProductTrustSection } from '../components/ProductTrustSection';
 import { Navigation } from '../components/Navigation';
 
-// Dynamic imports for heavy components
 const GradualBlur = dynamicImport(() => import('../../src/components/GradualBlur'));
 const Footer = dynamicImport(() => import('../components/Footer'));
 const NewsletterSection = dynamicImport(() => import('../components/NewsletterSection'));
@@ -17,249 +15,293 @@ const DiamondFAQ = dynamicImport(
   () => import('../components/client/SilverFAQ').then((mod) => ({ default: mod.SilverFAQ }))
 );
 
-// FAQ Data
+const PAGE_URL = 'https://totofinance.co/tokenized-diamonds';
+const PAGE_TITLE =
+  'Tokenized Diamonds | Buy, Trade & Own Real Diamonds | Toto Finance';
+const PAGE_DESCRIPTION =
+  'Access the largest tokenized diamonds marketplace. Buy blockchain backed, GIA certified diamonds with full transparency, insurance, and true digital ownership.';
+
+const breadcrumbItems = [
+  { name: 'Home', item: 'https://totofinance.co' },
+  { name: 'Products', item: 'https://totofinance.co/products' },
+  { name: 'Tokenized Diamonds', item: PAGE_URL },
+];
+
 const faqData = [
   {
-    question: 'What are tokenized diamonds?',
+    question: 'What are the 4Cs of Diamonds?',
     answer:
-      'Tokenized diamonds are physical, GIA-certified diamonds represented as digital tokens on the blockchain. Each token corresponds to a specific diamond held in secure custody.',
+      'The 4Cs, Cut, Clarity, Colour, and Carat, are the internationally recognized standard for evaluating diamond quality and determining value. Together, they provide a consistent framework used by gemologists worldwide. An increasingly important fifth C is "Conflict Free," which ensures ethical sourcing and adds both moral and market value to a diamond.',
   },
   {
-    question: 'Are tokenized diamonds real diamonds?',
+    question: 'What are the different types of diamonds?',
     answer:
-      'Yes. All tokenized diamonds on Toto Finance are natural, physical diamonds certified by GIA. No lab-grown or synthetic stones.',
+      "Diamonds broadly fall into two categories. Natural diamonds form over millions of years deep within the Earth's mantle under extreme heat and pressure. Synthetic (lab grown) diamonds are created in controlled laboratory environments that replicate natural conditions. Both can be graded using the 4Cs, though natural diamonds typically carry greater rarity value.",
   },
   {
-    question: 'Do I own a full diamond or a fraction of it?',
+    question: 'How should diamonds be stored to avoid damage?',
     answer:
-      'Each token represents direct digital ownership of a specific physical diamond. Fractional ownership is not offered.',
+      'Despite being the hardest natural material on Earth, diamonds can still be chipped or scratched by other diamonds. Store each stone separately in a fabric lined jewellery case or individual soft pouch. Avoid contact between diamonds and other gemstones. Clean periodically with warm soapy water and a soft brush to maintain brilliance.',
   },
   {
-    question: 'How is diamond ownership verified?',
+    question: 'How are diamonds graded and certified?',
     answer:
-      'Ownership and certification details are recorded on the blockchain and can be independently verified.',
+      "Diamond grading involves a detailed professional assessment of each stone's Cut, Colour, Clarity, and Carat weight. Independent gemological laboratories, such as GIA, IGI, and HRD, issue certificates that verify these qualities. Certification ensures transparency, builds buyer confidence, and establishes an objective market value for each stone.",
   },
   {
-    question: 'Where are the diamonds stored?',
+    question: 'How can you tell if a diamond is real?',
     answer:
-      'Diamonds are held under secure custody arrangements, with storage and certification details disclosed per asset.',
+      "Authentic diamonds exhibit unique physical properties including exceptional hardness (10 on the Mohs scale) and distinctive light refraction. Simple home tests include the fog test (real diamonds disperse heat instantly and won't stay fogged), the water test (diamonds sink due to high density), and the newspaper test (you can't read text through a real diamond). For definitive verification, professional diamond testers and gemological examination are recommended.",
+  },
+  {
+    question: 'Why do diamonds make a good investment?',
+    answer:
+      'Diamonds have historically preserved value due to their extreme rarity, unmatched durability, and consistent global demand. High quality diamonds with strong certification from reputable labs (GIA, IGI, HRD) can appreciate over time, particularly larger stones with exceptional grades. Through tokenization on Toto Finance, diamond investment becomes more accessible, liquid, and transparent, removing traditional barriers like physical storage and authentication concerns.',
   },
 ];
+
+const productJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Tokenized Diamonds',
+  description: PAGE_DESCRIPTION,
+  url: PAGE_URL,
+  brand: {
+    '@type': 'Brand',
+    name: 'Toto Finance',
+  },
+};
+
+function ExternalLink({
+  href,
+  children,
+  className,
+}: {
+  href: string;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+    >
+      {children}
+    </a>
+  );
+}
 
 export default function TokenizedDiamondsPage() {
   return (
     <div className="min-h-screen w-full relative">
-      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       <PageStructuredData
-        title="Tokenized Diamonds | Physical GIA-Certified Diamonds | Toto Finance"
-        description="Own certified natural diamonds digitally through blockchain tokenization. GIA-certified stones, transparent ownership, secure custody."
-        url="https://totofinance.co/tokenized-diamonds"
+        title={PAGE_TITLE}
+        description={PAGE_DESCRIPTION}
+        url={PAGE_URL}
         pageType="WebPage"
-        breadcrumbItems={[
-          { name: 'Home', item: 'https://totofinance.co' },
-          { name: 'Products', item: 'https://totofinance.co/products' },
-          { name: 'Tokenized Diamonds', item: 'https://totofinance.co/tokenized-diamonds' },
-        ]}
+        breadcrumbItems={breadcrumbItems}
       />
-      <BreadcrumbStructuredData
-        items={[
-          { name: 'Home', item: 'https://totofinance.co' },
-          { name: 'Tokenized Diamonds', item: 'https://totofinance.co/tokenized-diamonds' },
-        ]}
-      />
+      <BreadcrumbStructuredData items={breadcrumbItems} />
+      <FAQStructuredData faqs={faqData} />
+
       <GradualBlur preset="page-footer" strength={2} height="4rem" animated="scroll" duration="0.5s" />
       <Navigation pastHero={true} />
 
-      {/* ===================== FOLD 1: HERO SECTION ===================== */}
+      {/* Section 1: Hero */}
       <section className="relative bg-gradient-to-br from-neutral-900 via-neutral-800 to-gray-900 text-white px-4 sm:px-6 md:px-8 lg:px-12 pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px',
+          }}
+        />
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-6">
-              Tokenized Diamonds
+              Largest Tokenized Diamonds Marketplace
             </h1>
-            <h2 className="text-xl md:text-2xl font-light text-neutral-300 mb-6">
-              Certified diamonds. Digital ownership. Complete transparency.
-            </h2>
-            <p className="text-base md:text-lg text-gray-400 leading-relaxed mb-4 max-w-2xl">
-              Diamonds have always represented rarity, permanence, and value. Yet traditional diamond markets remain opaque, illiquid, and difficult to navigate.
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-8 max-w-2xl">
+              Everything about diamonds, from A to Z. This handbook is your complete guide, from beginner
+              basics to expert investment insights.
             </p>
-            <p className="text-base md:text-lg text-gray-400 leading-relaxed mb-6 max-w-2xl">
-              Tokenization modernizes diamond ownership &mdash; enabling certified stones to be owned and transferred digitally while remaining fully physical and verifiable.
-            </p>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-5 mb-8 max-w-lg">
-              <p className="text-sm text-gray-300 leading-relaxed">
-                This is not synthetic.<br />
-                This is not simulated.<br />
-                <strong className="text-white">These are real, GIA-certified diamonds &mdash; owned digitally.</strong>
+            <ExternalLink
+              href="https://blog.totofinance.co/diamond-handbook-index/"
+              className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300"
+            >
+              Diamond Handbook
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </ExternalLink>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Why Choose Tokenized Diamonds */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-12 md:mb-16 text-center max-w-4xl mx-auto">
+            Choose Diamonds: Shine Brighter, Ethically Sourced
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-neutral-50 rounded-2xl p-8 md:p-10 border border-neutral-100 flex flex-col">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Ethical Practices</h3>
+              <p className="text-gray-600 leading-relaxed flex-grow mb-6">
+                Our diamonds are conflict free and crafted with fair labour practices across every stage of
+                the supply chain. Each stone is responsibly sourced, giving you confidence that your
+                investment supports ethical mining standards.
               </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/products"
-                className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-300"
+              <ExternalLink
+                href="https://blog.totofinance.co/what-is-ethical-sourcing-of-diamonds/"
+                className="text-neutral-900 font-medium text-sm hover:underline inline-flex items-center gap-1"
               >
-                Explore Tokenized Diamonds
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                Read More
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </Link>
-              <a
-                href="#how-it-works"
-                className="inline-flex items-center justify-center border border-white/30 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-white/10 transition-all duration-300"
+              </ExternalLink>
+            </div>
+            <div className="bg-neutral-50 rounded-2xl p-8 md:p-10 border border-neutral-100 flex flex-col">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Sustainability</h3>
+              <p className="text-gray-600 leading-relaxed flex-grow mb-6">
+                Choosing our tokenized diamonds means supporting sustainable mining operations that protect
+                the planet&apos;s natural resources. Every diamond is traceable from mine to marketplace,
+                ensuring environmental accountability at every step.
+              </p>
+              <ExternalLink
+                href="https://blog.totofinance.co/diamond-traceability-with-tiamonds/"
+                className="text-neutral-900 font-medium text-sm hover:underline inline-flex items-center gap-1"
               >
-                How It Works
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                Read More
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </a>
+              </ExternalLink>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===================== FOLD 2: WHAT ARE TOKENIZED DIAMONDS? ===================== */}
-      <section id="how-it-works" className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
+      {/* Section 3: The 4Cs */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-28 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
-            What Are Tokenized Diamonds?
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-4 text-center">
+            The 4Cs: The Global Standard of Diamond Quality
           </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
-            Tokenized diamonds represent direct digital ownership of physical, certified diamonds, recorded on the blockchain. Each token corresponds to a specific, individual diamond verified by GIA certification and held in secure custody.
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto text-center mb-14 md:mb-16">
+            Diamonds are valued for their brilliance, rarity, and uniqueness. The 4Cs, Cut, Colour, Clarity,
+            and Carat Weight, form the universal benchmark for evaluating diamond quality with precision and
+            consistency.
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-neutral-50 rounded-2xl p-8 border border-neutral-100">
-              <p className="text-lg font-medium text-gray-900 mb-2">Diamonds remain physical, rare, and certified.</p>
-              <p className="text-gray-600">The underlying asset retains all its fundamental properties &mdash; natural origin, GIA grading, and intrinsic value.</p>
-            </div>
-            <div className="bg-neutral-50 rounded-2xl p-8 border border-neutral-100">
-              <p className="text-lg font-medium text-gray-900 mb-2">Ownership becomes digital, transparent, and verifiable.</p>
-              <p className="text-gray-600">Blockchain records provide transparent, auditable proof of ownership without intermediaries or ambiguity.</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              'Each token linked to a specific GIA-certified diamond',
-              'Direct digital ownership without physical handling',
-              'Transparent certification and ownership records',
-              'Secure custody of physical diamonds',
-              'Blockchain-recorded ownership history',
-            ].map((item, i) => (
-              <div key={i} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                <div className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-neutral-700 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              {
+                title: 'Cut',
+                body: "A diamond's cut determines its brilliance, fire, and scintillation. Only round brilliant diamonds receive official cut grades from gemological labs. Fancy shapes follow unique proportions that influence their visual beauty and light performance.",
+                href: 'https://blog.totofinance.co/an-overview-on-diamond-cuts/',
+              },
+              {
+                title: 'Colour',
+                body: 'Diamonds range from completely colourless to subtle shades of yellow and brown. The less body colour present, the rarer and more valuable the stone. Colour grading uses a D to Z scale, with D being perfectly colourless and commanding the highest premiums.',
+                href: 'https://blog.totofinance.co/guide-to-diamond-colors/',
+              },
+              {
+                title: 'Clarity',
+                body: 'Natural inclusions are like fingerprints, they make each diamond one of a kind. Fewer and smaller inclusions mean higher clarity, greater light transmission, and more brilliance. Clarity is graded from Flawless (FL) to Included (I3) under 10x magnification.',
+                href: 'https://blog.totofinance.co/an-overview-of-diamond-clarity/',
+              },
+              {
+                title: 'Carat',
+                body: "Carat measures a diamond's weight, not its physical size. One carat equals 0.2 grams. While larger diamonds are exponentially rarer and more valuable, a stone's overall worth is determined by the interplay of all four Cs together.",
+                href: 'https://blog.tiamonds.com/an-overview-of-diamond-carat/',
+              },
+            ].map((col) => (
+              <div
+                key={col.title}
+                className="bg-white rounded-2xl p-8 border border-gray-200 flex flex-col shadow-sm"
+              >
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{col.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed flex-grow mb-6">{col.body}</p>
+                <ExternalLink
+                  href={col.href}
+                  className="text-neutral-900 font-medium text-sm hover:underline inline-flex items-center gap-1 mt-auto"
+                >
+                  Learn More
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                  <p className="text-sm text-gray-700 leading-relaxed">{item}</p>
-                </div>
+                </ExternalLink>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===================== FOLD 3: WHY DIAMONDS MATTER ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
+      {/* Section 4: Journey of Diamonds */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
-            Why Diamonds Matter
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-14 md:mb-16 text-center">
+            Journey of Diamonds: From Earth to Blockchain
           </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-4">
-            Natural diamonds are finite resources formed over billions of years. High-quality certified stones are increasingly scarce as accessible deposits decline.
-          </p>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
-            Diamonds also hold enduring cultural significance across global markets, maintaining demand across economic cycles. Beyond jewelry, diamonds are essential for advanced industrial applications.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
-              <div className="w-10 h-10 bg-neutral-100 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-5 h-5 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium text-gray-900 mb-3">Tangible Scarcity</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Natural diamonds cannot be manufactured at scale. Each stone is unique, formed over billions of years under extreme conditions. Accessible deposits are declining globally.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
-              <div className="w-10 h-10 bg-neutral-100 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-5 h-5 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium text-gray-900 mb-3">Cultural &amp; Financial Significance</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Diamonds represent concentrated value across societies. They maintain demand across economic cycles as symbols of permanence, commitment, and wealth preservation.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
-              <div className="w-10 h-10 bg-neutral-100 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-5 h-5 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium text-gray-900 mb-3">Industrial Utility</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Used in precision cutting, semiconductors, quantum research, and medical tools. Diamond&apos;s unique physical properties make it irreplaceable in advanced manufacturing.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-neutral-900 text-white rounded-2xl p-6 md:p-8">
-            <p className="text-sm md:text-base leading-relaxed">
-              Traditional diamond markets suffer from opaque pricing, limited liquidity, and fragmented verification. <strong>Tokenization addresses these inefficiencies without altering the asset itself.</strong>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== FOLD 4: WHY TOKENIZE DIAMONDS? ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
-            Why Tokenize Diamonds?
-          </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
-            Traditional diamond ownership was built for retail jewelry &mdash; not for transparent, digital-first ownership. Tokenization modernizes how diamonds are accessed and managed.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-12 max-w-3xl mx-auto">
             {[
               {
-                title: 'Direct Digital Ownership',
-                desc: 'Own certified diamonds digitally without managing physical logistics. The stone stays in secure custody; you hold verifiable ownership.',
+                title: 'Mining',
+                body: 'Rough diamonds are unearthed from deep within the earth through carefully managed mining operations, beginning their journey from raw geological formation to finished masterpiece.',
+                href: 'https://blog.tiamonds.com/an-overview-of-diamond-mining',
+                cta: 'Read More',
               },
               {
-                title: 'Transparent Pricing & Verification',
-                desc: 'Certification and ownership data are directly accessible. No hidden markups, no opaque dealer negotiations.',
+                title: 'Polishing',
+                body: 'Skilled artisans meticulously cut and polish each rough diamond, unlocking its natural brilliance. This transformation from rough stone to polished gem requires decades of expertise and precision craftsmanship.',
+                href: 'https://blog.tiamonds.com/an-overview-on-diamond-cuts',
+                cta: 'Read More',
               },
               {
-                title: 'Efficient Transferability',
-                desc: 'Ownership can be transferred digitally without intermediaries. No brokers, no paperwork, no settlement delays.',
+                title: 'Grading',
+                body: 'Every diamond is expertly assessed using the 4Cs framework, Carat, Cut, Colour, and Clarity, by trained gemologists who assign objective quality grades that determine the stone\'s market value.',
+                href: 'https://blog.tiamonds.com/an-overview-of-diamond-grading-process/',
+                cta: 'Read More',
               },
               {
-                title: 'Global Accessibility',
-                desc: 'Access diamond ownership without geographic constraints. Digital ownership removes barriers for global participants.',
+                title: 'Certification',
+                body: 'Independent gemological laboratories such as GIA, IGI, and HRD issue formal certificates verifying each diamond\'s quality attributes. These certificates serve as the diamond\'s permanent identity document and proof of quality.',
+                href: 'https://blog.tiamonds.com/an-overview-of-diamond-certification',
+                cta: 'Read More',
               },
               {
-                title: 'Clear Ownership Records',
-                desc: 'Blockchain-based records eliminate disputes and ambiguity. Every ownership change is immutably recorded on-chain.',
+                title: 'Tokenization & Retailing',
+                body: 'Certified diamonds are securely stored, insured, and digitized as blockchain backed tokens on Toto Finance. Buyers can purchase, trade, or redeem their tokenized diamonds through the marketplace, combining traditional diamond value with modern digital ownership.',
+                href: 'https://blog.tiamonds.com/classical-vs-tokenized-diamonds-a-comparative-insight',
+                cta: 'Read More',
               },
-            ].map((benefit, i) => (
-              <div key={i} className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-neutral-900 text-white flex items-center justify-center flex-shrink-0 text-sm font-semibold">
-                    {i + 1}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{benefit.desc}</p>
-                  </div>
+            ].map((step, i) => (
+              <div
+                key={step.title}
+                className="flex flex-col sm:flex-row sm:items-start gap-6 pb-12 border-b border-gray-100 last:border-0 last:pb-0"
+              >
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-neutral-900 text-white flex items-center justify-center text-sm font-semibold">
+                  {i + 1}
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{step.title}</h3>
+                  <p className="text-gray-600 leading-relaxed mb-4">{step.body}</p>
+                  <ExternalLink
+                    href={step.href}
+                    className="text-neutral-900 font-medium text-sm hover:underline inline-flex items-center gap-1"
+                  >
+                    {step.cta}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </ExternalLink>
                 </div>
               </div>
             ))}
@@ -267,153 +309,20 @@ export default function TokenizedDiamondsPage() {
         </div>
       </section>
 
-      {/* ===================== FOLD 5: COMPARISON TABLE ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-12">
-            Tokenized Diamonds vs Traditional Diamond Ownership
-          </h2>
-
-          <div className="overflow-x-auto rounded-2xl border border-gray-200 mb-10">
-            <table className="w-full text-sm text-left">
-              <thead>
-                <tr className="bg-neutral-900 text-white">
-                  <th className="px-4 md:px-6 py-4 font-medium">Feature</th>
-                  <th className="px-4 md:px-6 py-4 font-medium">Traditional Diamonds</th>
-                  <th className="px-4 md:px-6 py-4 font-medium bg-white/10">Tokenized Diamonds</th>
-                </tr>
-              </thead>
-              <tbody className="bg-white">
-                {[
-                  ['Pricing', 'Opaque, negotiation-based', 'Transparent'],
-                  ['Ownership Records', 'Paper-based', 'On-chain'],
-                  ['Certification Access', 'Fragmented', 'Directly disclosed'],
-                  ['Liquidity', 'Limited & slow', 'Platform-enabled'],
-                  ['Verification', 'Trust-based', 'Blockchain-recorded'],
-                ].map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                    <td className="px-4 md:px-6 py-3 font-medium text-gray-900">{row[0]}</td>
-                    <td className="px-4 md:px-6 py-3 text-gray-600">{row[1]}</td>
-                    <td className="px-4 md:px-6 py-3 text-gray-900 font-medium bg-neutral-50/50">{row[2]}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="bg-neutral-900 text-white rounded-2xl p-6 md:p-8">
-            <p className="text-sm md:text-base leading-relaxed">
-              <strong>Tokenized diamonds preserve diamond fundamentals while eliminating market friction.</strong> The same certified stones, with modern ownership infrastructure.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== FOLD 6: HOW TOTO FINANCE DOES IT ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
-            How Toto Finance Tokenizes Diamonds
-          </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mb-12">
-            At Toto Finance, diamond tokenization is built on certification, custody, and transparency.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {[
-              {
-                title: 'GIA-Certified Diamonds Only',
-                desc: 'Each diamond is certified by the Gemological Institute of America (GIA) — the world\u2019s most respected diamond grading authority.',
-              },
-              {
-                title: 'Secure Custody',
-                desc: 'Physical diamonds are stored under professional custody arrangements with insured, audited facilities.',
-              },
-              {
-                title: 'On-Chain Records',
-                desc: 'Certification details and ownership history are recorded digitally on the blockchain, providing transparent and immutable records.',
-              },
-              {
-                title: 'Transparent Lifecycle',
-                desc: 'From certification to ownership transfer, each stage is verifiable. No hidden steps, no opaque processes.',
-              },
-            ].map((item, i) => (
-              <div key={i} className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
-                <div className="flex items-start gap-4">
-                  <svg className="w-5 h-5 text-neutral-700 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-neutral-50 rounded-2xl p-6 md:p-8 border border-neutral-200 text-center">
-            <p className="text-lg font-medium text-gray-900 mb-1">Diamonds are about trust.</p>
-            <p className="text-gray-600">Tokenization makes that trust transparent.</p>
-          </div>
-        </div>
-      </section>
-
-      <ProductTrustSection
-        assetName="Tokenized Diamonds"
-        regulatory={{
-          frameworks: 'MiCA (ESMA), TVTG (FMA Liechtenstein). Operating within EU and Liechtenstein regulatory frameworks.',
-          proofLink: 'https://totofinance.co/achievements',
-        }}
-        custody={{
-          entity: 'TotoHolding AG',
-          location: 'Vaduz',
-          insurance: "Lloyd's of London vault insurance.",
-          vaultPartners: 'Liechtenstein vault.',
-        }}
-        audit={{
-          summary: 'Hacken smart contract audit (Jan 2025). Independent third-party security verification.',
-          auditLink: 'https://totofinance.co/achievements',
-          certification: 'GIA Certified.',
-        }}
-      />
-
-      {/* ===================== FAQ ===================== */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 bg-gray-50">
+      {/* Section 5: FAQ */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-28 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-6">
-            Frequently Asked Questions
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 leading-tight mb-4">
+            Get answers to your questions
           </h2>
           <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-12">
-            Common questions about tokenized diamonds, GIA certification, custody, and digital ownership on Toto Finance.
+            No more confusion gains clear insights into asset tokenization with direct, easy-to-understand
+            answers. These insights help you navigate the world of tokenization.
           </p>
           <DiamondFAQ faqs={faqData} />
         </div>
       </section>
 
-      {/* ===================== FINAL CTA ===================== */}
-      <section className="relative bg-gradient-to-br from-neutral-900 via-neutral-800 to-gray-900 text-white px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight mb-3">
-            Diamonds have always been about rarity and value.
-          </h2>
-          <p className="text-xl md:text-2xl font-light text-neutral-300 mb-8">
-            Tokenization is about transparency and access.
-          </p>
-          <Link
-            href="/products"
-            className="inline-flex items-center justify-center bg-white text-gray-900 px-8 py-3.5 rounded-full text-base font-semibold hover:bg-gray-100 transition-all duration-300"
-          >
-            Explore Tokenized Diamonds
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </Link>
-        </div>
-      </section>
-
-      {/* ===================== NEWSLETTER + FOOTER ===================== */}
       <NewsletterSection />
       <Footer />
     </div>

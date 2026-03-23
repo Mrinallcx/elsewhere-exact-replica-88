@@ -1,9 +1,16 @@
 import { ReactNode } from 'react';
 
+const PAGE_TITLE =
+  'Tokenized Diamonds | Buy, Trade & Own Real Diamonds | Toto Finance';
+const PAGE_DESCRIPTION =
+  'Access the largest tokenized diamonds marketplace. Buy blockchain backed, GIA certified diamonds with full transparency, insurance, and true digital ownership.';
+const KEYWORDS =
+  'tokenized diamonds, buy tokenized diamonds, diamond tokenization, blockchain diamonds, diamond investment, certified diamonds blockchain, digital diamond ownership, diamond backed tokens';
+
 export const metadata = {
-  title: 'Tokenized Diamonds | Physical GIA-Certified Diamonds | Toto Finance',
-  description: 'Own certified natural diamonds digitally through blockchain tokenization. GIA-certified stones, transparent ownership, secure custody, and direct access via Toto Finance.',
-  keywords: 'tokenized diamonds, digital diamond ownership, blockchain diamond tokens, GIA certified diamonds, physical diamond tokenization, certified diamonds blockchain, digital diamond custody, transparent diamond ownership',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: KEYWORDS,
   robots: {
     index: true,
     follow: true,
@@ -16,8 +23,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Tokenized Diamonds | Physical GIA-Certified Diamonds | Toto Finance',
-    description: 'Own certified natural diamonds digitally through blockchain tokenization. GIA-certified stones, transparent ownership, secure custody, and direct access via Toto Finance.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: 'https://totofinance.co/tokenized-diamonds',
     siteName: 'Toto Finance',
     images: [
@@ -33,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokenized Diamonds | Physical GIA-Certified Diamonds | Toto Finance',
-    description: 'Own certified natural diamonds digitally through blockchain tokenization. GIA-certified stones, transparent ownership, secure custody, and direct access via Toto Finance.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },
   alternates: {

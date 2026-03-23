@@ -1,9 +1,15 @@
 import { ReactNode } from 'react';
 
+const PAGE_TITLE = 'Tokenized Sapphires | Own Certified Rare Sapphires | Toto Finance';
+const PAGE_DESCRIPTION =
+  "Invest in tokenized sapphires backed by real, certified, unheated Sri Lankan gems. Fully insured by Lloyd's of London with on chain transparency on Toto Finance.";
+const KEYWORDS =
+  'tokenized sapphires, buy tokenized sapphires, sapphire tokenization, sapphire investment, certified sapphire blockchain, unheated sapphire investment, digital gemstone ownership, sapphire backed NFT';
+
 export const metadata = {
-  title: 'Tokenized Sapphire | Certified Natural Sapphires on Blockchain | Toto Finance',
-  description: 'Own certified natural sapphires digitally through blockchain tokenization. Transparent pricing, verified authenticity, secure custody, and direct ownership via Toto Finance.',
-  keywords: 'tokenized sapphire, digital sapphire ownership, blockchain sapphire, certified natural sapphire, gemstone tokenization, blue sapphire, gemstone custody, sapphire certification, luxury assets blockchain, digital gemstones',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: KEYWORDS,
   robots: {
     index: true,
     follow: true,
@@ -16,8 +22,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Tokenized Sapphire | Certified Natural Sapphires on Blockchain | Toto Finance',
-    description: 'Own certified natural sapphires digitally through blockchain tokenization. Transparent pricing, verified authenticity, secure custody, and direct ownership via Toto Finance.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: 'https://totofinance.co/tokenized-sapphire',
     siteName: 'Toto Finance',
     images: [
@@ -25,7 +31,7 @@ export const metadata = {
         url: 'https://totofinance.co/assets/images/og-preview.png',
         width: 1200,
         height: 630,
-        alt: 'Tokenized Sapphire | Toto Finance',
+        alt: 'Tokenized Sapphires | Toto Finance',
       },
     ],
     locale: 'en_US',
@@ -33,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokenized Sapphire | Certified Natural Sapphires on Blockchain | Toto Finance',
-    description: 'Own certified natural sapphires digitally through blockchain tokenization. Transparent pricing, verified authenticity, secure custody, and direct ownership via Toto Finance.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },
   alternates: {
@@ -42,10 +48,6 @@ export const metadata = {
   },
 };
 
-export default function TokenizedSapphireLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function TokenizedSapphireLayout({ children }: { children: ReactNode }) {
   return children;
 }

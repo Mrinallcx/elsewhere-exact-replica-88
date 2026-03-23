@@ -1,9 +1,15 @@
 import { ReactNode } from 'react';
 
+const PAGE_TITLE = 'Tokenized Silver | Invest in Real Silver On Chain | Toto Finance';
+const PAGE_DESCRIPTION =
+  'Buy tokenized silver backed 1:1 by vault stored physical bars. Trade 24/7, enjoy full blockchain transparency, and redeem for physical delivery on Toto Finance.';
+const KEYWORDS =
+  'tokenized silver, buy tokenized silver, silver backed tokens, silver tokenization, invest silver blockchain, digital silver ownership, silver backed crypto, physical silver tokens, silver NFT';
+
 export const metadata = {
-  title: 'Tokenized Silver | Digital Silver Backed by Physical Bullion | Toto Finance',
-  description: 'Tokenized silver by Toto Finance. 1:1 asset-backed silver bullion tokens, always redeemable. Fifth consecutive year of supply deficit. 120M oz deficit 2025. Industrial demand at record highs. Solar, EV, AI driving demand through 2030.',
-  keywords: 'tokenized silver, silver tokenization, buy tokenized silver, digital silver, silver-backed tokens, RWA silver, real world asset silver, physical silver tokens, silver instant settlement, DeFi silver, silver yield, silver collateral loans, blockchain silver',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: KEYWORDS,
   robots: {
     index: true,
     follow: true,
@@ -16,8 +22,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Tokenized Silver | Digital Silver Backed by Physical Bullion | Toto Finance',
-    description: 'Tokenized silver by Toto Finance. 1:1 asset-backed silver bullion tokens, always redeemable. Fifth consecutive year of supply deficit. 120M oz deficit 2025. Industrial demand at record highs.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: 'https://totofinance.co/tokenized-silver',
     siteName: 'Toto Finance',
     images: [
@@ -33,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokenized Silver | Digital Silver Backed by Physical Bullion | Toto Finance',
-    description: 'Tokenized silver by Toto Finance. 1:1 asset-backed silver bullion tokens, always redeemable. Fifth consecutive year of supply deficit. Industrial demand at record highs.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     images: ['https://totofinance.co/assets/images/og-preview.png'],
   },
   alternates: {
@@ -42,10 +48,6 @@ export const metadata = {
   },
 };
 
-export default function TokenizedSilverLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function TokenizedSilverLayout({ children }: { children: ReactNode }) {
   return children;
 }
