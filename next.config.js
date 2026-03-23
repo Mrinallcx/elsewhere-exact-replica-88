@@ -156,23 +156,23 @@ const nextConfig = {
         ],
       },
       {
-        // Cache Next.js static files with long-term caching (immutable)
+        // Cache Next.js static files for 24h (was 1y; reduces stale JS/CSS after deploys)
         // MIME types are handled by Netlify's _headers file
         source: '/_next/static/:path*',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: 'public, max-age=86400, immutable',
           },
         ],
       },
       {
-        // Cache optimized images from Next.js Image component
+        // Optimized images from Next.js Image — same 24h browser cache
         source: '/_next/image',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: 'public, max-age=86400, immutable',
           },
         ],
       },
