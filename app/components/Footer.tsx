@@ -46,6 +46,16 @@ const footerColumns = [
     ],
   },
   {
+    heading: 'Social',
+    links: [
+      { label: 'X (Twitter)', href: 'https://x.com/totofinance' },
+      { label: 'Telegram', href: 'https://t.me/totofinance' },
+      { label: 'LinkedIn (company)', href: 'https://www.linkedin.com/company/totofinance/' },
+      { label: 'Instagram', href: 'https://instagram.com/totofinance.co' },
+      { label: 'YouTube', href: 'https://www.youtube.com/@Toto-Finance' },
+    ],
+  },
+  {
     heading: 'Rare Earths',
     links: [
       { label: 'Cerium', href: '/tokenized-cerium' },
@@ -116,7 +126,7 @@ export default function Footer() {
       <div className='max-w-7xl mx-auto'>
 
         {/* ── UNIFIED FOOTER GRID ── */}
-        <div className='footer-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-7 gap-x-6 gap-y-10'>
+        <div className='footer-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-8 gap-x-6 gap-y-10'>
           {footerColumns.map((column, idx) => (
             <div key={`col-${idx}`} className='footer-column'>
               <h3 className='footer-heading font-semibold text-[13px] mb-4 whitespace-nowrap'>
