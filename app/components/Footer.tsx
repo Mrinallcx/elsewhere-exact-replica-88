@@ -163,17 +163,31 @@ export default function Footer() {
             </div>
           </div>
           <div className='w-full flex flex-wrap justify-end gap-x-4 gap-y-1'>
-            {footerBottomLinks.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                target={item.href.startsWith('http') || item.href === '/sitemap.xml' ? '_blank' : undefined}
-                rel={item.href.startsWith('http') || item.href === '/sitemap.xml' ? 'noopener noreferrer' : undefined}
-                className='legal-link hover:underline'
-              >
-                {item.label}
-              </Link>
-            ))}
+            {footerBottomLinks.map((item) => {
+              const isNewTab = item.href.startsWith('http') || item.href === '/sitemap.xml';
+              if (isNewTab) {
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='legal-link hover:underline'
+                  >
+                    {item.label}
+                  </a>
+                );
+              }
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className='legal-link hover:underline'
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
