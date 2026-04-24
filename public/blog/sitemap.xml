@@ -2,21 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://totofinance.co/blog/</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://totofinance.co/blog/posts/</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://totofinance.co/blog/imprint/</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://totofinance.co/blog/posts/blackrock-said-tokenization-is-where-the-internet-was-in-1996-heres-the-commodity-layer-nobody-built-yet/</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://totofinance.co/blog/posts/china-sulfuric-acid-export-ban-2026/</loc>
