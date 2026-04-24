@@ -177,7 +177,7 @@ export function NavigationClient({ logo, pastHero: externalPastHero }: Navigatio
                       </svg>
                     </span>
                   </Link>
-                  <Link
+                  <a
                     href="/blog"
                     className="dropdown-item group block px-4 py-3 text-slate-700 hover:bg-slate-100/80 transition-all duration-300 hover:translate-x-2 hover:shadow-md"
                   >
@@ -197,7 +197,7 @@ export function NavigationClient({ logo, pastHero: externalPastHero }: Navigatio
                         />
                       </svg>
                     </span>
-                  </Link>
+                  </a>
                   <Link
                     href="/toto-token"
                     className="dropdown-item group block px-4 py-3 text-slate-700 hover:bg-slate-100/80 transition-all duration-300 hover:translate-x-2 hover:shadow-md"
@@ -337,13 +337,13 @@ export function NavigationClient({ logo, pastHero: externalPastHero }: Navigatio
                 Vision 2030
               </Link>
 
-              <Link
+              <a
                 href="/blog"
                 className="block py-3 text-travel-black hover:text-travel-gold transition-colors duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Blog
-              </Link>
+              </a>
 
               <Link
                 href="/ecosystem"
